@@ -57,6 +57,36 @@ MySQL中按照队名对表进行排序
 
 
 
+### 数据库设计
+
+- #### score表
+
+  - Team 和 opponent指定对战双方 String
+  - Home：标识主客场 String
+  - TeamPoints： 主场球队得分 int
+  - OpponentPoint：客场球队得分 int
+
+  说明：
+
+  1. 对分数添加了check约束，每支球队单场得分的范围(0,300)
+  2. 
+
+- #### user表
+
+  - 用户名 username 
+  - 用户ID 唯一标识
+  - 性别 sex
+  - 所在地 addr
+  - 关注的球队 Follow
+  - 发表的评论 comments
+  - 回帖 reply
+
+- #### comments  评论表
+
+  
+
+
+
 ### 软工进度
 
 - #### 第一周 4.10
