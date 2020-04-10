@@ -95,3 +95,34 @@ MySQL中按照队名对表进行排序
   张佳一：数据实时获取
   毛豫新：管理端前端
   甘凯元：管理端后端
+  
+  - #### 4/10 21:12更新：代码部署说明
+  
+    - For ALL
+  
+      `IDEA2018.3+ `
+  
+      `MAVEN3.6+ `
+  
+      `TomCAT9+`
+  
+    - For 前端
+  
+      前端的界面主要是在web/WEB-INF/jsp文件夹下新建jsp文件
+  
+      前端请求后端需要用到Servlet的request和response
+  
+      `com.hupu.controller`文件夹下用来连接前后端数据，数据交换形式为json
+  
+    - For 后端
+  
+      DAO层进行SQL操作
+  
+      POJO层是对数据库元素的封装
+  
+      SERVICE层是业务层，未来的业务逻辑可能要在这层实现
+  
+    emmm我个人作业的文档对spring层次描写的比较清楚，可以看看~
+  
+    连接：<https://github.com/GaryGky/SE-Peroject1>
+

@@ -10,5 +10,5 @@
     <!-- 在这里配置更多的bean -->
     <import resource="spring-dao.xml"/>
     <import resource="spring-service.xml"/>
-    <!--<import resource="spring-mvc.xml"/>-->
+    <import resource="spring-mvc.xml"/>
 </beans>
