@@ -61,10 +61,15 @@ MySQL中按照队名对表进行排序
 
 - #### score表
 
-  - Team 和 opponent指定对战双方 String
-  - Home：标识主客场 String
-  - TeamPoints： 主场球队得分 int
-  - OpponentPoint：客场球队得分 int
+  | 比赛信息表 |               |             |
+  | ---------- | ------------- | ----------- |
+  | 描述       | 字段名        | 类型        |
+  | 球队1      | Team          | varchar 255 |
+  | 球队2      | Opponent      | varchar 255 |
+  | 主场or客场 | Home          | varchar 255 |
+  | 球队1得分  | TeamPoints    | int         |
+  | 球队2得分  | OpponentPoint | int         |
+  |            |               |             |
 
   说明：
 
@@ -73,19 +78,56 @@ MySQL中按照队名对表进行排序
 
 - #### user表
 
-  - 用户名 username 
-  - 用户ID 唯一标识
-  - 性别 sex
-  - 所在地 addr
-  - 关注的球队 Follow
-  - 发表的评论 comments
-  - 回帖 reply
+  | Users用户注册信息表 |               |             |      |         |
+  | ------------------- | ------------- | ----------- | ---- | ------- |
+  | 描述                | 字段名        | 类型        | 空值 | 其他    |
+  | 用户ID              | user_id       | number(8)   | 否   | 主键    |
+  | 用户邮箱            | user_email    | varchar(40) | 否   |         |
+  | 用户密码            | user_password | varchar(80) | 否   |         |
+  | 用户昵称            | user_nikename | varchar(60) | 否   |         |
+  | 注册时间            | user_time     | timestamp   | 否   |         |
+  | 验证状态            | user_status   | Number(1)   |      | 默认(0) |
 
-- #### comments  评论表
+- #### post 帖子表
 
+  | 描述       | 字段名                 | 类型         | 空值 | 其他 |
+  | ---------- | ---------------------- | ------------ | ---- | ---- |
+  | 普通消息ID | messages_id            | number(8)    | 否   | 主键 |
+  | 消息类型   | messages_type          | varchar(20)  |      |      |
+  | 消息内容   | messages_info          | varchar(400) |      |      |
+  | 发表时间   | messages_time          | timestamp    |      |      |
+  | 收藏次数   | messages_collectnum    | number(8)    |      |      |
+  | 评论次数   | messages_commentnum    | number(8)    |      |      |
+  | 转发次数   | messages_ transpondnum | number(8)    |      |      |
+  | 赞同次数   | messages_agreenum      | number(8)    |      |      |
+  | 阅读次数   | messages_readnum       | number(8)    |      |      |
+  | 消息标签   | messages_label         | varchar(80)  |      |      |
+  | 消息图片ID | picture_id             | number(8)    | 否   | 外键 |
+  | 发表用户ID | user_id                | number(8)    | 否   | 外键 |
+  
   
 
+- #### comments 评论表
 
+  | 描述       | 字段名              | 类型         | 空值 | 其他 |
+  | ---------- | ------------------- | ------------ | ---- | ---- |
+  | 评论ID     | comments_id         | number(8)    | 否   | 主键 |
+  | 评论内容   | comments_info       | varchar(200) |      |      |
+  | 内容状态   | comments_infostatus | varchar(10)  |      |      |
+  | 评论时间   | comments_time       | timestamp    |      |      |
+  | 普通消息ID | messages_id         | number(8)    | 否   | 外键 |
+  | 用户ID     | user_id             | number(8)    | 否   | 外键 |
+
+
+
+- #### admins 管理员表
+
+  | Admins管理员表 |             |             |      |      |
+  | -------------- | ----------- | ----------- | ---- | ---- |
+  | 描述           | 字段名      | 类型        | 空值 | 其他 |
+  | 管理员ID       | admins_id   | number(8)   | 否   | 主键 |
+  | 管理员名称     | admins_name | varchar(20) | 否   |      |
+  | 管理员密码     | admins_pass | varchar(20) | 否   |      |
 
 ### 软工进度
 
