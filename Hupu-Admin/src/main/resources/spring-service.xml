@@ -15,8 +15,12 @@
         <property name="scoreMapper" ref="scoreMapper"/>
     </bean>
 
-    <bean id="UserServiceImpl" class="com.hupu.service.UserSeriveImpl">
+    <bean id="UserServiceImpl" class="com.hupu.service.UserServiceImpl">
         <property name="userMapper" ref="userMapper"/>
+    </bean>
+
+    <bean id="AdminServiceImpl" class="com.hupu.service.AdminServiceImpl">
+        <property name="adminMapper" ref="adminMapper"/>
     </bean>
 
 
@@ -25,5 +29,4 @@
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="datasource"/>
     </bean>
-
 </beans>

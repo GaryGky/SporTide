@@ -5,9 +5,9 @@ import com.hupu.pojo.User;
 
 import java.util.List;
 
-public class UserSeriveImpl implements UserService {
+public class UserServiceImpl extends ConstantService implements UserService {
     private UserMapper userMapper;
-    private final int ErrorCodeForPwd = -1; // 定义错误编码
+    
     
     public int createUser(int id, String email, String pwd, String nikeName, String createTime) {
         return userMapper.createUser(id, email, pwd, nikeName, createTime);

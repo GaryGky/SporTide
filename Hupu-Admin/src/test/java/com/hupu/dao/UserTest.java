@@ -1,19 +1,17 @@
-package com.hupu.service;
+package com.hupu.dao;
 
 import com.hupu.pojo.User;
+import com.hupu.service.UserServiceImpl;
 import org.junit.Test;
-import org.junit.runners.Parameterized;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.Collection;
 
 public class UserTest {
     @Test
     public void testInsert() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
-        UserSeriveImpl userSerive = (UserSeriveImpl) context.getBean("UserServiceImpl");
+        UserServiceImpl userSerive = (UserServiceImpl) context.getBean("UserServiceImpl");
         userSerive.createUser(1, "email1", "pwd1", "name1", "time1");
         userSerive.createUser(2, "email2", "pwd2", "name2", "time2");
         userSerive.createUser(3, "email3", "pwd3", "name3", "time3");
@@ -24,7 +22,7 @@ public class UserTest {
     public void testQueryAll() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
-        UserSeriveImpl userSerive = (UserSeriveImpl) context.getBean("UserServiceImpl");
+        UserServiceImpl userSerive = (UserServiceImpl) context.getBean("UserServiceImpl");
         System.out.println("====== Test Query All =======");
         for (User user : userSerive.queryAllUser()) {
             System.out.println(user);
@@ -65,7 +63,7 @@ public class UserTest {
     public void testDelete() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
-        UserSeriveImpl userSerive = (UserSeriveImpl) context.getBean("UserServiceImpl");
+        UserServiceImpl userSerive = (UserServiceImpl) context.getBean("UserServiceImpl");
         System.out.println("==== Test Delete By Id ===== ");
         System.out.println(userSerive.deleteUserById(1));
         System.out.println(userSerive.deleteUserById(2));

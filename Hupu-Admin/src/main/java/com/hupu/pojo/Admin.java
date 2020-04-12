@@ -1,14 +1,14 @@
 package com.hupu.pojo;
 
 public class Admin {
-    private int id;
-    private String name;
-    private String pwd;
+    private int admin_id;
+    private String admin_name;
+    private String admin_pwd;
     
     public Admin(int id, String name, String pwd) {
-        this.id = id;
-        this.name = name;
-        this.pwd = pwd;
+        this.admin_id = id;
+        this.admin_name = name;
+        this.admin_pwd = pwd;
     }
     
     public Admin() {
@@ -17,33 +17,33 @@ public class Admin {
     @Override
     public String toString() {
         return "Admin{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", pwd='" + pwd + '\'' +
+                "admin_id=" + admin_id +
+                ", admin_name='" + admin_name + '\'' +
+                ", admin_pwd='" + admin_pwd + '\'' +
                 '}';
     }
     
-    public int getId() {
-        return id;
+    public int getAdmin_id() {
+        return admin_id;
     }
     
-    public void setId(int id) {
-        this.id = id;
+    public void setAdmin_id(int admin_id) {
+        this.admin_id = admin_id;
     }
     
-    public String getName() {
-        return name;
+    public String getAdmin_name() {
+        return admin_name;
     }
     
-    public void setName(String name) {
-        this.name = name;
+    public void setAdmin_name(String admin_name) {
+        this.admin_name = admin_name;
     }
     
-    public String getPwd() {
-        return pwd;
+    public String getAdmin_pwd() {
+        return admin_pwd;
     }
     
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setAdmin_pwd(String admin_pwd) {
+        this.admin_pwd = admin_pwd;
     }
 }
