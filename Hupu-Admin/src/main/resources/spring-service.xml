@@ -15,6 +15,10 @@
         <property name="scoreMapper" ref="scoreMapper"/>
     </bean>
 
+    <bean id="UserServiceImpl" class="com.hupu.service.UserSeriveImpl">
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
+
 
     <!--事物管理器-->
     <bean id="transaction"

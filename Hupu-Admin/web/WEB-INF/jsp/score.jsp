@@ -43,7 +43,7 @@
 <body>
 
 <div class="form-inline">
-    <input id="date" type="text" placeholder="Input Date"
+    <input user_id="date" type="text" placeholder="Input Date"
            class="form-control">
     <button class="btn btn-primary" onclick="a1()">Query By
         Date
@@ -61,7 +61,7 @@
     </thead>
 
     <%--通过script动态添加数据--%>
-    <tbody id="content">
+    <tbody user_id="content">
 
     </tbody>
 </table>

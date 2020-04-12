@@ -1,9 +1,11 @@
-import com.hupu.service.ScoreServiceImpl;
+package com.hupu.service;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Test1 {
+public class ScoreTest {
+    
     @Test
     public void test1() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
