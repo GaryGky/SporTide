@@ -11,7 +11,8 @@ public class AdminTest {
     public void testInsert() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
-        AdminServiceImpl adminService = (AdminServiceImpl) context.getBean("AdminServiceImpl");
+        AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(
+                "adminServiceImpl");
         System.out.println("====== Test Add Admin ====== ");
         adminService.createAdmin(1, "admin1", "admin1");
         adminService.createAdmin(2, "admin2", "admin2");
@@ -22,7 +23,8 @@ public class AdminTest {
     public void testQuery() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
-        AdminServiceImpl adminService = (AdminServiceImpl) context.getBean("AdminServiceImpl");
+        AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(
+                "adminServiceImpl");
         System.out.println("====== Test Query BY ID ====== ");
         System.out.println(adminService.queryAdminById(1));
         System.out.println(adminService.queryAdminById(3));
@@ -53,7 +55,8 @@ public class AdminTest {
     public void testDelete() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
-        AdminServiceImpl adminService = (AdminServiceImpl) context.getBean("AdminServiceImpl");
+        AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(
+                "adminServiceImpl");
         System.out.println("====== Test Delete Admin ====== ");
         System.out.println(adminService.deleteAdminById(1));
         System.out.println(adminService.deleteAdminById(2));

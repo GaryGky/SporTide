@@ -2,10 +2,16 @@ package com.hupu.service;
 
 import com.hupu.dao.AdminMapper;
 import com.hupu.pojo.Admin;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AdminServiceImpl extends ConstantService implements AdminService {
+    @Autowired
+    @Qualifier("adminMapper")
     private AdminMapper adminMapper;
     
     public AdminServiceImpl(AdminMapper adminMapper) {

@@ -61,7 +61,7 @@
     </thead>
 
     <%--通过script动态添加数据--%>
-    <tbody user_id="content">
+    <tbody id="content">
 
     </tbody>
 </table>

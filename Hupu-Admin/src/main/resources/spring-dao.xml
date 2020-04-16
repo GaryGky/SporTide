@@ -40,5 +40,4 @@
         <!--要扫描的DAO接口-->
         <property name="basePackage" value="com.hupu.dao"/>
     </bean>
-
 </beans>

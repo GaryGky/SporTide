@@ -11,7 +11,8 @@ public class UserTest {
     public void testInsert() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
-        UserServiceImpl userSerive = (UserServiceImpl) context.getBean("UserServiceImpl");
+        UserServiceImpl userSerive = (UserServiceImpl) context.getBean(
+                "userServiceImpl");
         userSerive.createUser(1, "email1", "pwd1", "name1", "time1");
         userSerive.createUser(2, "email2", "pwd2", "name2", "time2");
         userSerive.createUser(3, "email3", "pwd3", "name3", "time3");
@@ -22,7 +23,8 @@ public class UserTest {
     public void testQueryAll() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
-        UserServiceImpl userSerive = (UserServiceImpl) context.getBean("UserServiceImpl");
+        UserServiceImpl userSerive = (UserServiceImpl) context.getBean(
+                "userServiceImpl");
         System.out.println("====== Test Query All =======");
         for (User user : userSerive.queryAllUser()) {
             System.out.println(user);
@@ -63,7 +65,8 @@ public class UserTest {
     public void testDelete() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
-        UserServiceImpl userSerive = (UserServiceImpl) context.getBean("UserServiceImpl");
+        UserServiceImpl userSerive = (UserServiceImpl) context.getBean(
+                "userServiceImpl");
         System.out.println("==== Test Delete By Id ===== ");
         System.out.println(userSerive.deleteUserById(1));
         System.out.println(userSerive.deleteUserById(2));

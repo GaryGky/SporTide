@@ -2,10 +2,16 @@ package com.hupu.service;
 
 import com.hupu.dao.UserMapper;
 import com.hupu.pojo.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImpl extends ConstantService implements UserService {
+    @Autowired
+    @Qualifier("userMapper")
     private UserMapper userMapper;
     
     

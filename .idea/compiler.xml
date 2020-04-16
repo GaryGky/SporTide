@@ -10,5 +10,8 @@
         <module name="Hupu-Admin" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SSM-Redis" target="6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
