@@ -1,6 +1,6 @@
 package com.hupu.dao;
 
-import com.hupu.service.ScoreServiceImpl;
+import com.hupu.service.Impl.ScoreServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

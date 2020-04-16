@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间绑定一个对应的DAO/MAPPER命名接口-->
+<mapper namespace="com.hupu.dao.CommentMapper">
+
+    <resultMap type="Comment" id="ComResultMap">
+        <id column="comment_id" property="id"/>
+        <result column="comment_info" property="info"/>
+        <result column="comment_status" property="status"/>
+        <result column="comment_time" property="time"/>
+        <result column="post_id" property="post_id"/>
+        <result column="from_uid" property="from_uid"/>
+        <result column="to_uid" property="to_uid"/>
+    </resultMap>
+
+
+    <insert id="createCom">
+        insert into comment (comment_id, comment_info, comment_status,
+                             comment_time,
+                             post_id, to_uid, from_uid)
+        values (#{id}, #{info}, #{status}, #{time}, #{post_id}, #{from_uid},
+                #{to_uid});
+    </insert>
+
+    <delete id="deleteComById">
+        delete
+        from comment
+        where comment_id = #{id};
+    </delete>
+
+    <select id="queryComById" resultMap="ComResultMap">
+        select *
+        from comment
+        where comment_id = #{id};
+    </select>
+
+    <select id="queryComByFromUid" resultMap="ComResultMap">
+        select *
+        from comment
+        where from_uid = #{from_uid};
+    </select>
+
+    <select id="queryComByPostId" resultMap="ComResultMap">
+        select *
+        from comment
+        where post_id = #{post_id};
+    </select>
+
+</mapper>

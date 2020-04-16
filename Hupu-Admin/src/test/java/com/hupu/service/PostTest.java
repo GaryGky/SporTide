@@ -1,13 +1,12 @@
 package com.hupu.service;
 
 import com.hupu.pojo.Post;
+import com.hupu.service.Impl.PostServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class PostTest {

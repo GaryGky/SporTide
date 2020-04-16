@@ -1,7 +1,9 @@
-package com.hupu.service;
+package com.hupu.service.Impl;
 
 import com.hupu.dao.AdminMapper;
 import com.hupu.pojo.Admin;
+import com.hupu.service.AdminService;
+import com.hupu.service.ConstantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

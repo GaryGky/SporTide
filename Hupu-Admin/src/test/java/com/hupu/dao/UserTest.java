@@ -1,7 +1,7 @@
 package com.hupu.dao;
 
 import com.hupu.pojo.User;
-import com.hupu.service.UserServiceImpl;
+import com.hupu.service.Impl.UserServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

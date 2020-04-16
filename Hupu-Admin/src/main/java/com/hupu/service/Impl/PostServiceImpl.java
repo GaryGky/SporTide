@@ -1,7 +1,8 @@
-package com.hupu.service;
+package com.hupu.service.Impl;
 
 import com.hupu.dao.PostMapper;
 import com.hupu.pojo.Post;
+import com.hupu.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

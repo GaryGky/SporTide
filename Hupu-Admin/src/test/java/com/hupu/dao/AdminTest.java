@@ -1,7 +1,7 @@
 package com.hupu.dao;
 
 import com.hupu.pojo.Admin;
-import com.hupu.service.AdminServiceImpl;
+import com.hupu.service.Impl.AdminServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

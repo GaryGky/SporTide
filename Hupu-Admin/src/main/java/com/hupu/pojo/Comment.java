@@ -6,21 +6,10 @@ public class Comment {
     private String status;
     private String time;
     private int post_id;
-    private int user_id;
+    private int from_uid;
+    private int to_uid;
     
     public Comment() {
-    }
-    
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "id=" + id +
-                ", info='" + info + '\'' +
-                ", status='" + status + '\'' +
-                ", time='" + time + '\'' +
-                ", post_id=" + post_id +
-                ", user_id=" + user_id +
-                '}';
     }
     
     public int getId() {
@@ -63,20 +52,44 @@ public class Comment {
         this.post_id = post_id;
     }
     
-    public int getUser_id() {
-        return user_id;
+    public int getFrom_uid() {
+        return from_uid;
     }
     
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setFrom_uid(int from_uid) {
+        this.from_uid = from_uid;
     }
     
-    public Comment(int id, String info, String status, String time, int post_id, int user_id) {
+    public int getTo_uid() {
+        return to_uid;
+    }
+    
+    public void setTo_uid(int to_uid) {
+        this.to_uid = to_uid;
+    }
+    
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id=" + id +
+                ", info='" + info + '\'' +
+                ", status='" + status + '\'' +
+                ", time='" + time + '\'' +
+                ", post_id=" + post_id +
+                ", from_uid=" + from_uid +
+                ", to_uid=" + to_uid +
+                '}';
+    }
+    
+    public Comment(int id, String info, String status, String time, int post_id, int from_uid, int to_uid) {
         this.id = id;
         this.info = info;
         this.status = status;
         this.time = time;
         this.post_id = post_id;
-        this.user_id = user_id;
+        this.from_uid = from_uid;
+        this.to_uid = to_uid;
     }
+    
+    
 }

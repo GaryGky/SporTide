@@ -1,7 +1,8 @@
-package com.hupu.service;
+package com.hupu.service.Impl;
 
 import com.hupu.dao.ScoreMapper;
 import com.hupu.pojo.Score;
+import com.hupu.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
