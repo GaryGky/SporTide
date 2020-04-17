@@ -45,6 +45,8 @@
     <!-- Custom Theme Style -->
     <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css"
           rel="stylesheet">
+
+
 </head>
 
 <body class="nav-md">
@@ -53,7 +55,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="${pageContext.request.contextPath}/index.jsp"
+                    <a href="/toLogin"
                        class="site_title"><i
                             class="fa fa-paw"></i>
                         <span>Gentelella Alela!</span></a>
@@ -64,9 +66,9 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <%--<div class="profile_pic">--%>
-                        <%--<!--管理员头像-->--%>
-                        <%--<img src="images/img.jpg" alt="..."--%>
-                             <%--class="img-circle profile_img">--%>
+                    <%--<!--管理员头像-->--%>
+                    <%--<img src="images/img.jpg" alt="..."--%>
+                    <%--class="img-circle profile_img">--%>
                     <%--</div>--%>
                     <div class="profile_info">
                         <span>Welcome,</span>
@@ -85,7 +87,7 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="${pageContext.request.contextPath}/index.jsp"><i
+                            <li><a href="/toHome"><i
                                     class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
@@ -142,8 +144,8 @@
                             <a href="javascript:"
                                class="user-profile dropdown-toggle"
                                aria-haspopup="true" id="navbarDropdown"
-                               data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                               data-toggle="dropdown" aria-expanded="false">John
+                                Doe
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right"
                                  aria-labelledby="navbarDropdown">
@@ -155,7 +157,8 @@
                                 </a>
                                 <a class="dropdown-item"
                                    href="javascript:">Help</a>
-                                <a class="dropdown-item" href="/toLogin"><i
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
@@ -193,20 +196,35 @@
                                             </p>
                                             <table id="datatable"
                                                    class="table table-striped table-bordered"
-                                                   style="width:100%">
+                                                   style="width:100%"
+                                                   onload="getAllPost()">
                                                 <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Position</th>
-                                                    <th>Office</th>
-                                                    <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
+                                                    <th>Id</th>
+                                                    <th>标题</th>
+                                                    <th>类型</th>
+                                                    <th>作者</th>
+                                                    <th>发表时间</th>
+                                                    <th>评论量</th>
+                                                    <th>收藏量</th>
+                                                    <th>转发量</th>
+                                                    <th>删除</th>
                                                 </tr>
                                                 </thead>
 
-                                                <tbody>
-
+                                                <tbody id="post-info-table">
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>不留情面！野球场上的恩比德戏耍对手并暴扣得分
+                                                    </td>
+                                                    <td>新闻</td>
+                                                    <td>斯科拉暴力拉杆</td>
+                                                    <td>2020-04-17</td>
+                                                    <td>28</td>
+                                                    <td>13</td>
+                                                    <td>2</td>
+                                                    <td><a href="#">删除</a></td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -261,6 +279,12 @@
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/post.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        getAllPost();
+    }
+</script>
 
 </body>
 </html>

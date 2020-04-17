@@ -36,9 +36,9 @@ public class JumpController {
         return "Hupu_CommentTable";
     }
     
-    @RequestMapping("/toLogin")
+    @RequestMapping("/toHome")
     public String gotoLogin() {
-        return "Hupu_Login";
+        return "Hupu_Home";
     }
     
 }

@@ -6,19 +6,33 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8399399-7afe-48a3-933d-1af815ae09d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/UserController.java" afterDir="false" />
+    <list default="true" id="e8399399-7afe-48a3-933d-1af815ae09d2" name="Default Changelist" comment="add web/static/JS">
+      <change afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/PostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8cf89477-3d78-4b67-8f38-a335d69a176e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8cf89477-3d78-4b67-8f38-a335d69a176e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/AdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/AdminTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/service/ComTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/service/ComTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/JS/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/static/JS/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/JS/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/static/JS/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/JS/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/static/JS/user.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -63,46 +77,39 @@
         <item name="nba@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="nba: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="comment: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/User.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="34">
-                    <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/user.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/post.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+            <state relative-caret-position="18">
+              <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="276" column="22" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp">
+        <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/PostController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="208" column="48" selection-start-line="208" selection-start-column="48" selection-end-line="208" selection-end-column="48" />
+            <state relative-caret-position="490">
+              <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,9 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>admin_id</find>
-      <find>admin_pwd</find>
-      <find>admin_name</find>
       <find>j</find>
       <find>com.sun.proxy</find>
       <find>tx</find>
@@ -151,8 +155,11 @@
       <find>href</find>
       <find>us</find>
       <find>static/JS/user.js</find>
-      <find>image</find>
       <find>user_</find>
+      <find>Log in</find>
+      <find>getCommenByPost</find>
+      <find>post_transpondNum</find>
+      <find>image</find>
     </findStrings>
     <replaceStrings>
       <replace>id</replace>
@@ -169,6 +176,7 @@
       <replace>index.jsp</replace>
       <replace>${pageContext.request.contextPath}/static/vendors</replace>
       <replace>${pageContext.request.contextPath}/static/build</replace>
+      <replace>post_readNum</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -178,57 +186,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/resources/db.properties" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/resources/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/resources/mybatis-config.xml" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/resources/spring-dao.xml" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/java/com/ssm/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/resources/spring-service.xml" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/resources/spring-dao.xml" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.xml" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PostService.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PosServiceImpl.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminServiceImpl.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/ScoreServiceImpl.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/UserTest.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/resources/spring-service.xml" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PostServiceImpl.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/service/PostTest.java" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/CommentService.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/CommentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/service/ComTest.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/ConstantService.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/Comment.java" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8cf89477-3d78-4b67-8f38-a335d69a176e/console_7.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8cf89477-3d78-4b67-8f38-a335d69a176e/console_8.sql" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/score.jsp" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/static/build/css/custom.min.css" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_login.jsp" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/index.jsp" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/static/JS/game.js" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/GameBaseInfo.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/ScoreController.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Login.jsp" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/static/JS/login.js" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.xml" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminService.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/AdminServiceImpl.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/AdminTest.java" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/UserController.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/static/JS/user.js" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/index.jsp" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/static/JS/login.js" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.xml" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PostService.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/PostServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/Post.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/service/ComTest.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.xml" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/CommentService.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/CommentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/PostController.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/static/JS/post.js" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp" />
       </list>
     </option>
   </component>
@@ -263,8 +271,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="90" />
-    <option name="y" value="138" />
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
     <option name="width" value="1944" />
     <option name="height" value="1044" />
   </component>
@@ -275,7 +283,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,7 +344,18 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="hupu" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="hupu" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
@@ -351,14 +369,6 @@
               <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Station" type="462c0819:PsiDirectoryNode" />
-              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="JS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
@@ -379,13 +389,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587097517360" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587122063106" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -424,7 +435,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.31">
+  <component name="RunManager" selected="JUnit.ComTest.testCreate">
+    <configuration name="AdminTest.testQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hupu-Admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hupu.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hupu.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.hupu.dao.AdminTest" />
+      <option name="METHOD_NAME" value="testQuery" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ComTest.testCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hupu-Admin" />
       <extension name="coverage">
@@ -457,48 +484,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostTest.TestCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hupu-Admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hupu.service.Impl.*" />
+          <option name="PATTERN" value="com.hupu.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hupu.service" />
       <option name="MAIN_CLASS_NAME" value="com.hupu.service.PostTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostTest.TestQueryPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Hupu-Admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hupu.service.Impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.hupu.service" />
-      <option name="MAIN_CLASS_NAME" value="com.hupu.service.PostTest" />
-      <option name="METHOD_NAME" value="TestQueryPost" />
+      <option name="METHOD_NAME" value="TestCreate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostTest.testDel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hupu-Admin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hupu.service.Impl.*" />
+          <option name="PATTERN" value="com.hupu.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.hupu.service" />
-      <option name="MAIN_CLASS_NAME" value="com.hupu.service.PostTest" />
-      <option name="METHOD_NAME" value="testDel" />
+      <option name="PACKAGE_NAME" value="com.hupu.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.hupu.dao.UserTest" />
+      <option name="METHOD_NAME" value="testInsert" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -579,20 +591,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PostTest.TestQueryPost" />
-      <item itemvalue="JUnit.PostTest.testDel" />
-      <item itemvalue="JUnit.PostTest" />
       <item itemvalue="JUnit.ComTest.testCreate" />
       <item itemvalue="JUnit.ComTest.testQuery" />
+      <item itemvalue="JUnit.UserTest.testInsert" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.31" />
+      <item itemvalue="JUnit.AdminTest.testQuery" />
+      <item itemvalue="JUnit.PostTest.TestCreate" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ComTest.testQuery" />
         <item itemvalue="JUnit.ComTest.testCreate" />
-        <item itemvalue="JUnit.PostTest" />
-        <item itemvalue="JUnit.PostTest.testDel" />
-        <item itemvalue="JUnit.PostTest.TestQueryPost" />
+        <item itemvalue="JUnit.PostTest.TestCreate" />
+        <item itemvalue="JUnit.UserTest.testInsert" />
+        <item itemvalue="JUnit.AdminTest.testQuery" />
+        <item itemvalue="JUnit.ComTest.testQuery" />
       </list>
     </recent_temporary>
   </component>
@@ -616,7 +628,8 @@
       <workItem from="1587004915153" duration="2885000" />
       <workItem from="1587012403343" duration="4972000" />
       <workItem from="1587032155365" duration="16542000" />
-      <workItem from="1587087466105" duration="9860000" />
+      <workItem from="1587087466105" duration="13156000" />
+      <workItem from="1587107553090" duration="12658000" />
     </task>
     <task id="LOCAL-00001" summary="test in IDEA">
       <created>1586526142983</created>
@@ -674,49 +687,63 @@
       <option name="project" value="LOCAL" />
       <updated>1587089822671</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="用户管理功能done">
+      <created>1587097438252</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587097438252</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add web/static/JS">
+      <created>1587097545833</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587097545833</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PostTest_TestQueryPost - 2020.04.16 at 11h 25m 42s.xml">
-      <configuration name="PostTest.TestQueryPost" configurationId="JUnit" />
+    <history-entry file="UserTest_testInsert - 2020.04.17 at 13h 14m 53s.xml">
+      <configuration name="UserTest.testInsert" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PostTest_TestQueryPost - 2020.04.16 at 11h 26m 36s.xml">
-      <configuration name="PostTest.TestQueryPost" configurationId="JUnit" />
+    <history-entry file="AdminTest_testQuery - 2020.04.17 at 16h 22m 20s.xml">
+      <configuration name="AdminTest.testQuery" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PostTest_testDel - 2020.04.16 at 11h 27m 57s.xml">
-      <configuration name="PostTest.testDel" configurationId="JUnit" />
+    <history-entry file="UserTest_testInsert - 2020.04.17 at 16h 44m 54s.xml">
+      <configuration name="UserTest.testInsert" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PostTest - 2020.04.16 at 12h 47m 19s.xml">
-      <configuration name="PostTest" configurationId="JUnit" />
+    <history-entry file="PostTest_TestCreate - 2020.04.17 at 17h 42m 40s.xml">
+      <configuration name="PostTest.TestCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PostTest - 2020.04.16 at 12h 51m 28s.xml">
-      <configuration name="PostTest" configurationId="JUnit" />
+    <history-entry file="UserTest_testInsert - 2020.04.17 at 17h 43m 09s.xml">
+      <configuration name="UserTest.testInsert" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PostTest - 2020.04.16 at 12h 54m 14s.xml">
-      <configuration name="PostTest" configurationId="JUnit" />
+    <history-entry file="PostTest_TestCreate - 2020.04.17 at 17h 43m 16s.xml">
+      <configuration name="PostTest.TestCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComTest_testCreate - 2020.04.16 at 12h 54m 29s.xml">
+    <history-entry file="PostTest_TestCreate - 2020.04.17 at 18h 25m 04s.xml">
+      <configuration name="PostTest.TestCreate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ComTest_testCreate - 2020.04.17 at 18h 31m 06s.xml">
       <configuration name="ComTest.testCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComTest_testQuery - 2020.04.16 at 12h 54m 40s.xml">
-      <configuration name="ComTest.testQuery" configurationId="JUnit" />
+    <history-entry file="PostTest_TestCreate - 2020.04.17 at 18h 41m 27s.xml">
+      <configuration name="PostTest.TestCreate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ComTest_testQuery - 2020.04.16 at 13h 02m 51s.xml">
-      <configuration name="ComTest.testQuery" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComTest_testQuery - 2020.04.16 at 13h 03m 49s.xml">
-      <configuration name="ComTest.testQuery" configurationId="JUnit" />
+    <history-entry file="ComTest_testCreate - 2020.04.17 at 18h 41m 33s.xml">
+      <configuration name="ComTest.testCreate" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84840000" />
+    <option name="totallyTimeSpent" value="100794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18877135" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.270952" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -725,16 +752,16 @@
       <window_info id="Image Layers" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.49612403" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25387597" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39922482" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.66085273" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.44379845" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.45736435" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.28875968" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Database Console" order="9" weight="0.49612403" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.63178295" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33527133" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="CheckStyle" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
@@ -745,10 +772,10 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.47723576" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.47681043" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.06753458" />
+      <window_info anchor="right" id="Database" order="6" weight="0.15785192" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -807,241 +834,19 @@
     <MESSAGE value="comment test pass" />
     <MESSAGE value="front-end running successful" />
     <MESSAGE value="building controller processing" />
-    <option name="LAST_COMMIT_MESSAGE" value="building controller processing" />
+    <MESSAGE value="用户管理功能done" />
+    <MESSAGE value="add web/static/JS" />
+    <option name="LAST_COMMIT_MESSAGE" value="add web/static/JS" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/comment">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/post">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/service/ComTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/CommentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/ConstantService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/PostServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/ScoreServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding>
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#715#716#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#897#898#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
-            <element signature="e#1013#1014#0" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1161#1162#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8cf89477-3d78-4b67-8f38-a335d69a176e/console_7.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="49" selection-start-column="49" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/schedule" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8cf89477-3d78-4b67-8f38-a335d69a176e/console_8.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/game_base_info">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/game_recap">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/build/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="3883" column="16" lean-forward="true" selection-start-line="3883" selection-start-column="16" selection-end-line="3883" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/build/css/custom.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57411">
-          <caret line="5877" column="30" selection-start-line="5877" selection-start-column="30" selection-end-line="5877" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/score.jsp" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="131" column="57" selection-start-line="131" selection-start-column="52" selection-end-line="131" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="104" column="57" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="121" selection-end-column="22" />
-          <folding>
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/main.java.com.hupu.GameBaseInfo/GameBaseInfo.java" />
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java.com.hupu.GameBaseInfo/GameBaseInfo.java" />
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/GameBaseInfo.java" />
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/GameBaseInfoService.java" />
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/GameBaseInfoController.java" />
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/.java" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/ScoreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="105" column="57" selection-start-line="105" selection-start-column="52" selection-end-line="105" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="27" selection-start-line="9" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/ScoreController.java" />
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1070,48 +875,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/login.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/AdminTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/admins">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="205" column="2" selection-start-line="205" selection-start-column="2" selection-end-line="205" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/post.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="41" column="12" lean-forward="true" selection-start-line="41" selection-start-column="12" selection-end-line="49" selection-end-column="13" />
+        <state relative-caret-position="455">
+          <caret line="36" column="15" lean-forward="true" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1122,34 +896,270 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/UserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4556">
+          <caret line="268" column="31" selection-start-line="268" selection-start-column="31" selection-end-line="268" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="303" column="23" selection-start-line="303" selection-start-column="23" selection-end-line="303" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="105" column="57" selection-start-line="105" selection-start-column="52" selection-end-line="105" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/AdminTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="131" column="57" selection-start-line="131" selection-start-column="52" selection-end-line="131" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding>
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/admins">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/index.jsp">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11117">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="-292">
+          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="208" column="48" selection-start-line="208" selection-start-column="48" selection-end-line="208" selection-end-column="48" />
+        <state relative-caret-position="141">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/service/PostTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Hupu_Admin_war_exploded/static/JS/user.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Hupu_Admin_war_exploded/static/JS/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/Hupu_Admin_war_exploded/static/JS/post.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="66" column="17" lean-forward="true" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/PostServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+          <folding>
+            <element signature="e#1603#1604#0" expanded="true" />
+            <element signature="e#1651#1652#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="55" column="52" lean-forward="true" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="287" lean-forward="true" selection-start-line="287" selection-end-line="287" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/post">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/service/ComTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/comment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/CommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/CommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+          <folding>
+            <element signature="e#1242#1243#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/PostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="276" column="22" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
         </state>
       </provider>
     </entry>

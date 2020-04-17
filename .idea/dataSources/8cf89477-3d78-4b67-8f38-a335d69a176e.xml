@@ -1394,7 +1394,7 @@
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="339" parent="287" name="post_transpondnum">
+    <column id="339" parent="287" name="post_readNum">
       <Position>7</Position>
       <DataType>int(8)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>

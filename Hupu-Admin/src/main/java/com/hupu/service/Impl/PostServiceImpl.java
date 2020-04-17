@@ -54,4 +54,9 @@ public class PostServiceImpl implements PostService {
     public List<Post> queryPostsByType(String type) {
         return postMapper.queryPostsByType(type);
     }
+    
+    @Override
+    public List<Post> queryAllPost() {
+        return postMapper.queryAllPost();
+    }
 }

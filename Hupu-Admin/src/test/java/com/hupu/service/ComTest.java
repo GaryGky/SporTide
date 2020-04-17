@@ -18,11 +18,12 @@ public class ComTest {
     @Test
     public void testCreate() {
         System.out.println("=== Create ====");
-        System.out.println(commentService.createCom(1, "info1", "status", "time1", 1, 1, 1));
-        System.out.println(commentService.createCom(2, "info1", "status",
-                "time1", 1, 1, 1));
+        System.out.println(commentService.createCom(1, "info2", "status",
+                "time1", 1, 3, 1));
+        System.out.println(commentService.createCom(2, "info3", "status",
+                "time1", 1, 1, 2));
         System.out.println(commentService.createCom(3, "info1", "status",
-                "time1", 1, 1, 1));
+                "time1", 2, 2, 3));
     }
     
     @Test

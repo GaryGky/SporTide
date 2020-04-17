@@ -4,12 +4,25 @@ public class Post {
     private int post_id;
     private String post_type;
     private String post_info;
-    private String post_Time;
+    private String post_time;
     private int post_collectNum;
     private int post_commentNum;
-    private int post_transpondNum;
+    private int post_readNum;
+    private int user_id;
     
     public Post() {
+    
+    }
+    
+    public Post(int post_id, String post_type, String post_info, String post_time, int post_collectNum, int post_commentNum, int post_readNum, int user_id) {
+        this.post_id = post_id;
+        this.post_type = post_type;
+        this.post_info = post_info;
+        this.post_time = post_time;
+        this.post_collectNum = post_collectNum;
+        this.post_commentNum = post_commentNum;
+        this.post_readNum = post_readNum;
+        this.user_id = user_id;
     }
     
     @Override
@@ -18,10 +31,11 @@ public class Post {
                 "post_id=" + post_id +
                 ", post_type='" + post_type + '\'' +
                 ", post_info='" + post_info + '\'' +
-                ", post_Time='" + post_Time + '\'' +
+                ", post_time='" + post_time + '\'' +
                 ", post_collectNum=" + post_collectNum +
                 ", post_commentNum=" + post_commentNum +
-                ", post_transpondNum=" + post_transpondNum +
+                ", post_readNum=" + post_readNum +
+                ", user_id=" + user_id +
                 '}';
     }
     
@@ -49,12 +63,12 @@ public class Post {
         this.post_info = post_info;
     }
     
-    public String getPost_Time() {
-        return post_Time;
+    public String getPost_time() {
+        return post_time;
     }
     
-    public void setPost_Time(String post_Time) {
-        this.post_Time = post_Time;
+    public void setPost_time(String post_time) {
+        this.post_time = post_time;
     }
     
     public int getPost_collectNum() {
@@ -74,20 +88,18 @@ public class Post {
     }
     
     public int getPost_transpondNum() {
-        return post_transpondNum;
+        return post_readNum;
     }
     
-    public void setPost_transpondNum(int post_transpondNum) {
-        this.post_transpondNum = post_transpondNum;
+    public void setPost_transpondNum(int post_readNum) {
+        this.post_readNum = post_readNum;
     }
     
-    public Post(int post_id, String post_type, String post_info, String post_Time, int post_collectNum, int post_commentNum, int post_transpondNum) {
-        this.post_id = post_id;
-        this.post_type = post_type;
-        this.post_info = post_info;
-        this.post_Time = post_Time;
-        this.post_collectNum = post_collectNum;
-        this.post_commentNum = post_commentNum;
-        this.post_transpondNum = post_transpondNum;
+    public int getUser_id() {
+        return user_id;
+    }
+    
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }

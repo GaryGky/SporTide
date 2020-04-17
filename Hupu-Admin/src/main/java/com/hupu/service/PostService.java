@@ -28,4 +28,6 @@ public interface PostService {
     
     public List<Post> queryPostsByType(String type); // 按照类型查询帖子
     
+    public List<Post> queryAllPost(); // 查询所有帖子信息
+    
 }

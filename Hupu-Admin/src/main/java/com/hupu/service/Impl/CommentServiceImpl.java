@@ -35,4 +35,9 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> queryComByPostId(int post_id) {
         return commentMapper.queryComByPostId(post_id);
     }
+    
+    @Override
+    public List<Comment> queryAllCom() {
+        return commentMapper.queryAllCom();
+    }
 }

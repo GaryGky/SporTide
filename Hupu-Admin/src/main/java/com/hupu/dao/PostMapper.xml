@@ -36,13 +36,13 @@
 
     <update id="updateAddTran">
         update post
-        set post_transpondnum = post_transpondnum + 1
+        set post_readNum = post_readNum + 1
         where post_id = #{id};
     </update>
 
     <update id="updateSubTran">
         update post
-        set post_transpondnum = post_transpondnum - 1
+        set post_readNum = post_readNum - 1
         where post_id = #{id};
     </update>
 
@@ -66,6 +66,13 @@
         select *
         from post
         where post_type = #{type};
+    </select>
+
+
+
+    <select id="queryAllPost" resultType="Post">
+        select *
+        from post
     </select>
 
 </mapper>

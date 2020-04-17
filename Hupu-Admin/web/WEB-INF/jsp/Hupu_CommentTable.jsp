@@ -43,7 +43,8 @@
           rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css"
+          rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -52,7 +53,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="${pageContext.request.contextPath}/index.jsp"
+                    <a href="/toHome"
                        class="site_title"><i
                             class="fa fa-paw"></i>
                         <span>Gentelella Alela!</span></a>
@@ -63,9 +64,9 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <%--<div class="profile_pic">--%>
-                        <%--<!--管理员头像-->--%>
-                        <%--<img src="images/img.jpg" alt="..."--%>
-                             <%--class="img-circle profile_img">--%>
+                    <%--<!--管理员头像-->--%>
+                    <%--<img src="images/img.jpg" alt="..."--%>
+                    <%--class="img-circle profile_img">--%>
                     <%--</div>--%>
                     <div class="profile_info">
                         <span>Welcome,</span>
@@ -84,7 +85,7 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="${pageContext.request.contextPath}/index.jsp"><i
+                            <li><a href="/toHome"><i
                                     class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
@@ -154,7 +155,8 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="/toLogin"><i
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
@@ -190,20 +192,31 @@
                                             </p>
                                             <table id="datatable"
                                                    class="table table-striped table-bordered"
-                                                   style="width:100%">
+                                                   style="width:100%"
+                                                   onload="getComments()">
                                                 <thead>
                                                 <tr>
                                                     <th>Id</th>
-                                                    <th>Name</th>
-                                                    <th>status</th>
-                                                    <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
+                                                    <th>帖子</th>
+                                                    <th>作者</th>
+                                                    <th>内容</th>
+                                                    <th>时间</th>
+                                                    <th>删除</th>
                                                 </tr>
                                                 </thead>
 
-                                                <tbody>
-
+                                                <tbody id="com-info-table">
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>不留情面！野球场上的恩比德戏耍对手并暴扣得分
+                                                    </td>
+                                                    <td>瞎说这个是小号</td>
+                                                    <td>
+                                                        大帝:小老弟，我玩过狮子的除了加索尔我怕啥🐶
+                                                    </td>
+                                                    <td>2020-04-17 13:16</td>
+                                                    <td><a href>删除</a></td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -258,6 +271,12 @@
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
-
+<script src="${pageContext.request.contextPath}/static/JS/post.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        // alert("窗口加载");
+        getAllComment();
+    }
+</script>
 </body>
 </html>

@@ -7,10 +7,10 @@ function login() {
             "name": document.getElementById("username").value,
             "password": document.getElementById("userpassword").value
         },
-        success: function (flag) {
-            console.log(flag);
+        success: function (flag, status,xhr) {
             if (flag === "loginSuccess") {
-                window.location.href = "index.jsp"; // 跳到首页
+                alert("登录成功");
+                window.location.href = "/toHome"; // 跳到首页
             } else {
                 alert("请输入正确的用户名和密码");
             }
@@ -44,7 +44,7 @@ function logout() {
         data: {},
         success: function (response) {
             console.log('response');
-            window.location.href = "/toLogin";
+            window.location.href = "index.jsp";
         }
     });
 }

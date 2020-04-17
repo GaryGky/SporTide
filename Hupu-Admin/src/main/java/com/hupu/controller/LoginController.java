@@ -22,12 +22,17 @@ public class LoginController {
         if (name == null || password == null) {
             return "loginFail";
         } // 如果输入字段为空，直接fail
-        if (adminService.queryPwdByName(name).equals(password)) {
-            session.setAttribute("admin_name", name); // 成功登录，把信息加入session
-            return "loginSuccess";
-        } else {
+        try {
+            if (adminService.queryPwdByName(name).equals(password)) {
+                session.setAttribute("admin_name", name); // 成功登录，把信息加入session
+                return "loginSuccess";
+            } else {
+                return "loginFail";
+            }
+        } catch (Exception e) {
             return "loginFail";
         }
+        
     }
     
     @RequestMapping("/logout")

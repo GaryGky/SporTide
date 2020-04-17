@@ -23,4 +23,6 @@ public interface CommentMapper {
     
     // 查找一个帖子下的评论
     public List<Comment> queryComByPostId(@Param("post_id") int post_id);
+    
+    public List<Comment> queryAllCom();
 }

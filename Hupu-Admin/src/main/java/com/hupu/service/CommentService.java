@@ -18,4 +18,6 @@ public interface CommentService {
     
     // 查找一个帖子下的评论
     public List<Comment> queryComByPostId(int post_id);
+    
+    public List<Comment> queryAllCom();
 }

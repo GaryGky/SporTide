@@ -29,7 +29,7 @@ function addAdmin() {
 
 //获取user信息
 function getMyUser() {
-    alert("调用getUser");
+    console.log("调用getUser");
     $.get({
         url: "/getMyUser",
         success: function (data) {
@@ -42,22 +42,23 @@ function getMyUser() {
                     "<td>" + data[i].user_email + " </td>" +
                     "<td>" + data[i].user_time + " </td>" +
                     "<td>" + data[i].user_status + " </td>" +
-                    "<td>" + "删除" + "</td>"
-                    + "</tr>"
-                );
+                    "<td> <button class='btn btn-primary'" +
+                    "  onclick=\"delUser(" + data[i].user_id + ")\">删除 </td>"
+                    + "</tr>");
             }
             $("#user_info_table").append(inject);
         }
-    });
+    })
 }
 
 //删除user
-function delUser() {
+function delUser(id) {
     $.post({
-        url: "",
-        data: {},
-        success: function (flag) {
-
+        url: "/delUser",
+        data: {"id": id},
+        success: function (data) {
+            console.log(data);
+            window.location.reload();
         }
     });
 }

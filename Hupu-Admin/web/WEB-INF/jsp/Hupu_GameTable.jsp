@@ -69,6 +69,11 @@
                 }
             })
         }
+
+        function test_load() {
+            console.log('test load')
+            $("#modal-body-content").html("asdasfgsdkjgh")
+        }
     </script>
 
 </head>
@@ -79,7 +84,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="${pageContext.request.contextPath}/index.jsp"
+                    <a href="/toHome"
                        class="site_title"><i
                             class="fa fa-paw"></i>
                         <span>Gentelella Alela!</span></a>
@@ -112,7 +117,7 @@
                         <ul class="nav side-menu">
                             <!-- yx add -->
                             <li>
-                                <a href="${pageContext.request.contextPath}/index.jsp"><i
+                                <a href="/toHome"><i
                                         class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
@@ -181,7 +186,7 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="/toLogin"><i
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
@@ -227,29 +232,83 @@
                                                     <th>Score</th>
                                                     <th>Date</th>
                                                     <th>View</th>
-                                                    <th>Delete</th>
+                                                    <th>Del</th>
                                                 </tr>
                                                 </thead>
 
                                                 <tbody id="game_table_content"
-                                                       onload="load_game_info()">
+                                                       onload="getGameInfo()">
+                                                <!-- 示例 -->
                                                 <tr>
                                                     <td>A</td>
                                                     <td>B</td>
                                                     <td>98:102</td>
                                                     <td>14</td>
-                                                    <td>查看</td>
-                                                    <td>删除</td>
+                                                    <td><a data-toggle="modal" data-target="#myModal">查看</a></td>
+                                                    <td><a href="#" onclick="delGame()">删除</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td>C</td>
                                                     <td>B</td>
                                                     <td>124:102</td>
                                                     <td>13</td>
-                                                    <td>查看</td>
-                                                    <td>删除</td>
+                                                    <td>
+                                                        <a data-toggle="modal" data-target="#myModal" onclick="getGameDetail(this)">查看</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#">删除</a>
+                                                    </td>
                                                 </tr>
                                                 </tbody>
+                                                <!-- Modal-->
+                                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" id="myModalLabel">比赛详细数据</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            </div>
+                                                            <div class="modal-body" id="modal-body-content">
+                                                                <!--
+                                                                <table>
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th>#</th>
+                                                                        <th>First Name</th>
+                                                                        <th>Last Name</th>
+                                                                        <th>Username</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>Mark</td>
+                                                                        <td>Otto</td>
+                                                                        <td>@mdo</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">2</th>
+                                                                        <td>Jacob</td>
+                                                                        <td>Thornton</td>
+                                                                        <td>@fat</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td>Larry</td>
+                                                                        <td>the Bird</td>
+                                                                        <td>@twitter</td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                -->
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </table>
                                         </div>
                                     </div>
@@ -303,6 +362,7 @@
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/game.js"></script>
 
 
 </body>

@@ -55,7 +55,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="${pageContext.request.contextPath}/index.jsp"
+                    <a href="/toHome"
                        class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
                 </div>
 
@@ -86,7 +86,7 @@
                         <ul class="nav side-menu">
                             <!-- yx add -->
                             <li>
-                                <a href="${pageContext.request.contextPath}/index.jsp"><i
+                                <a href="/toHome"><i
                                         class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
@@ -156,7 +156,7 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="/toLogin"><i
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
