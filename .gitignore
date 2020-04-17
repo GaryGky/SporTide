@@ -2,4 +2,5 @@
 /Hupu-Admin/target
 /.idea/
 /images
-/Hupu-Admin/web/static
+/Hupu-Admin/web/static/build
+/Hupu-Admin/web/static/vendors

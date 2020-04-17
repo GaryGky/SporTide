@@ -82,8 +82,9 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="${pageContext.request.contextPath}/index.jsp"><i
-                                    class="fa fa-home"></i> 首页</a>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/index.jsp"><i
+                                        class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
@@ -140,7 +141,7 @@
                                class="user-profile dropdown-toggle"
                                aria-haspopup="true" id="navbarDropdown"
                                data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <%--<img src="images/img.jpg" alt="">John Doe--%>
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right"
                                  aria-labelledby="navbarDropdown">
@@ -197,7 +198,7 @@
                                             </tr>
                                             </thead>
 
-                                            <tbody>
+                                            <tbody id="user_info_table">
                                             <tr>
                                                 <td>1</td>
                                                 <td>name1</td>
@@ -264,6 +265,11 @@
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/user.js"></script>
+
+<script type="text/javascript">
+    window.onload = getMyUser();
+</script>
 
 </body>
 </html>

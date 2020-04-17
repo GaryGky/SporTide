@@ -5,8 +5,8 @@
 <!--命名空间绑定一个对应的DAO/MAPPER命名接口-->
 <mapper namespace="com.hupu.dao.AdminMapper">
     <insert id="createAdmin">
-        insert into admins (admin_id, admin_name, admin_pwd)
-        values (#{admin_id}, #{name}, AES_ENCRYPT(#{pwd}, "hupu"));
+        insert into admins (admin_name, admin_pwd)
+        values (#{name}, AES_ENCRYPT(#{pwd}, "hupu"));
     </insert>
 
     <update id="updateAdminPwd">
@@ -37,7 +37,6 @@
         from admins
         where admin_name = #{admin_name}
     </select>
-
 
 
     <select id="queryAdminById" resultType="Admin">

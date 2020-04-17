@@ -198,115 +198,125 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                <form class="" action="" method="post"
-                                      novalidate>
+                                <div>
                                     <span class="section">Administrator Info</span>
 
                                     <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">email<span
+                                        <label
+                                                class="col-form-label col-md-3 col-sm-3  label-align">admin_name<span
                                                 class="required">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                            <input class="form-control"
-                                                   name="email" class='email'
+                                            <input id="admin_name"
+                                                   class="form-control"
+                                                   name="admin_name"
                                                    required="required"
-                                                   type="email"/></div>
+                                                   type="text"/>
+                                        </div>
                                     </div>
                                     <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Confirm
-                                            email address<span
-                                                    class="required">*</span></label>
+                                        <label
+                                                class="col-form-label col-md-3 col-sm-3  label-align">password<span
+                                                class="required">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                            <input class="form-control"
-                                                   type="email" class='email'
-                                                   name="confirm_email"
-                                                   data-validate-linked='email'
-                                                   required='required'/></div>
+                                            <input id="admin_pwd1"
+                                                   class="form-control "
+                                                   type="password"
+                                                   name="admin_pwd1"
+                                                   required='required'/>
+                                        </div>
                                     </div>
 
                                     <div class="field item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3  label-align">message<span
-                                                class="required">*</span></label>
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Confirm
+                                            password<span
+                                                    class="required">*</span></label>
                                         <div class="col-md-6 col-sm-6">
-                                            <textarea required="required"
-                                                      name='message'></textarea>
+                                            <input id="admin_pwd2"
+                                                   class="form-control email"
+                                                   type="password"
+                                                   name="admin_pwd2"
+                                                   required='required'/>
                                         </div>
                                     </div>
+
                                     <div class="ln_solid">
                                         <div class="form-group">
                                             <div class="col-md-6 offset-md-3">
-                                                <button type='submit'
-                                                        class="btn btn-primary"
+                                                <button class="btn btn-primary"
                                                         onclick="addAdmin()">
                                                     Submit
                                                 </button>
+
                                                 <button type='reset'
                                                         class="btn btn-success">
                                                     Reset
                                                 </button>
+
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- /page content -->
+
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Gentelella - Bootstrap Admin Template by <a
+                        href="https://colorlib.com">Colorlib</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
         </div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-            <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a
-                    href="https://colorlib.com">Colorlib</a>
-            </div>
-            <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
     </div>
-</div>
 
-<!-- jQuery -->
-<script src="${pageContext.request.contextPath}/static/vendors/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!-- FastClick -->
-<script src="${pageContext.request.contextPath}/static/vendors/fastclick/lib/fastclick.js"></script>
-<!-- NProgress -->
-<script src="${pageContext.request.contextPath}/static/vendors/nprogress/nprogress.js"></script>
-<!-- Chart.js -->
-<script src="${pageContext.request.contextPath}/static/vendors/Chart.js/dist/Chart.min.js"></script>
-<!-- gauge.js -->
-<script src="${pageContext.request.contextPath}/static/vendors/gauge.js/dist/gauge.min.js"></script>
-<!-- bootstrap-progressbar -->
-<script src="${pageContext.request.contextPath}/static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-<!-- iCheck -->
-<script src="${pageContext.request.contextPath}/static/vendors/iCheck/icheck.min.js"></script>
-<!-- Skycons -->
-<script src="${pageContext.request.contextPath}/static/vendors/skycons/skycons.js"></script>
-<!-- Flot -->
-<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.pie.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.time.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.stack.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.resize.js"></script>
-<!-- Flot plugins -->
-<script src="${pageContext.request.contextPath}/static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/flot.curvedlines/curvedLines.js"></script>
-<!-- DateJS -->
-<script src="${pageContext.request.contextPath}/static/vendors/DateJS/build/date.js"></script>
-<!-- JQVMap -->
-<script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/jquery.vmap.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-<!-- bootstrap-daterangepicker -->
-<script src="${pageContext.request.contextPath}/static/vendors/moment/min/moment.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- jQuery -->
+    <script src="${pageContext.request.contextPath}/static/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="${pageContext.request.contextPath}/static/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="${pageContext.request.contextPath}/static/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="${pageContext.request.contextPath}/static/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="${pageContext.request.contextPath}/static/vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="${pageContext.request.contextPath}/static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="${pageContext.request.contextPath}/static/vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="${pageContext.request.contextPath}/static/vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.js"></script>
+    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="${pageContext.request.contextPath}/static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="${pageContext.request.contextPath}/static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="${pageContext.request.contextPath}/static/vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="${pageContext.request.contextPath}/static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="${pageContext.request.contextPath}/static/vendors/moment/min/moment.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-<!-- Custom Theme Scripts -->
-<script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 
+    <script src="${pageContext.request.contextPath}/static/JS/user.js"></script>
 </body>
 </html>

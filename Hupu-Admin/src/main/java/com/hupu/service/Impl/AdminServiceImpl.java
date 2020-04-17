@@ -27,8 +27,8 @@ public class AdminServiceImpl extends ConstantService implements AdminService {
     public AdminServiceImpl() {
     }
     
-    public int createAdmin(int id, String name, String pwd) {
-        return adminMapper.createAdmin(id, name, pwd);
+    public int createAdmin(String name, String pwd) {
+        return adminMapper.createAdmin(name, pwd);
     }
     
     public int updateAdminPwd(int id, String oldPwd, String newPwd) {

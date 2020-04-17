@@ -7,8 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface AdminMapper {
-    public int createAdmin(@Param("admin_id") int id,
-                           @Param("name") String name,
+    public int createAdmin(@Param("name") String name,
                            @Param("pwd") String pwd);//
     // 创建一个管理员
     

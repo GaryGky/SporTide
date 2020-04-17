@@ -14,14 +14,25 @@ public class LoginController {
     @Qualifier("adminServiceImpl")
     private AdminServiceImpl adminService;
     
-    @RequestMapping("adminLogin")
+    @RequestMapping("/adminLogin")
     public String varifyLogIn(String name, String password, HttpSession session) {
-        session.setAttribute("admin_id",);
+        System.out.println("name === >" + name);
+        System.out.println("pwd === >" + password);
+        System.out.println("right pwd ===> " + adminService.queryPwdByName(name));
+        if (name == null || password == null) {
+            return "loginFail";
+        } // 如果输入字段为空，直接fail
         if (adminService.queryPwdByName(name).equals(password)) {
+            session.setAttribute("admin_name", name); // 成功登录，把信息加入session
             return "loginSuccess";
         } else {
             return "loginFail";
         }
     }
     
+    @RequestMapping("/logout")
+    public String logOut(HttpSession session) {
+        session.removeAttribute("admin_name");
+        return "logOut";
+    }
 }

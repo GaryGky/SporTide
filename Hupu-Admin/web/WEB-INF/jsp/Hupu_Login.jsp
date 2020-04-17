@@ -45,7 +45,7 @@
     <div class="login_wrapper">
         <div class="animate form login_form">
             <section class="login_content">
-                <form>
+                <div>
                     <h1>Login Form</h1>
                     <div>
                         <input type="text" id="username" class="form-control"
@@ -57,8 +57,10 @@
                                required=""/>
                     </div>
                     <div>
-                        <a class="btn btn-default submit"
-                           onclick="login()">Log in</a>
+                        <button>
+                            <a class="btn btn-default submit"
+                               onclick="login()">Log in</a>
+                        </button>
                     </div>
 
                     <div class="clearfix"></div>
@@ -79,7 +81,7 @@
                         </div>
                     </div>
                     <!-- 暂时不考虑自助注册-->
-                </form>
+                </div>
             </section>
         </div>
 
