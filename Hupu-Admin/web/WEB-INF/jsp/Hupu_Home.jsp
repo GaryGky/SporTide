@@ -1,5 +1,3 @@
-
-
 <%--
   Created by IntelliJ IDEA.
   User: dell
@@ -51,8 +49,11 @@
         table {
             table-layout: fixed;
         }
+
         td {
-            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     </style>
 </head>
@@ -81,7 +82,7 @@
                     <div class="profile_info">
                         <span>Welcome, </span>
                         <!--管理员<span>Welcome,</span>名字-->
-                        <h2>Administrator</h2>
+                        <h2>${sessionScope.admin}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -154,7 +155,7 @@
                                class="user-profile dropdown-toggle"
                                aria-haspopup="true" id="navbarDropdown"
                                data-toggle="dropdown" aria-expanded="false">
-                                Administrator
+                                ${sessionScope.admin}
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right"
                                  aria-labelledby="navbarDropdown">
@@ -165,7 +166,8 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="${pageContext.request.contextPath}/index.jsp"><i
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>

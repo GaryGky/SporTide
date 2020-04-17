@@ -79,7 +79,7 @@
                     <div class="profile_info">
                         <span>Welcome, </span>
                         <!--管理员<span>Welcome,</span>名字-->
-                        <h2>Administrator</h2>
+                        <h2>${sessionScope.admin}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -152,7 +152,7 @@
                                class="user-profile dropdown-toggle"
                                aria-haspopup="true" id="navbarDropdown"
                                data-toggle="dropdown" aria-expanded="false">
-                                Administrator
+                                ${sessionScope.admin}
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right"
                                  aria-labelledby="navbarDropdown">
