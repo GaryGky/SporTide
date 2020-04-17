@@ -32,6 +32,14 @@
         where admin_id = #{admin_id}
     </select>
 
+    <select id="queryPwdByName" resultType="String">
+        select AES_DECRYPT(admin_pwd, "hupu")
+        from admins
+        where admin_name = #{admin_name}
+    </select>
+
+
+
     <select id="queryAdminById" resultType="Admin">
         select *
         from admins

@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>管理员登录</title>
 
     <!-- Bootstrap -->
     <link href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -57,11 +57,8 @@
                                required=""/>
                     </div>
                     <div>
-                        <a class="btn btn-default submit" onclick="login()"
-                           href="/toLogin">Log in</a>
-                        <!-- 暂时不考虑忘记密码
-                        <a class="reset_pass" href="#">Lost your password?</a>
-                        -->
+                        <a class="btn btn-default submit"
+                           onclick="login()">Log in</a>
                     </div>
 
                     <div class="clearfix"></div>

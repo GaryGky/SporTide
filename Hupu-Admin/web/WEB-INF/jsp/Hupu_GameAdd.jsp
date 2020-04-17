@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>添加比赛 </title>
 
     <!-- Bootstrap -->
     <link href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -85,8 +85,9 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="${pageContext.request.contextPath}/index.jsp"><i
-                                    class="fa fa-home"></i> 首页</a>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/index.jsp"><i
+                                        class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>

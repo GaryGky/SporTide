@@ -31,7 +31,7 @@ public class JumpController {
         return "Hupu_PostingTable";
     }
     
-    @RequestMapping("/toComTab")
+    @RequestMapping("/toComTable")
     public String gotoComTab() {
         return "Hupu_CommentTable";
     }

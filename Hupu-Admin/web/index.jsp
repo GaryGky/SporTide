@@ -18,8 +18,9 @@
     <title>HuPu后台管理系统</title>
 
     <!-- Bootstrap -->
-    <link href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <link
+            href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css"
+            rel="stylesheet">
     <!-- Font Awesome -->
     <link href="${pageContext.request.contextPath}/static/vendors/font-awesome/css/font-awesome.min.css"
           rel="stylesheet">
@@ -51,7 +52,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="${pageContext.request.contextPath}/index.jsp"
+                    <a href="/index.jsp"
                        class="site_title"><i
                             class="fa fa-paw"></i>
                         <span>Gentelella Alela!</span></a>
@@ -83,25 +84,25 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="${pageContext.request.contextPath}/index.jsp"><i
+                            <li><a href="/index.jsp"><i
                                     class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a
-                                            href="${pageContext.request.contextPath}/toGameTable">赛事信息</a>
+                                            href="/toGameTable">赛事信息</a>
                                     </li>
-                                    <li><a href="${pageContext.request.contextPath}/toGameAdd">添加赛事</a>
+                                    <li><a href="/toGameAdd">添加赛事</a>
                                     </li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-users"></i> 用户管理 <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="${pageContext.request.contextPath}/toUserTable">用户信息</a>
+                                    <li><a href="/toUserTable">用户信息</a>
                                     </li>
-                                    <li><a href="${pageContext.request.contextPath}/toAdminAdd">添加管理员</a>
+                                    <li><a href="/toAdminAdd">添加管理员</a>
                                     </li>
                                 </ul>
                             </li>
@@ -109,10 +110,11 @@
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/toPostTable">帖子信息</a>
+                                        <a href="/toPostTable">帖子信息</a>
                                     </li>
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/toComTable">评论信息</a>
+                                        <a
+                                                href="/toComTable">评论信息</a>
                                     </li>
                                 </ul>
                             </li>
@@ -153,77 +155,12 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="Hupu_Login.html"><i
+                                <a class="dropdown-item" href="/toLogin"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
                         </li>
-                        <!-- 暂时不开启通知标图
-                        <li role="presentation" class="nav-item dropdown open">
-                            <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green">6</span>
-                            </a>
-                            <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item">
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="text-center">
-                                        <a class="dropdown-item">
-                                            <strong>See All Alerts</strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        -->
+
                     </ul>
                 </nav>
             </div>

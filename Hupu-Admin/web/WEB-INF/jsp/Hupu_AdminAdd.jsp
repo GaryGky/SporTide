@@ -14,27 +14,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DataTables | Gentelella</title>
+    <title>管理员添加</title>
 
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <link href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css"
+          rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="${pageContext.request.contextPath}/static/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/vendors/font-awesome/css/font-awesome.min.css"
+          rel="stylesheet">
     <!-- NProgress -->
-    <link href="${pageContext.request.contextPath}/static/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/vendors/nprogress/nprogress.css"
+          rel="stylesheet">
     <!-- iCheck -->
-    <link href="${pageContext.request.contextPath}/static/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/vendors/iCheck/skins/flat/green.css"
+          rel="stylesheet">
     <!-- Datatables -->
 
-    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"
+          rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"
+          rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
+          rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
+          rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
+          rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css"
+          rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -43,7 +53,10 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="${pageContext.request.contextPath}/index.jsp" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                    <a href="${pageContext.request.contextPath}/index.jsp"
+                       class="site_title"><i
+                            class="fa fa-paw"></i>
+                        <span>Gentelella Alela!</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -51,8 +64,9 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <%--<div class="profile_pic">--%>
-                        <%--<!--管理员头像-->--%>
-                        <%--<img src="images/img.jpg" alt="..." class="img-circle profile_img">--%>
+                    <%--<!--管理员头像-->--%>
+                    <%--<img src="images/img.jpg" alt="..."--%>
+                    <%--class="img-circle profile_img">--%>
                     <%--</div>--%>
                     <div class="profile_info">
                         <span>Welcome,</span>
@@ -62,7 +76,7 @@
                 </div>
                 <!-- /menu profile quick info -->
 
-                <br />
+                <br/>
 
                 <!-- sidebar menu -->
                 <div id="sidebar-menu"
@@ -71,8 +85,9 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="${pageContext.request.contextPath}/index.jsp"><i
-                                    class="fa fa-home"></i> 首页</a>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/index.jsp"><i
+                                        class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
@@ -123,18 +138,26 @@
                 </div>
                 <nav class="nav navbar-nav">
                     <ul class=" navbar-right">
-                        <li class="nav-item dropdown open" style="padding-left: 15px;">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                        <li class="nav-item dropdown open"
+                            style="padding-left: 15px;">
+                            <a href="javascript:;"
+                               class="user-profile dropdown-toggle"
+                               aria-haspopup="true" id="navbarDropdown"
+                               data-toggle="dropdown" aria-expanded="false">
+                                <!--<img src="images/img.jpg" alt="">-->John Doe
                             </a>
-                            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                                <a class="dropdown-item"  href="javascript:;">
+                            <div class="dropdown-menu dropdown-usermenu pull-right"
+                                 aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="javascript:;">
+                                    Profile</a>
+                                <a class="dropdown-item" href="javascript:;">
                                     <span class="badge bg-red pull-right">50%</span>
                                     <span>Settings</span>
                                 </a>
-                                <a class="dropdown-item"  href="javascript:;">Help</a>
-                                <a class="dropdown-item"  href="/toLogin"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                <a class="dropdown-item" href="javascript:;">Help</a>
+                                <a class="dropdown-item" href="/toLogin"><i
+                                        class="fa fa-sign-out pull-right"></i>
+                                    Log Out</a>
                             </div>
                         </li>
 
@@ -147,87 +170,85 @@
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">
-                <!--
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Users <small>Some examples to get you started</small></h3>
+                        <h3>Administrator Info</h3>
                     </div>
 
                     <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                        <div class="col-md-5 col-sm-5 form-group pull-right top_search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
+                                <input type="text" class="form-control"
+                                       placeholder="Search for...">
                                 <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
+                    <button class="btn btn-default" type="button">Go!</button>
+                  </span>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="clearfix"></div>
-                -->
 
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 ">
-                        <div class="x_title">
-                            <h2>Default Example <small>Users</small></h2>
-                            <!--
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Settings 1</a>
-                                        <a class="dropdown-item" href="#">Settings 2</a>
-                                    </div>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            -->
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card-box table-responsive">
-                                        <p class="text-muted font-13 m-b-30">
-                                            包含所有用户的基本信息。
-                                        </p>
-                                        <table id="datatable" class="table table-striped table-bordered" style="width:100%">
-                                            <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>RegisterTime</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                            </thead>
+                    <div class="col-md-12 col-sm-12">
+                        <div class="">
+                            <div class="x_title">
+                                <h2>power an email to register an admin
+                                    account</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <form class="" action="" method="post"
+                                      novalidate>
+                                    <span class="section">Administrator Info</span>
 
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>name1</td>
-                                                <td>123456@216.com</td>
-                                                <td>2020_03_22_12:33</td>
-                                                <td>online</td>
-                                                <td>删除</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">email<span
+                                                class="required">*</span></label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input class="form-control"
+                                                   name="email" class='email'
+                                                   required="required"
+                                                   type="email"/></div>
                                     </div>
-                                </div>
+                                    <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">Confirm
+                                            email address<span
+                                                    class="required">*</span></label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input class="form-control"
+                                                   type="email" class='email'
+                                                   name="confirm_email"
+                                                   data-validate-linked='email'
+                                                   required='required'/></div>
+                                    </div>
+
+                                    <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align">message<span
+                                                class="required">*</span></label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <textarea required="required"
+                                                      name='message'></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="ln_solid">
+                                        <div class="form-group">
+                                            <div class="col-md-6 offset-md-3">
+                                                <button type='submit'
+                                                        class="btn btn-primary"
+                                                        onclick="addAdmin()">
+                                                    Submit
+                                                </button>
+                                                <button type='reset'
+                                                        class="btn btn-success">
+                                                    Reset
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <!--
-                        <div class="x_panel">
-
-                        </div>
-                        -->
                     </div>
                 </div>
             </div>
@@ -237,7 +258,8 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                Gentelella - Bootstrap Admin Template by <a
+                    href="https://colorlib.com">Colorlib</a>
             </div>
             <div class="clearfix"></div>
         </footer>
@@ -253,24 +275,35 @@
 <script src="${pageContext.request.contextPath}/static/vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="${pageContext.request.contextPath}/static/vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="${pageContext.request.contextPath}/static/vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- gauge.js -->
+<script src="${pageContext.request.contextPath}/static/vendors/gauge.js/dist/gauge.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="${pageContext.request.contextPath}/static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
 <!-- iCheck -->
 <script src="${pageContext.request.contextPath}/static/vendors/iCheck/icheck.min.js"></script>
-<!-- Datatables -->
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/jszip/dist/jszip.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/pdfmake/build/pdfmake.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/vendors/pdfmake/build/vfs_fonts.js"></script>
+<!-- Skycons -->
+<script src="${pageContext.request.contextPath}/static/vendors/skycons/skycons.js"></script>
+<!-- Flot -->
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.pie.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.time.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.stack.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="${pageContext.request.contextPath}/static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/flot.curvedlines/curvedLines.js"></script>
+<!-- DateJS -->
+<script src="${pageContext.request.contextPath}/static/vendors/DateJS/build/date.js"></script>
+<!-- JQVMap -->
+<script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="${pageContext.request.contextPath}/static/vendors/moment/min/moment.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>

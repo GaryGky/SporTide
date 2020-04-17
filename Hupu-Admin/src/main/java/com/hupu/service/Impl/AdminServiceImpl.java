@@ -58,4 +58,9 @@ public class AdminServiceImpl extends ConstantService implements AdminService {
     public int deleteAdminById(int id) {
         return adminMapper.deleteAdminById(id);
     }
+    
+    @Override
+    public String queryPwdByName(String name) {
+        return adminMapper.queryPwdByName(name);
+    }
 }

@@ -7,128 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8399399-7afe-48a3-933d-1af815ae09d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8cf89477-3d78-4b67-8f38-a335d69a176e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8cf89477-3d78-4b67-8f38-a335d69a176e.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/score.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/ScoreController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Hupu-Admin/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/layui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/layui.mobile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/modules/code.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/modules/laydate/default/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/modules/layer/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/modules/layer/default/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/font/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/font/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/font/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/font/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/font/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/10.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/11.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/12.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/13.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/14.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/15.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/16.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/17.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/18.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/19.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/20.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/22.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/23.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/24.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/25.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/26.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/27.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/28.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/29.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/30.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/31.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/32.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/33.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/34.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/35.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/36.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/37.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/38.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/39.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/4.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/40.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/41.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/42.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/43.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/44.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/45.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/46.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/47.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/48.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/49.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/5.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/50.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/51.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/52.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/53.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/54.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/55.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/56.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/57.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/58.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/59.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/6.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/60.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/61.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/62.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/63.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/64.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/65.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/66.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/67.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/68.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/69.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/7.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/70.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/71.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/8.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/images/face/9.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/code.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/colorpicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/flow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/laydate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/layedit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/laypage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/laytpl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/mobile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/rate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/slider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/transfer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/tree.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/upload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/lay/modules/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/layui.all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hupu-Admin/web/static/layui/layui.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -167,16 +61,35 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="nba: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="nba@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="nba: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="admins: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            <state relative-caret-position="136">
+              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -190,8 +103,8 @@
         <option value="spring-beans.schema" />
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -208,16 +121,24 @@
       <find>tx</find>
       <find>hupu</find>
       <find>@Param\(&quot;\w*&quot;\)</find>
-      <find>Admin</find>
       <find>resultType</find>
       <find>js/</find>
       <find>user_id</find>
       <find>../vendors</find>
-      <find>index.html</find>
       <find>build</find>
-      <find>../build</find>
       <find>Hupu_index.html</find>
       <find>Hupu_Login.html</find>
+      <find>/toComTable</find>
+      <find>toCom</find>
+      <find>${pageContext.request.contextPath}</find>
+      <find>index.html</find>
+      <find>Admin</find>
+      <find>/static/vendors</find>
+      <find>static/build</find>
+      <find>../build</find>
+      <find>image</find>
+      <find>html</find>
+      <find>username</find>
     </findStrings>
     <replaceStrings>
       <replace>id</replace>
@@ -229,10 +150,11 @@
       <replace>\${pageContext.request.contextPath}/index.jsp</replace>
       <replace>\${pageContext.request.contextPath}/static/vendors</replace>
       <replace>\${pageContext.request.contextPath}/static/build</replace>
-      <replace>${pageContext.request.contextPath}/static/vendors</replace>
-      <replace>${pageContext.request.contextPath}/static/build</replace>
       <replace>${pageContext.request.contextPath}/index.jsp</replace>
       <replace>/toLogin</replace>
+      <replace>index.jsp</replace>
+      <replace>${pageContext.request.contextPath}/static/vendors</replace>
+      <replace>${pageContext.request.contextPath}/static/build</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -242,15 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/SSM-Redis/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/java/com/ssm/service/UserService.java" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/java/com/ssm/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/resources/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/test/java/Test.java" />
-        <option value="$PROJECT_DIR$/SSM-Redis/src/main/resources/redis.xml" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/resources/application-context.xml" />
         <option value="$PROJECT_DIR$/SSM-Redis/src/test/java/Test1.java" />
         <option value="$PROJECT_DIR$/SSM-Redis/src/main/resources/application-context.xml" />
         <option value="$PROJECT_DIR$/SSM-Redis/src/main/resources/db.properties" />
@@ -264,7 +177,6 @@
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PostService.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PosServiceImpl.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/ScoreController.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/ScoreServiceImpl.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/AdminTest.java" />
@@ -283,16 +195,26 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8cf89477-3d78-4b67-8f38-a335d69a176e/console_8.sql" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/score.jsp" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/static/build/css/custom.min.css" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_login.jsp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/index.jsp" />
         <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_login.jsp" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp" />
-        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/static/JS/game.js" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/GameBaseInfo.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/ScoreController.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Login.jsp" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.xml" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminService.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/AdminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/web/static/JS/login.js" />
+        <option value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java" />
       </list>
     </option>
   </component>
@@ -327,7 +249,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="91" />
+    <option name="x" value="90" />
     <option name="y" value="138" />
     <option name="width" value="1944" />
     <option name="height" value="1044" />
@@ -356,7 +278,99 @@
               <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
               <item name="Station" type="462c0819:PsiDirectoryNode" />
               <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="hupu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="hupu" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="hupu" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="JS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUPU" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Station" type="462c0819:PsiDirectoryNode" />
+              <item name="Hupu-Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -368,15 +382,16 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587041042491" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587089404498" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15156507" />
     <property name="project.structure.side.proportion" value="0.13883495" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="com.sjhy.plugin.ui.TemplateSettingPanel" />
+    <property name="settings.editor.splitter.proportion" value="0.21875" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -597,7 +612,8 @@
       <workItem from="1586953586096" duration="10144000" />
       <workItem from="1587004915153" duration="2885000" />
       <workItem from="1587012403343" duration="4972000" />
-      <workItem from="1587032155365" duration="7547000" />
+      <workItem from="1587032155365" duration="16542000" />
+      <workItem from="1587087466105" duration="2270000" />
     </task>
     <task id="LOCAL-00001" summary="test in IDEA">
       <created>1586526142983</created>
@@ -641,7 +657,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587013506978</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="front-end running successful">
+      <created>1587041076141</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587041076141</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -677,13 +700,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65985000" />
+    <option name="totallyTimeSpent" value="77250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30512613" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2278275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -693,29 +716,29 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.49612403" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.47969052" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31589147" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39922482" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.28875968" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Database Console" order="9" weight="0.2591876" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.47582206" />
+      <window_info anchor="bottom" id="Database Console" order="9" weight="0.25775194" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.63178295" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="CheckStyle" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.43326885" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
       <window_info anchor="bottom" id="Database Changes" order="16" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="17" weight="0.63829786" />
+      <window_info anchor="bottom" id="Version Control" order="17" weight="0.90891474" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.47723576" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.23089431" />
+      <window_info anchor="right" id="Database" order="6" weight="0.2441009" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -772,34 +795,10 @@
     <MESSAGE value="user test pass" />
     <MESSAGE value="admin test pass" />
     <MESSAGE value="comment test pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="comment test pass" />
+    <MESSAGE value="front-end running successful" />
+    <option name="LAST_COMMIT_MESSAGE" value="front-end running successful" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/PostService.java" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/ScoreService.java" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/ScoreController.java" />
-    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/admins">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/UserTest.java" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/dao/AdminTest.java" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/resources/spring-service.xml" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/resources/spring-dao.xml" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/resources/mybatis-config.xml" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/resources/spring-mvc.xml" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/resources/application-context.xml" />
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/Post.java" />
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.java" />
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/PostMapper.xml" />
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/test/java/com/hupu/service/PostTest.java">
@@ -810,24 +809,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/CommentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -866,13 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/AdminServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -974,8 +959,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/build/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -991,97 +976,184 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/score.jsp">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/score.jsp" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        <state relative-caret-position="68">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/index.jsp">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="121" selection-end-column="22" />
+        <state relative-caret-position="140">
+          <caret line="105" column="57" selection-start-line="105" selection-start-column="52" selection-end-line="105" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="131" column="57" selection-start-line="131" selection-start-column="52" selection-end-line="131" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="104" column="57" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="101" column="57" selection-start-line="101" selection-start-column="52" selection-end-line="101" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="121" selection-end-column="22" />
           <folding>
             <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        <state relative-caret-position="102">
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#12338#12344#0#HTML" expanded="true" />
+            <element signature="e#13379#13385#0#HTML" expanded="true" />
+            <element signature="e#13972#13978#0#HTML" expanded="true" />
+            <element signature="e#15013#15019#0#HTML" expanded="true" />
+            <element signature="e#15606#15612#0#HTML" expanded="true" />
+            <element signature="e#16647#16653#0#HTML" expanded="true" />
+            <element signature="e#17240#17246#0#HTML" expanded="true" />
+            <element signature="e#18281#18287#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_AdminAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="134" column="21" lean-forward="true" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
+        <state relative-caret-position="176">
+          <caret line="157" column="42" lean-forward="true" selection-start-line="157" selection-start-column="42" selection-end-line="157" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_CommentTable.jsp">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/main.java.com.hupu.GameBaseInfo/GameBaseInfo.java" />
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java.com.hupu.GameBaseInfo/GameBaseInfo.java" />
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/GameBaseInfo.java" />
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/GameBaseInfoService.java" />
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/GameBaseInfoController.java" />
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/pojo/.java" />
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/ScoreController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="155" column="71" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
+        <state relative-caret-position="238">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameAdd.jsp">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/JumpController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="158" column="2" selection-start-line="158" selection-start-column="2" selection-end-line="158" selection-end-column="2" />
+        <state relative-caret-position="99">
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_GameTable.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="182" column="71" selection-start-line="182" selection-start-column="71" selection-end-line="182" selection-end-column="71" />
+    <entry file="das://8cf89477-3d78-4b67-8f38-a335d69a176e/schema/nba/table/admins">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_login.jsp">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
+        <state relative-caret-position="408">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_UserTable.jsp">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/Impl/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1618">
-          <caret line="153" column="56" selection-start-line="153" selection-start-column="56" selection-end-line="153" selection-end-column="56" />
+        <state relative-caret-position="320">
+          <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_PostingTable.jsp">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/service/AdminService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="157" column="2" selection-start-line="157" selection-start-column="2" selection-end-line="157" selection-end-column="2" />
+        <state relative-caret-position="340">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/dao/AdminMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state relative-caret-position="235">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/WEB-INF/jsp/Hupu_Login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/src/main/java/com/hupu/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hupu-Admin/web/static/JS/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
         </state>
       </provider>
     </entry>
