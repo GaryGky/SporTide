@@ -47,6 +47,14 @@
     <!-- Custom Theme Style -->
     <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css"
           rel="stylesheet">
+    <style type="text/css">
+        table {
+            table-layout: fixed;
+        }
+        td {
+            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+        }
+    </style>
 </head>
 
 <body class="nav-md">
@@ -55,8 +63,10 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="/toHome"
-                       class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                    <a href="#"
+                       class="site_title"><i
+                            class="fa fa-trophy"></i>
+                        <span>NBA INFO CMS</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -69,9 +79,9 @@
                     <%--class="img-circle profile_img">--%>
                     <%--</div>--%>
                     <div class="profile_info">
-                        <span>Welcome,</span>
-                        <!--管理员名字-->
-                        <h2>John Doe</h2>
+                        <span>Welcome, </span>
+                        <!--管理员<span>Welcome,</span>名字-->
+                        <h2>Administrator</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -85,14 +95,14 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li>
-                                <a href="/toHome"><i
-                                        class="fa fa-home"></i> 首页</a>
+                            <li><a href="/toHome"><i
+                                    class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/toGameTable">赛事信息</a>
+                                    <li><a
+                                            href="/toGameTable">赛事信息</a>
                                     </li>
                                     <li><a href="/toGameAdd">添加赛事</a>
                                     </li>
@@ -130,7 +140,6 @@
             </div>
         </div>
 
-
         <!-- top navigation -->
         <div class="top_nav">
             <div class="nav_menu">
@@ -145,7 +154,7 @@
                                class="user-profile dropdown-toggle"
                                aria-haspopup="true" id="navbarDropdown"
                                data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                Administrator
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right"
                                  aria-labelledby="navbarDropdown">
@@ -161,11 +170,13 @@
                                     Log Out</a>
                             </div>
                         </li>
+
                     </ul>
                 </nav>
             </div>
         </div>
         <!-- /top navigation -->
+
 
         <!-- page content -->
         <div class="right_col" role="main">

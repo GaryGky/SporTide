@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%--<link rel="icon" href="images/favicon.ico" type="image/ico"/>--%>
 
-    <title>HuPu后台管理系统</title>
+    <title>NBA GAME INFO CMS</title>
 
     <!-- Bootstrap -->
     <link
@@ -46,6 +46,15 @@
     <!-- Custom Theme Style -->
     <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css"
           rel="stylesheet">
+
+    <style type="text/css">
+        table {
+            table-layout: fixed;
+        }
+        td {
+            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+        }
+    </style>
 </head>
 
 <body class="nav-md">
@@ -54,10 +63,10 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="$"
+                    <a href="#"
                        class="site_title"><i
-                            class="fa fa-paw"></i>
-                        <span>Gentelella Alela!</span></a>
+                            class="fa fa-trophy"></i>
+                        <span>NBA INFO CMS</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -70,9 +79,9 @@
                     <%--class="img-circle profile_img">--%>
                     <%--</div>--%>
                     <div class="profile_info">
-                        <span>Welcome,</span>
-                        <!--管理员名字-->
-                        <h2>John Doe</h2>
+                        <span>Welcome, </span>
+                        <!--管理员<span>Welcome,</span>名字-->
+                        <h2>Administrator</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -145,7 +154,7 @@
                                class="user-profile dropdown-toggle"
                                aria-haspopup="true" id="navbarDropdown"
                                data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                Administrator
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right"
                                  aria-labelledby="navbarDropdown">

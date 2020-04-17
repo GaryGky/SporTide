@@ -56,6 +56,7 @@
                                class="form-control" placeholder="Password"
                                required=""/>
                     </div>
+                    <br>
                     <div>
                         <a class="btn btn-default submit"
                            onclick="login()" href="#">Log in</a>
@@ -65,24 +66,28 @@
 
                     <div class="separator">
                         <p class="change_link">New to site?
+                            <a href="#">Please contact customer service
+                            </a>
+                            <!--
                             <a href="#signup" class="to_register"> Create
                                 Account </a>
+                            -->
                         </p>
 
                         <div class="clearfix"></div>
                         <br/>
 
                         <div>
-                            <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                            <p>©2016 All Rights Reserved. Gentelella Alela! is a
-                                Bootstrap 3 template. Privacy and Terms</p>
+                            <h1><i class="fa"></i> NBA GAME INFORMATION</h1>
+                            <p>©2020 All Rights Reserved. NBA GAME INFORMATION! is a
+                                background management system.</p>
                         </div>
                     </div>
                     <!-- 暂时不考虑自助注册-->
                 </div>
             </section>
         </div>
-
+        <!--
         <div id="register" class="animate form registration_form">
             <section class="login_content">
                 <form>
@@ -126,6 +131,7 @@
                 </form>
             </section>
         </div>
+        -->
     </div>
 </div>
 <!-- jQuery -->

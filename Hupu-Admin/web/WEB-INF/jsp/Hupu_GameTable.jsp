@@ -45,37 +45,14 @@
     <!-- Custom Theme Style -->
     <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css"
           rel="stylesheet">
-    <script>
-        function load_game_info() {
-            $.post({
-                url: "${pageContext.request.contextPath}/getScore",
-                data: {
-                    "date": $("#date").val(),
-                },
-                success: function (data) {
-                    console.log(data);
-                    console.log('have output data')
-                    var inject = "";
-                    for (var i = 0; i < data.length; i++) {
-                        inject += ("<tr>" +
-                            "<td>" + data[i].team + "</td>" +
-                            "<td>" + data[i].opponent + "</td>" +
-                            "<td>" + data[i].teamPoints + " : " + data[i].opponentPoints +
-                            "</td>"
-                            + "</tr>"
-                        )
-                    }
-                    $("#game_table_content").html(inject);
-                }
-            })
+    <style type="text/css">
+        table {
+            table-layout: fixed;
         }
-
-        function test_load() {
-            console.log('test load')
-            $("#modal-body-content").html("asdasfgsdkjgh")
+        td {
+            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
         }
-    </script>
-
+    </style>
 </head>
 
 <body class="nav-md">
@@ -84,10 +61,10 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="/toHome"
+                    <a href="#"
                        class="site_title"><i
-                            class="fa fa-paw"></i>
-                        <span>Gentelella Alela!</span></a>
+                            class="fa fa-trophy"></i>
+                        <span>NBA INFO CMS</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -95,14 +72,14 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <%--<div class="profile_pic">--%>
-                        <%--<!--管理员头像-->--%>
-                        <%--<img src="images/img.jpg" alt="..."--%>
-                             <%--class="img-circle profile_img">--%>
+                    <%--<!--管理员头像-->--%>
+                    <%--<img src="images/img.jpg" alt="..."--%>
+                    <%--class="img-circle profile_img">--%>
                     <%--</div>--%>
                     <div class="profile_info">
-                        <span>Welcome,</span>
-                        <!--管理员名字-->
-                        <h2>John Doe</h2>
+                        <span>Welcome, </span>
+                        <!--管理员<span>Welcome,</span>名字-->
+                        <h2>Administrator</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -116,14 +93,14 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li>
-                                <a href="/toHome"><i
-                                        class="fa fa-home"></i> 首页</a>
+                            <li><a href="/toHome"><i
+                                    class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/toGameTable">赛事信息</a>
+                                    <li><a
+                                            href="/toGameTable">赛事信息</a>
                                     </li>
                                     <li><a href="/toGameAdd">添加赛事</a>
                                     </li>
@@ -175,7 +152,7 @@
                                class="user-profile dropdown-toggle"
                                aria-haspopup="true" id="navbarDropdown"
                                data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                Administrator
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right"
                                  aria-labelledby="navbarDropdown">
@@ -205,8 +182,7 @@
                     <div class="col-md-12 col-sm-12 ">
                         <div class="">
                             <div class="x_title">
-                                <h2>Default Example
-                                    <small>Users</small>
+                                <h2>NBA对赛信息
                                 </h2>
                                 <div class="clearfix"></div>
                             </div>
@@ -215,11 +191,6 @@
                                     <div class="col-sm-12">
                                         <div class="card-box table-responsive">
                                             <p class="text-muted font-13 m-b-30">
-                                                DataTables has most features
-                                                enabled by default, so all you
-                                                need to do to use it with your
-                                                own tables is to call the
-                                                construction function: <code>$().DataTable();</code>
                                             </p>
                                             <table id="datatable"
                                                    class="table table-striped table-bordered"

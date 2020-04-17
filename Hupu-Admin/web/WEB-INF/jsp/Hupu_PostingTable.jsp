@@ -45,8 +45,14 @@
     <!-- Custom Theme Style -->
     <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css"
           rel="stylesheet">
-
-
+    <style type="text/css">
+        table {
+            table-layout: fixed;
+        }
+        td {
+            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+        }
+    </style>
 </head>
 
 <body class="nav-md">
@@ -55,10 +61,10 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="/toLogin"
+                    <a href="#"
                        class="site_title"><i
-                            class="fa fa-paw"></i>
-                        <span>Gentelella Alela!</span></a>
+                            class="fa fa-trophy"></i>
+                        <span>NBA INFO CMS</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -71,9 +77,9 @@
                     <%--class="img-circle profile_img">--%>
                     <%--</div>--%>
                     <div class="profile_info">
-                        <span>Welcome,</span>
-                        <!--管理员名字-->
-                        <h2>John Doe</h2>
+                        <span>Welcome, </span>
+                        <!--管理员<span>Welcome,</span>名字-->
+                        <h2>Administrator</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -93,7 +99,8 @@
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/toGameTable">赛事信息</a>
+                                    <li><a
+                                            href="/toGameTable">赛事信息</a>
                                     </li>
                                     <li><a href="/toGameAdd">添加赛事</a>
                                     </li>
@@ -141,33 +148,33 @@
                     <ul class=" navbar-right">
                         <li class="nav-item dropdown open"
                             style="padding-left: 15px;">
-                            <a href="javascript:"
+                            <a href="javascript:;"
                                class="user-profile dropdown-toggle"
                                aria-haspopup="true" id="navbarDropdown"
-                               data-toggle="dropdown" aria-expanded="false">John
-                                Doe
+                               data-toggle="dropdown" aria-expanded="false">
+                                Administrator
                             </a>
                             <div class="dropdown-menu dropdown-usermenu pull-right"
                                  aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="javascript:">
+                                <a class="dropdown-item" href="javascript:;">
                                     Profile</a>
-                                <a class="dropdown-item" href="javascript:">
+                                <a class="dropdown-item" href="javascript:;">
                                     <span class="badge bg-red pull-right">50%</span>
                                     <span>Settings</span>
                                 </a>
-                                <a class="dropdown-item"
-                                   href="javascript:">Help</a>
-                                <a class="dropdown-item"
-                                   href="${pageContext.request.contextPath}/index.jsp"><i
+                                <a class="dropdown-item" href="javascript:;">Help</a>
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
                         </li>
+
                     </ul>
                 </nav>
             </div>
         </div>
         <!-- /top navigation -->
+
 
         <!-- page content -->
         <div class="right_col" role="main">
@@ -178,8 +185,7 @@
                     <div class="col-md-12 col-sm-12 ">
                         <div class="">
                             <div class="x_title">
-                                <h2>Default Example
-                                    <small>Users</small>
+                                <h2>所有帖子信息
                                 </h2>
                                 <div class="clearfix"></div>
                             </div>
@@ -188,11 +194,6 @@
                                     <div class="col-sm-12">
                                         <div class="card-box table-responsive">
                                             <p class="text-muted font-13 m-b-30">
-                                                DataTables has most features
-                                                enabled by default, so all you
-                                                need to do to use it with your
-                                                own tables is to call the
-                                                construction function: <code>$().DataTable();</code>
                                             </p>
                                             <table id="datatable"
                                                    class="table table-striped table-bordered"
