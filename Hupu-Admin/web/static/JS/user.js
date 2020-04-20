@@ -42,7 +42,7 @@ function getMyUser() {
                     "<td>" + data[i].user_email + " </td>" +
                     "<td>" + data[i].user_time + " </td>" +
                     "<td>" + data[i].user_status + " </td>" +
-                    "<td> <button class='btn btn-primary'" +
+                    "<td> <button" +
                     "  onclick=\"delUser(" + data[i].user_id + ")\">删除 </td>"
                     + "</tr>");
             }
