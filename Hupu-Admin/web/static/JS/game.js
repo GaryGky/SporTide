@@ -5,9 +5,9 @@ function addGame() {
         data: {
             //一些数据，待确定。
         },
-        success: function(flag) {
+        success: function (flag) {
             console.log("添加成功");
-            if(flag) {
+            if (flag) {
                 //添加成功的提示。
             }
         }
@@ -21,9 +21,9 @@ function delGame() {
         data: {
             //game id? 还是 game name
         },
-        success: function(flag) {
+        success: function (flag) {
             console.log('比赛删除成功');
-            if(flag){
+            if (flag) {
                 //删除成功提示
             }
         }
@@ -32,23 +32,26 @@ function delGame() {
 
 //获取比赛信息
 function getGameInfo() {
-    $.post({
-        url: "",
+    $.get({
+        url: "/getGameByLimit",
         data: {
-            //需要什么
+            "pageNum": 1, // 页号: 相当于数据库索引时的偏移
+            "entries": 10, // 每页展示的数据量，相当于数据库索引时的limit
         },
-        success: function(data) {
+        success: function (data) {
             var inject = "";
             for (var i = 0; i < data.length; i++) {
                 inject += ("<tr>" +
-                    "<td>" + data[i].team + "</td>" +
-                    "<td>" + data[i].opponent + "</td>" +
-                    "<td>" + data[i].teamPoints + " : " + data[i].opponentPoints +
-                    "</td>"
-                    + "</tr>"
+                    "<td>" + data[i].home + "</td>" +
+                    "<td>" + data[i].away + "</td>" +
+                    "<td>" + data[i].teamPoints + "</td>" +
+                    "<td>" + data[i].date + "</td>" +
+                    "<td>" + data[i].arena + "</td>" +
+                    "<td>" + data[i].audNum + "</td>" + // 观众人数
+                    +"</tr>"
                 );
             }
-            $("#content").html(inject);
+            $("#game_table_content").html(inject);
         }
     });
 }

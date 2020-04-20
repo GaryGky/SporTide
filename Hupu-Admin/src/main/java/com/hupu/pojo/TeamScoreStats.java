@@ -1,6 +1,7 @@
 package com.hupu.pojo;
 
 public class TeamScoreStats {
+    private Integer id;
     private String teamid;
     private Integer gameid;
     private Integer ishome;
@@ -10,24 +11,19 @@ public class TeamScoreStats {
     private Integer score4;
     private Integer score;
     
-    public TeamScoreStats(String teamid, Integer gameid, Integer ishome, Integer score1, Integer score2, Integer score3, Integer score4, Integer score) {
-        this.teamid = teamid;
-        this.gameid = gameid;
-        this.ishome = ishome;
-        this.score1 = score1;
-        this.score2 = score2;
-        this.score3 = score3;
-        this.score4 = score4;
-        this.score = score;
+    public Integer getId() {
+        return id;
     }
     
-    public TeamScoreStats() {
+    public void setId(Integer id) {
+        this.id = id;
     }
     
     @Override
     public String toString() {
         return "TeamScoreStats{" +
-                "teamid='" + teamid + '\'' +
+                "id=" + id +
+                ", teamid='" + teamid + '\'' +
                 ", gameid=" + gameid +
                 ", ishome=" + ishome +
                 ", score1=" + score1 +
@@ -36,6 +32,21 @@ public class TeamScoreStats {
                 ", score4=" + score4 +
                 ", score=" + score +
                 '}';
+    }
+    
+    public TeamScoreStats() {
+    }
+    
+    public TeamScoreStats(Integer id, String teamid, Integer gameid, Integer ishome, Integer score1, Integer score2, Integer score3, Integer score4, Integer score) {
+        this.id = id;
+        this.teamid = teamid;
+        this.gameid = gameid;
+        this.ishome = ishome;
+        this.score1 = score1;
+        this.score2 = score2;
+        this.score3 = score3;
+        this.score4 = score4;
+        this.score = score;
     }
     
     public String getTeamid() {

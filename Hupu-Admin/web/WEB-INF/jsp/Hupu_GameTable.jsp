@@ -49,8 +49,11 @@
         table {
             table-layout: fixed;
         }
+
         td {
-            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     </style>
 </head>
@@ -163,7 +166,8 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="${pageContext.request.contextPath}/index.jsp"><i
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
@@ -198,83 +202,47 @@
                                                 <thead>
                                                 <!-- 用ajax? -->
                                                 <tr>
-                                                    <th>Team</th>
-                                                    <th>Opponent</th>
-                                                    <th>Score</th>
-                                                    <th>Date</th>
-                                                    <th>View</th>
-                                                    <th>Del</th>
+                                                    <th>主场球队</th>
+                                                    <th>客场球队</th>
+                                                    <th>比分</th>
+                                                    <th>比赛日期</th>
+                                                    <th>比赛场馆</th>
+                                                    <th>上座人数</th>
                                                 </tr>
                                                 </thead>
 
-                                                <tbody id="game_table_content"
-                                                       onload="getGameInfo()">
-                                                <!-- 示例 -->
-                                                <tr>
-                                                    <td>A</td>
-                                                    <td>B</td>
-                                                    <td>98:102</td>
-                                                    <td>14</td>
-                                                    <td><a data-toggle="modal" data-target="#myModal">查看</a></td>
-                                                    <td><a href="#" onclick="delGame()">删除</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>C</td>
-                                                    <td>B</td>
-                                                    <td>124:102</td>
-                                                    <td>13</td>
-                                                    <td>
-                                                        <a data-toggle="modal" data-target="#myModal" onclick="getGameDetail(this)">查看</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#">删除</a>
-                                                    </td>
-                                                </tr>
+                                                <tbody id="game_table_content">
+
                                                 </tbody>
-                                                <!-- Modal-->
-                                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                    <div class="modal-dialog" role="document">
+                                                <!-- Modal 弹窗-->
+                                                <div class="modal fade"
+                                                     id="myModal" tabindex="-1"
+                                                     role="dialog"
+                                                     aria-labelledby="myModalLabel">
+                                                    <div class="modal-dialog"
+                                                         role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" id="myModalLabel">比赛详细数据</h4>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                <h4 class="modal-title"
+                                                                    id="myModalLabel">
+                                                                    比赛详细数据</h4>
+                                                                <button type="button"
+                                                                        class="close"
+                                                                        data-dismiss="modal"
+                                                                        aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
                                                             </div>
-                                                            <div class="modal-body" id="modal-body-content">
-                                                                <!--
-                                                                <table>
-                                                                    <thead>
-                                                                    <tr>
-                                                                        <th>#</th>
-                                                                        <th>First Name</th>
-                                                                        <th>Last Name</th>
-                                                                        <th>Username</th>
-                                                                    </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>Mark</td>
-                                                                        <td>Otto</td>
-                                                                        <td>@mdo</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">2</th>
-                                                                        <td>Jacob</td>
-                                                                        <td>Thornton</td>
-                                                                        <td>@fat</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Larry</td>
-                                                                        <td>the Bird</td>
-                                                                        <td>@twitter</td>
-                                                                    </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                                -->
+                                                            <div class="modal-body"
+                                                                 id="modal-body-content">
+
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                <button type="button"
+                                                                        class="btn btn-default"
+                                                                        data-dismiss="modal">
+                                                                    Close
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -335,6 +303,13 @@
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/game.js"></script>
 
+<script type="text/javascript">
+
+
+    window.onload = function () {
+        getGameInfo();
+    }
+</script>
 
 </body>
 </html>

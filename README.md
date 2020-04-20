@@ -227,3 +227,13 @@ MySQL中按照队名对表进行排序
   6. 按类型查询帖子
   7. 查询某人发布的帖子
   8. 
+  
+  team表：队伍英文简称作为Id
+  
+  game表：6位gameId
+  
+  team_stats：7位id，是由gameId + 0/1组成的，0表示客场，1 表示主场
+  
+  player_stats：9位id，是由 team_stats:id + 两位数字 组成的，两位的数字是将球员从1开始编号的，且保证了1~5为首发球员
+  
+  recap：以gameId作为主键

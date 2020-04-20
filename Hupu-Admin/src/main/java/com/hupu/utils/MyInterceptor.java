@@ -22,9 +22,9 @@ public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse arg1,
                              Object arg2) throws Exception {
-        System.out.println("=====执行前======");
+        //System.out.println("=====执行前======");
+        //System.out.println(requestURI);
         String requestURI = request.getRequestURI();
-        System.out.println(requestURI);
         if(requestURI.indexOf("to")>0){
             //说明处在编辑的页面
             HttpSession session = request.getSession();

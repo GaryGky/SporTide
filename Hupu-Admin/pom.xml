@@ -11,6 +11,13 @@
     <modules>
         <module>Hupu-Admin</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.2.4.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 
     <artifactId>Hupu-Admin</artifactId>
