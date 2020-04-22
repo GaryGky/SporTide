@@ -11,7 +11,7 @@
 
     <!--关联数据库配置文件-->
     <context:property-placeholder
-            location="classpath:db.properties"/>
+            location="classpath:jdbc.properties"/>
     <!--数据库连接池
     1. dbcp
     2. c3p0
