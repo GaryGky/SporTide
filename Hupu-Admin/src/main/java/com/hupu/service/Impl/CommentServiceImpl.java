@@ -40,4 +40,9 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> queryAllCom() {
         return commentMapper.queryAllCom();
     }
+    
+    @Override
+    public List<Comment> queryCommentByLimit(int offset, int limit) {
+        return commentMapper.queryCommentByLimit(offset, limit);
+    }
 }

@@ -14,7 +14,8 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
-public class GameController {
+@RequestMapping("/game")
+public class GameController  {
     @Autowired
     @Qualifier("gameService")
     private GameServiceImpl gameService;
@@ -23,14 +24,33 @@ public class GameController {
     @Qualifier("teamScoreStatsService")
     private TeamScoreStatsServiceImpl teamScoreStats;
     
+    private int pageNum = 1;
+    
+    @RequestMapping("/addPageNum")
+    public void addPageNum() {
+        pageNum++;
+        System.out.println("pageNum===>" + pageNum);
+    }
+    
+    @RequestMapping("/subPageNum")
+    public void subPageNum() {
+        pageNum--;
+        if (pageNum <= 0) {
+            pageNum = 1;
+        }
+        System.out.println("=pageNum===>" + pageNum);
+    }
+    
     @RequestMapping("/getGameByLimit")
-    public ArrayList<HashMap<String, Object>> getGameByLimit(int pageNum,
-                                                             int entries) {
+    public ArrayList<HashMap<String, Object>> getGameByLimit(String entries) {
+        System.out.println("每页显示数量 ===> " + entries);
+        System.out.println("页号 ===> " + pageNum);
+        int entity = Integer.parseInt(entries);
 //        System.out.println("接收更新比赛信息请求");
         // 由比赛id索引比赛，每个比赛是一个hashmap，由string类型指向不同的信息
         ArrayList<HashMap<String, Object>> gameInfo = new ArrayList<>();
-        int offset = (pageNum - 1) * entries;
-        List<Game> gameList = gameService.queryAllByLimit(offset, entries);
+        int offset = (pageNum - 1) * entity;
+        List<Game> gameList = gameService.queryAllByLimit(offset, entity);
 //        System.out.println("game num ===> " + gameList.size());
         for (Game game : gameList) {
 //            System.out.println(game);

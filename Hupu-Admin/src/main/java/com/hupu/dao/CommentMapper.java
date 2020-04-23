@@ -25,4 +25,7 @@ public interface CommentMapper {
     public List<Comment> queryComByPostId(@Param("post_id") int post_id);
     
     public List<Comment> queryAllCom();
+    
+    public List<Comment> queryCommentByLimit(@Param("offset") int offset, @Param(
+            "limit") int limit);
 }

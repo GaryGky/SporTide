@@ -59,4 +59,13 @@ public class PostServiceImpl implements PostService {
     public List<Post> queryAllPost() {
         return postMapper.queryAllPost();
     }
+    
+    @Override
+    public List<Post> queryPostByLimit(int offset, int limit) {
+        return postMapper.queryPostByLimit(offset, limit);
+    }
+    
+    public Post queryPostById(int id){
+        return postMapper.queryPostById(id);
+    }
 }

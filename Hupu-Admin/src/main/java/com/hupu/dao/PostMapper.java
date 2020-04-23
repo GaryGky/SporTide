@@ -36,4 +36,9 @@ public interface PostMapper {
     
     public List<Post> queryAllPost(); // 查询所有帖子信息
     
+    public Post queryPostById(@Param("id") int id);
+    
+    public List<Post> queryPostByLimit(@Param("offset") int offset, @Param(
+            "limit") int limit);
+    
 }

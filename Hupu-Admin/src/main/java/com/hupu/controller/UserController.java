@@ -9,18 +9,42 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     @Qualifier("adminServiceImpl")
     private AdminServiceImpl adminService;
     
     @Autowired
-    @Qualifier("userServiceImpl")
+    @Qualifier("userService")
     private UserServiceImpl userService;
+
+//    @RequestMapping("/getLimitUser")
+//    public ArrayList<HashMap<String, Object>> getLimitUser(int entries) {
+//
+//    }
+    
+    private int pageNum = 1;
+    
+    @RequestMapping("/addPageNum")
+    public void addPageNum() {
+        pageNum++;
+        System.out.println("pageNum===>" + pageNum);
+    }
+    
+    @RequestMapping("/subPageNum")
+    public void subPageNum() {
+        pageNum--;
+        if (pageNum <= 0) {
+            pageNum = 1;
+        }
+        System.out.println("=pageNum===>" + pageNum);
+    }
     
     @RequestMapping("/addAdmin")
     public String addAdmin(String name, String pwd1, String pwd2) {
@@ -35,17 +59,11 @@ public class UserController {
         }
     }
     
-    @RequestMapping("/getMyUser")
-    public List<User> getUser() {
-        System.out.println("controller 接收user请求");
-        return userService.queryAllUser();
-    }
-    
     @RequestMapping("/delUser") // 删除用户
     public HashMap<String, Object> delUser(int id) {
         String delMsg = "";
         System.out.println("进入删除用户: id ===> " + id);
-        int res = userService.deleteUserById(id);
+        int res = userService.deleteById(id);
         if (res == 1) { // 返回一表示成功删除了用户
             delMsg = "success";
         } else {
@@ -53,7 +71,7 @@ public class UserController {
         }
         HashMap<String, Object> map = new HashMap<>(); // ajax请求通过map返回结果
         map.put("delMsg", delMsg);
-        map.put("UserList", userService.queryAllUser());
+        map.put("UserList", userService.queryAllByLimit(0, 10));
         return map;
     }
 }

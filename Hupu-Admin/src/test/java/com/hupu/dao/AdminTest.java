@@ -7,6 +7,17 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AdminTest {
+    
+    @Test
+    public void addRoot(){
+        ApplicationContext context = new ClassPathXmlApplicationContext(
+                "application-context.xml");
+        AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(
+                "adminServiceImpl");
+        System.out.println("====== Test Add Admin ====== ");
+        adminService.createAdmin("root", "root");
+    }
+    
     @Test
     public void testInsert() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
@@ -61,5 +72,18 @@ public class AdminTest {
         System.out.println(adminService.deleteAdminById(1));
         System.out.println(adminService.deleteAdminById(2));
         System.out.println(adminService.deleteAdminById(3));
+        System.out.println(adminService.deleteAdminById(4));
+        System.out.println(adminService.deleteAdminById(5));
+        System.out.println(adminService.deleteAdminById(6));
+    }
+    
+    @Test
+    public void tmp(){
+        ApplicationContext context = new ClassPathXmlApplicationContext(
+                "application-context.xml");
+        AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(
+                "adminServiceImpl");
+        System.out.println("====== Test Delete Admin ====== ");
+        System.out.println(adminService.queryPwdByName("root"));
     }
 }

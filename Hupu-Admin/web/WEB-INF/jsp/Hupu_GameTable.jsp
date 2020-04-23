@@ -302,13 +302,14 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/game.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/common.js"></script>
 
 <script type="text/javascript">
-
-
     window.onload = function () {
         getGameInfo();
-    }
+        listen("game");
+    };
+
 </script>
 
 </body>

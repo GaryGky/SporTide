@@ -30,4 +30,7 @@ public interface PostService {
     
     public List<Post> queryAllPost(); // 查询所有帖子信息
     
+    public List<Post> queryPostByLimit(int offset, int limit);
+    
+    public Post queryPostById(int id);
 }

@@ -20,4 +20,6 @@ public interface CommentService {
     public List<Comment> queryComByPostId(int post_id);
     
     public List<Comment> queryAllCom();
+    
+    public List<Comment> queryCommentByLimit(int offset,int limit);
 }

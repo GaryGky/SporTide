@@ -49,8 +49,11 @@
         table {
             table-layout: fixed;
         }
+
         td {
-            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     </style>
 </head>
@@ -163,7 +166,8 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="${pageContext.request.contextPath}/index.jsp"><i
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
@@ -277,9 +281,11 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/user.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/common.js"></script>
 
 <script type="text/javascript">
     window.onload = getMyUser();
+    listen();
 </script>
 
 </body>

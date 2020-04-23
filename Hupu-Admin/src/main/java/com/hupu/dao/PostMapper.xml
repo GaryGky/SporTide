@@ -69,10 +69,21 @@
     </select>
 
 
-
     <select id="queryAllPost" resultType="Post">
         select *
         from post
+    </select>
+
+    <select id="queryPostById" resultType="Post">
+        select *
+        from post
+        where post_id = #{id}
+    </select>
+
+    <select id="queryPostByLimit" resultType="Post">
+        select *
+        from post
+        limit #{offset},#{limit};
     </select>
 
 </mapper>

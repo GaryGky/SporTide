@@ -30,8 +30,12 @@ function addAdmin() {
 //获取user信息
 function getMyUser() {
     console.log("调用getUser");
+    var entry = $("select[name='datatable_length']").val();
     $.get({
         url: "/getMyUser",
+        data: {
+            "entries": entry
+        },
         success: function (data) {
             console.log(data);
             var inject = "";

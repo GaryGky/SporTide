@@ -49,8 +49,11 @@
         table {
             table-layout: fixed;
         }
+
         td {
-            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     </style>
 </head>
@@ -163,7 +166,8 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="${pageContext.request.contextPath}/index.jsp"><i
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
@@ -197,12 +201,11 @@
                                             </p>
                                             <table id="datatable"
                                                    class="table table-striped table-bordered"
-                                                   style="width:100%"
-                                                   onload="getAllPost()">
+                                                   style="width:100%">
                                                 <thead>
                                                 <tr>
                                                     <th>Id</th>
-                                                    <th>标题</th>
+                                                    <th>内容</th>
                                                     <th>类型</th>
                                                     <th>作者</th>
                                                     <th>发表时间</th>
@@ -281,9 +284,11 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/post.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/common.js"></script>
 <script type="text/javascript">
     window.onload = function () {
-        getAllPost();
+        getLimitPost();
+        listen("post");
     }
 </script>
 

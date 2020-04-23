@@ -9,14 +9,34 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpSession;
 
 @RestController
+@RequestMapping("/login")
 public class LoginController {
     @Autowired
     @Qualifier("adminServiceImpl")
     private AdminServiceImpl adminService;
     
+    private int pageNum = 1;
+    
+    @RequestMapping("/addPageNum")
+    public void addPageNum() {
+        pageNum++;
+        System.out.println("pageNum===>" + pageNum);
+    }
+    
+    @RequestMapping("/subPageNum")
+    public void subPageNum() {
+        pageNum--;
+        if (pageNum <= 0) {
+            pageNum = 1;
+        }
+        System.out.println("=pageNum===>" + pageNum);
+    }
+    
     @RequestMapping("/adminLogin")
     public String varifyLogIn(String name, String password,
                               HttpSession session) {
+        System.out.println(password);
+        System.out.println(adminService.queryPwdByName(name));
         
         if (name == null || password == null) {
             return "loginFail";

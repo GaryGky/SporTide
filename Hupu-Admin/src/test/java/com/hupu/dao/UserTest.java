@@ -2,75 +2,58 @@ package com.hupu.dao;
 
 import com.hupu.pojo.User;
 import com.hupu.service.Impl.UserServiceImpl;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UserTest {
+    private UserServiceImpl userService;
+    
+    @Before
+    public void before() {
+        ApplicationContext context = new ClassPathXmlApplicationContext(
+                "application-context.xml");
+        userService = (UserServiceImpl) context.getBean("userService");
+    }
+    
     @Test
     public void testInsert() {
-        ApplicationContext context = new ClassPathXmlApplicationContext(
-                "application-context.xml");
-        UserServiceImpl userSerive = (UserServiceImpl) context.getBean(
-                "userServiceImpl");
-        userSerive.createUser(1, "email1", "pwd1", "name1", "time1");
-        userSerive.createUser(2, "email2", "pwd2", "name2", "time2");
-        userSerive.createUser(3, "email3", "pwd3", "name3", "time3");
-    }
-    
-    
-    @Test
-    public void testQueryAll() {
-        ApplicationContext context = new ClassPathXmlApplicationContext(
-                "application-context.xml");
-        UserServiceImpl userSerive = (UserServiceImpl) context.getBean(
-                "userServiceImpl");
-        System.out.println("====== Test Query All =======");
-        for (User user : userSerive.queryAllUser()) {
-            System.out.println(user);
-        }
-        
-        System.out.println("======Test Pwd Decipher=======");
-        System.out.println(userSerive.queryUserPwdById(1));
-        System.out.println(userSerive.queryUserPwdById(2));
-        System.out.println(userSerive.queryUserPwdById(3));
-        
-        System.out.println("===== Test By Email =========");
-        System.out.println(userSerive.queryUserByEmail("email1"));
-        System.out.println(userSerive.queryUserByEmail("email2"));
-        System.out.println(userSerive.queryUserByEmail("email3"));
-        
-        System.out.println("==== Test By Name =====");
-        for (User user : userSerive.queryUserByName("name")) {
-            System.out.println(user);
-        }
-        
-        System.out.println("====Test Update User Stauts ======");
-        userSerive.updateUserStatus(1, 1);
-        userSerive.updateUserStatus(2, 1);
-        userSerive.updateUserStatus(3, 1);
-        
-        System.out.println("==== Test Update User Pwd =====");
-        System.out.println(userSerive.updateUserPwd(1, "pwd1", "pwd11"));
-        System.out.println(userSerive.updateUserPwd(1, "pwd2", "pwd11"));
-        System.out.println(userSerive.updateUserPwd(2, "pwd2", "pwd22"));
-        
-        System.out.println("===== Test Update User Name ======");
-        System.out.println(userSerive.updateUserName(1, "name11"));
-        System.out.println(userSerive.updateUserName(2, "name22"));
-        System.out.println(userSerive.updateUserName(3, "name33"));
+        System.out.println("====Test Insert=====");
+        userService.insert(new User(1, "user_name", "email", "pwd1", "nike1",
+                "time1", 1));
+        userService.insert(new User(2, "user_name2", "email", "pwd1", "nike1",
+                "time1", 1));
+        userService.insert(new User(3, "user_name3", "email", "pwd1", "nike1",
+                "time1", 1));
+        userService.insert(new User(4, "user_name4", "email", "pwd1", "nike1",
+                "time1", 1));
+        userService.insert(new User(5, "user_name5", "email", "pwd1", "nike1",
+                "time1", 1));
+        userService.insert(new User(6, "user_name6", "email", "pwd1", "nike1",
+                "time1", 1));
+        userService.insert(new User(7, "user_name7", "email", "pwd1", "nike1",
+                "time1", 1));
+        userService.insert(new User(8, "user_name8", "email", "pwd1", "nike1",
+                "time1", 1));
+        userService.insert(new User(9, "user_name9", "email", "pwd1", "nike1"
+                , "time1", 1));
+        userService.insert(new User(10, "user_name10", "email", "pwd1", "nike1",
+                "time1", 1));
+        userService.insert(new User(11, "user_name11", "email", "pwd1", "nike1"
+                , "time1", 1));
     }
     
     @Test
-    public void testDelete() {
-        ApplicationContext context = new ClassPathXmlApplicationContext(
-                "application-context.xml");
-        UserServiceImpl userSerive = (UserServiceImpl) context.getBean(
-                "userServiceImpl");
-        System.out.println("==== Test Delete By Id ===== ");
-        System.out.println(userSerive.deleteUserById(1));
-        System.out.println(userSerive.deleteUserById(2));
-        System.out.println(userSerive.deleteUserById(3));
+    public void testQuery(){
+        userService.queryAllByLimit(5,10).forEach(System.out::println);
+    }
+    
+    @Test
+    public void deleteById(){
+        for(int i=0;i<10;i++){
+            userService.deleteById(i);
+        }
     }
     
 }

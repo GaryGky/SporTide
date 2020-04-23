@@ -276,10 +276,12 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/post.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/common.js"></script>
 <script type="text/javascript">
     window.onload = function () {
         // alert("窗口加载");
-        getAllComment();
+        getLimitCom();
+        listen("comment");
     }
 </script>
 </body>
