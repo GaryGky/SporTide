@@ -38,6 +38,9 @@ public class PostController {
     public String getLimitPost(HttpServletRequest request,
                                HttpServletResponse response) throws ServletException, IOException {
         System.out.println("获取帖子");
+        if(request.getSession().getAttribute("postMap") !=null){
+            return "Exist";
+        }
         ArrayList<HashMap<String, Object>> mapArrayList = new ArrayList<>();
         int entries = 100;
         for (Post post : postService.queryPostByLimit(0,
@@ -56,8 +59,8 @@ public class PostController {
             mapArrayList.add(map);
         }
         request.getSession().setAttribute("postMap", mapArrayList);
-        request.getRequestDispatcher("Home_PostingTable.jsp").forward(request
-                , response);
+//        request.getRequestDispatcher("Home_PostingTable.jsp").forward(request
+//                , response);
         return "Success";
     }
     
@@ -82,6 +85,9 @@ public class PostController {
     public String getLimitComment(HttpServletRequest request,
                                   HttpServletResponse response) throws ServletException, IOException {
         System.out.println("产生评论");
+        if(request.getSession().getAttribute("comMap") !=null){
+            return "Exist";
+        }
         int entries = 100;
         ArrayList<HashMap<String, Object>> mapArrayList = new ArrayList<>();
         for (Comment comment : commentService.queryCommentByLimit(0, entries)) {
@@ -96,8 +102,6 @@ public class PostController {
             mapArrayList.add(map);
         }
         request.getSession().setAttribute("comMap", mapArrayList);
-        request.getRequestDispatcher("Home_CommentTable.jsp").forward(request
-                , response);
         return "Success";
     }
     

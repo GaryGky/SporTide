@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,28 +25,21 @@ public class UserController {
     @Autowired
     @Qualifier("userService")
     private UserServiceImpl userService;
-
-//    @RequestMapping("/getLimitUser")
-//    public ArrayList<HashMap<String, Object>> getLimitUser(int entries) {
-//
-//    }
     
-    private int pageNum = 1;
-    
-    @RequestMapping("/addPageNum")
-    public void addPageNum() {
-        pageNum++;
-        System.out.println("pageNum===>" + pageNum);
-    }
-    
-    @RequestMapping("/subPageNum")
-    public void subPageNum() {
-        pageNum--;
-        if (pageNum <= 0) {
-            pageNum = 1;
+    @RequestMapping("/getLimitUser")
+    public String getLimitUser(HttpServletRequest request,
+                               HttpServletResponse response) {
+        System.out.println("获取用户");
+        if (request.getSession().getAttribute("userMap") != null) {
+            return "Exist";
         }
-        System.out.println("=pageNum===>" + pageNum);
+        int entries = 100;
+        ArrayList<User> users = new ArrayList<>();
+        users.addAll(userService.queryAllByLimit(0,entries));
+        request.getSession().setAttribute("userMap", users);
+        return "Success";
     }
+    
     
     @RequestMapping("/addAdmin")
     public String addAdmin(String name, String pwd1, String pwd2) {

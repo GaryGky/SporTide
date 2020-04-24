@@ -21,7 +21,6 @@ public class JumpController {
     
     @RequestMapping("/toUserTable")
     public String gotoUserTab() {
-        
         return "Hupu_UserTable";
     }
     

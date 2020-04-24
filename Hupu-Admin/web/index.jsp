@@ -91,5 +91,6 @@
 </div>
 <!-- jQuery -->
 <script src="${pageContext.request.contextPath}/static/vendors/jquery/dist/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/login.js"></script>
 </body>
 </html>

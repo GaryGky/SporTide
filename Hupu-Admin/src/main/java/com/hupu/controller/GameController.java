@@ -51,8 +51,8 @@ public class GameController {
                                  HttpServletResponse response,
                                  String entries) throws ServletException, IOException {
         if (request.getAttribute("gameInfo") != null) {
-            request.getRequestDispatcher("/Home_GameTable.jsp").forward(request, response);
-            return null;
+//            request.getRequestDispatcher("/Home_GameTable.jsp").forward(request, response);
+            return "exist";
         }
         int entity = 1000; // 一次性请求全部
 //        System.out.println("接收更新比赛信息请求");
@@ -80,7 +80,7 @@ public class GameController {
             gameInfo.add(map);
         }
         request.getSession().setAttribute("gameInfo", gameInfo);
-        request.getRequestDispatcher("/Home_GameTable.jsp").forward(request, response);
+//        request.getRequestDispatcher("/Home_GameTable.jsp").forward(request, response);
         return "Success";
     }
 }

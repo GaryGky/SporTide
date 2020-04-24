@@ -30,27 +30,13 @@ function addAdmin() {
 //获取user信息
 function getMyUser() {
     console.log("调用getUser");
-    var entry = $("select[name='datatable_length']").val();
+    // var entry = $("select[name='datatable_length']").val();
     $.get({
-        url: "/user/getMyUser",
+        url: "/user/getLimitUser",
         data: {
-            "entries": entry
         },
         success: function (data) {
             console.log(data);
-            var inject = "";
-            for (var i = 0; i < data.length; i++) {
-                inject += ("<tr>" +
-                    "<td>" + data[i].user_id + "</td>" +
-                    "<td>" + data[i].user_nikeName + "</td>" +
-                    "<td>" + data[i].user_email + " </td>" +
-                    "<td>" + data[i].user_time + " </td>" +
-                    "<td>" + data[i].user_status + " </td>" +
-                    "<td> <button" +
-                    "  onclick=\"delUser(" + data[i].user_id + ")\">删除 </td>"
-                    + "</tr>");
-            }
-            $("#user_info_table").append(inject);
         }
     })
 }

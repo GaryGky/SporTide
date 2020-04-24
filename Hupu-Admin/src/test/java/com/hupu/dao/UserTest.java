@@ -56,4 +56,10 @@ public class UserTest {
         }
     }
     
+    
+    @Test
+    public void testTmp(){
+        userService.queryAllByLimit(0,100).forEach(System.out::println);
+    }
+    
 }

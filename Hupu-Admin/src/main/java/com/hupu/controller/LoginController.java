@@ -33,30 +33,30 @@ public class LoginController {
     }
     
     @RequestMapping("/adminLogin")
-    public String varifyLogIn(String name, String password,
+    public int varifyLogIn(String name, String password,
                               HttpSession session) {
-        System.out.println(password);
-        System.out.println(adminService.queryPwdByName(name));
+        System.out.println("输入密码 ===>> " + password);
+        System.out.println("正确密码 ===>> " + adminService.queryPwdByName(name));
         
         if (name == null || password == null) {
-            return "loginFail";
+            return -1;
         } // 如果输入字段为空，直接fail
         try {
             if (adminService.queryPwdByName(name).equals(password)) {
                 session.setAttribute("admin", name); //
                 // 成功登录，把信息加入session
-                return "loginSuccess";
+                return 1;
             } else {
-                return "loginFail";
+                return 0;
             }
         } catch (Exception e) {
-            return "loginFail";
+            return 0;
         }
     }
     
     @RequestMapping("/logout")
     public String logOut(HttpSession session) {
-        session.removeAttribute("admin_name");
+        session.removeAttribute("admin");
         return "logOut";
     }
 }

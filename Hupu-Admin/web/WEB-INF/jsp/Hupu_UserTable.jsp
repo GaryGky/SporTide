@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
@@ -205,8 +206,9 @@
                                             <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Name</th>
+                                                <th>UserName</th>
                                                 <th>Email</th>
+                                                <th>NikeName</th>
                                                 <th>RegisterTime</th>
                                                 <th>Status</th>
                                                 <th>Actions</th>
@@ -214,14 +216,26 @@
                                             </thead>
 
                                             <tbody id="user_info_table">
-                                            <tr>
-                                                <td>1</td>
-                                                <td>name1</td>
-                                                <td>123456@216.com</td>
-                                                <td>2020_03_22_12:33</td>
-                                                <td>online</td>
-                                                <td onclick="delUser()">删除</td>
-                                            </tr>
+                                            <c:forEach var="user"
+                                                       items="${sessionScope.userMap}">
+                                                <tr>
+                                                    <td>${user.getUserId()}</td>
+                                                    <td>${user.getUserName()}</td>
+                                                    <td>${user.getUserEmail()}</td>
+
+                                                    <td>${user.getUserNikename()}</td>
+                                                    <td>${user.getUserTime()}</td>
+                                                    <td>${user.getUserStatus()}</td>
+                                                    <td>
+                                                        <button
+                                                                onclick="delUser(${user.userId})"
+                                                                class="btn btn-primary"
+                                                                style="display: block;width: 60px;height: 30px;background: #0b2e13">
+                                                            删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </c:forEach>
                                             </tbody>
                                         </table>
                                     </div>
@@ -281,11 +295,9 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/user.js"></script>
-<script src="${pageContext.request.contextPath}/static/JS/common.js"></script>
 
 <script type="text/javascript">
     window.onload = getMyUser();
-    listen();
 </script>
 
 </body>
