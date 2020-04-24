@@ -11,6 +11,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,28 +34,13 @@ public class PostController {
     @Qualifier("userService")
     private UserServiceImpl userService;
     
-    private int pageNum = 1;
-    
-    @RequestMapping("/addPageNum")
-    public void addPageNum() {
-        pageNum++;
-        System.out.println("pageNum===>" + pageNum);
-    }
-    
-    @RequestMapping("/subPageNum")
-    public void subPageNum() {
-        pageNum--;
-        if (pageNum <= 0) {
-            pageNum = 1;
-        }
-        System.out.println("=pageNum===>" + pageNum);
-    }
-    
     @RequestMapping("/getLimitPost")
-    public ArrayList<HashMap<String, Object>> getLimitPost(int entries) {
+    public String getLimitPost(HttpServletRequest request,
+                               HttpServletResponse response) throws ServletException, IOException {
         System.out.println("获取帖子");
         ArrayList<HashMap<String, Object>> mapArrayList = new ArrayList<>();
-        for (Post post : postService.queryPostByLimit((pageNum - 1) * entries,
+        int entries = 100;
+        for (Post post : postService.queryPostByLimit(0,
                 entries)) {
             HashMap<String, Object> map = new HashMap<>();
             String name =
@@ -66,7 +55,10 @@ public class PostController {
             map.put("post_transpondNum", post.getPost_id());
             mapArrayList.add(map);
         }
-        return mapArrayList;
+        request.getSession().setAttribute("postMap", mapArrayList);
+        request.getRequestDispatcher("Home_PostingTable.jsp").forward(request
+                , response);
+        return "Success";
     }
     
     @RequestMapping("/delPost")
@@ -87,10 +79,12 @@ public class PostController {
     
     
     @RequestMapping("/getLimitCom")
-    public ArrayList<HashMap<String, Object>> getLimitComment(int entries) {
+    public String getLimitComment(HttpServletRequest request,
+                                  HttpServletResponse response) throws ServletException, IOException {
         System.out.println("产生评论");
+        int entries = 100;
         ArrayList<HashMap<String, Object>> mapArrayList = new ArrayList<>();
-        for (Comment comment : commentService.queryCommentByLimit((pageNum - 1) * entries, entries)) {
+        for (Comment comment : commentService.queryCommentByLimit(0, entries)) {
             HashMap<String, Object> map = new HashMap<>();
             map.put("id", comment.getId());
             map.put("from_user_name",
@@ -101,7 +95,10 @@ public class PostController {
             map.put("time", comment.getTime());
             mapArrayList.add(map);
         }
-        return mapArrayList;
+        request.getSession().setAttribute("comMap", mapArrayList);
+        request.getRequestDispatcher("Home_CommentTable.jsp").forward(request
+                , response);
+        return "Success";
     }
     
     @RequestMapping("/delComment")

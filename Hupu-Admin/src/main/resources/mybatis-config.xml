@@ -3,10 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration> <!--核心配置文件 -->
-    <properties resource="jdbc.properties"/>
-    <!--<settings>-->
-    <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
-    <!--</settings>-->
+    <properties resource="db.properties"/>
+
+    <settings>
+        <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <setting name="aggressiveLazyLoading" value="true"/>
+    </settings>
 
     <!--可以给实体类写别名-->
     <typeAliases>
@@ -33,5 +37,6 @@
     <mappers>
         <mapper class="com.hupu.dao.ScoreMapper"/>
     </mappers>
+
 
 </configuration>

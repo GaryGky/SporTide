@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
@@ -96,25 +97,25 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="/toHome"><i
+                            <li><a href="/jump/toHome"><i
                                     class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a
-                                            href="/toGameTable">赛事信息</a>
+                                            href="/jump/toGameTable">赛事信息</a>
                                     </li>
-                                    <li><a href="/toGameAdd">添加赛事</a>
+                                    <li><a href="/jump/toGameAdd">添加赛事</a>
                                     </li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-users"></i> 用户管理 <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/toUserTable">用户信息</a>
+                                    <li><a href="/jump/toUserTable">用户信息</a>
                                     </li>
-                                    <li><a href="/toAdminAdd">添加管理员</a>
+                                    <li><a href="/jump/toAdminAdd">添加管理员</a>
                                     </li>
                                 </ul>
                             </li>
@@ -122,10 +123,10 @@
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li>
-                                        <a href="/toPostTable">帖子信息</a>
+                                        <a href="/jump/toPostTable">帖子信息</a>
                                     </li>
                                     <li>
-                                        <a href="/toComTable">评论信息</a>
+                                        <a href="/jump/toComTable">评论信息</a>
                                     </li>
                                 </ul>
                             </li>
@@ -177,7 +178,7 @@
                 </nav>
             </div>
         </div>
-        <!-- /top navigation -->
+        <!-- /jump/top navigation -->
 
 
         <!-- page content -->
@@ -217,18 +218,27 @@
                                                 </thead>
 
                                                 <tbody id="post-info-table">
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>不留情面！野球场上的恩比德戏耍对手并暴扣得分
-                                                    </td>
-                                                    <td>新闻</td>
-                                                    <td>斯科拉暴力拉杆</td>
-                                                    <td>2020-04-17</td>
-                                                    <td>28</td>
-                                                    <td>13</td>
-                                                    <td>2</td>
-                                                    <td><a href="#">删除</a></td>
-                                                </tr>
+                                                <c:forEach var="posts"
+                                                           items="${sessionScope.postMap}">
+                                                    <tr>
+                                                        <td>${posts.post_id}</td>
+                                                        <td>${posts.post_info}</td>
+                                                        <td>${posts.post_type}</td>
+                                                        <td>${posts.user_name}</td>
+                                                        <td>${posts.post_time}</td>
+                                                        <td>${posts.post_commentNum}</td>
+                                                        <td>${posts.post_collectNum}</td>
+                                                        <td>${posts.post_transpondNum}</td>
+                                                        <td>
+                                                            <button
+                                                                    onclick="delPost(${posts.id})"
+                                                                    class="btn btn-primary"
+                                                                    style="display: block;width: 60px;height: 30px;background: #0b2e13">
+                                                                删除
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -284,11 +294,9 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/post.js"></script>
-<script src="${pageContext.request.contextPath}/static/JS/common.js"></script>
 <script type="text/javascript">
     window.onload = function () {
         getLimitPost();
-        listen("post");
     }
 </script>
 

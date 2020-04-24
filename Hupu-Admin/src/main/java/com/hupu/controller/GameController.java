@@ -6,16 +6,21 @@ import com.hupu.service.Impl.GameServiceImpl;
 import com.hupu.service.Impl.TeamScoreStatsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 @RestController
 @RequestMapping("/game")
-public class GameController  {
+public class GameController {
     @Autowired
     @Qualifier("gameService")
     private GameServiceImpl gameService;
@@ -42,10 +47,14 @@ public class GameController  {
     }
     
     @RequestMapping("/getGameByLimit")
-    public ArrayList<HashMap<String, Object>> getGameByLimit(String entries) {
-        System.out.println("每页显示数量 ===> " + entries);
-        System.out.println("页号 ===> " + pageNum);
-        int entity = Integer.parseInt(entries);
+    public String getGameByLimit(HttpServletRequest request,
+                                 HttpServletResponse response,
+                                 String entries) throws ServletException, IOException {
+        if (request.getAttribute("gameInfo") != null) {
+            request.getRequestDispatcher("/Home_GameTable.jsp").forward(request, response);
+            return null;
+        }
+        int entity = 1000; // 一次性请求全部
 //        System.out.println("接收更新比赛信息请求");
         // 由比赛id索引比赛，每个比赛是一个hashmap，由string类型指向不同的信息
         ArrayList<HashMap<String, Object>> gameInfo = new ArrayList<>();
@@ -70,7 +79,8 @@ public class GameController  {
             
             gameInfo.add(map);
         }
-//        System.out.println("game info size: " + gameInfo.size());
-        return gameInfo;
+        request.getSession().setAttribute("gameInfo", gameInfo);
+        request.getRequestDispatcher("/Home_GameTable.jsp").forward(request, response);
+        return "Success";
     }
 }

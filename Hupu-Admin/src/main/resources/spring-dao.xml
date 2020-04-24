@@ -8,10 +8,7 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
     <!--特别重要的一句话：开启注解支持-->
     <context:annotation-config/>
-
-    <!--关联数据库配置文件-->
-    <context:property-placeholder
-            location="classpath:jdbc.properties"/>
+    <context:property-placeholder location="classpath:db.properties"/>
     <!--数据库连接池
     1. dbcp
     2. c3p0

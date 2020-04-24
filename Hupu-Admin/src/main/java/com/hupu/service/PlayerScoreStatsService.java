@@ -30,7 +30,7 @@ public interface PlayerScoreStatsService {
      */
     List<PlayerScoreStats> queryAllByLimit(int offset, int limit);
     
-    List<PlayerScoreStats> queryAll();
+    List<PlayerScoreStats> queryAll(PlayerScoreStats playerScoreStats);
     
     /**
      * 新增数据
@@ -38,7 +38,7 @@ public interface PlayerScoreStatsService {
      * @param playerScoreStats 实例对象
      * @return 实例对象
      */
-    PlayerScoreStats insert(PlayerScoreStats playerScoreStats);
+    int insert(PlayerScoreStats playerScoreStats);
     
     /**
      * 修改数据
@@ -46,7 +46,7 @@ public interface PlayerScoreStatsService {
      * @param playerScoreStats 实例对象
      * @return 实例对象
      */
-    PlayerScoreStats update(PlayerScoreStats playerScoreStats);
+    int update(PlayerScoreStats playerScoreStats);
     
     /**
      * 通过主键删除数据
@@ -54,6 +54,7 @@ public interface PlayerScoreStatsService {
      * @param id 主键
      * @return 是否成功
      */
-    boolean deleteById(Integer id);
+    int deleteById(Integer id);
     
+    public List<PlayerScoreStats> queryByTeamStatsId(int teamStatsId);
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
@@ -49,8 +50,11 @@
         table {
             table-layout: fixed;
         }
+
         td {
-            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     </style>
 </head>
@@ -93,25 +97,25 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="/toHome"><i
+                            <li><a href="/jump/toHome"><i
                                     class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a
-                                            href="/toGameTable">赛事信息</a>
+                                            href="/jump/toGameTable">赛事信息</a>
                                     </li>
-                                    <li><a href="/toGameAdd">添加赛事</a>
+                                    <li><a href="/jump/toGameAdd">添加赛事</a>
                                     </li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-users"></i> 用户管理 <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/toUserTable">用户信息</a>
+                                    <li><a href="/jump/toUserTable">用户信息</a>
                                     </li>
-                                    <li><a href="/toAdminAdd">添加管理员</a>
+                                    <li><a href="/jump/toAdminAdd">添加管理员</a>
                                     </li>
                                 </ul>
                             </li>
@@ -119,10 +123,10 @@
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li>
-                                        <a href="/toPostTable">帖子信息</a>
+                                        <a href="/jump/toPostTable">帖子信息</a>
                                     </li>
                                     <li>
-                                        <a href="/toComTable">评论信息</a>
+                                        <a href="/jump/toComTable">评论信息</a>
                                     </li>
                                 </ul>
                             </li>
@@ -163,7 +167,8 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="${pageContext.request.contextPath}/index.jsp"><i
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
@@ -173,7 +178,7 @@
                 </nav>
             </div>
         </div>
-        <!-- /top navigation -->
+        <!-- /jump/top navigation -->
 
         <!-- page content -->
         <div class="right_col" role="main">
@@ -210,17 +215,24 @@
                                                 </thead>
 
                                                 <tbody id="com-info-table">
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>不留情面！野球场上的恩比德戏耍对手并暴扣得分
-                                                    </td>
-                                                    <td>瞎说这个是小号</td>
-                                                    <td>
-                                                        大帝:小老弟，我玩过狮子的除了加索尔我怕啥🐶
-                                                    </td>
-                                                    <td>2020-04-17 13:16</td>
-                                                    <td><a href>删除</a></td>
-                                                </tr>
+                                                <c:forEach var="comment"
+                                                           items="${sessionScope.comMap}">
+                                                    <tr>
+                                                        <td>${comment.id}</td>
+                                                        <td>${comment.post_label}</td>
+                                                        <td>${comment.from_user_name}</td>
+                                                        <td>${comment.info}</td>
+                                                        <td>${comment.time}</td>
+                                                        <td>
+                                                            <button
+                                                                    onclick="delComment(${comment.id})"
+                                                                    class="btn btn-primary"
+                                                                    style="display: block;width: 60px;height: 30px;background: #0b2e13">
+                                                                删除
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -276,12 +288,11 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/post.js"></script>
-<script src="${pageContext.request.contextPath}/static/JS/common.js"></script>
 <script type="text/javascript">
     window.onload = function () {
         // alert("窗口加载");
         getLimitCom();
-        listen("comment");
+
     }
 </script>
 </body>

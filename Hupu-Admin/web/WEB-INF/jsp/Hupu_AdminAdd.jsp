@@ -93,25 +93,25 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="/toHome"><i
+                            <li><a href="/jump/toHome"><i
                                     class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a
-                                            href="/toGameTable">赛事信息</a>
+                                            href="/jump/toGameTable">赛事信息</a>
                                     </li>
-                                    <li><a href="/toGameAdd">添加赛事</a>
+                                    <li><a href="/jump/toGameAdd">添加赛事</a>
                                     </li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-users"></i> 用户管理 <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/toUserTable">用户信息</a>
+                                    <li><a href="/jump/toUserTable">用户信息</a>
                                     </li>
-                                    <li><a href="/toAdminAdd">添加管理员</a>
+                                    <li><a href="/jump/toAdminAdd">添加管理员</a>
                                     </li>
                                 </ul>
                             </li>
@@ -119,10 +119,10 @@
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li>
-                                        <a href="/toPostTable">帖子信息</a>
+                                        <a href="/jump/toPostTable">帖子信息</a>
                                     </li>
                                     <li>
-                                        <a href="/toComTable">评论信息</a>
+                                        <a href="/jump/toComTable">评论信息</a>
                                     </li>
                                 </ul>
                             </li>

@@ -7,7 +7,7 @@ function getCurAdmin() {
 function addAdmin() {
     console.log("进入添加函数");
     $.post({
-        url: "/addAdmin",
+        url: "/user/addAdmin",
         data: {
             "name": $("#admin_name").val(),
             "pwd1": $("#admin_pwd1").val(),
@@ -32,7 +32,7 @@ function getMyUser() {
     console.log("调用getUser");
     var entry = $("select[name='datatable_length']").val();
     $.get({
-        url: "/getMyUser",
+        url: "/user/getMyUser",
         data: {
             "entries": entry
         },
@@ -58,7 +58,7 @@ function getMyUser() {
 //删除user
 function delUser(id) {
     $.post({
-        url: "/delUser",
+        url: "/user/delUser",
         data: {"id": id},
         success: function (data) {
             console.log(data);
