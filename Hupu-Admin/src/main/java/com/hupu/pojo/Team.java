@@ -1,6 +1,8 @@
 package com.hupu.pojo;
 
-public class Team {
+import java.io.Serializable;
+
+public class Team implements Serializable {
     private String teamid;
     private String teamname;
     private String buildtime;

@@ -1,6 +1,14 @@
 package com.hupu.pojo;
 
-public class Admin {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+
+@Data
+@Component
+public class Admin implements Serializable {
     private int admin_id;
     private String admin_name;
     private String admin_pwd;

@@ -1,6 +1,8 @@
 package com.hupu.pojo;
 
-public class PlayerScoreStats {
+import java.io.Serializable;
+
+public class PlayerScoreStats implements Serializable {
     
     private String teamid;
     private Integer teamstatsid;

@@ -1,6 +1,8 @@
 package com.hupu.pojo;
 
-public class Post {
+import java.io.Serializable;
+
+public class Post implements Serializable {
     private int post_id;
     private String post_type;
     private String post_info;

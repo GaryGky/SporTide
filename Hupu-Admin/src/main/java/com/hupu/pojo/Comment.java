@@ -1,6 +1,8 @@
 package com.hupu.pojo;
 
-public class Comment {
+import java.io.Serializable;
+
+public class Comment implements Serializable {
     private int id;
     private String info;
     private String status;

@@ -6,7 +6,6 @@
     <properties resource="db.properties"/>
 
     <settings>
-        <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
         <setting name="cacheEnabled" value="true"/>
         <setting name="lazyLoadingEnabled" value="false"/>
         <setting name="aggressiveLazyLoading" value="true"/>

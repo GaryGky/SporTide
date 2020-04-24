@@ -1,7 +1,9 @@
 package com.hupu.pojo;
 
 
-public class Score {
+import java.io.Serializable;
+
+public class Score implements Serializable {
     private String team;
     private String date;
     private String opponent;

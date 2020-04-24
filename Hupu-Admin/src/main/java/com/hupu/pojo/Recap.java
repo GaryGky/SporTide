@@ -1,6 +1,8 @@
 package com.hupu.pojo;
 
-public class Recap {
+import java.io.Serializable;
+
+public class Recap implements Serializable {
     private String gameid;
     private String header;
     private String content;
