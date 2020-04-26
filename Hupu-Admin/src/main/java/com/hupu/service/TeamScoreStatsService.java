@@ -3,6 +3,7 @@ package com.hupu.service;
 import com.hupu.pojo.TeamScoreStats;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * (TeamScoreStats)表服务接口
@@ -56,4 +57,6 @@ public interface TeamScoreStatsService {
     int deleteById(Integer id);
     
     List<TeamScoreStats> getTeamStatsByGameId(int gameId);
+    
+    List<TeamScoreStats> getGameIndexByDay(String date);
 }

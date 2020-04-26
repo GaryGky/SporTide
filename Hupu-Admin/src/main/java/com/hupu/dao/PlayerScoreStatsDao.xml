@@ -243,4 +243,10 @@
         where teamStatsId = #{teamStatsId};
     </select>
 
+    <select id="queryByGameId" resultType="PlayerScoreStats">
+        select *
+        from player_score_stats
+        where id like CONCAT(#{game_id},'___') order by id ASC ;
+    </select>
+
 </mapper>

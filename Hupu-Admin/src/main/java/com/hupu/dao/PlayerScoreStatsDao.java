@@ -4,6 +4,7 @@ import com.hupu.pojo.PlayerScoreStats;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * (PlayerScoreStats)表数据库访问层
@@ -65,4 +66,5 @@ public interface PlayerScoreStatsDao {
     
     public List<PlayerScoreStats> queryByTeamStatsId(@Param("teamStatsId") int teamStatsId);
     
+    List<PlayerScoreStats> queryByGameId(@Param("game_id") int gameId);
 }

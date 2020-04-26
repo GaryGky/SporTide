@@ -39,6 +39,7 @@ public class TeamScoreStats implements Serializable {
     public TeamScoreStats() {
     }
     
+    
     public TeamScoreStats(Integer id, String teamid, Integer gameid, Integer ishome, Integer score1, Integer score2, Integer score3, Integer score4, Integer score) {
         this.id = id;
         this.teamid = teamid;

@@ -4,6 +4,7 @@ import com.hupu.pojo.Team;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * (Team)表数据库访问层
@@ -62,8 +63,4 @@ public interface TeamDao {
      * @return 影响行数
      */
     int deleteById(String teamid);
-    
-    
-    
-    
 }

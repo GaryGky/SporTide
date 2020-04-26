@@ -57,4 +57,5 @@ public interface PlayerScoreStatsService {
     int deleteById(Integer id);
     
     public List<PlayerScoreStats> queryByTeamStatsId(int teamStatsId);
+    public List<PlayerScoreStats> queryByGameId(int teamStatsId);
 }

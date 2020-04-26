@@ -22,4 +22,6 @@ public class TeamTest {
     public void testGet() {
         teamService.queryAllByLimit(0, 100).stream().map(JSON::toJSONString).forEach(System.out::println);
     }
+    
+   
 }

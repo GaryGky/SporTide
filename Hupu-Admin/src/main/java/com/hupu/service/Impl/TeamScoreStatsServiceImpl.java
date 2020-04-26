@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * (TeamScoreStats)表服务实现类
@@ -56,6 +58,12 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
     
     @Override
     public List<TeamScoreStats> getTeamStatsByGameId(int gameId) {
+        
         return teamScoreStatsDao.getTeamStatsByGameId(gameId);
+    }
+    
+    @Override
+    public List<TeamScoreStats> getGameIndexByDay(String date) {
+        return teamScoreStatsDao.getGameIndex(date);
     }
 }

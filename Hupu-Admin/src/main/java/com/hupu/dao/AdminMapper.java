@@ -3,6 +3,7 @@ package com.hupu.dao;
 import com.hupu.pojo.Admin;
 import com.hupu.service.AdminService;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 

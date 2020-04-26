@@ -128,11 +128,22 @@
         where id = #{id}
     </delete>
 
-    <select id="getTeamStatsByGameId" resultMap="TeamScoreStatsMap">
-        select distinct  *
+    <select id="getTeamStatsByGameId" resultType="TeamScoreStats">
+        select distinct *
         from team_score_stats
         where gameId = #{game_id}
         order by isHome ASC
+    </select>
+
+    <select id="getGameIndex" resultType="TeamScoreStats">
+        select *
+        from team_score_stats
+        where gameId in
+              (select gameId
+               from game
+               where gameTime like
+                     #{date})
+        order by id ASC;
     </select>
 
 </mapper>

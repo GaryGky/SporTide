@@ -1442,7 +1442,7 @@
     </foreign-key>
     <column id="350" parent="288" name="gameId">
       <Position>1</Position>
-      <DataType>varchar(8)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>

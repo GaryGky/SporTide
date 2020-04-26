@@ -7,6 +7,10 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class TeamStatsTest {
     private TeamScoreStatsServiceImpl teamScoreStatsService;
     
@@ -27,5 +31,15 @@ public class TeamStatsTest {
     public void testGame2() {
         System.out.println("=====Test Query By Page=====");
         teamScoreStatsService.queryAllByLimit(10, 20).forEach(System.out::println);
+    }
+    
+    @Test
+    public void testGame3() throws ParseException {
+        String date = "2019年01月01日 04:00";
+        SimpleDateFormat myFmt=new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+        SimpleDateFormat format=new SimpleDateFormat("%yyyy%MM%dd%");
+        System.out.println(format.format(myFmt.parse(date)));
+        teamScoreStatsService.getGameIndexByDay(format.format(myFmt.parse(date))).forEach(System
+         .out::println);
     }
 }

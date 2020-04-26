@@ -5,6 +5,7 @@ import com.hupu.pojo.TeamScoreStats;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface TeamScoreStatsDao {
@@ -61,4 +62,6 @@ public interface TeamScoreStatsDao {
     
     
     List<TeamScoreStats> getTeamStatsByGameId(@Param("game_id") int game_id);
+    
+    List<TeamScoreStats> getGameIndex(@Param("date") String date);
 }

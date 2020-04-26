@@ -59,4 +59,9 @@ public class PlayerScoreStatsServiceImpl implements PlayerScoreStatsService {
     public List<PlayerScoreStats> queryByTeamStatsId(int teamStatsId) {
         return playerScoreStatsDao.queryByTeamStatsId(teamStatsId);
     }
+    
+    @Override
+    public List<PlayerScoreStats> queryByGameId(int gameId) {
+        return playerScoreStatsDao.queryByGameId(gameId);
+    }
 }

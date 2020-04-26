@@ -14,6 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,39 +33,32 @@ public class PlayStatsTest {
         gameService = (GameServiceImpl) context.getBean("gameService");
     }
     
-    @Test
-    public void getTeamStats() {
-        int gameId = 156542;
-        HashMap<String, Object> gameMap = new HashMap<>();
-        for (TeamScoreStats teamScoreStats : teamScoreStatsService.getTeamStatsByGameId(gameId)) {
-            HashMap<String, Object> teamStatsMap = new HashMap<>();
-            int teamStatsId = teamScoreStats.getId();
-            int score = 0; // 得分
-            int court = 0; // 篮板可以由前场后场篮板相加得到
-            int assist = 0;
-            int steal = 0;
-            int block = 0;
-            int frontCourt = 0;
-            int backCourt = 0;
-            int shot = 0; // 出手
-            int goal = 0; // 命中
-            String team = null;
-            for (PlayerScoreStats playerStats : playerScoreStats.queryByTeamStatsId(teamStatsId)) {
-                score += playerStats.getScore();
-                backCourt += playerStats.getBackcourt();
-                frontCourt += playerStats.getFrontcourt();
-                assist += playerStats.getAssist();
-                steal += playerStats.getSteal();
-                block += playerStats.getBlock();
-                Pattern pattern = Pattern.compile("(\\d+)-(\\d+)");
-                Matcher matcher = pattern.matcher(playerStats.getShot());
-                if (matcher.matches()) {
-                    goal += Integer.parseInt(matcher.group(1));
-                    shot += Integer.parseInt(matcher.group(2));
-                }
-                team = playerStats.getTeamid();
+    public HashMap<String, Object> getMap(List<PlayerScoreStats> playerList) {
+        int score = 0; // 得分
+        int court = 0; // 篮板可以由前场后场篮板相加得到
+        int assist = 0;
+        int steal = 0;
+        int block = 0;
+        int frontCourt = 0;
+        int backCourt = 0;
+        int shot = 0; // 出手
+        int goal = 0; // 命中
+        String team = "";
+        HashMap<String, Object> teamStatsMap = new HashMap<>();
+        for (PlayerScoreStats playerStats : playerList) {
+            score += playerStats.getScore();
+            backCourt += playerStats.getBackcourt();
+            frontCourt += playerStats.getFrontcourt();
+            assist += playerStats.getAssist();
+            steal += playerStats.getSteal();
+            block += playerStats.getBlock();
+            Pattern pattern = Pattern.compile("(\\d+)-(\\d+)");
+            Matcher matcher = pattern.matcher(playerStats.getShot());
+            if (matcher.matches()) {
+                goal += Integer.parseInt(matcher.group(1));
+                shot += Integer.parseInt(matcher.group(2));
             }
-            //TODO: 把球队技术统计放到map中保存
+            team = playerStats.getTeamid();
             court = backCourt + frontCourt; // 篮板
             String hitRate = goal + "-" + shot; // 命中率
             teamStatsMap.put("score", score);
@@ -76,38 +70,53 @@ public class PlayStatsTest {
             teamStatsMap.put("backCourt", backCourt);
             teamStatsMap.put("hitRate", hitRate);
             teamStatsMap.put("team", team);
-            // TODO: 把球队的map添加到game的map中
-            if (teamScoreStats.getIshome() == 0) {
-                gameMap.put("away", teamStatsMap);
-            } else {
-                gameMap.put("home", teamStatsMap);
-            }
         }
-        System.out.println(JSON.toJSON(gameMap));
+        return teamStatsMap;
     }
     
-    
     @Test
-    public void getPlayerStats() {
+    public void getTeamStats() {
         int gameId = 156542;
         HashMap<String, Object> gameMap = new HashMap<>();
-        for (TeamScoreStats teamScoreStats : teamScoreStatsService.getTeamStatsByGameId(gameId)) {
-            int teamStatsId = teamScoreStats.getId();
-            ArrayList<PlayerScoreStats> playerStatsList = new ArrayList<>(playerScoreStats.queryByTeamStatsId(teamStatsId));
-            if (teamScoreStats.getIshome() == 0) {
-                gameMap.put("away", playerStatsList);
+        List<PlayerScoreStats> listHome = new ArrayList<>(), listAway = new ArrayList<>();
+        for (PlayerScoreStats stats : playerScoreStats.queryByGameId(gameId)) {
+            if (stats.getTeamstatsid() % 10 == 0) {
+                listAway.add(stats);
             } else {
-                gameMap.put("home", playerStatsList);
+                listHome.add(stats);
             }
         }
+        gameMap.put("home",getMap(listHome));
+        gameMap.put("away",getMap(listAway));
+        System.out.println(JSON.toJSON(gameMap));
+    }
+    
+    
+    @Test
+    public void getPlayerStats() { // 查询异常比赛的球员统计
+        int gameId = 156542;
+        HashMap<String, Object> gameMap = new HashMap<>();
+        // 查询一次数据库
+        ArrayList<PlayerScoreStats> awayList = new ArrayList<>();
+        ArrayList<PlayerScoreStats> homeList = new ArrayList<>();
+        for (PlayerScoreStats playerStats : playerScoreStats.queryByGameId(gameId)) {
+            if (playerStats.getTeamstatsid() % 10 == 0) {
+                awayList.add(playerStats);
+            } else {
+                homeList.add(playerStats);
+            }
+        }
+        gameMap.put("home", homeList);
+        gameMap.put("away", awayList);
         System.out.println(JSON.toJSON(gameMap));
     }
     
     @Test
-    public void getTeamScore() {
+    public void getTeamScore() { // 得到球队的统计 O(1)的复杂度只需要访问一次数据库
         int gameId = 156542;
         HashMap<String, Object> map = new HashMap<>();
-        for (TeamScoreStats teamScore : teamScoreStatsService.getTeamStatsByGameId(gameId)) {
+        for (TeamScoreStats teamScore :
+                teamScoreStatsService.getTeamStatsByGameId(gameId)) {
             if (teamScore.getIshome() == 0) {
                 map.put("away", teamScore);
             } else {

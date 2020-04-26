@@ -91,4 +91,6 @@
         where gameId = #{gameid}
     </delete>
 
+
+
 </mapper>

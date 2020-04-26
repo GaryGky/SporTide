@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.lang.Nullable;
 
 import java.util.List;
+import java.util.Map;
 
 public interface GameDao {
     Game queryById(Integer gameid); // 通过id访问比赛数据
@@ -50,5 +51,7 @@ public interface GameDao {
      * @return 影响行数
      */
     int deleteById(Integer gameid);
+    
+    List<Map<String,Object>> getGameIndex();
     
 }
