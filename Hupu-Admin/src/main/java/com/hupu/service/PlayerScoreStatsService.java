@@ -3,7 +3,10 @@ package com.hupu.service;
 
 import com.hupu.pojo.PlayerScoreStats;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * (PlayerScoreStats)表服务接口
@@ -57,5 +60,10 @@ public interface PlayerScoreStatsService {
     int deleteById(Integer id);
     
     public List<PlayerScoreStats> queryByTeamStatsId(int teamStatsId);
+    
     public List<PlayerScoreStats> queryByGameId(int teamStatsId);
+    
+    public HashMap<String, Object> getTeamStatsByGame(int gameId);
+    
+    public HashMap<String,Object> getPlayerStatsByGame(int gameId);
 }

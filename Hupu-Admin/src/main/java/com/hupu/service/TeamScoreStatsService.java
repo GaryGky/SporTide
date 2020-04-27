@@ -2,6 +2,9 @@ package com.hupu.service;
 
 import com.hupu.pojo.TeamScoreStats;
 
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -58,5 +61,7 @@ public interface TeamScoreStatsService {
     
     List<TeamScoreStats> getTeamStatsByGameId(int gameId);
     
-    List<TeamScoreStats> getGameIndexByDay(String date);
+    ArrayList<Map> getGameIndexByDay(String date) throws ParseException;
+    
+    HashMap<String, Object> getScoreByGame(int gameId);
 }

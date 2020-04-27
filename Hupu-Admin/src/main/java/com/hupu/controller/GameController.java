@@ -38,12 +38,13 @@ public class GameController {
     @RequestMapping("/getGameByLimit") // 一次性获得比赛的全部信息
     public String getGameByLimit(HttpServletRequest request,
                                  String entries) {
+        
         if (request.getAttribute("gameInfo") != null) {
-//            request.getRequestDispatcher("/Home_GameTable.jsp").forward(request, response);
             return "exist";
         }
         int entity = 2000; // 一次性请求全部
         // 由比赛id索引比赛，每个比赛是一个hashmap，由string类型指向不同的信息
+        //TODO: 为该方法配置缓存，否则一次访问就要读2000+次mysql.
         ArrayList<HashMap<String, Object>> gameInfo = new ArrayList<>();
         List<Game> gameList = gameService.queryAllByLimit(0, entity);
         for (Game game : gameList) {
@@ -66,120 +67,24 @@ public class GameController {
         return "Success";
     }
     
-    @RequestMapping("/getScoreByGame")
+    @RequestMapping("/getScoreByGame") // 获得一场比赛的双方得分数据
     public HashMap<String, Object> getScoreByGame(int gameId) {
-        HashMap<String, Object> map = new HashMap<>();
-        for (TeamScoreStats teamScore :
-                teamScoreStats.getTeamStatsByGameId(gameId)) {
-            if (teamScore.getIshome() == 0) {
-                map.put("away", teamScore);
-            } else {
-                map.put("home", teamScore);
-            }
-        }
-        return map;
+        return teamScoreStats.getScoreByGame(gameId);
     }
     
     
-    @RequestMapping("/getPlayerByGame") // 设置一个http请求
+    @RequestMapping("/getPlayerByGame") // 获得一场比赛的球员数据
     public HashMap<String, Object> getPlayerStatsByGame(int gameId) {
-        HashMap<String, Object> gameMap = new HashMap<>();
-        // 查询一次数据库
-        ArrayList<PlayerScoreStats> awayList = new ArrayList<>();
-        ArrayList<PlayerScoreStats> homeList = new ArrayList<>();
-        for (PlayerScoreStats playerStats : playerScoreStatsService.queryByGameId(gameId)) {
-            if (playerStats.getTeamstatsid() % 10 == 0) {
-                awayList.add(playerStats);
-            } else {
-                homeList.add(playerStats);
-            }
-        }
-        gameMap.put("home", homeList);
-        gameMap.put("away", awayList);
-        return gameMap;
+        return playerScoreStatsService.getPlayerStatsByGame(gameId);
     }
     
-    public HashMap<String, Object> getMap(List<PlayerScoreStats> playerList) {
-        int score = 0; // 得分
-        int court = 0; // 篮板可以由前场后场篮板相加得到
-        int assist = 0;
-        int steal = 0;
-        int block = 0;
-        int frontCourt = 0;
-        int backCourt = 0;
-        int shot = 0; // 出手
-        int goal = 0; // 命中
-        String team = "";
-        HashMap<String, Object> teamStatsMap = new HashMap<>();
-        for (PlayerScoreStats playerStats : playerList) {
-            score += playerStats.getScore();
-            backCourt += playerStats.getBackcourt();
-            frontCourt += playerStats.getFrontcourt();
-            assist += playerStats.getAssist();
-            steal += playerStats.getSteal();
-            block += playerStats.getBlock();
-            Pattern pattern = Pattern.compile("(\\d+)-(\\d+)");
-            Matcher matcher = pattern.matcher(playerStats.getShot());
-            if (matcher.matches()) {
-                goal += Integer.parseInt(matcher.group(1));
-                shot += Integer.parseInt(matcher.group(2));
-            }
-            team = playerStats.getTeamid();
-            court = backCourt + frontCourt; // 篮板
-            String hitRate = goal + "-" + shot; // 命中率
-            teamStatsMap.put("score", score);
-            teamStatsMap.put("court", court);
-            teamStatsMap.put("assist", assist);
-            teamStatsMap.put("steal", steal);
-            teamStatsMap.put("block", block);
-            teamStatsMap.put("frontCourt", frontCourt);
-            teamStatsMap.put("backCourt", backCourt);
-            teamStatsMap.put("hitRate", hitRate);
-            teamStatsMap.put("team", team);
-        }
-        return teamStatsMap;
+    @RequestMapping("/getTeamScoreByGame") // 获得一场比赛的球队统计数据
+    public HashMap<String, Object> getTeamStatsByGame(int gameId) {
+        return playerScoreStatsService.getTeamStatsByGame(gameId);
     }
     
-    @RequestMapping("/getTeamScoreByGame")
-    public HashMap<String, Object> getTeamScoreByGame(int gameId) {
-        System.out.println("TeamStats gameId ===> " + gameId);
-        HashMap<String, Object> gameMap = new HashMap<>();
-        List<PlayerScoreStats> listHome = new ArrayList<>();
-        List<PlayerScoreStats> listAway = new ArrayList<>();
-        for (PlayerScoreStats stats : playerScoreStatsService.queryByGameId(gameId)) {
-            if (stats.getTeamstatsid() % 10 == 0) {
-                listAway.add(stats);
-            } else {
-                listHome.add(stats);
-            }
-        }
-        
-        gameMap.put("home", getMap(listHome));
-        gameMap.put("away", getMap(listAway));
-        
-        System.out.println(listHome);
-        System.out.println(listAway);
-        System.out.println(gameMap);
-        
-        return gameMap;
-    }
-    
-    @RequestMapping("/getGameIndex")
+    @RequestMapping("/getGameIndex") // 通过日期获得一天某场比赛
     public ArrayList<Map> getGameByDay(String date) throws ParseException {
-        SimpleDateFormat myFmt = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
-        SimpleDateFormat format = new SimpleDateFormat("%yyyy%MM%dd%");
-        Set<Integer> gameSet = new HashSet<>();
-        List<TeamScoreStats> gameIndexByDay = teamScoreStats.getGameIndexByDay(format.format(myFmt.parse(date)));
-        ArrayList<Map> maps = new ArrayList<>();
-        for (int i = 0; i < gameIndexByDay.size(); i++) {
-            HashMap<String, Object> gameMap = new HashMap<>();
-            gameMap.put("awayTeam", gameIndexByDay.get(i).getTeamid());
-            gameMap.put("awayScore", gameIndexByDay.get(i).getScore());
-            gameMap.put("homeTeam", gameIndexByDay.get(i + 1).getTeamid());
-            gameMap.put("homeScore", gameIndexByDay.get(i + 1).getScore());
-            i++;
-            maps.add(gameMap);
-        }
-        return maps;
+        return teamScoreStats.getGameIndexByDay(date);
     }
 }

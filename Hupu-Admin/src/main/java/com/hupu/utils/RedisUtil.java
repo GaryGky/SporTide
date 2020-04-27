@@ -1,10 +1,7 @@
 package com.hupu.utils;
 
-import org.apache.ibatis.cache.Cache;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -15,11 +12,10 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.logging.Logger;
 
 // 在我们真实的分发中，或者你们在公司，一般都可以看到一个公司自己封装RedisUtil
 @Component
-public final class RedisUtil implements Cache {
+public final class RedisUtil {
     
     // 日志跟踪对象
 //    private static final Logger logger =
@@ -31,6 +27,12 @@ public final class RedisUtil implements Cache {
     @Autowired
     @Qualifier("redisTemplate")
     private RedisTemplate<String, Object> redisTemplate;
+    
+    private String name;
+    
+    public void setName(String name) {
+        this.name = name;
+    }
     
     private RedisUtil() {
     }
@@ -599,38 +601,5 @@ public final class RedisUtil implements Cache {
             return 0;
         }
         
-    }
-    
-    @Override
-    public String getId() {
-        return null;
-    }
-    
-    @Override
-    public void putObject(Object key, Object value) {
-    
-    }
-    
-    @Override
-    public Object getObject(Object key) {
-        return null;
-    }
-    
-    @Override
-    public Object removeObject(Object key) {
-        return null;
-    }
-    
-    @Override
-    public void clear() {
-        RedisConnection redisConnection =
-                redisTemplate.getConnectionFactory().getConnection();
-        redisConnection.flushAll();
-        redisConnection.flushDb();
-    }
-    
-    @Override
-    public int getSize() {
-        return 0;
     }
 }
