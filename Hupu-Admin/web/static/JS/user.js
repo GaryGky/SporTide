@@ -6,25 +6,29 @@ function getCurAdmin() {
 //添加Admin的信息
 function addAdmin() {
     console.log("进入添加函数");
-    $.post({
-        url: "/user/addAdmin",
-        data: {
-            "name": $("#admin_name").val(),
-            "pwd1": $("#admin_pwd1").val(),
-            "pwd2": $("#admin_pwd2").val()
-        },
-        success: function (msg) {
-            console.log(msg);
-            if (msg === 1) {
-                // 注册成功
-                console.log("注册成功");
-                window.location.href = "/index.jsp";
-            } else {
-                // 注册失败
-                alert("两次输入的密码不一致");
+    var pwd1 = $("#admin_pwd1").val();
+    var pwd2 = $("#admin_pwd2").val();
+    if(pwd1 !== pwd2){
+        alert("两次输入的密码不一致");
+    }else {
+        $.post({
+            url: "/Hupu-Admin/user/addAdmin",
+            data: {
+                "name": $("#admin_name").val(),
+                "pwd1": pwd1,
+                "pwd2": pwd2
+            },
+            success: function (msg) {
+                console.log(msg);
+                if (msg === 1) {
+                    // 注册成功
+                    console.log("注册成功");
+                    window.location.href = "/index.jsp";
+                }
             }
-        }
-    });
+        });
+    }
+
 }
 
 //获取user信息
@@ -32,11 +36,12 @@ function getMyUser() {
     console.log("调用getUser");
     // var entry = $("select[name='datatable_length']").val();
     $.get({
-        url: "/user/getLimitUser",
+        url: "/Hupu-Admin/user/getLimitUser",
         data: {
         },
         success: function (data) {
             console.log(data);
+            window.location.reload();
         }
     })
 }
@@ -44,7 +49,7 @@ function getMyUser() {
 //删除user
 function delUser(id) {
     $.post({
-        url: "/user/delUser",
+        url: "/Hupu-Admin/user/delUser",
         data: {"id": id},
         success: function (data) {
             console.log(data);

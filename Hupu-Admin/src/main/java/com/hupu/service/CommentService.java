@@ -2,6 +2,7 @@ package com.hupu.service;
 
 import com.hupu.pojo.Comment;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface CommentService {
@@ -22,4 +23,6 @@ public interface CommentService {
     public List<Comment> queryAllCom();
     
     public List<Comment> queryCommentByLimit(int offset,int limit);
+    
+    public List<HashMap<String,Object>> getComList(int entity);
 }

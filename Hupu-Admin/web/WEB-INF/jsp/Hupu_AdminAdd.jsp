@@ -49,8 +49,11 @@
         table {
             table-layout: fixed;
         }
+
         td {
-            white-space:nowrap;overflow:hidden;text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     </style>
 </head>
@@ -93,8 +96,9 @@
                         <h3>General</h3>
                         <ul class="nav side-menu">
                             <!-- yx add -->
-                            <li><a href="/jump/toHome"><i
-                                    class="fa fa-home"></i> 首页</a>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/jump/toHome"><i
+                                        class="fa fa-home"></i> 首页</a>
                             </li>
                             <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                                 <span class="fa fa-chevron-down"></span></a>
@@ -163,7 +167,8 @@
                                     <span>Settings</span>
                                 </a>
                                 <a class="dropdown-item" href="javascript:;">Help</a>
-                                <a class="dropdown-item" href="${pageContext.request.contextPath}/index.jsp"><i
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.contextPath}/index.jsp"><i
                                         class="fa fa-sign-out pull-right"></i>
                                     Log Out</a>
                             </div>
@@ -283,48 +288,49 @@
             <!-- /footer content -->
         </div>
     </div>
+</div>
 
-    <!-- jQuery -->
-    <script src="${pageContext.request.contextPath}/static/vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FastClick -->
-    <script src="${pageContext.request.contextPath}/static/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="${pageContext.request.contextPath}/static/vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <script src="${pageContext.request.contextPath}/static/vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="${pageContext.request.contextPath}/static/vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="${pageContext.request.contextPath}/static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="${pageContext.request.contextPath}/static/vendors/iCheck/icheck.min.js"></script>
-    <!-- Skycons -->
-    <script src="${pageContext.request.contextPath}/static/vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
-    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.js"></script>
-    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.time.js"></script>
-    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="${pageContext.request.contextPath}/static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="${pageContext.request.contextPath}/static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="${pageContext.request.contextPath}/static/vendors/flot.curvedlines/curvedLines.js"></script>
-    <!-- DateJS -->
-    <script src="${pageContext.request.contextPath}/static/vendors/DateJS/build/date.js"></script>
-    <!-- JQVMap -->
-    <script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="${pageContext.request.contextPath}/static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="${pageContext.request.contextPath}/static/vendors/moment/min/moment.min.js"></script>
-    <script src="${pageContext.request.contextPath}/static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- jQuery -->
+<script src="${pageContext.request.contextPath}/static/vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FastClick -->
+<script src="${pageContext.request.contextPath}/static/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="${pageContext.request.contextPath}/static/vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="${pageContext.request.contextPath}/static/vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- gauge.js -->
+<script src="${pageContext.request.contextPath}/static/vendors/gauge.js/dist/gauge.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="${pageContext.request.contextPath}/static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- iCheck -->
+<script src="${pageContext.request.contextPath}/static/vendors/iCheck/icheck.min.js"></script>
+<!-- Skycons -->
+<script src="${pageContext.request.contextPath}/static/vendors/skycons/skycons.js"></script>
+<!-- Flot -->
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.pie.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.time.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.stack.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="${pageContext.request.contextPath}/static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/flot.curvedlines/curvedLines.js"></script>
+<!-- DateJS -->
+<script src="${pageContext.request.contextPath}/static/vendors/DateJS/build/date.js"></script>
+<!-- JQVMap -->
+<script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="${pageContext.request.contextPath}/static/vendors/moment/min/moment.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-    <!-- Custom Theme Scripts -->
-    <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 
-    <script src="${pageContext.request.contextPath}/static/JS/user.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/user.js"></script>
 </body>
 </html>

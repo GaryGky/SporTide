@@ -25,9 +25,9 @@ public class AdminTest {
         AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(
                 "adminServiceImpl");
         System.out.println("====== Test Add Admin ====== ");
-        adminService.createAdmin("admin1", "admin1");
-        adminService.createAdmin("admin2", "admin2");
-        adminService.createAdmin("admin3", "admin3");
+        adminService.createAdmin("root", "root");
+//        adminService.createAdmin("admin2", "admin2");
+//        adminService.createAdmin("admin3", "admin3");
     }
     
     @Test

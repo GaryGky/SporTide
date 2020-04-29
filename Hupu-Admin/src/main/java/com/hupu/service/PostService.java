@@ -2,6 +2,8 @@ package com.hupu.service;
 
 import com.hupu.pojo.Post;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public interface PostService {
@@ -33,4 +35,6 @@ public interface PostService {
     public List<Post> queryPostByLimit(int offset, int limit);
     
     public Post queryPostById(int id);
+    
+    public ArrayList<HashMap<String,Object>> getPostList(int entities);
 }

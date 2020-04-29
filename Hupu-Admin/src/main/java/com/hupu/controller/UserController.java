@@ -27,46 +27,30 @@ public class UserController {
     private UserServiceImpl userService;
     
     @RequestMapping("/getLimitUser")
-    public String getLimitUser(HttpServletRequest request,
-                               HttpServletResponse response) {
+    public String getLimitUser(HttpServletRequest request) {
         System.out.println("获取用户");
-        if (request.getSession().getAttribute("userMap") != null) {
-            return "Exist";
-        }
-        int entries = 100;
-        ArrayList<User> users = new ArrayList<>();
-        users.addAll(userService.queryAllByLimit(0,entries));
+        ArrayList<User> users = new ArrayList<>(userService.queryAllByLimit(0
+                , 100));
         request.getSession().setAttribute("userMap", users);
         return "Success";
     }
     
     
     @RequestMapping("/addAdmin")
-    public int addAdmin(String name, String pwd1, String pwd2) {
-        System.out.println("name  ===>" + name);
-        System.out.println("pwd1  ===>" + pwd1);
-        System.out.println("pwd2  ===>" + pwd2);
-        if (!pwd1.equals(pwd2)) {
-            return 0;
-        } else {
-            adminService.createAdmin(name, pwd1);
-            return 1;
-        }
+    public int addAdmin(String name, String pwd1) {
+        return adminService.createAdmin(name, pwd1);
     }
     
     @RequestMapping("/delUser") // 删除用户
-    public HashMap<String, Object> delUser(int id) {
+    public String delUser(int id, HttpServletRequest request) {
         String delMsg = "";
         System.out.println("进入删除用户: id ===> " + id);
         int res = userService.deleteById(id);
-        if (res == 1) { // 返回一表示成功删除了用户
-            delMsg = "success";
-        } else {
-            delMsg = "fail";
-        }
-        HashMap<String, Object> map = new HashMap<>(); // ajax请求通过map返回结果
-        map.put("delMsg", delMsg);
-        map.put("UserList", userService.queryAllByLimit(0, 10));
-        return map;
+        // 返回一表示成功删除了用户
+        delMsg = res == 1 ? "success" : "fail";
+        ArrayList<User> users = new ArrayList<>(userService.queryAllByLimit(0
+                , 100));
+        request.getSession().setAttribute("userMap", users); // 重新设置model
+        return delMsg;
     }
 }

@@ -2,7 +2,7 @@
 function login() {
     console.log("into login");
     $.post({
-        url: "/login/adminLogin", //登录验证url
+        url: "/Hupu-Admin/login/adminLogin", //登录验证url
         data: {
             "name": $("#username").val(),
             "password": $("#userpassword").val()
@@ -10,7 +10,7 @@ function login() {
         success: function (flag, status,xhr) {
             if (flag === 1) {
                 alert("登录成功");
-                window.location.href = "/jump/toHome"; // 跳到首页
+                window.location.href = "/Hupu-Admin/jump/toHome"; // 跳到首页
             } else if(flag === 0){
                 alert("请输入正确的用户名和密码");
             }else if(flag === -1){

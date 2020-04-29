@@ -1,12 +1,13 @@
 function getLimitPost() {
     var entry = $("select[name='datatable_length']").val();
     $.get({
-        url: "/post/getLimitPost",
+        url: "/Hupu-Admin/post/getLimitPost",
         data: {
             "entries": entry
         },
         success: function (data) {
             console.log(data);
+            window.location.reload();
         }
     });
 }
@@ -15,7 +16,7 @@ function getLimitPost() {
 function delPost(id) {
 
     $.post({
-        url: "/post/delPost",
+        url: "/Hupu-Admin/post/delPost",
         data: {"id": id},
         success: function (map) {
             console.log(map);
@@ -27,24 +28,13 @@ function delPost(id) {
 function getLimitCom() {
     var entry = $("select[name='datatable_length']").val();
     $.get({
-        url: "/post/getLimitCom",
+        url: "/Hupu-Admin/post/getLimitCom",
         data: {
             "entries": entry
         },
         success: function (data) {
             console.log(data);
-            // var inject = "";
-            // for (var i = 0; i < data.length; i++) {
-            //     inject += ("<tr>" +
-            //         "<td>" + data[i].id + "</td>" +
-            //         "<td>" + data[i].post_label + "</td>" +
-            //         "<td>" + data[i].from_user_name + " </td>" +
-            //         "<td>" + data[i].info + " </td>" +
-            //         "<td>" + data[i].time + " </td>" +
-            //         "<td> <button onclick=\"delComment(" + data[i].id + ")\">删除 </td>"
-            //         + "</tr>");
-            // }
-            // $("#com-info-table").append(inject);
+            window.location.reload();
         }
     });
 
@@ -54,7 +44,7 @@ function getLimitCom() {
 //删除评论
 function delComment(id) {
     $.post({
-        url: "/post/delComment",
+        url: "/Hupu-Admin/post/delComment",
         data: {"id": id},
         success: function (map) {
             console.log(map);
