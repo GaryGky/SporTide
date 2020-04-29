@@ -122,7 +122,7 @@ public class PlayerScoreStatsServiceImpl implements PlayerScoreStatsService {
     // 获得一场比赛的球队统计数据
     @Override
     public HashMap<String, Object> getTeamStatsByGame(int gameId) {
-        String key = gameId + "teamStats";
+        String key = gameId + "teamScoreStats";
         if (redisUtil.get(key) != null) {
             return (HashMap<String, Object>) redisUtil.get(key);
         }

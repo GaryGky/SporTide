@@ -83,7 +83,7 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
     // TODO:添加缓存
     @Override
     public ArrayList<Map> getGameIndexByDay(String date) throws ParseException {
-        SimpleDateFormat myFmt = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+        SimpleDateFormat myFmt = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat format = new SimpleDateFormat("%yyyy%MM%dd%");
         String queryDay = format.format(myFmt.parse(date));
         List<TeamScoreStats> gameIndexByDay = null;

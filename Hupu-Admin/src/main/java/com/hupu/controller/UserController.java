@@ -42,15 +42,15 @@ public class UserController {
     
     
     @RequestMapping("/addAdmin")
-    public String addAdmin(String name, String pwd1, String pwd2) {
+    public int addAdmin(String name, String pwd1, String pwd2) {
         System.out.println("name  ===>" + name);
         System.out.println("pwd1  ===>" + pwd1);
         System.out.println("pwd2  ===>" + pwd2);
         if (!pwd1.equals(pwd2)) {
-            return "pwd-unmatched";
+            return 0;
         } else {
             adminService.createAdmin(name, pwd1);
-            return "admin-add";
+            return 1;
         }
     }
     

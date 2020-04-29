@@ -69,12 +69,12 @@ public class AdminTest {
         AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(
                 "adminServiceImpl");
         System.out.println("====== Test Delete Admin ====== ");
-        System.out.println(adminService.deleteAdminById(1));
-        System.out.println(adminService.deleteAdminById(2));
-        System.out.println(adminService.deleteAdminById(3));
-        System.out.println(adminService.deleteAdminById(4));
-        System.out.println(adminService.deleteAdminById(5));
-        System.out.println(adminService.deleteAdminById(6));
+        System.out.println(adminService.deleteAdminById(8));
+        System.out.println(adminService.deleteAdminById(16));
+        System.out.println(adminService.deleteAdminById(15));
+        System.out.println(adminService.deleteAdminById(14));
+        System.out.println(adminService.deleteAdminById(13));
+        System.out.println(adminService.deleteAdminById(7));
     }
     
     @Test
@@ -84,6 +84,6 @@ public class AdminTest {
         AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(
                 "adminServiceImpl");
         System.out.println("====== Test Delete Admin ====== ");
-        System.out.println(adminService.queryPwdByName("root"));
+        System.out.println(adminService.queryPwdByName("admin1"));
     }
 }

@@ -15,7 +15,7 @@ function addAdmin() {
         },
         success: function (msg) {
             console.log(msg);
-            if (msg === "admin-add") {
+            if (msg === 1) {
                 // 注册成功
                 console.log("注册成功");
                 window.location.href = "/index.jsp";

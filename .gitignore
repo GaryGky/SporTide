@@ -1,5 +1,6 @@
 /out
 /Hupu-Admin/target
+/Hupu-Admin/log
 /.idea/
 /images
 /Hupu-Admin/web/static/build
