@@ -46,11 +46,16 @@ public class UserController {
         String delMsg = "";
         System.out.println("进入删除用户: id ===> " + id);
         int res = userService.deleteById(id);
-        // 返回一表示成功删除了用户
-        delMsg = res == 1 ? "success" : "fail";
+        delMsg = res == 1 ? "success" : "fail";// 返回一表示成功删除了用户
         ArrayList<User> users = new ArrayList<>(userService.queryAllByLimit(0
                 , 100));
         request.getSession().setAttribute("userMap", users); // 重新设置model
         return delMsg;
+    }
+    
+    @RequestMapping("updateUser")
+    public int updateUser(User user){
+        // TODO: 更新用户信息
+        return 0;
     }
 }

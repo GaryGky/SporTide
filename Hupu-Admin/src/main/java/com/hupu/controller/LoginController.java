@@ -1,5 +1,6 @@
 package com.hupu.controller;
 
+import com.hupu.pojo.User;
 import com.hupu.service.Impl.AdminServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -58,5 +59,11 @@ public class LoginController {
     public String logOut(HttpSession session) {
         session.removeAttribute("admin");
         return "logOut";
+    }
+    
+    @RequestMapping("/register")
+    public int register(User user){
+        //TODO:用户注册时创建一个对象
+        return 0;
     }
 }

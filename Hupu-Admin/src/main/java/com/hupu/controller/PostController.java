@@ -1,5 +1,6 @@
 package com.hupu.controller;
 
+import com.hupu.pojo.Post;
 import com.hupu.service.Impl.CommentServiceImpl;
 import com.hupu.service.Impl.PostServiceImpl;
 import com.hupu.service.Impl.UserServiceImpl;
@@ -31,9 +32,6 @@ public class PostController {
     @RequestMapping("/getLimitPost")
     public String getLimitPost(HttpServletRequest request) {
         System.out.println("获取帖子");
-        if (request.getSession().getAttribute("postMap") != null) {
-            return "Exist";
-        }
         request.getSession().setAttribute("postMap",
                 postService.getPostList(100));
         return "Success";
@@ -54,9 +52,6 @@ public class PostController {
     public String getLimitComment(HttpServletRequest request,
                                   HttpServletResponse response) throws ServletException, IOException {
         System.out.println("产生评论");
-        if (request.getSession().getAttribute("comMap") != null) {
-            return "Exist";
-        }
         request.getSession().setAttribute("comMap",
                 commentService.getComList(100));
         return "Success";
@@ -70,5 +65,17 @@ public class PostController {
         resMsg = delRes > 0 ? "del-success" : "del-fail";
         request.setAttribute("comMap", commentService.getComList(100));
         return resMsg;
+    }
+    
+    @RequestMapping("/createPost")
+    public int createPost(Post post){
+        //TODO:创建一个新帖
+        return 0;
+    }
+    
+    @RequestMapping("/delPost")
+    public int delPost(Post post){
+        // TODO: delete a post from database
+        return 0;
     }
 }

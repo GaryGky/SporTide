@@ -7,7 +7,7 @@ function getLimitPost() {
         },
         success: function (data) {
             console.log(data);
-            window.location.reload();
+            // window.location.reload();
         }
     });
 }
@@ -20,7 +20,7 @@ function delPost(id) {
         data: {"id": id},
         success: function (map) {
             console.log(map);
-            window.location.reload();
+           //  window.location.reload();
         }
     });
 }
@@ -34,7 +34,7 @@ function getLimitCom() {
         },
         success: function (data) {
             console.log(data);
-            window.location.reload();
+            // window.location.reload();
         }
     });
 
@@ -48,7 +48,7 @@ function delComment(id) {
         data: {"id": id},
         success: function (map) {
             console.log(map);
-            window.location.reload();
+            // window.location.reload();
         }
     })
 }
