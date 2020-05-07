@@ -26,6 +26,10 @@ public class PostServiceImpl implements PostService {
         return postMapper.createPost(id, type, info, createTime, user_id);
     }
     
+    public int createPost(Post post) {
+        return postMapper.createNewPost(post);
+    }
+    
     public int updateAddCol(int id) {
         return postMapper.updateAddCol(id);
     }

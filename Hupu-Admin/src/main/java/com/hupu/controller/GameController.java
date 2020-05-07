@@ -1,12 +1,10 @@
 package com.hupu.controller;
 
 import com.hupu.pojo.Game;
-import com.hupu.pojo.PlayerScoreStats;
 import com.hupu.pojo.TeamScoreStats;
 import com.hupu.service.Impl.GameServiceImpl;
 import com.hupu.service.Impl.PlayerScoreStatsServiceImpl;
 import com.hupu.service.Impl.TeamScoreStatsServiceImpl;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/game")
@@ -44,7 +42,6 @@ public class GameController {
         }
         int entity = 2000; // 一次性请求全部
         // 由比赛id索引比赛，每个比赛是一个hashmap，由string类型指向不同的信息
-        //TODO: 为该方法配置缓存，否则一次访问就要读2000+次mysql.
         ArrayList<HashMap<String, Object>> gameInfo = new ArrayList<>();
         List<Game> gameList = gameService.queryAllByLimit(0, entity);
         for (Game game : gameList) {

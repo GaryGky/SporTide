@@ -46,18 +46,25 @@ public class TeamController {
     public String updateTeamInfo(String teamId, String field, String new_value){
         //根据字段进行修改
         Team team = teamService.queryById(teamId);
-        if (field.equals("id")){
-            team.setTeamid(new_value);
-        }else if (field.equals("name")){
-            team.setTeamname(new_value);
-        }else if (field.equals("buildtime")){
-            team.setBuildtime(new_value);
-        }else if (field.equals("area")){
-            team.setArea(new_value);
-        }else if (field.equals("homecourt")){
-            team.setHomecourt(new_value);
-        }else if (field.equals("chiefcoach")){
-            team.setChiefcoach(new_value);
+        switch (field) {
+            case "id":
+                team.setTeamid(new_value);
+                break;
+            case "name":
+                team.setTeamname(new_value);
+                break;
+            case "buildtime":
+                team.setBuildtime(new_value);
+                break;
+            case "area":
+                team.setArea(new_value);
+                break;
+            case "homecourt":
+                team.setHomecourt(new_value);
+                break;
+            case "chiefcoach":
+                team.setChiefcoach(new_value);
+                break;
         }
         teamService.update(team);
         return "Success";

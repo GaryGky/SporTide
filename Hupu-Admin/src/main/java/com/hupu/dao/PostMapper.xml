@@ -9,6 +9,13 @@
         values (#{id}, #{type}, #{info}, #{time}, #{user_id});
     </insert>
 
+    <!--新增所有列-->
+    <insert id="createNewPost" keyProperty="gameid" useGeneratedKeys="true">
+        insert into nba.post (post_id, post_type, post_info, post_time, user_id)
+        values (#{post_id}, #{post_type}, #{post_info}, #{post_time},
+                #{user_id})
+    </insert>
+
     <update id="updateAddCol">
         update post
         set post_collectnum = post_collectnum + 1

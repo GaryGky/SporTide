@@ -22,21 +22,21 @@ public class PostTest {
     
     @Test
     public void TestCreate() {
-        System.out.println(postService.createPost(1, "type1", "info1", "time1", 1));
-        System.out.println(postService.createPost(2, "type2", "info2", "time2", 2));
-        System.out.println(postService.createPost(3, "type3", "info3", "time3", 3));
-        System.out.println(postService.createPost(4, "type3", "info3", "time3", 3));
-        System.out.println(postService.createPost(5, "type3", "info3", "time3", 3));
-        System.out.println(postService.createPost(6, "type3", "info3", "time3", 3));
-        System.out.println(postService.createPost(7, "type3", "info3", "time3", 3));
-        System.out.println(postService.createPost(8, "type3", "info3", "time3", 3));
-        System.out.println(postService.createPost(9, "type3", "info3", "time3", 3));
-        System.out.println(postService.createPost(10, "type3", "info3",
-                "time3", 3));
-        System.out.println(postService.createPost(11, "type3", "info3",
-                "time3", 3));
-        System.out.println(postService.createPost(12, "type3", "info3",
-                "time3", 3));
+        for (int i = 0; i < 10; i++) {
+            System.out.println(postService.createPost(i, "type" + i, "info" + i,
+                    "time" + i, i));
+            System.out.println(postService.createPost(new Post(i+10, "type" + i
+                    , "info" + i,
+                    "time" + i, i, 0, 0, 0)));
+        }
+        
+    }
+    
+    @Test
+    public void testDel() {
+        for (int i = 0; i < 20; i++) {
+            System.out.println(postService.deletePostById(i));
+        }
     }
     
     @Test
@@ -63,23 +63,6 @@ public class PostTest {
         System.out.println(postService.updateSubCol(3));
         System.out.println(postService.updateSubCom(2));
         System.out.println(postService.updateSubTran(1));
-    }
-    
-    @Test
-    public void testDel() {
-        System.out.println("====Test Delete======");
-        System.out.println(postService.deletePostById(1));
-        System.out.println(postService.deletePostById(2));
-        System.out.println(postService.deletePostById(3));
-        System.out.println(postService.deletePostById(4));
-        System.out.println(postService.deletePostById(5));
-        System.out.println(postService.deletePostById(6));
-        System.out.println(postService.deletePostById(7));
-        System.out.println(postService.deletePostById(8));
-        System.out.println(postService.deletePostById(9));
-        System.out.println(postService.deletePostById(10));
-        System.out.println(postService.deletePostById(11));
-        System.out.println(postService.deletePostById(12));
     }
     
     @Test

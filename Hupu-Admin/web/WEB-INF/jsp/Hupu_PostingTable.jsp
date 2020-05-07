@@ -116,7 +116,7 @@
                                                         <td>${posts.post_transpondNum}</td>
                                                         <td>
                                                             <button
-                                                                    onclick="delPost(${posts.id})"
+                                                                    onclick="delPost(${posts.post_id})"
                                                                     class="btn btn-primary"
                                                                     style="display: block;width: 60px;height: 30px;background: #0b2e13">
                                                                 删除

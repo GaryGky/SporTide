@@ -14,6 +14,8 @@ public interface PostMapper {
             @Param("time") String createTime,
             @Param("user_id") int user_id);
     
+    public int createNewPost(Post post);
+    
     // 更新帖子信息
     public int updateAddCol(@Param("id") int id); // 增加帖子的收藏量
     

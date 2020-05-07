@@ -9,7 +9,7 @@ import java.util.List;
 public interface PostService {
     public int createPost(
             int id, String type, String info, String createTime, int user_id);
-    
+    public int createPost(Post post);
     // 更新帖子信息
     public int updateAddCol(int id); // 增加帖子的收藏量
     

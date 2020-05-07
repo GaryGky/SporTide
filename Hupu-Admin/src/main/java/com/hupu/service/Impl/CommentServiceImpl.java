@@ -33,6 +33,11 @@ public class CommentServiceImpl implements CommentService {
         return commentMapper.createCom(id, info, status, time, post_id, from_uid, to_uid);
     }
     
+    @Override
+    public int createCom(Comment comment) {
+        return commentMapper.createNewCom(comment);
+    }
+    
     public int deleteComById(int id) {
         return commentMapper.deleteComById(id);
     }

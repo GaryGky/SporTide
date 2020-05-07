@@ -42,6 +42,7 @@ public class UserServiceImpl implements UserService {
     
     @Override
     public int insert(User user) {
+        //TODO: 用户名不能重复
         return userDao.insert(user);
     }
     

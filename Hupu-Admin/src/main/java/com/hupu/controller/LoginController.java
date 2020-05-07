@@ -2,6 +2,7 @@ package com.hupu.controller;
 
 import com.hupu.pojo.User;
 import com.hupu.service.Impl.AdminServiceImpl;
+import com.hupu.service.Impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,22 +17,9 @@ public class LoginController {
     @Qualifier("adminServiceImpl")
     private AdminServiceImpl adminService;
     
-    private int pageNum = 1;
-    
-    @RequestMapping("/addPageNum")
-    public void addPageNum() {
-        pageNum++;
-        System.out.println("pageNum===>" + pageNum);
-    }
-    
-    @RequestMapping("/subPageNum")
-    public void subPageNum() {
-        pageNum--;
-        if (pageNum <= 0) {
-            pageNum = 1;
-        }
-        System.out.println("=pageNum===>" + pageNum);
-    }
+    @Autowired
+    @Qualifier("userService")
+    private UserServiceImpl userService;
     
     @RequestMapping("/adminLogin")
     public int varifyLogIn(String name, String password,
@@ -62,8 +50,7 @@ public class LoginController {
     }
     
     @RequestMapping("/register")
-    public int register(User user){
-        //TODO:用户注册时创建一个对象
-        return 0;
+    public int register(User user){ // 创建一个用户
+        return userService.insert(user);
     }
 }

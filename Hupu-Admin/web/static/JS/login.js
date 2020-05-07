@@ -42,7 +42,7 @@ function register() {
 //登出 登出的话需要传送什么参数, user_id?
 function logout() {
     $.post({
-        url: "/login/logout",
+        url: "/Hupu-Admin/login/logout",
         data: {},
         success: function (response) {
             console.log('response');

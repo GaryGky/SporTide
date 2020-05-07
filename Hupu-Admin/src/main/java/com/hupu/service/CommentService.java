@@ -10,6 +10,8 @@ public interface CommentService {
                          String time, int post_id,
                          int from_uid, int to_uid); // 创建一条评论
     
+    public int createCom(Comment comment);
+    
     public int deleteComById(int id); // 删除一条评论
     
     public Comment queryComById(int id); // 通过id查找评论

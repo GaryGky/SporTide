@@ -18,9 +18,12 @@ function delPost(id) {
     $.post({
         url: "/Hupu-Admin/post/delPost",
         data: {"id": id},
-        success: function (map) {
-            console.log(map);
-           //  window.location.reload();
+        success: function (msg) {
+            console.log(msg);
+            if(msg === "del-success"){
+                alert("删除成功");
+                window.location.reload();
+            }
         }
     });
 }
@@ -28,7 +31,7 @@ function delPost(id) {
 function getLimitCom() {
     var entry = $("select[name='datatable_length']").val();
     $.get({
-        url: "/Hupu-Admin/post/getLimitCom",
+        url: "/Hupu-Admin/comment/getLimitCom",
         data: {
             "entries": entry
         },
@@ -44,11 +47,14 @@ function getLimitCom() {
 //删除评论
 function delComment(id) {
     $.post({
-        url: "/Hupu-Admin/post/delComment",
+        url: "/Hupu-Admin/comment/delComment",
         data: {"id": id},
-        success: function (map) {
-            console.log(map);
-            // window.location.reload();
+        success: function (msg) {
+            console.log(msg);
+            if(msg === "del-success"){
+                alert("删除成功");
+                window.location.reload();
+            }
         }
     })
 }

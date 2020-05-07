@@ -22,13 +22,13 @@ function tdclick(){
         console.log('point2')
         var myEvent = event || window.event;
         var kcode = myEvent.keyCode;
-        if(kcode == 13){
+        if(kcode === 13){
             var inputnode = $(this);
             var inputext = inputnode.val();
             var tdNode = inputnode.parent();
             tdNode.html(inputext);
             tdNode.click(tdclick);
-            if(inputext != text){                    //只有当内容不一样时才进行保存
+            if(inputext !== text){                    //只有当内容不一样时才进行保存
                 //后台交互的地方
                 console.log('sampleId:',sampleId)
                 sampleNameUpdate(sampleId, inputext, 'sampleAlterAction.action');

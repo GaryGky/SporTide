@@ -1,10 +1,13 @@
 package com.hupu.service;
 
+import com.hupu.pojo.Comment;
 import com.hupu.service.Impl.CommentServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.stream.IntStream;
 
 public class ComTest {
     private CommentServiceImpl commentService;
@@ -18,19 +21,11 @@ public class ComTest {
     @Test
     public void testCreate() {
         System.out.println("=== Create ====");
-        System.out.println(commentService.createCom(1, "info2", "status", "time1", 1, 3, 1));
-        System.out.println(commentService.createCom(2, "info3", "status", "time1", 1, 1, 2));
-        System.out.println(commentService.createCom(3, "info1", "status", "time1", 2, 2, 3));
-        System.out.println(commentService.createCom(4, "info1", "status", "time1", 2, 2, 3));
-        System.out.println(commentService.createCom(5, "info1", "status", "time1", 2, 2, 3));
-        System.out.println(commentService.createCom(6, "info1", "status", "time1", 2, 2, 3));
-        System.out.println(commentService.createCom(7, "info1", "status", "time1", 2, 2, 3));
-        System.out.println(commentService.createCom(8, "info1", "status", "time1", 2, 2, 3));
-        System.out.println(commentService.createCom(9, "info1", "status", "time1", 2, 2, 3));
-        System.out.println(commentService.createCom(10, "info1", "status", "time1", 2, 2, 3));
-        System.out.println(commentService.createCom(11, "info1", "status", "time1", 2, 2, 3));
-        System.out.println(commentService.createCom(12, "info1", "status", "time1", 2, 2, 3));
+        IntStream.range(0, 10).map(i -> commentService.createCom(new Comment(i,
+                "info" + i, "status",
+                "time" + i, i, 3, (i * i) % 10))).forEach(System.out::println);
     }
+    
     
     @Test
     public void testQuery() {
@@ -52,18 +47,7 @@ public class ComTest {
     }
     
     @Test
-    public void delete(){
-        System.out.println(commentService.deleteComById(1));
-        System.out.println(commentService.deleteComById(2));
-        System.out.println(commentService.deleteComById(3));
-        System.out.println(commentService.deleteComById(4));
-        System.out.println(commentService.deleteComById(5));
-        System.out.println(commentService.deleteComById(6));
-        System.out.println(commentService.deleteComById(7));
-        System.out.println(commentService.deleteComById(8));
-        System.out.println(commentService.deleteComById(9));
-        System.out.println(commentService.deleteComById(10));
-        System.out.println(commentService.deleteComById(11));
-        System.out.println(commentService.deleteComById(12));
+    public void delete() {
+        IntStream.range(0, 10).map(i -> commentService.deleteComById(i)).forEach(System.out::println);
     }
 }

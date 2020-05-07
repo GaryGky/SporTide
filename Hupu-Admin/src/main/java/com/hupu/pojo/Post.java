@@ -10,10 +10,19 @@ public class Post implements Serializable {
     private int post_collectNum;
     private int post_commentNum;
     private int post_readNum;
+    
+    public int getPost_readNum() {
+        return post_readNum;
+    }
+    
     private int user_id;
     
     public Post() {
     
+    }
+    
+    public void setPost_readNum(int post_readNum) {
+        this.post_readNum = post_readNum;
     }
     
     public Post(int post_id, String post_type, String post_info, String post_time, int post_collectNum, int post_commentNum, int post_readNum, int user_id) {

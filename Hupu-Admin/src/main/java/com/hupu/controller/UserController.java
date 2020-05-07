@@ -53,9 +53,8 @@ public class UserController {
         return delMsg;
     }
     
-    @RequestMapping("updateUser")
+    @RequestMapping("/updateUser")
     public int updateUser(User user){
-        // TODO: 更新用户信息
-        return 0;
+        return userService.update(user);
     }
 }

@@ -14,6 +14,8 @@ public interface CommentMapper {
                          @Param("from_uid") int from_uid,
                          @Param("to_uid") int to_uid); // 创建一条评论
     
+    public int createNewCom(Comment comment);
+    
     public int deleteComById(@Param("id") int id); // 删除一条评论
     
     public Comment queryComById(@Param("id") int id); // 通过id查找评论

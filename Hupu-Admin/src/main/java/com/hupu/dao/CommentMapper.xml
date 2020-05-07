@@ -24,6 +24,16 @@
                 #{to_uid});
     </insert>
 
+    <insert id="createNewCom">
+        insert into comment (comment_id, comment_info, comment_status,
+                             comment_time,
+                             post_id, to_uid, from_uid)
+        values (#{id}, #{info}, #{status}, #{time}, #{post_id}, #{from_uid},
+                #{to_uid});
+    </insert>
+
+
+
     <delete id="deleteComById">
         delete
         from comment
