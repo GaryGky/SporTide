@@ -62,15 +62,11 @@
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
-
         <jsp:include page="Hupu_top_nav.jsp" flush="true" />
-
 
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">
-
-
                 <div class="row">
                     <div class="col-md-12 col-sm-12 ">
                         <div class="x_title">
@@ -91,11 +87,8 @@
                                             <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>UserName</th>
-                                                <th>Email</th>
-                                                <th>NikeName</th>
+                                                <th>AdminName</th>
                                                 <th>RegisterTime</th>
-                                                <th>Status</th>
                                                 <th>Actions</th>
                                             </tr>
                                             </thead>
@@ -108,9 +101,6 @@
                                                     <td>${user.getUserName()}</td>
                                                     <td>${user.getUserEmail()}</td>
 
-                                                    <td>${user.getUserNikename()}</td>
-                                                    <td>${user.getUserTime()}</td>
-                                                    <td>${user.getUserStatus()}</td>
                                                     <td>
                                                         <button
                                                                 onclick="delUser(${user.userId})"
@@ -182,9 +172,7 @@
 <script src="${pageContext.request.contextPath}/static/JS/user.js"></script>
 
 <script type="text/javascript">
-    window.onload = function () {
-        getMyUser();
-    }
+    window.onload = getMyUser();
 </script>
 
 </body>

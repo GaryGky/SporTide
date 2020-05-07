@@ -72,10 +72,11 @@ public class PostController {
         //TODO:创建一个新帖
         return 0;
     }
-    
+    /*
     @RequestMapping("/delPost")
     public int delPost(Post post){
         // TODO: delete a post from database
         return 0;
     }
+    */
 }

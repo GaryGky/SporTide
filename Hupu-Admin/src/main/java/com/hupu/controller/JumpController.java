@@ -9,13 +9,11 @@ public class JumpController {
     // 用于页面跳转
     @RequestMapping("/toGameTable")
     public String gotoGameTab() {
-        
         return "Hupu_GameTable";
     }
     
     @RequestMapping("/toGameAdd")
     public String gotoGameAdd() {
-        
         return "Hupu_GameAdd";
     }
     
@@ -31,13 +29,11 @@ public class JumpController {
     
     @RequestMapping("/toPostTable")
     public String gotoPostTable() {
-        
         return "Hupu_PostingTable";
     }
     
     @RequestMapping("/toComTable")
     public String gotoComTab() {
-        
         return "Hupu_CommentTable";
     }
     
@@ -45,5 +41,14 @@ public class JumpController {
     public String gotoLogin() {
         return "Hupu_Home";
     }
-    
+
+    @RequestMapping("/toTeamTable")
+    public String gotoTeamTable() {
+        return "Hupu_TeamTable";
+    }
+
+    @RequestMapping("/toAdminUserTable")
+    public String gotoAdminUserTable() {
+        return "Hupu_AdminUserTable";
+    }
 }

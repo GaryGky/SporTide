@@ -3,7 +3,7 @@
   Created by IntelliJ IDEA.
   User: dell
   Date: 2020/4/16
-  Time: 19:52
+  Time: 19:45
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>查看用户信息</title>
+    <title>比赛信息</title>
 
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -65,73 +65,68 @@
 
         <jsp:include page="Hupu_top_nav.jsp" flush="true" />
 
-
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">
-
-
                 <div class="row">
                     <div class="col-md-12 col-sm-12 ">
-                        <div class="x_title">
-                            <h2>所有用户信息
-                            </h2>
-
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="card-box table-responsive">
-                                        <p class="text-muted font-13 m-b-30">
-                                        </p>
-                                        <table id="datatable"
-                                               class="table table-striped table-bordered"
-                                               style="width:100%">
-                                            <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>UserName</th>
-                                                <th>Email</th>
-                                                <th>NikeName</th>
-                                                <th>RegisterTime</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                            </thead>
-
-                                            <tbody id="user_info_table">
-                                            <c:forEach var="user"
-                                                       items="${sessionScope.userMap}">
+                        <div class="">
+                            <div class="x_title">
+                                <h2>NBA球队信息
+                                </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card-box table-responsive">
+                                            <p class="text-muted font-13 m-b-30">
+                                            </p>
+                                            <table id="datatable"
+                                                   class="table table-striped table-bordered"
+                                                   style="width:100%">
+                                                <thead>
+                                                <!-- 用ajax? -->
                                                 <tr>
-                                                    <td>${user.getUserId()}</td>
-                                                    <td>${user.getUserName()}</td>
-                                                    <td>${user.getUserEmail()}</td>
-
-                                                    <td>${user.getUserNikename()}</td>
-                                                    <td>${user.getUserTime()}</td>
-                                                    <td>${user.getUserStatus()}</td>
-                                                    <td>
-                                                        <button
-                                                                onclick="delUser(${user.userId})"
-                                                                class="btn btn-primary"
-                                                                style="display: block;width: 60px;height: 30px;background: #0b2e13">
-                                                            删除
-                                                        </button>
-                                                    </td>
+                                                    <!--对于description该怎么放入表中 -->
+                                                    <th>球队ID</th>
+                                                    <th>球队名称</th>
+                                                    <th>建立时间</th>
+                                                    <th>区域</th>
+                                                    <th>主场</th>
+                                                    <th>主教练</th>
                                                 </tr>
-                                            </c:forEach>
-                                            </tbody>
-                                        </table>
+                                                </thead>
+
+                                                <tbody id="game_table_content">
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>A</td>
+                                                        <td>2000.01.01</td>
+                                                        <td>C</td>
+                                                        <td>D</td>
+                                                        <td>S</td>
+                                                    </tr>
+                                                <c:forEach var="teams"
+                                                           items="${sessionScope.teamInfo}">
+                                                    <tr id="${teams.id}">
+                                                        <td>${teams.id}</td>
+                                                        <td>${teams.name}</td>
+                                                        <td>${teams.buildtime}</td>
+                                                        <td>${teams.area}</td>
+                                                        <td>${teams.homecourt}</td>
+                                                        <td>${teams.chiefcoach}</td>
+                                                    </tr>
+                                                </c:forEach>
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--
-                        <div class="x_panel">
-
-                        </div>
-                        -->
                     </div>
                 </div>
             </div>
@@ -179,11 +174,33 @@
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/JS/user.js"></script>
-
+<script src="${pageContext.request.contextPath}/static/JS/team.js"></script>
+<script src="${pageContext.request.contextPath}/static/JS/table_click.js"></script>
 <script type="text/javascript">
     window.onload = function () {
-        getMyUser();
+        getTeamInfo();
+    }
+    function sampleNameUpdate(id, content, tagAction){
+        //alert(id+content+tagAction);
+        console.log('enter the ajax')
+        $.ajax({
+            url:"/ChangeTeamInfo",
+            data:{
+                sendTime:(new Date()).getTime(),
+                sampleName:content,
+                tagId: id
+            },
+            type:'post',
+            async:false,
+            dataType:'json',
+            success:function(data){
+                if(data.success){
+                    alert("修改成功");
+                }else{
+                    alert("修改失败！");
+                }
+            }
+        });
     }
 </script>
 
