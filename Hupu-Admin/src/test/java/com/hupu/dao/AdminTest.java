@@ -26,8 +26,6 @@ public class AdminTest {
                 "adminServiceImpl");
         System.out.println("====== Test Add Admin ====== ");
         adminService.createAdmin("root", "root");
-//        adminService.createAdmin("admin2", "admin2");
-//        adminService.createAdmin("admin3", "admin3");
     }
     
     @Test
