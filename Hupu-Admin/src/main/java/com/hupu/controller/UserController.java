@@ -6,7 +6,9 @@ import com.hupu.service.Impl.UserServiceImpl;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -53,8 +55,9 @@ public class UserController {
         return delMsg;
     }
     
-    @RequestMapping("/updateUser")
-    public int updateUser(User user){
+    @RequestMapping(value = "/updateUser", method = {RequestMethod.POST})
+    public int updateUser(@RequestBody User user) {
+        System.out.println(user);
         return userService.update(user);
     }
 }

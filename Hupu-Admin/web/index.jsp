@@ -66,12 +66,10 @@
 
                     <div class="separator">
                         <p class="change_link">New to site?
-                            <a href="#">Please contact customer service
-                            </a>
-                            <!--
+                            <%--<a href="#">Please contact customer service--%>
+                            <%--</a>--%>
                             <a href="#signup" class="to_register"> Create
                                 Account </a>
-                            -->
                         </p>
 
                         <div class="clearfix"></div>
@@ -79,7 +77,8 @@
 
                         <div>
                             <h1><i class="fa"></i> NBA GAME INFORMATION</h1>
-                            <p>©2020 All Rights Reserved. NBA GAME INFORMATION! is a
+                            <p>©2020 All Rights Reserved. NBA GAME INFORMATION!
+                                is a
                                 background management system.</p>
                         </div>
                     </div>
@@ -87,10 +86,98 @@
                 </div>
             </section>
         </div>
+
+        <div id="register" class="animate form registration_form">
+            <section class="login_content">
+                <form action="##" method="post" id="form">
+                    <h1>Create Account</h1>
+                    <div>
+                        <input type="text" class="form-control"
+                               id="user_name" name="user_name"
+                               placeholder="Username" required="required"/>
+                    </div>
+                    <div>
+                        <input type="email" class="form-control" id="email"
+                               name="email"
+                               placeholder="Email" required="required"/>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" id="nikeName"
+                               name="nikeName"
+                               placeholder="NikeName" required="required"/>
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" id="pwd1"
+                               name="pwd1"
+                               placeholder="Password" required="required"/>
+                    </div>
+
+                    <div>
+                        <input type="password" class="form-control" id="pwd2"
+                               placeholder="Confirm Password" name="pwd2"
+                               required="required"/>
+                    </div>
+                    <div>
+                        <a class="btn btn-default submit" href="#"
+                           onclick="register()">
+                            Submit</a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+                        <p class="change_link">Already a member ?
+                            <a href="#signin" class="to_register"> Log in </a>
+                        </p>
+
+                        <div class="clearfix"></div>
+                        <br/>
+
+                        <div>
+                            <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                            <p>Â©2016 All Rights Reserved. Gentelella Alela! is
+                                a Bootstrap 3 template. Privacy and Terms</p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
     </div>
+
+
 </div>
 <!-- jQuery -->
 <script src="${pageContext.request.contextPath}/static/vendors/jquery/dist/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/login.js"></script>
+<script type="text/javascript">
+    //还是用一个注册吧，感觉login页面有点空。。
+    console.log("准备注册新用户 --- js");
+
+    function register() {
+        var user_name = $("#user_name").val();
+        var email = $("#email").val();
+        var nikeName = $("#nikeName").val();
+        var pwd1 = $("#pwd1").val();
+        var pwd2 = $("#pwd2").val();
+        if (pwd1 !== pwd2) {
+            alert("两次输入的密码不一致");
+            return;
+        }
+
+        $.post({
+                url: "/Hupu-Admin/login/register-web",
+                data: {
+                    "name": user_name,
+                    "email": email,
+                    "password": pwd1,
+                    "nikeName": nikeName
+                },
+                success: function x() {
+                    alert("注册成功");
+                }
+            }
+        )
+    }
+</script>
 </body>
 </html>

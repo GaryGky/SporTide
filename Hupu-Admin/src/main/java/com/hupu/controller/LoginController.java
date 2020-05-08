@@ -1,14 +1,17 @@
 package com.hupu.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.hupu.pojo.User;
 import com.hupu.service.Impl.AdminServiceImpl;
 import com.hupu.service.Impl.UserServiceImpl;
+import com.hupu.utils.DateUtils;
+import com.hupu.utils.UserIdGen;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/login")
@@ -23,7 +26,7 @@ public class LoginController {
     
     @RequestMapping("/adminLogin")
     public int varifyLogIn(String name, String password,
-                              HttpSession session) {
+                           HttpSession session) {
         System.out.println("输入密码 ===>> " + password);
         System.out.println("正确密码 ===>> " + adminService.queryPwdByName(name));
         
@@ -49,8 +52,21 @@ public class LoginController {
         return "logOut";
     }
     
-    @RequestMapping("/register")
-    public int register(User user){ // 创建一个用户
+    @RequestMapping(value = "/register", method = {RequestMethod.POST})
+    public int register(@RequestBody User user) { // 创建一个用户
+        System.out.println(user);
+        return userService.insert(user);
+    }
+    
+    @RequestMapping(value = "/register-web", method = {RequestMethod.POST})
+    public int register_web(@RequestParam Map map) { // 创建一个用户
+        System.out.println(JSON.toJSON(map));
+        User user = new User((int) UserIdGen.get().nextId(), (String) map.get(
+                "name"),
+                (String) map.get("email"),
+                (String) map.get(
+                        "password"),
+                (String) map.get("nikeName"), DateUtils.getCurTime(), 0);
         return userService.insert(user);
     }
 }

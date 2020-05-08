@@ -89,7 +89,7 @@
                 user_name = #{userName},
             </if>
         </set>
-        where user_id = #{userId}
+        where user_id = #{userId} or user_name = #{userName}
     </update>
 
     <!--通过主键删除-->

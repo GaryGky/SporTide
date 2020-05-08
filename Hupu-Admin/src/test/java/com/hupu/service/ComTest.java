@@ -1,5 +1,6 @@
 package com.hupu.service;
 
+import com.alibaba.fastjson.JSON;
 import com.hupu.pojo.Comment;
 import com.hupu.service.Impl.CommentServiceImpl;
 import org.junit.Before;
@@ -21,9 +22,12 @@ public class ComTest {
     @Test
     public void testCreate() {
         System.out.println("=== Create ====");
-        IntStream.range(0, 10).map(i -> commentService.createCom(new Comment(i,
-                "info" + i, "status",
-                "time" + i, i, 3, (i * i) % 10))).forEach(System.out::println);
+        for (int i = 0; i < 10; i++) {
+            int status = commentService.createCom(new Comment(i,
+                    "info" + i, "status",
+                    "time" + i, i, 3, (i * i) % 10));
+            System.out.println(status);
+        }
     }
     
     
@@ -43,7 +47,9 @@ public class ComTest {
     @Test
     public void testLimit() {
         System.out.println("=== Limit ====");
-        commentService.queryCommentByLimit(1, 2).forEach(System.out::println);
+        for (Comment comment : commentService.queryCommentByLimit(1, 2)) {
+            System.out.println(JSON.toJSON(comment));
+        }
     }
     
     @Test

@@ -1,5 +1,6 @@
 package com.hupu.service;
 
+import com.alibaba.fastjson.JSON;
 import com.hupu.pojo.Post;
 import com.hupu.service.Impl.PostServiceImpl;
 import org.junit.Before;
@@ -68,6 +69,8 @@ public class PostTest {
     @Test
     public void testLimit() {
         System.out.println("=== Limit ====");
-        postService.queryPostByLimit(1, 2).forEach(System.out::println);
+        for (Post post : postService.queryPostByLimit(1, 2)) {
+            System.out.println(JSON.toJSON(post));
+        }
     }
 }

@@ -4,6 +4,7 @@ import com.hupu.pojo.Comment;
 import com.hupu.service.Impl.CommentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,7 +42,8 @@ public class ComController {
     }
     
     @RequestMapping("/createCom")
-    public String createCom(Comment comment) {
+    public String createCom(@RequestBody Comment comment) {
+        System.out.println(comment);
         return commentService.createCom(comment) == 1 ? "Success" : "Fail";
     }
 }

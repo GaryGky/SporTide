@@ -1,5 +1,6 @@
 package com.hupu.dao;
 
+import com.alibaba.fastjson.JSON;
 import com.hupu.pojo.User;
 import com.hupu.service.Impl.UserServiceImpl;
 import org.junit.Before;
@@ -31,7 +32,7 @@ public class UserTest {
     
     @Test
     public void testQuery() {
-        userService.queryAllByLimit(5, 10).forEach(System.out::println);
+        userService.queryAllByLimit(5, 10).stream().map(JSON::toJSON).forEach(System.out::println);
     }
     
     @Test

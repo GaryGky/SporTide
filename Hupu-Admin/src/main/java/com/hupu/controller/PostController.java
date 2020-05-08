@@ -6,6 +6,7 @@ import com.hupu.service.Impl.PostServiceImpl;
 import com.hupu.service.Impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,8 +42,8 @@ public class PostController {
     }
     
     @RequestMapping("/createPost")
-    public int createPost(Post post) {
-        postService.createPost(post);
-        return 0;
+    public int createPost(@RequestBody Post post) {
+        System.out.println(post);
+        return postService.createPost(post);
     }
 }
