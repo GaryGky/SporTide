@@ -55,4 +55,9 @@ public class UserServiceImpl implements UserService {
     public int deleteById(Integer userId) {
         return userDao.deleteById(userId);
     }
+    
+    @Override
+    public String getPwdByUserName(String user_name) {
+        return userDao.getPwdByUserName(user_name);
+    }
 }

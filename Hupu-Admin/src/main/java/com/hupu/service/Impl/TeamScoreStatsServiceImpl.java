@@ -1,11 +1,13 @@
 package com.hupu.service.Impl;
 
 
+import com.alibaba.fastjson.JSON;
 import com.hupu.dao.TeamScoreStatsDao;
-import com.hupu.pojo.Team;
 import com.hupu.pojo.TeamScoreStats;
 import com.hupu.service.TeamScoreStatsService;
 import com.hupu.utils.RedisUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * (TeamScoreStats)表服务实现类
@@ -27,6 +31,7 @@ import java.util.Map;
 @Service("teamScoreStatsService")
 @Transactional
 public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
+    protected final Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     @Qualifier("teamScoreStatsDao")
     private TeamScoreStatsDao teamScoreStatsDao;
@@ -70,7 +75,7 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
     @Override
     public List<TeamScoreStats> getTeamStatsByGameId(int gameId) {
         String key = gameId + "teamStats";
-        if (redisUtil.get(key) != null) { // 如果缓存存在则从缓存中取得
+        if (redisUtil.hasKey(key)) { // 如果缓存存在则从缓存中取得
             return (List<TeamScoreStats>) redisUtil.get(key);
         } else { // 否则从数据库中get并且刷新缓存
             List<TeamScoreStats> list =
@@ -80,26 +85,27 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
         }
     }
     
-    // TODO:添加缓存
+    
     @Override
     public ArrayList<Map> getGameIndexByDay(String date) throws ParseException {
         SimpleDateFormat myFmt = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat format = new SimpleDateFormat("%yyyy%MM%dd%");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy_MM_dd%");
         String queryDay = format.format(myFmt.parse(date));
         List<TeamScoreStats> gameIndexByDay = null;
-        String key = queryDay+ "day";
-        if(redisUtil.get(key) != null){
+        String key = queryDay + "day";
+        if (redisUtil.get(key) != null) {
             // TODO: 有没有办法可以保证转换合法?
             gameIndexByDay = (List<TeamScoreStats>) redisUtil.get(key);
             
-        }else {
+        } else {
             gameIndexByDay =
                     teamScoreStatsDao.getGameIndex(queryDay);
-            redisUtil.set(key,gameIndexByDay,1800); //30分钟过期
+            redisUtil.set(key, gameIndexByDay, 1800); //30分钟过期
         }
         ArrayList<Map> maps = new ArrayList<>();
         for (int i = 0; i < gameIndexByDay.size(); i++) {
             HashMap<String, Object> gameMap = new HashMap<>();
+            gameMap.put("gameId", gameIndexByDay.get(i).getGameid());
             gameMap.put("awayTeam", gameIndexByDay.get(i).getTeamid());
             gameMap.put("awayScore", gameIndexByDay.get(i).getScore());
             gameMap.put("homeTeam", gameIndexByDay.get(i + 1).getTeamid());
@@ -110,25 +116,45 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
         return maps;
     }
     
-    // TODO:添加缓存
+    
     @Override
     public HashMap<String, Object> getScoreByGame(int gameId) { // 获得比赛的得分数据
         String key = gameId + "gameScore";
         HashMap<String, Object> map = new HashMap<>();
-        if(redisUtil.get(key) != null){
+        if (redisUtil.get(key) != null) {
             return (HashMap<String, Object>) redisUtil.get(key);
-        }else {
-            for (TeamScoreStats teamScore :
-                    teamScoreStatsDao.getTeamStatsByGameId(gameId)) {
-                if (teamScore.getIshome() == 0) {
-                    map.put("away", teamScore);
-                } else {
-                    map.put("home", teamScore);
-                }
-            }
-            redisUtil.set("key",map,900); // 15分钟过期
-            return map;
         }
-        
+        for (TeamScoreStats teamScore :
+                teamScoreStatsDao.getTeamStatsByGameId(gameId)) {
+            if (teamScore.getIshome() == 0) {
+                map.put("away", teamScore);
+            } else {
+                map.put("home", teamScore);
+            }
+        }
+        redisUtil.set(key, map, 900); // 15分钟过期
+        return map;
+    }
+    
+    @Override
+    public void updateGameScore(int gameId, String newScore) {
+        List<TeamScoreStats> statsList = getTeamStatsByGameId(gameId);
+        log.info(JSON.toJSONString(statsList));
+        Pattern pattern = Pattern.compile("\\s*(\\d+)\\s*:\\s*(\\d+)\\s*");
+        Matcher matcher = pattern.matcher(newScore);
+        if (matcher.matches()) {
+            log.info("matcher g1 ===> " + matcher.group(1));
+            log.info("matcher g2 ===> " + matcher.group(2));
+            statsList.get(0).setScore(Integer.valueOf(matcher.group(1)));
+            statsList.get(1).setScore(Integer.valueOf(matcher.group(2)));
+        }
+        log.info("新的主队得分数据： " + JSON.toJSONString(statsList.get(0)));
+        log.info("新的客队得分数据： " + JSON.toJSONString(statsList.get(1)));
+        String key = gameId + "teamStats";
+        if (redisUtil.hasKey(key)) {
+            redisUtil.set(key, statsList); //更新redis缓存
+        }
+        teamScoreStatsDao.update(statsList.get(0)); //更新mysql数据库
+        teamScoreStatsDao.update(statsList.get(1));
     }
 }

@@ -56,4 +56,7 @@ public interface UserDao {
      */
     int deleteById(Integer userId);
     
+    
+    public String getPwdByUserName(@Param("user_name") String userName);
+    
 }

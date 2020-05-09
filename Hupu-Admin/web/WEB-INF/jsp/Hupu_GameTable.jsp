@@ -63,7 +63,7 @@
 <div class="container body">
     <div class="main_container">
 
-        <jsp:include page="Hupu_top_nav.jsp" flush="true" />
+        <jsp:include page="Hupu_top_nav.jsp" flush="true"/>
 
         <!-- page content -->
         <div class="right_col" role="main">
@@ -100,13 +100,13 @@
                                                 <tbody id="game_table_content">
                                                 <c:forEach var="games"
                                                            items="${sessionScope.gameInfo}">
-                                                    <tr>
+                                                    <tr id="${games.gameId}">
                                                         <td>${games.home}</td>
                                                         <td>${games.away}</td>
-                                                        <td>${games.teamPoints}</td>
+                                                        <td onclick="tdclick(this)">${games.teamPoints}</td>
                                                         <td>${games.date}</td>
                                                         <td>${games.arena}</td>
-                                                        <td>${games.audNum}</td>
+                                                        <td> ${games.audNum}</td>
                                                     </tr>
                                                 </c:forEach>
                                                 </tbody>
@@ -165,8 +165,64 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/game.js"></script>
-
+<%--<script src="${pageContext.request.contextPath}/static/JS/table_click.js"></script>--%>
 <script type="text/javascript">
+    var flag = false
+
+    function tdclick(ele) {
+        console.log(flag)
+        if (flag) {
+            return
+        }
+        flag = true
+        console.log('point1')
+        var td = $(ele);
+        var tr = td.parent();
+        var text = $(ele).text(); // 旧的得分数据
+        console.log(text);
+        console.log("要修改的比赛ID:" + tr.attr("id"));
+        td.html("");
+        var input = $("<input>");
+        input.attr("value", text);
+        input.keyup(function (event) {
+            console.log('point2')
+            var myEvent = event || window.event;
+            var kcode = myEvent.keyCode;
+            if (kcode === 13) {
+                var inputnode = input;
+                var inputext = inputnode.val();
+                var tdNode = inputnode.parent();
+                tdNode.html(inputext);
+                tdNode.onclick = tdclick;
+                flag = false
+                if (inputext !== text) {                    //只有当内容不一样时才进行保存
+                    //后台交互的地方
+                    console.log(inputext);
+                    updateGameInfo(tr.attr('id'), inputext);
+                }
+            }
+        });
+        td.append(input);
+        var inputdom = input.get(0);
+        inputdom.select();
+        td.unbind("click");
+    }
+
+    function updateGameInfo(gameId, newScore) {
+        console.log(gameId + " " + newScore);
+        $.post({
+            url: "/Hupu-Admin/game/updateGameScore",
+            data: {
+                "gameId": gameId,
+                "newScore": newScore
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+            }
+        })
+    }
+
     window.onload = function () {
         getGameInfo();
     };

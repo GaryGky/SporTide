@@ -6,6 +6,8 @@ import com.hupu.service.Impl.AdminServiceImpl;
 import com.hupu.service.Impl.UserServiceImpl;
 import com.hupu.utils.DateUtils;
 import com.hupu.utils.UserIdGen;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/login")
 public class LoginController {
+    protected final Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     @Qualifier("adminServiceImpl")
     private AdminServiceImpl adminService;
@@ -27,8 +30,8 @@ public class LoginController {
     @RequestMapping("/adminLogin")
     public int varifyLogIn(String name, String password,
                            HttpSession session) {
-        System.out.println("输入密码 ===>> " + password);
-        System.out.println("正确密码 ===>> " + adminService.queryPwdByName(name));
+        log.info("输入密码 ===>> " + password);
+        log.info("正确密码 ===>> " + adminService.queryPwdByName(name));
         
         if (name == null || password == null) {
             return -1;
@@ -54,13 +57,13 @@ public class LoginController {
     
     @RequestMapping(value = "/register", method = {RequestMethod.POST})
     public int register(@RequestBody User user) { // 创建一个用户
-        System.out.println(user);
+        log.info("用户注册信息为：" + JSON.toJSONString(user));
         return userService.insert(user);
     }
     
     @RequestMapping(value = "/register-web", method = {RequestMethod.POST})
     public int register_web(@RequestParam Map map) { // 创建一个用户
-        System.out.println(JSON.toJSON(map));
+        log.info(JSON.toJSONString(map));
         User user = new User((int) UserIdGen.get().nextId(), (String) map.get(
                 "name"),
                 (String) map.get("email"),

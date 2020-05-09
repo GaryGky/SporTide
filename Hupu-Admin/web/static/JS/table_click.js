@@ -13,7 +13,7 @@ function tdclick(){
     var td = $(this);
     var tr = td.parentNode;
 
-    var sampleId = $(this).val();
+    var sampleId = $(tr).val();
     var text = $(this).text();
     td.html("");
     var input = $("<input>");

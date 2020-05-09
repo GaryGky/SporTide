@@ -1,15 +1,16 @@
 package com.hupu.service.Impl;
 
 
-    import com.hupu.dao.RecapDao;
-    import com.hupu.pojo.Recap;
-    import com.hupu.service.RecapService;
-    import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.beans.factory.annotation.Qualifier;
-    import org.springframework.stereotype.Service;
-    import org.springframework.transaction.annotation.Transactional;
+import com.hupu.dao.RecapDao;
+import com.hupu.pojo.Recap;
+import com.hupu.service.RecapService;
+import com.hupu.utils.RedisUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-    import java.util.List;
+import java.util.List;
 
 /**
  * (Recap)表服务实现类
@@ -20,14 +21,24 @@ package com.hupu.service.Impl;
 @Service("recapService")
 @Transactional
 public class RecapServiceImpl implements RecapService {
-
-@Autowired
-@Qualifier("recapDao")
-private RecapDao recapDao;
+    
+    @Autowired
+    @Qualifier("recapDao")
+    private RecapDao recapDao;
+    
+    @Autowired
+    @Qualifier("redisUtil")
+    private RedisUtil redisUtil;
     
     @Override
     public Recap queryById(int gameid) {
-        return recapDao.queryById(gameid);
+        String key = "recap" + gameid;
+        if (redisUtil.hasKey(key)) {
+            return (Recap) redisUtil.get(key);
+        }
+        Recap recap = recapDao.queryById(gameid);
+        redisUtil.set(key, recap, 900);
+        return recap;
     }
     
     @Override

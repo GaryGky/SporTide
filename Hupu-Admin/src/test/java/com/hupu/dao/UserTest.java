@@ -8,6 +8,10 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+
 public class UserTest {
     private UserServiceImpl userService;
     
@@ -41,11 +45,4 @@ public class UserTest {
             userService.deleteById(i);
         }
     }
-    
-    
-    @Test
-    public void testTmp() {
-        userService.queryAllByLimit(0, 100).forEach(System.out::println);
-    }
-    
 }

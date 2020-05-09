@@ -64,4 +64,6 @@ public interface TeamScoreStatsService {
     ArrayList<Map> getGameIndexByDay(String date) throws ParseException;
     
     HashMap<String, Object> getScoreByGame(int gameId);
+    
+    void updateGameScore(int gameId, String newScore);
 }

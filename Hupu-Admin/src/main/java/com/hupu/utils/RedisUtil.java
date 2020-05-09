@@ -1,5 +1,8 @@
 package com.hupu.utils;
 
+import com.alibaba.fastjson.JSON;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -18,23 +21,15 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public final class RedisUtil {
     
     // 日志跟踪对象
-//    private static final Logger logger =
-//            (Logger) LoggerFactory.getLogger(RedisUtil.class);
-//
-    // 管理一个只读锁，一个写锁
-    private final ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+    private final Logger logger =
+            LoggerFactory.getLogger(RedisUtil.class);
     
     @Autowired
     @Qualifier("redisTemplate")
     private RedisTemplate<String, Object> redisTemplate;
     
-    private String name;
     
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    private RedisUtil() {
+    public RedisUtil() {
     }
     // =============================common============================
     
@@ -74,6 +69,7 @@ public final class RedisUtil {
      * @return true 存在 false不存在
      */
     public boolean hasKey(String key) {
+        logger.info("Redis 判断 KEY ===> " + key);
         try {
             return redisTemplate.hasKey(key);
         } catch (Exception e) {
@@ -109,6 +105,7 @@ public final class RedisUtil {
      * @return 值
      */
     public Object get(String key) {
+        logger.info("Redis 请求 KEY ===>  " + key);
         return key == null ? null : redisTemplate.opsForValue().get(key);
     }
     
@@ -121,6 +118,7 @@ public final class RedisUtil {
      */
     
     public boolean set(String key, Object value) {
+        logger.info("Redis 设置 KEY ===>  " + key);
         try {
             redisTemplate.opsForValue().set(key, value);
             return true;
@@ -141,6 +139,9 @@ public final class RedisUtil {
      */
     
     public boolean set(String key, Object value, long time) {
+        logger.info("Redis 设置 KEY ===>  " + key + " value ===> "
+                + JSON.toJSONString(value));
+        
         try {
             if (time > 0) {
                 redisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);

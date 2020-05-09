@@ -1,9 +1,12 @@
 package com.hupu.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.hupu.pojo.User;
 import com.hupu.service.Impl.AdminServiceImpl;
 import com.hupu.service.Impl.UserServiceImpl;
 import org.apache.ibatis.annotations.Param;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,10 +19,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
+    protected final Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     @Qualifier("adminServiceImpl")
     private AdminServiceImpl adminService;
@@ -29,12 +34,12 @@ public class UserController {
     private UserServiceImpl userService;
     
     @RequestMapping("/getLimitUser")
-    public String getLimitUser(HttpServletRequest request) {
+    public ArrayList<User> getLimitUser(HttpServletRequest request) {
         System.out.println("获取用户");
         ArrayList<User> users = new ArrayList<>(userService.queryAllByLimit(0
                 , 100));
         request.getSession().setAttribute("userMap", users);
-        return "Success";
+        return users;
     }
     
     
@@ -59,5 +64,18 @@ public class UserController {
     public int updateUser(@RequestBody User user) {
         System.out.println(user);
         return userService.update(user);
+    }
+    
+    @RequestMapping(value = "/login", method = {RequestMethod.POST})
+    public int userLogin(@RequestBody Map map) {
+        log.info("用户登录传入的map为：" + JSON.toJSON(map));
+        if (map == null || userService.getPwdByUserName((String) map.get(
+                "user_name")) == null || map.get("user_name") == null) {
+            log.info("【用户登录】存在空值！！！");
+            return 0;
+        }
+        log.info("用户的登录密码为 ===> " + userService.getPwdByUserName((String) map.get("user_name")));
+        return userService.getPwdByUserName((String) map.get("user_name")).equals(map.get(
+                "password")) ? 1 : 0;
     }
 }

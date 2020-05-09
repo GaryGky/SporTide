@@ -62,7 +62,8 @@
     <insert id="insert" keyProperty="userId" useGeneratedKeys="true">
         insert into nba.user(user_id,user_email, user_password, user_nikename,
                              user_time, user_status, user_name)
-        values (#{userId},#{userEmail}, #{userPassword}, #{userNikename},
+        values (#{userId},#{userEmail}, AES_ENCRYPT(#{userPassword},"hupu"),
+                                                    #{userNikename},
                 #{userTime}, #{userStatus}, #{userName})
     </insert>
 
@@ -74,7 +75,7 @@
                 user_email = #{userEmail},
             </if>
             <if test="userPassword != null">
-                user_password = #{userPassword},
+                user_password = AES_ENCRYPT(#{userPassword},"hupu"),
             </if>
             <if test="userNikename != null and userNikename != ''">
                 user_nikename = #{userNikename},
@@ -96,5 +97,12 @@
     <delete id="deleteById">
         delete from nba.user where user_id = #{userId}
     </delete>
+
+
+    <select id="getPwdByUserName" resultType="String">
+        select AES_DECRYPT(user_password, "hupu")
+        from user
+        where user_name = #{user_name}
+    </select>
 
 </mapper>

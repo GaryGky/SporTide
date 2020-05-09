@@ -118,7 +118,7 @@
                 score = #{score},
             </if>
         </set>
-        where id = #{id}
+        where id = #{id} or gameid = #{gameid}
     </update>
 
     <!--通过主键删除-->

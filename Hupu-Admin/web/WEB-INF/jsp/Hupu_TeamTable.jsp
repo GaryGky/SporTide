@@ -63,7 +63,7 @@
 <div class="container body">
     <div class="main_container">
 
-        <jsp:include page="Hupu_top_nav.jsp" flush="true" />
+        <jsp:include page="Hupu_top_nav.jsp" flush="true"/>
 
         <!-- page content -->
         <div class="right_col" role="main">
@@ -99,23 +99,26 @@
                                                 </thead>
 
                                                 <tbody id="game_table_content">
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>A</td>
-                                                        <td>2000.01.01</td>
-                                                        <td>C</td>
-                                                        <td>D</td>
-                                                        <td>S</td>
-                                                    </tr>
                                                 <c:forEach var="teams"
                                                            items="${sessionScope.teamInfo}">
                                                     <tr id="${teams.id}">
-                                                        <td>${teams.id}</td>
-                                                        <td>${teams.name}</td>
-                                                        <td>${teams.buildtime}</td>
-                                                        <td>${teams.area}</td>
-                                                        <td>${teams.homecourt}</td>
-                                                        <td>${teams.chiefcoach}</td>
+                                                        <td id="teamId"
+                                                            onclick="tdclick(this)"
+                                                        >${teams.id}</td>
+                                                        <td onclick="tdclick(this)"
+                                                            id="teamName">${teams.name}</td>
+                                                        <td id="buildTime"
+                                                            onclick="tdclick(this)"
+                                                        >${teams.buildtime}</td>
+                                                        <td id="teamArea"
+                                                            onclick="tdclick(this)"
+                                                        >${teams.area}</td>
+                                                        <td id="homeCourt"
+                                                            onclick="tdclick(this)"
+                                                        >${teams.homecourt}</td>
+                                                        <td id="chief"
+                                                            onclick="tdclick(this)"
+                                                        >${teams.chiefcoach}</td>
                                                     </tr>
                                                 </c:forEach>
 
@@ -175,30 +178,66 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/JS/team.js"></script>
-<script src="${pageContext.request.contextPath}/static/JS/table_click.js"></script>
+<%--<script src="${pageContext.request.contextPath}/static/JS/table_click.js"></script>--%>
 <script type="text/javascript">
     window.onload = function () {
         getTeamInfo();
-    }
-    function sampleNameUpdate(id, content, tagAction){
-        //alert(id+content+tagAction);
-        console.log('enter the ajax')
-        $.ajax({
-            url:"/ChangeTeamInfo",
-            data:{
-                sendTime:(new Date()).getTime(),
-                sampleName:content,
-                tagId: id
-            },
-            type:'post',
-            async:false,
-            dataType:'json',
-            success:function(data){
-                if(data.success){
-                    alert("修改成功");
-                }else{
-                    alert("修改失败！");
+    };
+
+
+    var flag = false
+
+    function tdclick(ele) {
+        console.log(flag)
+        if (flag) {
+            return
+        }
+        flag = true
+        console.log('point1')
+        var td = $(ele);
+        var tr = td.parent();
+
+        var sampleId = $(ele).val();
+        var text = $(ele).text();
+        console.log(text)
+        td.html("");
+        var input = $("<input>");
+        input.attr("value", text);
+        input.keyup(function (event) {
+            console.log('point2')
+            var myEvent = event || window.event;
+            var kcode = myEvent.keyCode;
+            if (kcode === 13) {
+                var inputnode = input;
+                var inputext = inputnode.val();
+                var tdNode = inputnode.parent();
+                tdNode.html(inputext);
+                tdNode.onclick = tdclick;
+                flag = false
+                if (inputext !== text) {                    //只有当内容不一样时才进行保存
+                    //后台交互的地方
+                    sampleNameUpdate($(tr).attr('id'), td.attr('id'), inputext);
                 }
+            }
+        });
+        td.append(input);
+        var inputdom = input.get(0);
+        inputdom.select();
+        td.unbind("click");
+    }
+
+    function sampleNameUpdate(id, field, content) {
+        console.log(id + " " + field + " " + content);
+        $.post({
+            url: "/Hupu-Admin/team/updateTeamInfo",
+            data: {
+                teamId: id,
+                field: field,
+                new_value: content
+            },
+            dataType: 'json',
+            success: function (data) {
+                alert("修改成功");
             }
         });
     }

@@ -2,6 +2,7 @@ package com.hupu.controller;
 
 import com.hupu.pojo.Recap;
 import com.hupu.service.Impl.RecapServiceImpl;
+import com.hupu.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,8 @@ public class ReCapController {
     @Autowired
     @Qualifier("recapService")
     private RecapServiceImpl recapService;
+    
+    
     
     @RequestMapping("/getRecap")
     public Recap getrecapByGame(int gameId){

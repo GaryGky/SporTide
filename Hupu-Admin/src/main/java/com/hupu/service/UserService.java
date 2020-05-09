@@ -55,4 +55,6 @@ public interface UserService {
      */
     int deleteById(Integer userId);
     
+    
+    String getPwdByUserName(String user_name);
 }
