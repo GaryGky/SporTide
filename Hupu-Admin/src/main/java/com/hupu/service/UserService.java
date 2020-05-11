@@ -57,4 +57,6 @@ public interface UserService {
     
     
     String getPwdByUserName(String user_name);
+    
+    User getUserByName(String user_name);
 }

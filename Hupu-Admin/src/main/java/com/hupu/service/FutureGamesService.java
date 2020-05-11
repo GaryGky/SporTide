@@ -1,18 +1,18 @@
-package com.hupu.dao;
+package com.hupu.service;
 
 import com.hupu.pojo.FutureGames;
-import com.hupu.pojo.TeamScoreStats;
-import org.apache.ibatis.annotations.Param;
 
+import java.text.ParseException;
+import java.util.HashMap;
 import java.util.List;
 
 /**
- * (FutureGames)表数据库访问层
+ * (FutureGames)表服务接口
  *
  * @author makejava
- * @since 2020-05-11 11:18:25
+ * @since 2020-05-11 11:19:08
  */
-public interface FutureGamesDao {
+public interface FutureGamesService {
     
     /**
      * 通过ID查询单条数据
@@ -23,28 +23,21 @@ public interface FutureGamesDao {
     FutureGames queryById(String gameid);
     
     /**
-     * 查询指定行数据
+     * 查询多条数据
      *
      * @param offset 查询起始位置
      * @param limit  查询条数
      * @return 对象列表
      */
-    List<FutureGames> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
+    List<FutureGames> queryAllByLimit(int offset, int limit);
     
-    
-    /**
-     * 通过实体作为筛选条件查询
-     *
-     * @param futureGames 实例对象
-     * @return 对象列表
-     */
     List<FutureGames> queryAll(FutureGames futureGames);
     
     /**
      * 新增数据
      *
      * @param futureGames 实例对象
-     * @return 影响行数
+     * @return 实例对象
      */
     int insert(FutureGames futureGames);
     
@@ -52,7 +45,7 @@ public interface FutureGamesDao {
      * 修改数据
      *
      * @param futureGames 实例对象
-     * @return 影响行数
+     * @return 实例对象
      */
     int update(FutureGames futureGames);
     
@@ -60,11 +53,11 @@ public interface FutureGamesDao {
      * 通过主键删除数据
      *
      * @param gameid 主键
-     * @return 影响行数
+     * @return 是否成功
      */
     int deleteById(String gameid);
     
-    List<FutureGames> getFutureGameByDate(@Param("date") String date);
+    List<FutureGames> getFutureGameByDate(String date) throws ParseException;
     
-    List<Integer> getStatsByTeam(@Param("teamId") String teamId);
+    HashMap<String, Object> getTeamPreview(String teamId);
 }

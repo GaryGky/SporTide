@@ -79,8 +79,8 @@ public class UserController {
                 "password")) ? 1 : 0;
     }
     
-    @RequestMapping(value = "/getUserById", method = RequestMethod.GET)
-    public User queryUserById(int userId) {
-        return userService.queryById(userId);
+    @RequestMapping(value = "/getUserByName", method = RequestMethod.GET)
+    public User queryUserById(String user_name) {
+        return userService.getUserByName(user_name);
     }
 }

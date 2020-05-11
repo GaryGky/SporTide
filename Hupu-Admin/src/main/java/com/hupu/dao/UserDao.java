@@ -2,6 +2,7 @@ package com.hupu.dao;
 
 import com.hupu.pojo.User;
 import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -65,5 +66,4 @@ public interface UserDao {
     String getPwdByUserName(@Param("user_name") String userName);
     
     User getUserByUserName(@Param("user_name") String userName);
-
 }

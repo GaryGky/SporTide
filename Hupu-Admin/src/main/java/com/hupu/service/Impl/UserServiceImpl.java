@@ -72,4 +72,9 @@ public class UserServiceImpl implements UserService {
     public String getPwdByUserName(String user_name) {
         return userDao.getPwdByUserName(user_name);
     }
+    
+    @Override
+    public User getUserByName(String user_name) {
+        return userDao.getUserByUserName(user_name);
+    }
 }

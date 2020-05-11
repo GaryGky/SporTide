@@ -1,21 +1,32 @@
 package com.hupu.pojo;
 
 public class FutureGames {
+    
+    private String gameid;
+     
     private String home;
-    
+     
     private String away;
-    
+     
     private String gametime;
+     
+    private String homeWinRate;
+     
+    private String awayWinRate;
+
     
-    private Double homeWinRate;
-    
-    private Double awayWinRate;
-    
+    public String getGameid() {
+        return gameid;
+    }
+
+    public void setGameid(String gameid) {
+        this.gameid = gameid;
+    }
     
     public String getHome() {
         return home;
     }
-    
+
     public void setHome(String home) {
         this.home = home;
     }
@@ -23,7 +34,7 @@ public class FutureGames {
     public String getAway() {
         return away;
     }
-    
+
     public void setAway(String away) {
         this.away = away;
     }
@@ -31,35 +42,25 @@ public class FutureGames {
     public String getGametime() {
         return gametime;
     }
-    
+
     public void setGametime(String gametime) {
         this.gametime = gametime;
     }
     
-    public Double getHomeWinRate() {
+    public String getHomeWinRate() {
         return homeWinRate;
     }
-    
-    public void setHomeWinRate(Double homeWinRate) {
+
+    public void setHomeWinRate(String homeWinRate) {
         this.homeWinRate = homeWinRate;
     }
     
-    public Double getAwayWinRate() {
+    public String getAwayWinRate() {
         return awayWinRate;
     }
-    
-    public void setAwayWinRate(Double awayWinRate) {
+
+    public void setAwayWinRate(String awayWinRate) {
         this.awayWinRate = awayWinRate;
     }
-    
-    @Override
-    public String toString() {
-        return "FutureGames{" +
-                "home='" + home + '\'' +
-                ", away='" + away + '\'' +
-                ", gametime='" + gametime + '\'' +
-                ", homeWinRate=" + homeWinRate +
-                ", awayWinRate=" + awayWinRate +
-                '}';
-    }
+ 
 }

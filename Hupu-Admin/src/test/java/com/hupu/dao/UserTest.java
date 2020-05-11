@@ -45,4 +45,9 @@ public class UserTest {
             userService.deleteById(i);
         }
     }
+    
+    @Test
+    public void testGet(){
+        System.out.println(userService.getUserByName("user_name0"));
+    }
 }

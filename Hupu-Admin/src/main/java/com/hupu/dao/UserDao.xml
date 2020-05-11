@@ -80,9 +80,10 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="userId" useGeneratedKeys="true">
-        insert into nba.user(user_id,user_name, user_email, user_password,
+        insert into nba.user(user_id, user_name, user_email, user_password,
                              user_nikename, user_time, user_status, user_head)
-        values (#{userId},#{userName}, #{userEmail}, #{userPassword},
+        values (#{userId}, #{userName}, #{userEmail},
+                AES_ENCRYPT(#{userPassword}, "hupu"),
                 #{userNikename},
                 #{userTime}, #{userStatus}, #{userHead})
     </insert>
@@ -98,7 +99,7 @@
                 user_email = #{userEmail},
             </if>
             <if test="userPassword != null">
-                user_password = #{userPassword},
+                user_password = AES_DECRYPT(#{userPassword}, "hupu"),
             </if>
             <if test="userNikename != null and userNikename != ''">
                 user_nikename = #{userNikename},
@@ -113,7 +114,7 @@
                 user_head = #{userHead},
             </if>
         </set>
-        where user_id = #{userId}
+        where user_id = #{userId} or user_name=#{userName}
     </update>
 
     <!--通过主键删除-->
@@ -139,6 +140,8 @@
                user_status,
                user_head
         from nba.user
-        where user_name=#{user_name}
+        where user_name = #{user_name}
     </select>
+
+
 </mapper>

@@ -81,7 +81,7 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
         } else { // 否则从数据库中get并且刷新缓存
             List<TeamScoreStats> list =
                     teamScoreStatsDao.getTeamStatsByGameId(gameId);
-            redisUtil.set(key, list);
+            redisUtil.set(key, list, HupuEnum.RedisExpTime.LongTime.getTime());
             return list;
         }
     }
@@ -98,12 +98,12 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
             // TODO: 有没有办法可以保证转换合法?
             gameIndexByDay = (List<TeamScoreStats>) redisUtil.get(key);
             
-        } else {
-            gameIndexByDay =
-                    teamScoreStatsDao.getGameIndex(queryDay);
+        }
+        gameIndexByDay =
+                teamScoreStatsDao.getGameIndex(queryDay);
+        if (gameIndexByDay.size() > 0) {
             redisUtil.set(key, gameIndexByDay,
-                    HupuEnum.RedisExpTime.LongTime.getTime()); //30
-            // 分钟过期
+                    HupuEnum.RedisExpTime.LongTime.getTime());
         }
         ArrayList<Map> maps = new ArrayList<>();
         for (int i = 0; i < gameIndexByDay.size(); i++) {

@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
  */
 @Service("playerScoreStatsService")
 @Transactional
-public class PlayerScoreStatsServiceImpl implements PlayerScoreStatsService {
+public class PlayerScoreStatsServiceImpl extends Play2TeamStats implements PlayerScoreStatsService {
     
     @Autowired
     @Qualifier("playerScoreStatsDao")
@@ -79,46 +79,6 @@ public class PlayerScoreStatsServiceImpl implements PlayerScoreStatsService {
         return playerScoreStatsDao.queryByGameId(gameId);
     }
     
-    public HashMap<String, Object> getMap(List<PlayerScoreStats> playerList) {
-        int score = 0; // 得分
-        int court = 0; // 篮板可以由前场后场篮板相加得到
-        int assist = 0;
-        int steal = 0;
-        int block = 0;
-        int frontCourt = 0;
-        int backCourt = 0;
-        int shot = 0; // 出手
-        int goal = 0; // 命中
-        String team = "";
-        HashMap<String, Object> teamStatsMap = new HashMap<>();
-        for (PlayerScoreStats playerStats : playerList) {
-            score += playerStats.getScore();
-            backCourt += playerStats.getBackcourt();
-            frontCourt += playerStats.getFrontcourt();
-            assist += playerStats.getAssist();
-            steal += playerStats.getSteal();
-            block += playerStats.getBlock();
-            Pattern pattern = Pattern.compile("(\\d+)-(\\d+)");
-            Matcher matcher = pattern.matcher(playerStats.getShot());
-            if (matcher.matches()) {
-                goal += Integer.parseInt(matcher.group(1));
-                shot += Integer.parseInt(matcher.group(2));
-            }
-            team = playerStats.getTeamid();
-            court = backCourt + frontCourt; // 篮板
-            String hitRate = goal + "-" + shot; // 命中率
-            teamStatsMap.put("score", score);
-            teamStatsMap.put("court", court);
-            teamStatsMap.put("assist", assist);
-            teamStatsMap.put("steal", steal);
-            teamStatsMap.put("block", block);
-            teamStatsMap.put("frontCourt", frontCourt);
-            teamStatsMap.put("backCourt", backCourt);
-            teamStatsMap.put("hitRate", hitRate);
-            teamStatsMap.put("team", team);
-        }
-        return teamStatsMap;
-    }
     
     // 获得一场比赛的球队统计数据
     @Override
@@ -166,4 +126,6 @@ public class PlayerScoreStatsServiceImpl implements PlayerScoreStatsService {
         redisUtil.set(key, gameMap, HupuEnum.RedisExpTime.SHORT_TIME.getTime());
         return gameMap;
     }
+    
+    
 }
