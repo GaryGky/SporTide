@@ -1,5 +1,7 @@
 package com.hupu.service;
 
+import com.alibaba.fastjson.JSON;
+import com.hupu.pojo.Recap;
 import com.hupu.service.Impl.RecapServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,5 +23,12 @@ public class RecapTest {
     public void testQueryById(){
         System.out.println(recapService.queryById(156542));
         // recapService.queryById(156542);
+    }
+    
+    @Test
+    public void testRecap(){
+        for (Recap recap : recapService.getRecapByDay("2019-1-10", "2019-1-19")) {
+            System.out.println(JSON.toJSON(recap));
+        }
     }
 }

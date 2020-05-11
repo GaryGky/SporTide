@@ -28,6 +28,20 @@ public class User {
         this.userHead = userHead;
     }
     
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userPassword=" + userPassword +
+                ", userNikename='" + userNikename + '\'' +
+                ", userTime='" + userTime + '\'' +
+                ", userStatus=" + userStatus +
+                ", userHead=" + userHead +
+                '}';
+    }
+    
     public User() {
     }
     

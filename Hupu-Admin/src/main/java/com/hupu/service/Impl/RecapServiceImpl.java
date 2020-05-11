@@ -66,4 +66,15 @@ public class RecapServiceImpl implements RecapService {
     public int deleteById(String gameid) {
         return recapDao.deleteById(gameid);
     }
+    
+    @Override
+    public List<Recap> getRecapByDay(String foreDate, String backDate) {
+        String key = foreDate + backDate + "getRecapByDate";
+        if (redisUtil.hasKey(key)) {
+            return (List<Recap>) redisUtil.get(key);
+        }
+        List<Recap> recaps = recapDao.getRecapByDate(foreDate, backDate);
+        redisUtil.set(key, recaps, HupuEnum.RedisExpTime.Mid_Time.getTime());
+        return recaps;
+    }
 }
