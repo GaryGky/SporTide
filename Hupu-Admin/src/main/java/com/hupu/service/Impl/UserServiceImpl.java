@@ -1,10 +1,13 @@
 package com.hupu.service.Impl;
 
 
+import com.alibaba.fastjson.JSON;
 import com.hupu.config.HupuEnum;
 import com.hupu.dao.UserDao;
 import com.hupu.pojo.User;
 import com.hupu.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -26,6 +29,8 @@ public class UserServiceImpl implements UserService {
     @Qualifier("userDao")
     private UserDao userDao;
     
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    
     @Override
     public User queryById(Integer userId) {
         return userDao.queryById(userId);
@@ -43,9 +48,12 @@ public class UserServiceImpl implements UserService {
     
     @Override
     public int insert(User user) { // 用户注册
+        logger.info(JSON.toJSONString(user));
         if (userDao.getUserByUserName(user.getUserName()) != null) {
+            logger.info("用户注册时用户名重复");
             return HupuEnum.LogInRet.USER_NAME_DUP.getReturnCode();
         }else {
+            logger.info("注册成功");
             return userDao.insert(user);
         }
     }

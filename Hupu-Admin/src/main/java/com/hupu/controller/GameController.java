@@ -104,6 +104,6 @@ public class GameController {
     
     @RequestMapping("/getGameInfo")
     public Game getBaseInfoByGameId(int gameId) {
-        return null;
+        return gameService.queryById(gameId);
     }
 }

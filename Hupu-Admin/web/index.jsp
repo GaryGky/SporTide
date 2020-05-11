@@ -172,8 +172,12 @@
                     "password": pwd1,
                     "nikeName": nikeName
                 },
-                success: function x() {
-                    alert("注册成功");
+                success: function fun(data) {
+                    if (data === 2) {
+                        alert("用户名重复，请重新输入");
+                    } else {
+                        alert("注册成功");
+                    }
                 }
             }
         )

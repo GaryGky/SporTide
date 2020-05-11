@@ -29,7 +29,7 @@ public class UserTest {
             User user = new User(i, "user_name" + i,
                     "email" + i,
                     "pwd" + i, "nikename" + i,
-                    "time" + i,0);
+                    "time" + i,0,0);
             userService.insert(user);
         }
     }

@@ -20,7 +20,7 @@ public interface HupuEnum {
     
     // 登录成功，密码不正确，用户名重复
     enum LogInRet implements HupuEnum {
-        SUCCESS(1), PWD_UNMATCHED(200), USER_NAME_DUP(201);
+        SUCCESS(1), PWD_UNMATCHED(0), USER_NAME_DUP(2);
         private int returnCode = 0;
         
         LogInRet(int code) {

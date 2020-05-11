@@ -1,13 +1,13 @@
 package com.hupu.pojo;
 
-import java.io.Serializable;
-
-public class User implements Serializable {
+public class User {
     private Integer userId;
+    
+    private String userName;
     
     private String userEmail;
     
-    private String userPassword;
+    private Object userPassword;
     
     private String userNikename;
     //注册时间 
@@ -15,33 +15,20 @@ public class User implements Serializable {
     //默认0 
     private Integer userStatus;
     
-    private String userName;
+    private Integer userHead;
     
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userEmail='" + userEmail + '\'' +
-                ", userPassword=" + userPassword +
-                ", userNikename='" + userNikename + '\'' +
-                ", userTime='" + userTime + '\'' +
-                ", userStatus=" + userStatus +
-                ", userName='" + userName + '\'' +
-                '}';
-    }
-    
-    public User() {
-    }
-    
-    public User(Integer userId, String userName, String userEmail,
-                String userPassword, String userNikename, String userTime, Integer userStatus) {
+    public User(Integer userId, String userName, String userEmail, Object userPassword, String userNikename, String userTime, Integer userStatus, Integer userHead) {
         this.userId = userId;
+        this.userName = userName;
         this.userEmail = userEmail;
         this.userPassword = userPassword;
         this.userNikename = userNikename;
         this.userTime = userTime;
         this.userStatus = userStatus;
-        this.userName = userName;
+        this.userHead = userHead;
+    }
+    
+    public User() {
     }
     
     public Integer getUserId() {
@@ -50,6 +37,14 @@ public class User implements Serializable {
     
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+    
+    public String getUserName() {
+        return userName;
+    }
+    
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
     
     public String getUserEmail() {
@@ -64,7 +59,7 @@ public class User implements Serializable {
         return userPassword;
     }
     
-    public void setUserPassword(String userPassword) {
+    public void setUserPassword(Object userPassword) {
         this.userPassword = userPassword;
     }
     
@@ -92,12 +87,12 @@ public class User implements Serializable {
         this.userStatus = userStatus;
     }
     
-    public String getUserName() {
-        return userName;
+    public Integer getUserHead() {
+        return userHead;
     }
     
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserHead(Integer userHead) {
+        this.userHead = userHead;
     }
     
 }

@@ -67,9 +67,8 @@ public class LoginController {
         User user = new User((int) UserIdGen.get().nextId(), (String) map.get(
                 "name"),
                 (String) map.get("email"),
-                (String) map.get(
-                        "password"),
-                (String) map.get("nikeName"), DateUtils.getCurTime(), 0);
+                map.get("password"),
+                (String) map.get("nikeName"), DateUtils.getCurTime(), 0, 0);
         return userService.insert(user);
     }
 }
