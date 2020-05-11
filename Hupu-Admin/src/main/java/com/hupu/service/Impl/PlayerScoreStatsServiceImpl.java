@@ -1,6 +1,7 @@
 package com.hupu.service.Impl;
 
 
+import com.hupu.config.HupuEnum;
 import com.hupu.dao.PlayerScoreStatsDao;
 import com.hupu.pojo.PlayerScoreStats;
 import com.hupu.pojo.TeamScoreStats;
@@ -138,7 +139,7 @@ public class PlayerScoreStatsServiceImpl implements PlayerScoreStatsService {
         }
         gameMap.put("home", getMap(listHome));
         gameMap.put("away", getMap(listAway));
-        redisUtil.set(key, gameMap, 900);
+        redisUtil.set(key, gameMap, HupuEnum.RedisExpTime.SHORT_TIME.getTime());
         return gameMap;
     }
     
@@ -162,7 +163,7 @@ public class PlayerScoreStatsServiceImpl implements PlayerScoreStatsService {
         }
         gameMap.put("home", homeList);
         gameMap.put("away", awayList);
-        redisUtil.set(key, gameMap, 900);
+        redisUtil.set(key, gameMap, HupuEnum.RedisExpTime.SHORT_TIME.getTime());
         return gameMap;
     }
 }

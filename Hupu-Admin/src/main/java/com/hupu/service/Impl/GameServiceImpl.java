@@ -1,6 +1,7 @@
 package com.hupu.service.Impl;
 
 
+import com.hupu.config.HupuEnum;
 import com.hupu.dao.GameDao;
 import com.hupu.pojo.Game;
 import com.hupu.service.GameService;
@@ -33,7 +34,13 @@ public class GameServiceImpl implements GameService {
     
     @Override
     public Game queryById(Integer gameid) {
-        return gameDao.queryById(gameid);
+        String key = gameid + "baseInfo";
+        if (redisUtil.hasKey(key)) {
+            return (Game) redisUtil.get(key);
+        }
+        Game game = gameDao.queryById(gameid);
+        redisUtil.set(key, game, HupuEnum.RedisExpTime.SHORT_TIME.getTime());
+        return game;
     }
     
     @Override

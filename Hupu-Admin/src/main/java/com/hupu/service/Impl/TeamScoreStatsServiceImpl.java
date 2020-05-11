@@ -2,6 +2,7 @@ package com.hupu.service.Impl;
 
 
 import com.alibaba.fastjson.JSON;
+import com.hupu.config.HupuEnum;
 import com.hupu.dao.TeamScoreStatsDao;
 import com.hupu.pojo.TeamScoreStats;
 import com.hupu.service.TeamScoreStatsService;
@@ -100,7 +101,9 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
         } else {
             gameIndexByDay =
                     teamScoreStatsDao.getGameIndex(queryDay);
-            redisUtil.set(key, gameIndexByDay, 1800); //30分钟过期
+            redisUtil.set(key, gameIndexByDay,
+                    HupuEnum.RedisExpTime.LongTime.getTime()); //30
+            // 分钟过期
         }
         ArrayList<Map> maps = new ArrayList<>();
         for (int i = 0; i < gameIndexByDay.size(); i++) {
@@ -132,7 +135,7 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
                 map.put("home", teamScore);
             }
         }
-        redisUtil.set(key, map, 900); // 15分钟过期
+        redisUtil.set(key, map, HupuEnum.RedisExpTime.SHORT_TIME.getTime()); // 15分钟过期
         return map;
     }
     

@@ -101,4 +101,9 @@ public class GameController {
         request.getSession().removeAttribute("gameInfo");
         return "Success";
     }
+    
+    @RequestMapping("/getGameInfo")
+    public Game getBaseInfoByGameId(int gameId) {
+        return null;
+    }
 }

@@ -41,30 +41,38 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                     <!-- yx add -->
-                    <li><a href="${pageContext.request.contextPath}/jump/toHome"><i
-                            class="fa fa-home"></i> 首页</a>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/jump/toHome"><i
+                                class="fa fa-home"></i> 首页</a>
                     </li>
                     <li><a><i class="fa fa-flag-checkered"></i> 赛事管理
                         <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="${pageContext.request.contextPath}/jump/toGameTable">赛事信息</a>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/jump/toGameTable">赛事信息</a>
                             </li>
-                            <!--
-                            <li><a href="/toGameAdd">添加赛事</a>
+
+                            <li><a
+                                    href="${pageContext.request.contextPath}/jump/toGameFuture">
+                                未来赛事AI预测</a>
                             </li>
-                            -->
-                            <li><a href="${pageContext.request.contextPath}/jump/toTeamTable">球队信息</a>
+
+                            <li>
+                                <a href="${pageContext.request.contextPath}/jump/toTeamTable">球队信息</a>
                             </li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-users"></i> 用户管理 <span
                             class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="${pageContext.request.contextPath}/jump/toUserTable">用户信息</a>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/jump/toUserTable">用户信息</a>
                             </li>
-                            <li><a href="${pageContext.request.contextPath}/jump/toAdminUserTable">管理员信息</a>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/jump/toAdminUserTable">管理员信息</a>
                             </li>
-                            <li><a href="${pageContext.request.contextPath}/jump/toAdminAdd">添加管理员</a>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/jump/toAdminAdd">添加管理员</a>
                             </li>
                         </ul>
                     </li>

@@ -41,14 +41,19 @@ public class JumpController {
     public String gotoLogin() {
         return "Hupu_Home";
     }
-
+    
     @RequestMapping("/toTeamTable")
     public String gotoTeamTable() {
         return "Hupu_TeamTable";
     }
-
+    
     @RequestMapping("/toAdminUserTable")
     public String gotoAdminUserTable() {
         return "Hupu_AdminUserTable";
+    }
+    
+    @RequestMapping("/toGameFuture")
+    public String gotoGameFutureTable() {
+        return "Hupu_Future_Game";
     }
 }

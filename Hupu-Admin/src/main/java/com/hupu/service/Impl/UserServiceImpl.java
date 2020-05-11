@@ -1,6 +1,7 @@
 package com.hupu.service.Impl;
 
 
+import com.hupu.config.HupuEnum;
 import com.hupu.dao.UserDao;
 import com.hupu.pojo.User;
 import com.hupu.service.UserService;
@@ -41,9 +42,12 @@ public class UserServiceImpl implements UserService {
     }
     
     @Override
-    public int insert(User user) {
-        //TODO: 用户名不能重复
-        return userDao.insert(user);
+    public int insert(User user) { // 用户注册
+        if (userDao.getUserByUserName(user.getUserName()) != null) {
+            return HupuEnum.LogInRet.USER_NAME_DUP.getReturnCode();
+        }else {
+            return userDao.insert(user);
+        }
     }
     
     @Override

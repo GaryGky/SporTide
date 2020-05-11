@@ -78,4 +78,9 @@ public class UserController {
         return userService.getPwdByUserName((String) map.get("user_name")).equals(map.get(
                 "password")) ? 1 : 0;
     }
+    
+    @RequestMapping(value = "/getUserById", method = RequestMethod.GET)
+    public User queryUserById(int userId) {
+        return userService.queryById(userId);
+    }
 }

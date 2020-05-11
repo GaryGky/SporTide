@@ -1,6 +1,7 @@
 package com.hupu.service.Impl;
 
 
+import com.hupu.config.HupuEnum;
 import com.hupu.dao.RecapDao;
 import com.hupu.pojo.Recap;
 import com.hupu.service.RecapService;
@@ -37,7 +38,7 @@ public class RecapServiceImpl implements RecapService {
             return (Recap) redisUtil.get(key);
         }
         Recap recap = recapDao.queryById(gameid);
-        redisUtil.set(key, recap, 900);
+        redisUtil.set(key, recap, HupuEnum.RedisExpTime.SHORT_TIME.getTime());
         return recap;
     }
     
