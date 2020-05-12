@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>添加比赛 </title>
-
+    <link rel="shortcut icon" href="http://114.115.134.119:8080/logo/DEN.png"/>
     <!-- Bootstrap -->
     <link href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css"
           rel="stylesheet">

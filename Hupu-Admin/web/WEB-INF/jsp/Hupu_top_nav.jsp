@@ -60,6 +60,11 @@
                             <li>
                                 <a href="${pageContext.request.contextPath}/jump/toTeamTable">球队信息</a>
                             </li>
+
+                            <li>
+                                <a
+                                        href="${pageContext.request.contextPath}/jump/toPyGame">球队博物馆</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-users"></i> 用户管理 <span

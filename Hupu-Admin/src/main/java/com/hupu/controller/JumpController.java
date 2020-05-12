@@ -56,4 +56,9 @@ public class JumpController {
     public String gotoGameFutureTable() {
         return "Hupu_Future_Game";
     }
+    
+    @RequestMapping("/toPyGame")
+    public String gotoPyGameTable() {
+        return "Hupu_PyControl";
+    }
 }

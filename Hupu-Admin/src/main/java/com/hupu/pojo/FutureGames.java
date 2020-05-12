@@ -13,7 +13,6 @@ public class FutureGames {
     private String homeWinRate;
      
     private String awayWinRate;
-
     
     public String getGameid() {
         return gameid;

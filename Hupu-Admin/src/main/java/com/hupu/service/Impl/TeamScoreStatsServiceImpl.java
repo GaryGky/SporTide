@@ -3,6 +3,7 @@ package com.hupu.service.Impl;
 
 import com.alibaba.fastjson.JSON;
 import com.hupu.config.HupuEnum;
+import com.hupu.dao.GameDao;
 import com.hupu.dao.TeamScoreStatsDao;
 import com.hupu.pojo.TeamScoreStats;
 import com.hupu.service.TeamScoreStatsService;
@@ -33,6 +34,10 @@ import java.util.regex.Pattern;
 @Transactional
 public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
     protected final Logger log = LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    @Qualifier("gameDao")
+    private GameDao gameDao;
+    
     @Autowired
     @Qualifier("teamScoreStatsDao")
     private TeamScoreStatsDao teamScoreStatsDao;
@@ -113,6 +118,8 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
             gameMap.put("awayScore", gameIndexByDay.get(i).getScore());
             gameMap.put("homeTeam", gameIndexByDay.get(i + 1).getTeamid());
             gameMap.put("homeScore", gameIndexByDay.get(i + 1).getScore());
+            gameMap.put("gameArena",
+                    gameDao.queryById(gameIndexByDay.get(i).getGameid()).getArena());
             i++;
             maps.add(gameMap);
         }

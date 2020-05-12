@@ -16,7 +16,7 @@
     <%--<link rel="icon" href="images/favicon.ico" type="image/ico"/>--%>
 
     <title>NBA GAME INFO CMS</title>
-
+    <link rel="shortcut icon" href="http://114.115.134.119:8080/logo/BOS.png"/>
     <!-- Bootstrap -->
     <link
             href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css"

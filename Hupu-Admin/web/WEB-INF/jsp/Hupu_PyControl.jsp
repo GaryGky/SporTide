@@ -3,7 +3,7 @@
   Created by IntelliJ IDEA.
   User: dell
   Date: 2020/4/16
-  Time: 19:45
+  Time: 19:49
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -15,8 +15,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>比赛信息</title>
-    <link rel="shortcut icon" href="http://114.115.134.119:8080/logo/CHI.png"/>
+    <title>球队博物馆</title>
+
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -42,7 +42,7 @@
           rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
           rel="stylesheet">
-
+    <link rel="shortcut icon" href="http://114.115.134.119:8080/logo/ATL.png"/>
     <!-- Custom Theme Style -->
     <link href="${pageContext.request.contextPath}/static/build/css/custom.min.css"
           rel="stylesheet">
@@ -65,68 +65,75 @@
 
         <jsp:include page="Hupu_top_nav.jsp" flush="true"/>
 
+
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3> 球队博物馆 </h3>
+                    </div>
+
+                    <div class="title_right">
+                        <div class="col-md-5 col-sm-5   form-group pull-right top_search">
+                            <div class="input-group">
+                                <input type="text" class="form-control"
+                                       placeholder="Search for...">
+                                <span class="input-group-btn">
+                        <button class="btn btn-default"
+                                type="button">Go!</button>
+                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 ">
-                        <div class="">
+                    <div class="col-md-12">
+                        <div class="x_panel">
                             <div class="x_title">
-                                <h2>NBA球队信息
+                                <h2>去掉好像有点空洞
                                 </h2>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
+
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="card-box table-responsive">
-                                            <p class="text-muted font-13 m-b-30">
-                                            </p>
-                                            <table id="datatable"
-                                                   class="table table-striped table-bordered"
-                                                   style="width:100%">
-                                                <thead>
-                                                <!-- 用ajax? -->
-                                                <tr>
-                                                    <!--对于description该怎么放入表中 -->
-                                                    <th>球队ID</th>
-                                                    <th>球队名称</th>
-                                                    <th>建立时间</th>
-                                                    <th>区域</th>
-                                                    <th>主场</th>
-                                                    <th>主教练</th>
-                                                </tr>
-                                                </thead>
+                                    <c:forEach var="teams"
+                                               items="${sessionScope.teamInfo}">
+                                        <div class="col-md-55">
+                                            <div class="thumbnail">
+                                                <div class="image view view-first">
+                                                    <img style="width: 100%; display: block;"
+                                                         src="http://114.115.134.119:8080/bg/${teams.id}.jpg"
+                                                         alt="image">
+                                                    <div class="mask">
+                                                        <p>${teams.teamName}</p>
+                                                        <div class="tools tools-bottom">
 
-                                                <tbody id="game_table_content">
-                                                <c:forEach var="teams"
-                                                           items="${sessionScope.teamInfo}">
-                                                    <tr id="${teams.id}">
-                                                        <td id="teamId"
-                                                            onclick="tdclick(this)"
-                                                        >${teams.id}</td>
-                                                        <td onclick="tdclick(this)"
-                                                            id="teamName">${teams.name}</td>
-                                                        <td id="buildTime"
-                                                            onclick="tdclick(this)"
-                                                        >${teams.buildtime}</td>
-                                                        <td id="teamArea"
-                                                            onclick="tdclick(this)"
-                                                        >${teams.area}</td>
-                                                        <td id="homeCourt"
-                                                            onclick="tdclick(this)"
-                                                        >${teams.homecourt}</td>
-                                                        <td id="chief"
-                                                            onclick="tdclick(this)"
-                                                        >${teams.chiefcoach}</td>
-                                                    </tr>
-                                                </c:forEach>
+                                                            <a target="_blank"
+                                                               href="${teams.website}"><i
+                                                                    class="fa fa-link"></i></a>
+                                                            <a href="#"><i
+                                                                    class="fa fa-pencil"></i></a>
+                                                            <a href="#"><i
+                                                                    class="fa fa-times"></i></a>
 
-                                                </tbody>
-
-                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="caption">
+                                                    <p>建立时间:
+                                                        <strong>${teams.buildtime}</strong>
+                                                    </p>
+                                                    <p>主场：${teams.homecourt}</p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </c:forEach>
+
                                 </div>
                             </div>
                         </div>
@@ -147,6 +154,7 @@
         <!-- /footer content -->
     </div>
 </div>
+
 
 <!-- jQuery -->
 <script src="${pageContext.request.contextPath}/static/vendors/jquery/dist/jquery.min.js"></script>
@@ -177,71 +185,13 @@
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
+
 <script src="${pageContext.request.contextPath}/static/JS/team.js"></script>
 <%--<script src="${pageContext.request.contextPath}/static/JS/table_click.js"></script>--%>
 <script type="text/javascript">
     window.onload = function () {
         getTeamInfo();
     };
-
-
-    var flag = false
-
-    function tdclick(ele) {
-        console.log(flag)
-        if (flag) {
-            return
-        }
-        flag = true
-        console.log('point1')
-        var td = $(ele);
-        var tr = td.parent();
-
-        var sampleId = $(ele).val();
-        var text = $(ele).text();
-        console.log(text)
-        td.html("");
-        var input = $("<input>");
-        input.attr("value", text);
-        input.keyup(function (event) {
-            console.log('point2')
-            var myEvent = event || window.event;
-            var kcode = myEvent.keyCode;
-            if (kcode === 13) {
-                var inputnode = input;
-                var inputext = inputnode.val();
-                var tdNode = inputnode.parent();
-                tdNode.html(inputext);
-                tdNode.onclick = tdclick;
-                flag = false
-                if (inputext !== text) {                    //只有当内容不一样时才进行保存
-                    //后台交互的地方
-                    sampleNameUpdate($(tr).attr('id'), td.attr('id'), inputext);
-                }
-            }
-        });
-        td.append(input);
-        var inputdom = input.get(0);
-        inputdom.select();
-        td.unbind("click");
-    }
-
-    function sampleNameUpdate(id, field, content) {
-        console.log(id + " " + field + " " + content);
-        $.post({
-            url: "/Hupu-Admin/team/updateTeamInfo",
-            data: {
-                teamId: id,
-                field: field,
-                new_value: content
-            },
-            dataType: 'json',
-            success: function (data) {
-                alert("修改成功");
-            }
-        });
-    }
 </script>
-
 </body>
 </html>

@@ -38,7 +38,8 @@ public class TeamController {
             map.put("area", team.getArea());
             map.put("homecourt", team.getHomecourt());
             map.put("chiefcoach", team.getChiefcoach());
-            
+            map.put("website",team.getWebsite());
+            map.put("teamName",team.getTeamname());
             teamInfo.add(map);
         }
         request.getSession().setAttribute("teamInfo", teamInfo);

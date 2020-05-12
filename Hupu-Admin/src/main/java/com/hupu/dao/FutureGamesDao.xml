@@ -120,4 +120,22 @@
           and gameId in (select gameId
                          from season2019);
     </select>
+
+    <select id="getAllGames" resultType="int">
+        select count(*)
+        from team_score_stats
+        where teamId = #{teamId}
+          and gameId in (select gameId from season2019);
+    </select>
+
+    <select id="getWinGames" resultType="int">
+        select count(*)
+        from team_score_stats teamA,
+             team_score_stats teamB
+        where teamA.gameId = teamB.gameId
+          and teamA.teamId = #{teamId}
+          and teamA.score > teamB
+            .score
+          and teamA.gameId in (select gameId from season2019);
+    </select>
 </mapper>

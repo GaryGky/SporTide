@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>比赛信息</title>
-
+    <link rel="shortcut icon" href="http://114.115.134.119:8080/logo/MIA.png"/>
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link href="${pageContext.request.contextPath}/static/vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -74,28 +74,9 @@
                     <div class="col-md-12 col-sm-12 ">
                         <div class="">
                             <div class="x_title">
-                                <h2>NBA未来比赛AI预测
+                                <h2>NBA对赛信息
                                 </h2>
                                 <div class="clearfix"></div>
-                            </div>
-                            <div class="col-md-5">
-                                <button class="btn btn-dark"> 一键预测
-                                </button>
-                            </div>
-                            <div class="field item form-group bad">
-                                <label class="col-form-label col-md-3 col-sm-3  label-align">Date<span
-                                        class="required">*</span></label>
-                                <div class="col-md-5 col-sm-6">
-                                    <input class="form-control" type="date"
-                                           name="date" required="required"
-                                           style="float: left">
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn-dark btn"
-                                            >提交
-                                    </button>
-                                </div>
-
                             </div>
                             <div class="x_content">
                                 <div class="row">
@@ -106,54 +87,30 @@
                                             <table id="datatable"
                                                    class="table table-striped table-bordered"
                                                    style="width:100%">
-                                                <tbody id="game_table_content">
+                                                <thead>
+                                                <!-- 用ajax? -->
                                                 <tr>
-                                                    <div class="team_vs">
-                                                        <div
-                                                                class="team_vs_box"
-                                                                style="width: 800px">
-                                                            <div class="team_a">
-                                                                <div class="img">
-                                                                    <a target="_blank"
-                                                                       href="https://nba.hupu.com/teams/bucks"><img
-                                                                            alt="雄鹿"
-                                                                            src="http://114.115.134.119:8080/logo/MIL.png"
-                                                                            height="95"
-                                                                            width="95"></a>
-                                                                </div>
-                                                                <div class="message">
-                                                                    <a href="https://nba.hupu.com/teams/bucks"
-                                                                       target="_blank"><span
-                                                                            style="font-size: x-large"> 雄鹿</span></a>
-
-                                                                    <div>
-                                                                        客队胜率：<span>Nan</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="team_b">
-                                                                <div class="img">
-                                                                    <a target="_blank"
-                                                                       href="https://nba.hupu.com/teams/nets"><img
-                                                                            alt="篮网"
-                                                                            src="http://114.115.134.119:8080/logo/BKN.png"
-                                                                            height="95"
-                                                                            width="95"></a>
-                                                                </div>
-                                                                <div class="message">
-                                                                    <a href="https://nba.hupu.com/teams/nets"
-                                                                       target="_blank"><span
-                                                                            style="font-size: x-large;">篮网</span>
-                                                                    </a>
-
-                                                                    <div>主队胜率:
-                                                                        <span>Nan</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <th>主场球队</th>
+                                                    <th>主队胜率</th>
+                                                    <th>比赛地点</th>
+                                                    <th>比赛时间</th>
+                                                    <th>客场球队</th>
+                                                    <th>客队胜率</th>
                                                 </tr>
+                                                </thead>
+
+                                                <tbody id="game_table_content">
+                                                <c:forEach var="future"
+                                                           items="${sessionScope.allFuture}">
+                                                    <tr id="${future.getGameid()}">
+                                                        <td>${future.getHome()}</td>
+                                                        <td>${future.getHomeWinRate()}</td>
+                                                        <td>${sessionScope.homeCourt[future.getGameid()]}</td>
+                                                        <td>${future.getGametime()}</td>
+                                                        <td>${future.getAway()}</td>
+                                                        <td> ${future.getAwayWinRate()}</td>
+                                                    </tr>
+                                                </c:forEach>
                                                 </tbody>
 
                                             </table>
@@ -210,5 +167,16 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 <%--<script src="${pageContext.request.contextPath}/static/JS/table_click.js"></script>--%>
+
+<script>
+    $.get({
+        url: "/Hupu-Admin/future/getAllFutureGame",
+        data: {},
+        success: function (data) {
+            console.log(data);
+            // window.location.reload();
+        }
+    });
+</script>
 </body>
 </html>

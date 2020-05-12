@@ -67,4 +67,8 @@ public interface FutureGamesDao {
     List<FutureGames> getFutureGameByDate(@Param("date") String date);
     
     List<Integer> getStatsByTeam(@Param("teamId") String teamId);
+    
+    int getAllGames(@Param("teamId") String teamId); // 获得球队的所有比赛场数
+    
+    int getWinGames(@Param("teamId") String teamId); // 获得球队的胜场
 }

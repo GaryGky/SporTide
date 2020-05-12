@@ -4,6 +4,7 @@ package com.hupu.service.Impl;
 import com.hupu.config.HupuEnum;
 import com.hupu.dao.FutureGamesDao;
 import com.hupu.dao.PlayerScoreStatsDao;
+import com.hupu.dao.TeamDao;
 import com.hupu.dao.TeamScoreStatsDao;
 import com.hupu.pojo.FutureGames;
 import com.hupu.service.FutureGamesService;
@@ -45,6 +46,8 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
     @Autowired
     @Qualifier("redisUtil")
     private RedisUtil redisUtil;
+    
+    
     
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     
@@ -88,7 +91,7 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         logger.info("AI预测查询日期 ====> " + queryDay);
         String key = queryDay + "future";
         if (redisUtil.hasKey(key)) {
-            return (List<FutureGames>) redisUtil.get(key);
+            return (List) redisUtil.get(key);
         }
         List<FutureGames> list = futureGamesDao.getFutureGameByDate(queryDay);
         if (list.size() > 0) {
@@ -143,7 +146,41 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         previewMap.put("goal", goal / teamStatsIdList.size());
         previewMap.put("goal3", goal3 / teamStatsIdList.size());
         previewMap.put("shot3", shot3 / teamStatsIdList.size());
+        previewMap.put("allGames", getAllGames(teamId));
+        previewMap.put("winGames", getWinGames(teamId));
+        previewMap.put("teamId",teamId);
         redisUtil.set(key, previewMap, HupuEnum.RedisExpTime.SS_LONG.getTime());
         return previewMap;
+    }
+    
+    @Override
+    public int getAllGames(String teamId) {
+        String key = teamId + "AllGames";
+        if (redisUtil.hasKey(key)) {
+            return (int) redisUtil.get(key);
+        }
+        int allGames = futureGamesDao.getAllGames(teamId);
+        redisUtil.set(key, allGames, HupuEnum.RedisExpTime.LongTime.getTime());
+        return allGames;
+    }
+    
+    @Override
+    public int getWinGames(String teamId) {
+        String key = teamId + "WinGames";
+        if (redisUtil.hasKey(key)) {
+            return (int) redisUtil.get(key);
+        }
+        int winGames = futureGamesDao.getWinGames(teamId);
+        redisUtil.set(key, winGames, HupuEnum.RedisExpTime.LongTime.getTime());
+        return winGames;
+    }
+    
+    @Override
+    public HashMap<String, Object> getGamePreview(int gameId) {
+        FutureGames futureGames = futureGamesDao.queryById(String.valueOf(gameId));
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("awayTeam", getTeamPreview(futureGames.getAway()));
+        map.put("homeTeam", getTeamPreview(futureGames.getHome()));
+        return map;
     }
 }

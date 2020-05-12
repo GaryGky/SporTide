@@ -1,6 +1,7 @@
 package com.hupu.service;
 
 import com.hupu.pojo.FutureGames;
+import org.apache.ibatis.annotations.Param;
 
 import java.text.ParseException;
 import java.util.HashMap;
@@ -57,7 +58,13 @@ public interface FutureGamesService {
      */
     int deleteById(String gameid);
     
-    List<FutureGames> getFutureGameByDate(String date) throws ParseException;
+    List getFutureGameByDate(String date) throws ParseException;
     
     HashMap<String, Object> getTeamPreview(String teamId);
+    
+    HashMap<String ,Object> getGamePreview(int gameId);
+    
+    int getAllGames(String teamId); // 获得球队的所有比赛场数
+    
+    int getWinGames(String teamId); // 获得球队的胜场
 }
