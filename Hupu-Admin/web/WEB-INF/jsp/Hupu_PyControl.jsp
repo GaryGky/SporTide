@@ -77,11 +77,11 @@
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                             <div class="input-group">
-                                <input type="text" class="form-control"
-                                       placeholder="Search for...">
+                                <input id="crawlGamesDates" type="text" class="form-control"
+                                       placeholder="比赛日期">
                                 <span class="input-group-btn">
                         <button class="btn btn-default"
-                                type="button">Go!</button>
+                                type="button" onclick="crawlGames()">爬取比赛信息</button>
                     </span>
                             </div>
                         </div>
@@ -192,6 +192,30 @@
     window.onload = function () {
         getTeamInfo();
     };
+
+    function crawlGames() {
+        input_dates = $("#crawlGamesDates").val();
+        $.post({
+            url: "/Hupu-Admin/python/crawlGames",
+            data: {
+                "dates": input_dates
+            },
+            success: function (data) {
+                console.log('crawlGames ',data);
+                predictGames();
+            }
+        });
+    }
+
+    function predictGames() {
+        $.post({
+            url: "/Hupu-Admin/python/predictGames",
+            data: {},
+            success: function (data) {
+                console.log('predict games',data);
+            }
+        });
+    }
 </script>
 </body>
 </html>
