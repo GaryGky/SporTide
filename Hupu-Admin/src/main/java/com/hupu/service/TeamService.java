@@ -57,5 +57,5 @@ public interface TeamService {
     int deleteById(String teamid);
     
     
-    
+    List<Map<String, Object>> getAllTeam();
 }

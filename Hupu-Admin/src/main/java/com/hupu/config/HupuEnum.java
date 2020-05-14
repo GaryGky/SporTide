@@ -5,7 +5,7 @@ import com.hupu.pojo.Game;
 public interface HupuEnum {
     enum RedisExpTime implements HupuEnum {
         SHORT_TIME(300), Mid_Time(500), LongTime(700), S_LONG(900),
-        SS_LONG(3600);
+        SS_LONG(86400);
         private long time = 0;
         
         public long getTime() {

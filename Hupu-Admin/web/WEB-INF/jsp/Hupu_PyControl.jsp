@@ -77,11 +77,13 @@
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                             <div class="input-group">
-                                <input id="crawlGamesDates" type="text" class="form-control"
+                                <input id="crawlGamesDates" type="text"
+                                       class="form-control"
                                        placeholder="比赛日期">
                                 <span class="input-group-btn">
                         <button class="btn btn-default"
-                                type="button" onclick="crawlGames()">爬取比赛信息</button>
+                                type="button"
+                                onclick="crawlGames()">爬取比赛信息</button>
                     </span>
                             </div>
                         </div>
@@ -94,7 +96,7 @@
                     <div class="col-md-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>去掉好像有点空洞
+                                <h2>Author-By：球迷部落
                                 </h2>
                                 <div class="clearfix"></div>
                             </div>
@@ -107,7 +109,7 @@
                                             <div class="thumbnail">
                                                 <div class="image view view-first">
                                                     <img style="width: 100%; display: block;"
-                                                         src="http://114.115.134.119:8080/bg/${teams.id}.jpg"
+                                                         src="http://114.115.134.119/bg/${teams.id}.jpg"
                                                          alt="image">
                                                     <div class="mask">
                                                         <p>${teams.teamName}</p>
@@ -129,6 +131,8 @@
                                                         <strong>${teams.buildtime}</strong>
                                                     </p>
                                                     <p>主场：${teams.homecourt}</p>
+                                                    <p>战绩：${teams.winGame}/
+                                                            ${teams.allGame}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -201,7 +205,7 @@
                 "dates": input_dates
             },
             success: function (data) {
-                console.log('crawlGames ',data);
+                console.log('crawlGames ', data);
                 predictGames();
             }
         });
@@ -212,7 +216,7 @@
             url: "/Hupu-Admin/python/predictGames",
             data: {},
             success: function (data) {
-                console.log('predict games',data);
+                console.log('predict games', data);
             }
         });
     }

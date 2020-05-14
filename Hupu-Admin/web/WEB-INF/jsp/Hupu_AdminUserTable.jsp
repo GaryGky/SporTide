@@ -62,7 +62,7 @@
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
-        <jsp:include page="Hupu_top_nav.jsp" flush="true" />
+        <jsp:include page="Hupu_top_nav.jsp" flush="true"/>
 
         <!-- page content -->
         <div class="right_col" role="main">
@@ -88,25 +88,21 @@
                                             <tr>
                                                 <th>Id</th>
                                                 <th>AdminName</th>
-                                                <th>RegisterTime</th>
                                                 <th>Actions</th>
                                             </tr>
                                             </thead>
 
                                             <tbody id="user_info_table">
-                                            <c:forEach var="user"
-                                                       items="${sessionScope.userMap}">
+                                            <c:forEach var="admin"
+                                                       items="${sessionScope.allAdmin}">
                                                 <tr>
-                                                    <td>${user.getUserId()}</td>
-                                                    <td>${user.getUserName()}</td>
-                                                    <td>${user.getUserEmail()}</td>
-
+                                                    <td>${admin.getAdmin_id()}</td>
+                                                    <td>${admin.getAdmin_name()}</td>
                                                     <td>
                                                         <button
-                                                                onclick="delUser(${user.userId})"
                                                                 class="btn btn-primary"
                                                                 style="display: block;width: 60px;height: 30px;background: #0b2e13">
-                                                            删除
+                                                            暂无
                                                         </button>
                                                     </td>
                                                 </tr>
@@ -169,10 +165,21 @@
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/JS/user.js"></script>
+
 
 <script type="text/javascript">
-    window.onload = getMyUser();
+    //获取当前Admin的信息
+    function getCurAdmin() {
+        $.get({
+            url: "/Hupu-Admin/user/getAdmin",
+            data: "",
+            success: function () {
+
+            }
+        })
+    }
+
+    window.onload = getCurAdmin();
 </script>
 
 </body>

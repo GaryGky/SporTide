@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -26,26 +27,14 @@ public class TeamController {
     private TeamServiceImpl teamService;
     
     @RequestMapping("/getTeamByLimit")
-    public String getTeamByLimit(HttpServletRequest request) {
+    public List<Map<String, Object>> getTeamByLimit(HttpServletRequest request) {
         System.out.println("获取球队信息");
-        ArrayList<HashMap<String, Object>> teamInfo = new ArrayList<>();
-        List<Team> teamList = teamService.queryAllByLimit(0, 50);
-        for (Team team : teamList) {
-            HashMap<String, Object> map = new HashMap<>();
-            map.put("id", team.getTeamid());
-            map.put("name", team.getTeamname());
-            map.put("buildtime", team.getBuildtime());
-            map.put("area", team.getArea());
-            map.put("homecourt", team.getHomecourt());
-            map.put("chiefcoach", team.getChiefcoach());
-            map.put("website",team.getWebsite());
-            map.put("teamName",team.getTeamname());
-            teamInfo.add(map);
+        if (request.getSession().getAttribute("teamInfo") != null) {
+            return (List<Map<String, Object>>) request.getSession().getAttribute("teamInfo");
         }
-        request.getSession().setAttribute("teamInfo", teamInfo);
-        System.out.println("获取球队信息成功");
-        System.out.println(teamInfo.isEmpty());
-        return "Success";
+        List<Map<String, Object>> list = teamService.getAllTeam();
+        request.getSession().setAttribute("teamInfo", list);
+        return list;
     }
     
     @RequestMapping(value = "/updateTeamInfo", method = RequestMethod.POST)

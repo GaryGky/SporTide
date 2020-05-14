@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 
 public abstract class Play2TeamStats {
     public HashMap<String, Object> getMap(List<PlayerScoreStats> playerList) {
+        //TODO: 问题是shot是"10-30"的字符串，只能提取出来用正则匹配再相加
         double score = 0; // 得分
         double court; // 篮板可以由前场后场篮板相加得到
         double assist = 0;

@@ -1,6 +1,7 @@
 package com.hupu.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.hupu.pojo.Admin;
 import com.hupu.pojo.User;
 import com.hupu.service.Impl.AdminServiceImpl;
 import com.hupu.service.Impl.UserServiceImpl;
@@ -42,6 +43,12 @@ public class UserController {
         return users;
     }
     
+    @RequestMapping("/getAdmin")
+    public List<Admin> getAllAdmin(HttpServletRequest request) {
+        List<Admin> list = adminService.queryAllAdmins();
+        request.getSession().setAttribute("allAdmin", list);
+        return list;
+    }
     
     @RequestMapping("/addAdmin")
     public int addAdmin(String name, String pwd1) {
@@ -62,7 +69,6 @@ public class UserController {
     
     @RequestMapping(value = "/updateUser", method = {RequestMethod.POST})
     public int updateUser(@RequestBody User user) {
-        System.out.println(user);
         return userService.update(user);
     }
     

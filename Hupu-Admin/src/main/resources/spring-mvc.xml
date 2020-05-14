@@ -41,19 +41,8 @@
     <!--文件上传-->
     <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="102400000"/>
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="maxInMemorySize" value="40960"/>
     </bean>
-
-    <!--&lt;!&ndash;关于拦截器的配置&ndash;&gt;-->
-    <!--<mvc:interceptors>-->
-    <!--<mvc:interceptor>-->
-    <!--&lt;!&ndash;/** 包括路径及其子路径&ndash;&gt;-->
-    <!--&lt;!&ndash;/admin/* 拦截的是/admin/add等等这种 , /admin/add/user不会被拦截&ndash;&gt;-->
-    <!--&lt;!&ndash;/admin/** 拦截的是/admin/下的所有&ndash;&gt;-->
-    <!--<mvc:mapping path="/user/**"/>-->
-    <!--&lt;!&ndash;bean配置的就是拦截器&ndash;&gt;-->
-    <!--<bean class="com.gary.config.MyInterceptor"/>-->
-    <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
-    <!--视图解析器-->
 
 </beans>

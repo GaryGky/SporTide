@@ -60,7 +60,7 @@ public interface FutureGamesDao {
      * 通过主键删除数据
      *
      * @param gameid 主键
-     * @return 影响行数
+     * @return 影响行数 // 获得球队的所有比赛场数
      */
     int deleteById(String gameid);
     
@@ -68,7 +68,7 @@ public interface FutureGamesDao {
     
     List<Integer> getStatsByTeam(@Param("teamId") String teamId);
     
-    int getAllGames(@Param("teamId") String teamId); // 获得球队的所有比赛场数
+    int getAllGames(@Param("teamId") String teamId);
     
     int getWinGames(@Param("teamId") String teamId); // 获得球队的胜场
 }

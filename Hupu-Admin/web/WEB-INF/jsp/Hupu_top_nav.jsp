@@ -90,6 +90,10 @@
                             <li>
                                 <a href="${pageContext.request.contextPath}/jump/toComTable">评论信息</a>
                             </li>
+                            <li>
+                                <a
+                                        href="${pageContext.request.contextPath}/jump/toGameAdd">添加新闻</a>
+                            </li>
                         </ul>
                     </li>
                     <!-- yx add end -->

@@ -49,6 +49,11 @@ public class UserTest {
     @Test
     public void testGet(){
         System.out.println(JSON.toJSONString(userService.getUserByName(
-                "user_name0")));
+                "q")));
+    }
+    
+    @Test
+    public void testUpd(){
+    
     }
 }

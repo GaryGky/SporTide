@@ -1,7 +1,4 @@
-//获取当前Admin的信息
-function getCurAdmin() {
 
-}
 
 //添加Admin的信息
 function addAdmin() {
@@ -22,8 +19,8 @@ function addAdmin() {
                 console.log(msg);
                 if (msg === 1) {
                     // 注册成功
-                    console.log("注册成功");
-                    window.location.href = "/index.jsp";
+                    alert("注册成功");
+
                 }
             }
         });

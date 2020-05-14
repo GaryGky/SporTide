@@ -48,7 +48,6 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
     private RedisUtil redisUtil;
     
     
-    
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     
     
@@ -107,6 +106,7 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
      */
     @Override
     public HashMap<String, Object> getTeamPreview(String teamId) {
+        logger.info("获取球队历史数据  => " + teamId);
         String key = teamId + "preview";
         if (redisUtil.hasKey(key)) {
             return (HashMap<String, Object>) redisUtil.get(key);
@@ -123,8 +123,10 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         double goal = 0; // 命中
         double shot3 = 0;
         double goal3 = 0;
+        //TODO:优化这个循环
         for (Integer teamStatsId : teamStatsIdList) {
             // 得到一场比赛球队的球员数据的累加和
+            // TODO:嵌套循环访问数据库，时间爆炸
             previewMap = getMap(playerDao.queryByTeamStatsId(teamStatsId)); //
             score += (double) previewMap.get("score");
             court += (double) previewMap.get("court");
@@ -148,7 +150,7 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         previewMap.put("shot3", shot3 / teamStatsIdList.size());
         previewMap.put("allGames", getAllGames(teamId));
         previewMap.put("winGames", getWinGames(teamId));
-        previewMap.put("teamId",teamId);
+        previewMap.put("teamId", teamId);
         redisUtil.set(key, previewMap, HupuEnum.RedisExpTime.SS_LONG.getTime());
         return previewMap;
     }
@@ -160,7 +162,7 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
             return (int) redisUtil.get(key);
         }
         int allGames = futureGamesDao.getAllGames(teamId);
-        redisUtil.set(key, allGames, HupuEnum.RedisExpTime.LongTime.getTime());
+        redisUtil.set(key, allGames, HupuEnum.RedisExpTime.S_LONG.getTime());
         return allGames;
     }
     
@@ -171,7 +173,7 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
             return (int) redisUtil.get(key);
         }
         int winGames = futureGamesDao.getWinGames(teamId);
-        redisUtil.set(key, winGames, HupuEnum.RedisExpTime.LongTime.getTime());
+        redisUtil.set(key, winGames, HupuEnum.RedisExpTime.S_LONG.getTime());
         return winGames;
     }
     
