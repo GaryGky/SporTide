@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -24,6 +25,13 @@ public class ComController {
     @RequestMapping("/getCommentByTopic")
     public List<Comment> getCommentByTopic(int topicId, int topicType) {
         return commentService.getCommentByTopic(topicId, topicType);
+    }
+    
+    @RequestMapping("/getAllComment")
+    public List<Comment> getAllComment(HttpServletRequest request) {
+        List<Comment> comments = commentService.queryAllByLimit(0, 100);
+        request.getSession().setAttribute("comMap", comments);
+        return comments;
     }
     
 }

@@ -29,20 +29,7 @@ function delPost(id) {
     });
 }
 
-function getLimitCom() {
-    var entry = $("select[name='datatable_length']").val();
-    $.get({
-        url: "/Hupu-Admin/comment/getLimitCom",
-        data: {
-            "entries": entry
-        },
-        success: function (data) {
-            console.log(data);
-            // window.location.reload();
-        }
-    });
 
-}
 
 
 //删除评论

@@ -47,7 +47,7 @@ function delUser(id) {
         data: {"id": id},
         success: function (data) {
             console.log(data);
-            // window.location.reload();
+            window.location.reload();
         }
     });
 }

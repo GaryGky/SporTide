@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * (GameCollection)表服务实现类
@@ -27,31 +28,36 @@ public class GameCollectionServiceImpl implements GameCollectionService {
     
     @Override
     public GameCollection queryById(Integer id) {
-        return null;
+        return gameCollectionDao.queryById(id);
     }
     
     @Override
     public List<GameCollection> queryAllByLimit(int offset, int limit) {
-        return null;
+        return gameCollectionDao.queryAllByLimit(offset, limit);
     }
     
     @Override
     public List<GameCollection> queryAll(GameCollection gameCollection) {
-        return null;
+        return gameCollectionDao.queryAll(gameCollection);
     }
     
     @Override
-    public GameCollection insert(GameCollection gameCollection) {
-        return null;
+    public int insert(GameCollection gameCollection) {
+        return gameCollectionDao.insert(gameCollection);
     }
     
     @Override
-    public GameCollection update(GameCollection gameCollection) {
-        return null;
+    public int update(GameCollection gameCollection) {
+        return gameCollectionDao.update(gameCollection);
     }
     
     @Override
-    public boolean deleteById(Integer id) {
-        return false;
+    public int deleteById(Integer id) {
+        return gameCollectionDao.deleteById(id);
+    }
+    
+    @Override
+    public List<Map> getUserCollection(int user_id) {
+        return gameCollectionDao.getUserCollection(user_id);
     }
 }

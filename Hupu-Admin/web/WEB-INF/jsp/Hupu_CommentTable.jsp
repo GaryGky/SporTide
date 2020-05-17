@@ -90,12 +90,12 @@
                                                    style="width:100%; table-layout: fixed">
                                                 <thead>
                                                 <tr>
-                                                    <th>Id</th>
-                                                    <th>帖子</th>
-                                                    <th>作者</th>
-                                                    <th>内容</th>
-                                                    <th>时间</th>
-                                                    <th>删除</th>
+                                                    <th>评论Id</th>
+                                                    <th>评论内容</th>
+                                                    <th>评论用户</th>
+                                                    <th>评论类型</th>
+                                                    <th>评论时间</th>
+                                                    <th>操作</th>
                                                 </tr>
                                                 </thead>
 
@@ -103,14 +103,14 @@
                                                 <c:forEach var="comment"
                                                            items="${sessionScope.comMap}">
                                                     <tr>
-                                                        <td>${comment.id}</td>
-                                                        <td>${comment.post_label}</td>
-                                                        <td>${comment.from_user_name}</td>
-                                                        <td>${comment.info}</td>
-                                                        <td>${comment.time}</td>
+                                                        <td>${comment.getCommentId()}</td>
+                                                        <td>${comment.getCommentInfo()}</td>
+                                                        <td>${comment.getFromUid()}</td>
+                                                        <td>${comment.getTopicType()}</td>
+                                                        <td>${comment.getCommentTime()}</td>
                                                         <td>
                                                             <button
-                                                                    onclick="delComment(${comment.id})"
+                                                                    onclick="delComment(${comment.getCommentId()})"
                                                                     class="btn btn-primary"
                                                                     style="display: block;width: 60px;height: 30px;background: #0b2e13">
                                                                 删除
@@ -172,8 +172,17 @@
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/JS/post.js"></script>
 <script type="text/javascript">
+    function getLimitCom() {
+        $.get({
+            url: "/Hupu-Admin/comment/getAllComment",
+            data: {},
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
     window.onload = function () {
         getLimitCom();
     }

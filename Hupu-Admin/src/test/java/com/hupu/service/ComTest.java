@@ -23,7 +23,7 @@ public class ComTest {
     public void testInsert() {
         
         for (int i = 2; i < 13; i++) {
-            commentService.insert(new Comment(i+100, i, 1,
+            commentService.insert(new Comment(i*999, i, 1,
                     HupuEnum.TopicType.COMMENT.getTopicType(), 156542,
                     "comment info" + i, DateUtils.getCurTime()));
         }

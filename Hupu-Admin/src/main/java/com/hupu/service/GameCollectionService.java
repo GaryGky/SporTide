@@ -1,8 +1,10 @@
 package com.hupu.service;
 
 import com.hupu.pojo.GameCollection;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * (GameCollection)表服务接口
@@ -37,7 +39,7 @@ public interface GameCollectionService {
      * @param gameCollection 实例对象
      * @return 实例对象
      */
-    GameCollection insert(GameCollection gameCollection);
+    int insert(GameCollection gameCollection);
     
     /**
      * 修改数据
@@ -45,7 +47,7 @@ public interface GameCollectionService {
      * @param gameCollection 实例对象
      * @return 实例对象
      */
-    GameCollection update(GameCollection gameCollection);
+    int update(GameCollection gameCollection);
     
     /**
      * 通过主键删除数据
@@ -53,6 +55,8 @@ public interface GameCollectionService {
      * @param id 主键
      * @return 是否成功
      */
-    boolean deleteById(Integer id);
+    int deleteById(Integer id);
+    
+    List<Map> getUserCollection(int user_id);
     
 }

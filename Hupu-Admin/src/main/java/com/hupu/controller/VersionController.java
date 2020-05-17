@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/version")
-public class VersinController {
+public class VersionController {
     @Autowired
     private VersionInfoServiceImpl versionInfoService;
     

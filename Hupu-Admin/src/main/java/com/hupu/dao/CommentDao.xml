@@ -116,10 +116,10 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="commentId" useGeneratedKeys="true">
-        insert into nba.comment(comment_id, from_uid, to_uid, topic_type,
+        insert into nba.comment(from_uid, to_uid, topic_type,
                                 topic_id,
                                 comment_info, comment_time)
-        values (#{commentId}, #{fromUid}, #{toUid}, #{topicType}, #{topicId},
+        values (#{fromUid}, #{toUid}, #{topicType}, #{topicId},
                 #{commentInfo}, #{commentTime})
     </insert>
 

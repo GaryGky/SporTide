@@ -4,6 +4,7 @@ import com.hupu.pojo.GameCollection;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * (GameCollection)表数据库访问层
@@ -62,5 +63,6 @@ public interface GameCollectionDao {
      * @return 影响行数
      */
     int deleteById(Integer id);
-
+    
+    List<Map> getUserCollection(@Param("userId") int user_id);
 }

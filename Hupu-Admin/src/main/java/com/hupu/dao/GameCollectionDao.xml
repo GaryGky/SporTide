@@ -13,16 +13,20 @@
 
     <!--查询单个-->
     <select id="queryById" resultMap="GameCollectionMap">
-        select
-        user_id, game_id, collect_time, id
+        select user_id,
+               game_id,
+               collect_time,
+               id
         from nba.game_collection
         where id = #{id}
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="GameCollectionMap">
-        select
-        user_id, game_id, collect_time, id
+        select user_id,
+               game_id,
+               collect_time,
+               id
         from nba.game_collection
         limit #{offset}, #{limit}
     </select>
@@ -73,7 +77,31 @@
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from nba.game_collection where id = #{id}
+        delete
+        from nba.game_collection
+        where id = #{id}
     </delete>
+
+    <select id="getUserCollection" resultType="Map">
+        select a.teamId as away,
+               b.teamId as home,
+               game.gameTime,
+               collection.collect_time,
+               a.score as awayScore,
+               b.score as homeScore,
+               a.gameId,
+               collection.id as collection_id
+        from team_score_stats a,
+             team_score_stats b,
+             game game,
+             game_collection collection
+        where a.gameId = b.gameId
+          and a.isHome = 0
+          and b.isHome = 1
+          and a.gameId = 156542
+          and game
+                  .gameId = 156542
+          and collection.game_id = 156542;
+    </select>
 
 </mapper>
