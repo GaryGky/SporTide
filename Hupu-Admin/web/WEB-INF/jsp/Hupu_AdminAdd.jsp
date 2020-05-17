@@ -62,7 +62,7 @@
 <div class="container body">
     <div class="main_container">
 
-        <jsp:include page="Hupu_top_nav.jsp" flush="true" />
+        <jsp:include page="Hupu_top_nav.jsp" flush="true"/>
 
         <!-- page content -->
         <div class="right_col" role="main">

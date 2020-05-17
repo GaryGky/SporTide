@@ -23,5 +23,5 @@ public class TeamTest {
         teamService.queryAllByLimit(0, 100).stream().map(JSON::toJSONString).forEach(System.out::println);
     }
     
-   
+
 }

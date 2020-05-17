@@ -54,7 +54,7 @@
     </error-page>
 
     <!--<error-page>-->
-        <!--<error-code>500</error-code>-->
-        <!--<location>/WEB-INF/html/error_500.html</location>-->
+    <!--<error-code>500</error-code>-->
+    <!--<location>/WEB-INF/html/error_500.html</location>-->
     <!--</error-page>-->
 </web-app>

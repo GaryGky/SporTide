@@ -1,26 +1,26 @@
 package com.hupu.dao;
 
-import com.hupu.pojo.User;
+import com.hupu.pojo.Post;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 /**
- * (User)表数据库访问层
+ * (Post)表数据库访问层
  *
  * @author makejava
- * @since 2020-05-11 10:42:26
+ * @since 2020-05-16 17:33:28
  */
-public interface UserDao {
-
+public interface PostDao {
+    
     /**
      * 通过ID查询单条数据
      *
-     * @param userId 主键
+     * @param postId 主键
      * @return 实例对象
      */
-    User queryById(Integer userId);
-
+    Post queryById(Integer postId);
+    
     /**
      * 查询指定行数据
      *
@@ -28,42 +28,39 @@ public interface UserDao {
      * @param limit  查询条数
      * @return 对象列表
      */
-    List<User> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
-
-
+    List<Post> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
+    
+    
     /**
      * 通过实体作为筛选条件查询
      *
-     * @param user 实例对象
+     * @param post 实例对象
      * @return 对象列表
      */
-    List<User> queryAll(User user);
-
+    List<Post> queryAll(Post post);
+    
     /**
      * 新增数据
      *
-     * @param user 实例对象
+     * @param post 实例对象
      * @return 影响行数
      */
-    int insert(User user);
-
+    int insert(Post post);
+    
     /**
      * 修改数据
      *
-     * @param user 实例对象
+     * @param post 实例对象
      * @return 影响行数
      */
-    int update(User user);
-
+    int update(Post post);
+    
     /**
      * 通过主键删除数据
      *
-     * @param userId 主键
+     * @param postId 主键
      * @return 影响行数
      */
-    int deleteById(Integer userId);
+    int deleteById(Integer postId);
     
-    String getPwdByUserName(@Param("user_name") String userName);
-    
-    User getUserByUserName(@Param("user_name") String userName);
 }

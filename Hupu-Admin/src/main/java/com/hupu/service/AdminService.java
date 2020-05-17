@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface AdminService {
-    public int createAdmin( String name, String pwd);//
+    public int createAdmin(String name, String pwd);//
     // 创建一个管理员
     
     public int updateAdminPwd(int id, String oldPwd, String newPwd); // 更新管理员密码

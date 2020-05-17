@@ -2,7 +2,7 @@ package com.hupu.pojo;
 
 import java.io.Serializable;
 
-public class Game  implements Serializable {
+public class Game implements Serializable {
     
     private Integer gameid;
     private String gametime;

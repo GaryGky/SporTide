@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AdminTest {
     
     @Test
-    public void addRoot(){
+    public void addRoot() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
         AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(
@@ -76,7 +76,7 @@ public class AdminTest {
     }
     
     @Test
-    public void tmp(){
+    public void tmp() {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "application-context.xml");
         AdminServiceImpl adminService = (AdminServiceImpl) context.getBean(

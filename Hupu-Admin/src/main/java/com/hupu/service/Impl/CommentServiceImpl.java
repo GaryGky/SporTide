@@ -1,83 +1,62 @@
 package com.hupu.service.Impl;
 
-import com.hupu.dao.CommentMapper;
-import com.hupu.dao.PostMapper;
-import com.hupu.dao.UserDao;
+
+import com.hupu.dao.CommentDao;
 import com.hupu.pojo.Comment;
 import com.hupu.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-@Service
+/**
+ * (Comment)表服务实现类
+ *
+ * @author makejava
+ * @since 2020-05-16 17:16:02
+ */
+@Service("commentService")
+@Transactional
 public class CommentServiceImpl implements CommentService {
-    @Autowired
-    @Qualifier("commentMapper")
-    private CommentMapper commentMapper;
     
     @Autowired
-    @Qualifier("postMapper")
-    private PostMapper postMapper;
+    @Qualifier("commentDao")
+    private CommentDao commentDao;
     
-    @Autowired
-    @Qualifier("userDao")
-    private UserDao userDao;
-    
-    
-    public int createCom(int id, String info, String status, String time,
-                         int post_id, int from_uid, int to_uid) {
-        return commentMapper.createCom(id, info, status, time, post_id, from_uid, to_uid);
+    @Override
+    public Comment queryById(Integer commentId) {
+        return commentDao.queryById(commentId);
     }
     
     @Override
-    public int createCom(Comment comment) {
-        return commentMapper.createNewCom(comment);
-    }
-    
-    public int deleteComById(int id) {
-        return commentMapper.deleteComById(id);
-    }
-    
-    public Comment queryComById(int id) {
-        return commentMapper.queryComById(id);
-    }
-    
-    public List<Comment> queryComByFromUid(int from_uid) {
-        return commentMapper.queryComByFromUid(from_uid);
-    }
-    
-    public List<Comment> queryComByPostId(int post_id) {
-        return commentMapper.queryComByPostId(post_id);
+    public List<Comment> queryAllByLimit(int offset, int limit) {
+        return commentDao.queryAllByLimit(offset, limit);
     }
     
     @Override
-    public List<Comment> queryAllCom() {
-        return commentMapper.queryAllCom();
+    public List<Comment> queryAll(Comment comment) {
+        return commentDao.queryAll(comment);
     }
     
     @Override
-    public List<Comment> queryCommentByLimit(int offset, int limit) {
-        return commentMapper.queryCommentByLimit(offset, limit);
+    public int insert(Comment comment) {
+        return commentDao.insert(comment);
     }
     
     @Override
-    public List<HashMap<String, Object>> getComList(int entity) {
-        ArrayList<HashMap<String, Object>> mapArrayList = new ArrayList<>();
-        for (Comment comment : commentMapper.queryCommentByLimit(0,entity)) {
-            HashMap<String, Object> map = new HashMap<>();
-            map.put("id", comment.getId());
-            map.put("from_user_name",
-                    userDao.queryById(comment.getFrom_uid()).getUserNikename());
-            map.put("post_label",
-                    postMapper.queryPostById(comment.getPost_id()).getPost_info());
-            map.put("info", comment.getInfo());
-            map.put("time", comment.getTime());
-            mapArrayList.add(map);
-        }
-        return mapArrayList;
+    public int update(Comment comment) {
+        return commentDao.update(comment);
+    }
+    
+    @Override
+    public int deleteById(Integer commentId) {
+        return commentDao.deleteById(commentId);
+    }
+    
+    @Override
+    public List<Comment> getCommentByTopic(Integer topicId, Integer topicType) {
+        return commentDao.getCommentByTopic(topicId,topicType);
     }
 }

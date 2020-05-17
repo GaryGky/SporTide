@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
         if (userDao.getUserByUserName(user.getUserName()) != null) {
             logger.info("用户注册时用户名重复");
             return HupuEnum.LogInRet.USER_NAME_DUP.getReturnCode();
-        }else {
+        } else {
             logger.info("注册成功");
             return userDao.insert(user);
         }

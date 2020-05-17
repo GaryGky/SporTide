@@ -56,4 +56,21 @@ public interface HupuEnum {
             this.gameCode = gameCode;
         }
     }
+    
+    enum TopicType implements HupuEnum {
+        COMMENT(0), GAME(1), POST(2);
+        private int topicType;
+        
+        TopicType(int topicType) {
+            this.topicType = topicType;
+        }
+    
+        public int getTopicType() {
+            return topicType;
+        }
+    
+        public void setTopicType(int topicType) {
+            this.topicType = topicType;
+        }
+    }
 }

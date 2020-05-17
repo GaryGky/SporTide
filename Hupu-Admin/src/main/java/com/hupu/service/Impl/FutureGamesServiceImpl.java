@@ -85,7 +85,7 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
     @Override
     public List<FutureGames> getFutureGameByDate(String date) throws ParseException {
         SimpleDateFormat myFmt = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat format = new SimpleDateFormat("yyyy_M_d%");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy_M_d %");
         String queryDay = format.format(myFmt.parse(date));
         logger.info("AI预测查询日期 ====> " + queryDay);
         String key = queryDay + "future";

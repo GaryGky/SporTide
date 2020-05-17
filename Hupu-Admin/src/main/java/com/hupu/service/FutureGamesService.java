@@ -62,7 +62,7 @@ public interface FutureGamesService {
     
     HashMap<String, Object> getTeamPreview(String teamId);
     
-    HashMap<String ,Object> getGamePreview(int gameId);
+    HashMap<String, Object> getGamePreview(int gameId);
     
     int getAllGames(String teamId); // 获得球队的所有比赛场数
     

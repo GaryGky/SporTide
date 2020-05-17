@@ -17,8 +17,8 @@ public class SubPubTest {
     private RedisUtil redisUtil;
     
     @Test
-    public void test1(){
-    
+    public void test1() {
+
     }
     
 }

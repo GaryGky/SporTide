@@ -29,7 +29,7 @@ public class UserTest {
             User user = new User(i, "user_name" + i,
                     "email" + i,
                     "pwd" + i, "nikename" + i,
-                    "time" + i,0,0);
+                    "time" + i, 0, 0);
             userService.insert(user);
         }
     }
@@ -47,13 +47,13 @@ public class UserTest {
     }
     
     @Test
-    public void testGet(){
+    public void testGet() {
         System.out.println(JSON.toJSONString(userService.getUserByName(
                 "q")));
     }
     
     @Test
-    public void testUpd(){
-    
+    public void testUpd() {
+
     }
 }

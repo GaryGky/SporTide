@@ -1,116 +1,89 @@
 package com.hupu.pojo;
 
-import java.io.Serializable;
-
-public class Post implements Serializable {
-    private int post_id;
-    private String post_type;
-    private String post_info;
-    private String post_time;
-    private int post_collectNum;
-    private int post_commentNum;
-    private int post_readNum;
+public class Post {
     
-    public int getPost_readNum() {
-        return post_readNum;
-    }
     
-    private int user_id;
+    private Integer postId;
+    
+    private String postTitle;
+    
+    private String postContent;
+    
+    private String postTime;
+    
+    private Integer postCommentnum;
+    //发表该消息的管理员id 
+    private Integer adminId;
+    //新闻中图片的url 
+    private String imgUrl;
     
     public Post() {
-    
     }
     
-    public void setPost_readNum(int post_readNum) {
-        this.post_readNum = post_readNum;
+    public Post(Integer postId, String postTitle, String postContent, String postTime, Integer postCommentnum, Integer adminId, String imgUrl) {
+        this.postId = postId;
+        this.postTitle = postTitle;
+        this.postContent = postContent;
+        this.postTime = postTime;
+        this.postCommentnum = postCommentnum;
+        this.adminId = adminId;
+        this.imgUrl = imgUrl;
     }
     
-    public Post(int post_id, String post_type, String post_info, String post_time, int post_collectNum, int post_commentNum, int post_readNum, int user_id) {
-        this.post_id = post_id;
-        this.post_type = post_type;
-        this.post_info = post_info;
-        this.post_time = post_time;
-        this.post_collectNum = post_collectNum;
-        this.post_commentNum = post_commentNum;
-        this.post_readNum = post_readNum;
-        this.user_id = user_id;
+    public Integer getPostId() {
+        return postId;
     }
     
-    @Override
-    public String toString() {
-        return "Post{" +
-                "post_id=" + post_id +
-                ", post_type='" + post_type + '\'' +
-                ", post_info='" + post_info + '\'' +
-                ", post_time='" + post_time + '\'' +
-                ", post_collectNum=" + post_collectNum +
-                ", post_commentNum=" + post_commentNum +
-                ", post_readNum=" + post_readNum +
-                ", user_id=" + user_id +
-                '}';
+    public void setPostId(Integer postId) {
+        this.postId = postId;
     }
     
-    public int getPost_id() {
-        return post_id;
+    public String getPostTitle() {
+        return postTitle;
     }
     
-    public void setPost_id(int post_id) {
-        this.post_id = post_id;
+    public void setPostTitle(String postTitle) {
+        this.postTitle = postTitle;
     }
     
-    public String getPost_type() {
-        return post_type;
+    public String getPostContent() {
+        return postContent;
     }
     
-    public void setPost_type(String post_type) {
-        this.post_type = post_type;
+    public void setPostContent(String postContent) {
+        this.postContent = postContent;
     }
     
-    public String getPost_info() {
-        return post_info;
+    public String getPostTime() {
+        return postTime;
     }
     
-    public void setPost_info(String post_info) {
-        this.post_info = post_info;
+    public void setPostTime(String postTime) {
+        this.postTime = postTime;
     }
     
-    public String getPost_time() {
-        return post_time;
+    public Integer getPostCommentnum() {
+        return postCommentnum;
     }
     
-    public void setPost_time(String post_time) {
-        this.post_time = post_time;
+    public void setPostCommentnum(Integer postCommentnum) {
+        this.postCommentnum = postCommentnum;
     }
     
-    public int getPost_collectNum() {
-        return post_collectNum;
+    public Integer getAdminId() {
+        return adminId;
     }
     
-    public void setPost_collectNum(int post_collectNum) {
-        this.post_collectNum = post_collectNum;
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
     }
     
-    public int getPost_commentNum() {
-        return post_commentNum;
+    public String getImgUrl() {
+        return imgUrl;
     }
     
-    public void setPost_commentNum(int post_commentNum) {
-        this.post_commentNum = post_commentNum;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
     
-    public int getPost_transpondNum() {
-        return post_readNum;
-    }
-    
-    public void setPost_transpondNum(int post_readNum) {
-        this.post_readNum = post_readNum;
-    }
-    
-    public int getUser_id() {
-        return user_id;
-    }
-    
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
 }

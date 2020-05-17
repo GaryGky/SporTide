@@ -19,7 +19,7 @@
 
         <result property="teamstatsid" column="teamStatsId" jdbcType="INTEGER"/>
         <result property="frontcourt" column="frontCourt"
-        jdbcType="INTEGER"/>
+                jdbcType="INTEGER"/>
         <result property="backcourt" column="backCourt"
                 jdbcType="INTEGER"/>
     </resultMap>
@@ -27,14 +27,14 @@
     <!--查询单个-->
     <select id="queryById" resultMap="TeamMap">
         select teamId,
-               teamName,
-               buildTime,
-               area,
-               homeCourt,
-               chiefCoach,
-               logoUrl,
-               website,
-               description
+        teamName,
+        buildTime,
+        area,
+        homeCourt,
+        chiefCoach,
+        logoUrl,
+        website,
+        description
         from nba.team
         where teamId = #{teamid}
     </select>
@@ -42,14 +42,14 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TeamMap">
         select teamId,
-               teamName,
-               buildTime,
-               area,
-               homeCourt,
-               chiefCoach,
-               logoUrl,
-               website,
-               description
+        teamName,
+        buildTime,
+        area,
+        homeCourt,
+        chiefCoach,
+        logoUrl,
+        website,
+        description
         from nba.team
         limit #{offset}, #{limit}
     </select>
@@ -94,9 +94,9 @@
     <!--新增所有列-->
     <insert id="insert" keyProperty="teamid" useGeneratedKeys="true">
         insert into nba.team(teamName, buildTime, area, homeCourt, chiefCoach,
-                             logoUrl, website, description)
+        logoUrl, website, description)
         values (#{teamname}, #{buildtime}, #{area}, #{homecourt}, #{chiefcoach},
-                #{logourl}, #{website}, #{description})
+        #{logourl}, #{website}, #{description})
     </insert>
 
     <!--通过主键修改数据-->

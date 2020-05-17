@@ -19,13 +19,13 @@
     <!--查询单个-->
     <select id="queryById" resultMap="UserMap">
         select user_id,
-               user_name,
-               user_email,
-               user_password,
-               user_nikename,
-               user_time,
-               user_status,
-               user_head
+        user_name,
+        user_email,
+        user_password,
+        user_nikename,
+        user_time,
+        user_status,
+        user_head
         from nba.user
         where user_id = #{userId}
     </select>
@@ -33,13 +33,13 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="UserMap">
         select user_id,
-               user_name,
-               user_email,
-               user_password,
-               user_nikename,
-               user_time,
-               user_status,
-               user_head
+        user_name,
+        user_email,
+        user_password,
+        user_nikename,
+        user_time,
+        user_status,
+        user_head
         from nba.user
         limit #{offset}, #{limit}
     </select>
@@ -81,11 +81,11 @@
     <!--新增所有列-->
     <insert id="insert" keyProperty="userId" useGeneratedKeys="true">
         insert into nba.user(user_id, user_name, user_email, user_password,
-                             user_nikename, user_time, user_status, user_head)
+        user_nikename, user_time, user_status, user_head)
         values (#{userId}, #{userName}, #{userEmail},
-                AES_ENCRYPT(#{userPassword}, "hupu"),
-                #{userNikename},
-                #{userTime}, #{userStatus}, #{userHead})
+        AES_ENCRYPT(#{userPassword}, "hupu"),
+        #{userNikename},
+        #{userTime}, #{userStatus}, #{userHead})
     </insert>
 
     <!--通过主键修改数据-->
@@ -132,13 +132,13 @@
 
     <select id="getUserByUserName" resultMap="UserMap">
         select user_id,
-               user_name,
-               user_email,
-               AES_DECRYPT(user_password, "hupu"),
-               user_nikename,
-               user_time,
-               user_status,
-               user_head
+        user_name,
+        user_email,
+        AES_DECRYPT(user_password, "hupu"),
+        user_nikename,
+        user_time,
+        user_status,
+        user_head
         from nba.user
         where user_name = #{user_name}
     </select>

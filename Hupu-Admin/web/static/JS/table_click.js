@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var tds = $("td");
     //var tds = $("#sampleName");
     //var tds = document.getElementsByName('sampleName');
@@ -7,7 +7,7 @@ $(document).ready(function(){
     tds.click(tdclick);
 });
 
-function tdclick(){
+function tdclick() {
     console.log('point1')
     var clickfunction = this;
     var td = $(this);
@@ -17,20 +17,20 @@ function tdclick(){
     var text = $(this).text();
     td.html("");
     var input = $("<input>");
-    input.attr("value",text);
-    input.keyup(function(event){
+    input.attr("value", text);
+    input.keyup(function (event) {
         console.log('point2')
         var myEvent = event || window.event;
         var kcode = myEvent.keyCode;
-        if(kcode === 13){
+        if (kcode === 13) {
             var inputnode = $(this);
             var inputext = inputnode.val();
             var tdNode = inputnode.parent();
             tdNode.html(inputext);
             tdNode.click(tdclick);
-            if(inputext !== text){                    //只有当内容不一样时才进行保存
+            if (inputext !== text) {                    //只有当内容不一样时才进行保存
                 //后台交互的地方
-                console.log('sampleId:',sampleId)
+                console.log('sampleId:', sampleId)
                 sampleNameUpdate(sampleId, inputext, 'sampleAlterAction.action');
             }
         }

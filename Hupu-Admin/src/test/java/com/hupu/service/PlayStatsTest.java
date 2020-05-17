@@ -86,8 +86,8 @@ public class PlayStatsTest {
                 listHome.add(stats);
             }
         }
-        gameMap.put("home",getMap(listHome));
-        gameMap.put("away",getMap(listAway));
+        gameMap.put("home", getMap(listHome));
+        gameMap.put("away", getMap(listAway));
         System.out.println(JSON.toJSON(gameMap));
     }
     

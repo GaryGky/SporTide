@@ -14,10 +14,10 @@
     <!--查询单个-->
     <select id="queryById" resultMap="GameMap">
         select gameId,
-               gameTime,
-               consumTime,
-               arena,
-               peopleNum
+        gameTime,
+        consumTime,
+        arena,
+        peopleNum
         from nba.game
         where gameId = #{gameid}
     </select>
@@ -25,10 +25,10 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="GameMap">
         select gameId,
-               gameTime,
-               consumTime,
-               arena,
-               peopleNum
+        gameTime,
+        consumTime,
+        arena,
+        peopleNum
         from nba.game
         order by gameId ASC
         limit #{offset}, #{limit}
@@ -90,7 +90,6 @@
         from nba.game
         where gameId = #{gameid}
     </delete>
-
 
 
 </mapper>

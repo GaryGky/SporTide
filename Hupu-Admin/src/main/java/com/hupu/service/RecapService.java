@@ -57,4 +57,5 @@ public interface RecapService {
     
     List<Recap> getRecapByDay(String foreDate, String backDate);
     
+    
 }

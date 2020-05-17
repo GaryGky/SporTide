@@ -30,25 +30,25 @@
     <!--查询单个-->
     <select id="queryById" resultMap="PlayerScoreStatsMap">
         select id,
-               teamId,
-               teamStatsId,
-               playerName,
-               isFirst,
-               position,
-               playMinute,
-               shot,
-               threeShot,
-               penaltyShot,
-               frontCourt,
-               backCourt,
-               rebound,
-               assist,
-               foul,
-               steal,
-               fault,
-               block,
-               score,
-               Contribution
+        teamId,
+        teamStatsId,
+        playerName,
+        isFirst,
+        position,
+        playMinute,
+        shot,
+        threeShot,
+        penaltyShot,
+        frontCourt,
+        backCourt,
+        rebound,
+        assist,
+        foul,
+        steal,
+        fault,
+        block,
+        score,
+        Contribution
         from nba.player_score_stats
         where id = #{id}
     </select>
@@ -56,25 +56,25 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="PlayerScoreStatsMap">
         select id,
-               teamId,
-               teamStatsId,
-               playerName,
-               isFirst,
-               position,
-               playMinute,
-               shot,
-               threeShot,
-               penaltyShot,
-               frontCourt,
-               backCourt,
-               rebound,
-               assist,
-               foul,
-               steal,
-               fault,
-               block,
-               score,
-               Contribution
+        teamId,
+        teamStatsId,
+        playerName,
+        isFirst,
+        position,
+        playMinute,
+        shot,
+        threeShot,
+        penaltyShot,
+        frontCourt,
+        backCourt,
+        rebound,
+        assist,
+        foul,
+        steal,
+        fault,
+        block,
+        score,
+        Contribution
         from nba.player_score_stats
         limit #{offset}, #{limit}
     </select>
@@ -153,16 +153,16 @@
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
         insert into nba.player_score_stats(teamId, teamStatsId, playerName,
-                                           isFirst, position, playMinute, shot,
-                                           threeShot, penaltyShot, frontCourt,
-                                           backCourt, rebound, assist, foul,
-                                           steal, fault, block, score,
-                                           Contribution)
+        isFirst, position, playMinute, shot,
+        threeShot, penaltyShot, frontCourt,
+        backCourt, rebound, assist, foul,
+        steal, fault, block, score,
+        Contribution)
         values (#{teamid}, #{teamstatsid}, #{playername}, #{isfirst},
-                #{position}, #{playminute}, #{shot}, #{threeshot},
-                #{penaltyshot}, #{frontcourt}, #{backcourt}, #{rebound},
-                #{assist}, #{foul}, #{steal}, #{fault}, #{block}, #{score},
-                #{contribution})
+        #{position}, #{playminute}, #{shot}, #{threeshot},
+        #{penaltyshot}, #{frontcourt}, #{backcourt}, #{rebound},
+        #{assist}, #{foul}, #{steal}, #{fault}, #{block}, #{score},
+        #{contribution})
     </insert>
 
     <!--通过主键修改数据-->

@@ -2,39 +2,57 @@ package com.hupu.service;
 
 import com.hupu.pojo.Post;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
+/**
+ * (Post)表服务接口
+ *
+ * @author makejava
+ * @since 2020-05-15 12:33:06
+ */
 public interface PostService {
-    public int createPost(
-            int id, String type, String info, String createTime, int user_id);
-    public int createPost(Post post);
-    // 更新帖子信息
-    public int updateAddCol(int id); // 增加帖子的收藏量
     
-    public int updateSubCol(int id); // 减少帖子的收藏量
+    /**
+     * 通过ID查询单条数据
+     *
+     * @param postId 主键
+     * @return 实例对象
+     */
+    Post queryById(Integer postId);
     
-    public int updateAddCom(int id); // 增加帖子的评论数
+    /**
+     * 查询多条数据
+     *
+     * @param offset 查询起始位置
+     * @param limit  查询条数
+     * @return 对象列表
+     */
+    List<Post> queryAllByLimit(int offset, int limit);
     
-    public int updateSubCom(int id); // 减少帖子的评论数
+    List<Post> queryAll(Post post);
     
-    public int updateAddTran(int id); // 增加帖子的转发
+    /**
+     * 新增数据
+     *
+     * @param post 实例对象
+     * @return 实例对象
+     */
+    int insert(Post post);
     
-    public int updateSubTran(int id); // 减少帖子的转发
+    /**
+     * 修改数据
+     *
+     * @param post 实例对象
+     * @return 实例对象
+     */
+    int update(Post post);
     
-    public int deletePostById(int id); // 删除一个帖子
+    /**
+     * 通过主键删除数据
+     *
+     * @param postId 主键
+     * @return 是否成功
+     */
+    int deleteById(Integer postId);
     
-    public List<Post> queryPostsByUser(String user_name); //
-    // 按照用户查询帖子
-    
-    public List<Post> queryPostsByType(String type); // 按照类型查询帖子
-    
-    public List<Post> queryAllPost(); // 查询所有帖子信息
-    
-    public List<Post> queryPostByLimit(int offset, int limit);
-    
-    public Post queryPostById(int id);
-    
-    public ArrayList<HashMap<String,Object>> getPostList(int entities);
 }

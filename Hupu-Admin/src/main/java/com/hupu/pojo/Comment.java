@@ -3,95 +3,125 @@ package com.hupu.pojo;
 import java.io.Serializable;
 
 public class Comment implements Serializable {
-    private int id;
-    private String info;
-    private String status;
-    private String time;
-    private int post_id;
-    private int from_uid;
-    private int to_uid;
+    
+    
+    private Integer commentId;
+    
+    private Integer fromUid;
+    
+    private Integer toUid;
+    
+    private Integer topicType;
+    
+    private Integer topicId;
+    
+    private String commentInfo;
+    
+    private String commentTime;
+    
+    private User fromUsr;
+    
+    
+    public Comment(Integer commentId, Integer fromUid, Integer toUid, Integer topicType, Integer topicId, String commentInfo, String commentTime, User fromUsr) {
+        this.commentId = commentId;
+        this.fromUid = fromUid;
+        this.toUid = toUid;
+        this.topicType = topicType;
+        this.topicId = topicId;
+        this.commentInfo = commentInfo;
+        this.commentTime = commentTime;
+        this.fromUsr = fromUsr;
+    }
     
     public Comment() {
     }
     
-    public int getId() {
-        return id;
+    public User getFromUsr() {
+        return fromUsr;
     }
     
-    public void setId(int id) {
-        this.id = id;
+    public void setFromUsr(User fromUsr) {
+        this.fromUsr = fromUsr;
     }
     
-    public String getInfo() {
-        return info;
+    public Comment(Integer commentId, Integer fromUid, Integer toUid, Integer topicType, Integer topicId, String commentInfo, String commentTime) {
+        this.commentId = commentId;
+        this.fromUid = fromUid;
+        this.toUid = toUid;
+        this.topicType = topicType;
+        this.topicId = topicId;
+        this.commentInfo = commentInfo;
+        this.commentTime = commentTime;
     }
     
-    public void setInfo(String info) {
-        this.info = info;
+    
+    public Integer getCommentId() {
+        return commentId;
     }
     
-    public String getStatus() {
-        return status;
+    public void setCommentId(Integer commentId) {
+        this.commentId = commentId;
     }
     
-    public void setStatus(String status) {
-        this.status = status;
+    public Integer getFromUid() {
+        return fromUid;
     }
     
-    public String getTime() {
-        return time;
+    public void setFromUid(Integer fromUid) {
+        this.fromUid = fromUid;
     }
     
-    public void setTime(String time) {
-        this.time = time;
+    public Integer getToUid() {
+        return toUid;
     }
     
-    public int getPost_id() {
-        return post_id;
+    public void setToUid(Integer toUid) {
+        this.toUid = toUid;
     }
     
-    public void setPost_id(int post_id) {
-        this.post_id = post_id;
+    public Integer getTopicType() {
+        return topicType;
     }
     
-    public int getFrom_uid() {
-        return from_uid;
+    public void setTopicType(Integer topicType) {
+        this.topicType = topicType;
     }
     
-    public void setFrom_uid(int from_uid) {
-        this.from_uid = from_uid;
+    public Integer getTopicId() {
+        return topicId;
     }
     
-    public int getTo_uid() {
-        return to_uid;
+    public void setTopicId(Integer topicId) {
+        this.topicId = topicId;
     }
     
-    public void setTo_uid(int to_uid) {
-        this.to_uid = to_uid;
+    public String getCommentInfo() {
+        return commentInfo;
+    }
+    
+    public void setCommentInfo(String commentInfo) {
+        this.commentInfo = commentInfo;
+    }
+    
+    public String getCommentTime() {
+        return commentTime;
+    }
+    
+    public void setCommentTime(String commentTime) {
+        this.commentTime = commentTime;
     }
     
     @Override
     public String toString() {
         return "Comment{" +
-                "id=" + id +
-                ", info='" + info + '\'' +
-                ", status='" + status + '\'' +
-                ", time='" + time + '\'' +
-                ", post_id=" + post_id +
-                ", from_uid=" + from_uid +
-                ", to_uid=" + to_uid +
+                "commentId=" + commentId +
+                ", fromUid=" + fromUid +
+                ", toUid=" + toUid +
+                ", topicType=" + topicType +
+                ", topicId=" + topicId +
+                ", commentInfo='" + commentInfo + '\'' +
+                ", commentTime='" + commentTime + '\'' +
+                ", fromUsr=" + fromUsr +
                 '}';
     }
-    
-    public Comment(int id, String info, String status, String time, int post_id, int from_uid, int to_uid) {
-        this.id = id;
-        this.info = info;
-        this.status = status;
-        this.time = time;
-        this.post_id = post_id;
-        this.from_uid = from_uid;
-        this.to_uid = to_uid;
-    }
-    
-    
 }

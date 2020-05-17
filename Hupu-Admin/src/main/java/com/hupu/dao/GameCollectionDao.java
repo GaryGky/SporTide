@@ -1,25 +1,25 @@
 package com.hupu.dao;
 
-import com.hupu.pojo.User;
+import com.hupu.pojo.GameCollection;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 /**
- * (User)表数据库访问层
+ * (GameCollection)表数据库访问层
  *
  * @author makejava
- * @since 2020-05-11 10:42:26
+ * @since 2020-05-15 12:32:10
  */
-public interface UserDao {
+public interface GameCollectionDao {
 
     /**
      * 通过ID查询单条数据
      *
-     * @param userId 主键
+     * @param id 主键
      * @return 实例对象
      */
-    User queryById(Integer userId);
+    GameCollection queryById(Integer id);
 
     /**
      * 查询指定行数据
@@ -28,42 +28,39 @@ public interface UserDao {
      * @param limit  查询条数
      * @return 对象列表
      */
-    List<User> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
+    List<GameCollection> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
 
 
     /**
      * 通过实体作为筛选条件查询
      *
-     * @param user 实例对象
+     * @param gameCollection 实例对象
      * @return 对象列表
      */
-    List<User> queryAll(User user);
+    List<GameCollection> queryAll(GameCollection gameCollection);
 
     /**
      * 新增数据
      *
-     * @param user 实例对象
+     * @param gameCollection 实例对象
      * @return 影响行数
      */
-    int insert(User user);
+    int insert(GameCollection gameCollection);
 
     /**
      * 修改数据
      *
-     * @param user 实例对象
+     * @param gameCollection 实例对象
      * @return 影响行数
      */
-    int update(User user);
+    int update(GameCollection gameCollection);
 
     /**
      * 通过主键删除数据
      *
-     * @param userId 主键
+     * @param id 主键
      * @return 影响行数
      */
-    int deleteById(Integer userId);
-    
-    String getPwdByUserName(@Param("user_name") String userName);
-    
-    User getUserByUserName(@Param("user_name") String userName);
+    int deleteById(Integer id);
+
 }

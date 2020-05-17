@@ -7,13 +7,13 @@ function login() {
             "name": $("#username").val(),
             "password": $("#userpassword").val()
         },
-        success: function (flag, status,xhr) {
+        success: function (flag, status, xhr) {
             if (flag === 1) {
                 alert("登录成功");
                 window.location.href = "/Hupu-Admin/jump/toHome"; // 跳到首页
-            } else if(flag === 0){
+            } else if (flag === 0) {
                 alert("请输入正确的用户名和密码");
-            }else if(flag === -1){
+            } else if (flag === -1) {
                 alert("用户名密码不能为空");
             }
         }

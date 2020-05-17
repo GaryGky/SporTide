@@ -65,5 +65,5 @@ public interface PlayerScoreStatsService {
     
     public HashMap<String, Object> getTeamStatsByGame(int gameId);
     
-    public HashMap<String,Object> getPlayerStatsByGame(int gameId);
+    public HashMap<String, Object> getPlayerStatsByGame(int gameId);
 }

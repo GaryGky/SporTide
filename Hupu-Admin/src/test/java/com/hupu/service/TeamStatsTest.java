@@ -36,10 +36,10 @@ public class TeamStatsTest {
     @Test
     public void testGame3() throws ParseException {
         String date = "2019年01月01日 04:00";
-        SimpleDateFormat myFmt=new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
-        SimpleDateFormat format=new SimpleDateFormat("%yyyy%MM%dd%");
+        SimpleDateFormat myFmt = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+        SimpleDateFormat format = new SimpleDateFormat("%yyyy%MM%dd%");
         System.out.println(format.format(myFmt.parse(date)));
         teamScoreStatsService.getGameIndexByDay(format.format(myFmt.parse(date))).forEach(System
-         .out::println);
+                .out::println);
     }
 }

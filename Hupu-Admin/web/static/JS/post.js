@@ -18,10 +18,10 @@ function delPost(id) {
     $.post({
         url: "/Hupu-Admin/post/delPost",
         data: {"id": id},
-        success: function (msg,textStatus) {
+        success: function (msg, textStatus) {
             console.log(msg);
             console.log(textStatus);
-            if(textStatus === "success"){
+            if (textStatus === "success") {
                 alert("删除成功");
                 window.location.reload();
             }
@@ -50,10 +50,10 @@ function delComment(id) {
     $.post({
         url: "/Hupu-Admin/comment/delComment",
         data: {"id": id},
-        success: function (msg,textStatus) {
+        success: function (msg, textStatus) {
             console.log(msg);
             console.log(textStatus);
-            if(textStatus === "success"){
+            if (textStatus === "success") {
                 alert("删除成功");
                 window.location.reload();
             }

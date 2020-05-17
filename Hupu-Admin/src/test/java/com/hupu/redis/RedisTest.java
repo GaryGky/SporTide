@@ -30,28 +30,29 @@ public class RedisTest {
     
     @Autowired
     private UserServiceImpl userService;
+
     @Test
     public void test1() {
         // 操作不同的数据类型
-        Admin admin = new Admin(1,"name","pwd");
+        Admin admin = new Admin(1, "name", "pwd");
         for (User user : userService.queryAllByLimit(0, 10)) {
-            redisUtil.set(user.getUserName(),user);
+            redisUtil.set(user.getUserName(), user);
         }
     }
     
     @Test
-    public void test2(){
+    public void test2() {
         // 列表
         ListOperations listOperations = redisTemplate.opsForList();
     }
     
     @Test
-    public void test3(){
+    public void test3() {
         ZSetOperations zSetOperations = redisTemplate.opsForZSet();
     }
     
     @Test
-    public void test4(){
+    public void test4() {
         RedisConnection redisConnection =
                 redisTemplate.getConnectionFactory().getConnection();
         redisConnection.flushAll();

@@ -1,13 +1,11 @@
-
-
 //添加Admin的信息
 function addAdmin() {
     console.log("进入添加函数");
     var pwd1 = $("#admin_pwd1").val();
     var pwd2 = $("#admin_pwd2").val();
-    if(pwd1 !== pwd2){
+    if (pwd1 !== pwd2) {
         alert("两次输入的密码不一致");
-    }else {
+    } else {
         $.post({
             url: "/Hupu-Admin/user/addAdmin",
             data: {
@@ -34,11 +32,10 @@ function getMyUser() {
     // var entry = $("select[name='datatable_length']").val();
     $.get({
         url: "/Hupu-Admin/user/getLimitUser",
-        data: {
-        },
+        data: {},
         success: function (data) {
             console.log(data);
-           // window.location.reload();
+            // window.location.reload();
         }
     })
 }

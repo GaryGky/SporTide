@@ -14,10 +14,10 @@
     <!--查询单个-->
     <select id="queryById" resultMap="RecapMap">
         select gameId,
-               header,
-               content,
-               updTime,
-               capture
+        header,
+        content,
+        updTime,
+        capture
         from nba.recap
         where gameId = #{gameid}
     </select>
@@ -25,10 +25,10 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="RecapMap">
         select gameId,
-               header,
-               content,
-               updTime,
-               capture
+        header,
+        content,
+        updTime,
+        capture
         from nba.recap
         limit #{offset}, #{limit}
     </select>
@@ -92,10 +92,10 @@
 
     <select id="getRecapByDate" resultMap="RecapMap">
         select gameId,
-               header,
-               content,
-               updTime,
-               capture
+        header,
+        content,
+        updTime,
+        capture
         from recap
         where cast(updTime as date) between #{foreDate} and #{backDate}
         order by updTime ASC

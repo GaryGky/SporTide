@@ -20,13 +20,13 @@ public class RecapTest {
     private RecapServiceImpl recapService;
     
     @Test
-    public void testQueryById(){
+    public void testQueryById() {
         System.out.println(recapService.queryById(156542));
         // recapService.queryById(156542);
     }
     
     @Test
-    public void testRecap(){
+    public void testRecap() {
         for (Recap recap : recapService.getRecapByDay("2019-1-10", "2019-1-19")) {
             System.out.println(JSON.toJSON(recap));
         }

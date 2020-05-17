@@ -3,15 +3,15 @@ package com.hupu.pojo;
 public class FutureGames {
     
     private String gameid;
-     
+
     private String home;
-     
+
     private String away;
-     
+
     private String gametime;
-     
+
     private String homeWinRate;
-     
+
     private String awayWinRate;
     
     public String getGameid() {
@@ -61,5 +61,5 @@ public class FutureGames {
     public void setAwayWinRate(String awayWinRate) {
         this.awayWinRate = awayWinRate;
     }
- 
+
 }

@@ -52,6 +52,6 @@ public interface GameDao {
      */
     int deleteById(Integer gameid);
     
-    List<Map<String,Object>> getGameIndex();
+    List<Map<String, Object>> getGameIndex();
     
 }
