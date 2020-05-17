@@ -51,5 +51,10 @@
         where admin_id = #{admin_id}
     </delete>
 
+    <select id="queryIdByName" resultType="int">
+        select admin_id
+        from admins
+        where admin_name = #{admin_name}
+    </select>
 
 </mapper>

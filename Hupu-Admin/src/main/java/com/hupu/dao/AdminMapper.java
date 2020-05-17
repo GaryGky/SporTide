@@ -27,4 +27,6 @@ public interface AdminMapper {
     public int deleteAdminById(@Param("admin_id") int id); // 删除一个管理员
     
     public String queryPwdByName(@Param("admin_name") String name);
+
+    public int queryIdByName(@Param("admin_name") String name);
 }

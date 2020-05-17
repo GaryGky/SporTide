@@ -97,4 +97,9 @@
         delete from nba.post where post_id = #{postId}
     </delete>
 
+    <insert id="createPost">
+        insert into post (post_title, post_content, post_time, admin_id, img_url)
+        values (#{post_title}, #{post_content}, #{post_time}, #{admin_id}, #{img_url});
+    </insert>
+
 </mapper>

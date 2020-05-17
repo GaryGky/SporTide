@@ -63,4 +63,9 @@ public class AdminServiceImpl extends ConstantService implements AdminService {
     public String queryPwdByName(String name) {
         return adminMapper.queryPwdByName(name);
     }
+
+    @Override
+    public int queryIdByName(String name) {
+        return adminMapper.queryIdByName(name);
+    }
 }

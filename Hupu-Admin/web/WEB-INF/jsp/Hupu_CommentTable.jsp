@@ -183,6 +183,25 @@
         });
     }
 
+
+    //删除评论
+    function delComment(id) {
+        $.post({
+            url: "/Hupu-Admin/comment/delComment",
+            data: {"commentId": id},
+            success: function (msg, textStatus) {
+                console.log(msg);
+                console.log(textStatus);
+                if (textStatus === "success") {
+                    alert("删除成功");
+                   getLimitCom();
+                   window.location.reload();
+                }
+            }
+        })
+    }
+
+
     window.onload = function () {
         getLimitCom();
     }

@@ -22,4 +22,6 @@ public interface AdminService {
     public int deleteAdminById(int id); // 删除一个管理员
     
     public String queryPwdByName(String name);
+
+    public int queryIdByName(String name);
 }

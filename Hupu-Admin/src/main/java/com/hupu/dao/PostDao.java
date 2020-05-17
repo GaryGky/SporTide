@@ -62,5 +62,10 @@ public interface PostDao {
      * @return 影响行数
      */
     int deleteById(Integer postId);
-    
+
+    int createPost(@Param("post_title") String post_title,
+                   @Param("post_content") String post_content,
+                   @Param("post_time") String post_time,
+                   @Param("admin_id") int admin_id,
+                   @Param("img_url") String img_url);
 }

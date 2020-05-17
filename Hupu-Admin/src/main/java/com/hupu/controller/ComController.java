@@ -34,4 +34,9 @@ public class ComController {
         return comments;
     }
     
+    @RequestMapping("/delComment")
+    public int delComment(int commentId){
+        return commentService.deleteById(commentId);
+    }
+    
 }

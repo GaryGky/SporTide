@@ -55,4 +55,9 @@ public class PostServiceImpl implements PostService {
     public int deleteById(Integer postId) {
         return postDao.deleteById(postId);
     }
+
+    @Override
+    public int createPost(String post_title, String post_content, String post_time, int admin_id, String img_url) {
+        return postDao.createPost(post_title, post_content, post_time, admin_id, img_url);
+    }
 }

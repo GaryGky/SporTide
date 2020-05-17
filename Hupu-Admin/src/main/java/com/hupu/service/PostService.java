@@ -54,5 +54,7 @@ public interface PostService {
      * @return 是否成功
      */
     int deleteById(Integer postId);
-    
+
+    int createPost(String post_title, String post_content, String post_time,
+                   int admin_id, String img_url);
 }

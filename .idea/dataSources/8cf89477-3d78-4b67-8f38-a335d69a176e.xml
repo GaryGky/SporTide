@@ -1424,6 +1424,7 @@
       <Position>1</Position>
       <DataType>int(8)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="350" parent="289" name="post_title">
@@ -1438,7 +1439,7 @@
     </column>
     <column id="352" parent="289" name="post_time">
       <Position>4</Position>
-      <DataType>varchar(15)|0s</DataType>
+      <DataType>varchar(31)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="353" parent="289" name="post_commentnum">
@@ -1456,7 +1457,7 @@
     <column id="355" parent="289" name="img_url">
       <Position>7</Position>
       <Comment>新闻中图片的url</Comment>
-      <DataType>varchar(31)|0s</DataType>
+      <DataType>varchar(127)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="356" parent="289" name="admin_id">
