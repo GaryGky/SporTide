@@ -1,5 +1,6 @@
 package com.hupu.service;
 
+import com.alibaba.fastjson.JSON;
 import com.hupu.service.Impl.GameServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,5 +27,10 @@ public class GameTest {
     public void testGame2() {
         System.out.println("=====Test Query By Page=====");
         gameService.queryAllByLimit(10, 20).forEach(System.out::println);
+    }
+    
+    @Test
+    public void testBaseGet(){
+        System.out.println(JSON.toJSON(gameService.queryById(156562)));
     }
 }

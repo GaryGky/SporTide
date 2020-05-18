@@ -61,4 +61,9 @@ public class JumpController {
     public String gotoPyGameTable() {
         return "Hupu_PyControl";
     }
+    
+    @RequestMapping("/toVersion")
+    public String gotoVersionTable() {
+        return "Hupu_Version";
+    }
 }

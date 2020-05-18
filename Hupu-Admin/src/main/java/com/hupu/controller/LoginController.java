@@ -1,6 +1,7 @@
 package com.hupu.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.hupu.pojo.Admin;
 import com.hupu.pojo.User;
 import com.hupu.service.Impl.AdminServiceImpl;
 import com.hupu.service.Impl.UserServiceImpl;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
@@ -29,10 +31,7 @@ public class LoginController {
     
     @RequestMapping("/adminLogin")
     public int varifyLogIn(String name, String password,
-                           HttpSession session) {
-        log.info("输入密码 ===>> " + password);
-        log.info("正确密码 ===>> " + adminService.queryPwdByName(name));
-        
+                           HttpSession session, HttpServletRequest request) {
         if (name == null || password == null) {
             return -1;
         } // 如果输入字段为空，直接fail
@@ -40,6 +39,8 @@ public class LoginController {
             if (adminService.queryPwdByName(name).equals(password)) {
                 session.setAttribute("admin", name); //
                 // 成功登录，把信息加入session
+                Admin admin = adminService.queryAdminById(17);
+                request.getSession().setAttribute(String.valueOf(admin.getAdmin_id()), admin);
                 return 1;
             } else {
                 return 0;

@@ -9,28 +9,14 @@ public class VersionInfo {
     
     private String versionName;
     //是否强制更新 
-    private Object forceUpdate;
+    private boolean forceUpdate;
     //版本的url连接 
     private String updateUrl;
     //更新信息
     
     private String updateInfo;
     
-    @Override
-    public String toString() {
-        return "VersionInfo{" +
-                "versionCode=" + versionCode +
-                ", versionName='" + versionName + '\'' +
-                ", forceUpdate=" + forceUpdate +
-                ", updateUrl='" + updateUrl + '\'' +
-                ", updateInfo='" + updateInfo + '\'' +
-                '}';
-    }
-    
-    public VersionInfo() {
-    }
-    
-    public VersionInfo(Integer versionCode, String versionName, Object forceUpdate, String updateUrl, String updateInfo) {
+    public VersionInfo(Integer versionCode, String versionName, boolean forceUpdate, String updateUrl, String updateInfo) {
         this.versionCode = versionCode;
         this.versionName = versionName;
         this.forceUpdate = forceUpdate;
@@ -54,11 +40,11 @@ public class VersionInfo {
         this.versionName = versionName;
     }
     
-    public Object getForceUpdate() {
+    public boolean isForceUpdate() {
         return forceUpdate;
     }
     
-    public void setForceUpdate(Object forceUpdate) {
+    public void setForceUpdate(boolean forceUpdate) {
         this.forceUpdate = forceUpdate;
     }
     
@@ -77,5 +63,17 @@ public class VersionInfo {
     public void setUpdateInfo(String updateInfo) {
         this.updateInfo = updateInfo;
     }
+    
+    @Override
+    public String toString() {
+        return "VersionInfo{" +
+                "versionCode=" + versionCode +
+                ", versionName='" + versionName + '\'' +
+                ", forceUpdate=" + forceUpdate +
+                ", updateUrl='" + updateUrl + '\'' +
+                ", updateInfo='" + updateInfo + '\'' +
+                '}';
+    }
+    
     
 }

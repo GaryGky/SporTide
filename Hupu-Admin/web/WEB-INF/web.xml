@@ -27,6 +27,7 @@
         </init-param>
         <!--启动级别-1 与服务器同时启动-->
         <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
     </servlet>
 
 
@@ -42,6 +43,7 @@
         <filter-name>encoding</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter
         </filter-class>
+        <async-supported>true</async-supported>
     </filter>
     <filter-mapping>
         <filter-name>encoding</filter-name>

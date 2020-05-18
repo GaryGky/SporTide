@@ -79,6 +79,10 @@
                             <li>
                                 <a href="${pageContext.request.contextPath}/jump/toAdminAdd">添加管理员</a>
                             </li>
+                            <li>
+                                <a
+                                        href="${pageContext.request.contextPath}/jump/toVersion">版本管理</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-pencil-square-o"></i> 论坛管理
