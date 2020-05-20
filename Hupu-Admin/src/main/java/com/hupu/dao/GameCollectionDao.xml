@@ -83,12 +83,13 @@
     </delete>
 
     <select id="getUserCollection" resultType="Map">
-        select a.teamId as away,
-               b.teamId as home,
+        select a.teamId      as away,
+               b.teamId      as home,
                game.gameTime,
+               game.arena    as arena,
                collection.collect_time,
-               a.score as awayScore,
-               b.score as homeScore,
+               a.score       as awayScore,
+               b.score       as homeScore,
                a.gameId,
                collection.id as collection_id
         from team_score_stats a,
@@ -96,12 +97,39 @@
              game game,
              game_collection collection
         where a.gameId = b.gameId
+          and collection.user_id = #{userId}
           and a.isHome = 0
           and b.isHome = 1
-          and a.gameId = 156542
-          and game
-                  .gameId = 156542
-          and collection.game_id = 156542;
+          and a.gameId = collection.game_id
+          and game.gameId = collection.game_id;
     </select>
 
+    <select id="getUserColFuture" resultType="Map">
+        select game.away          as away,
+               game.home          as home,
+               game.gameTime,
+               collection.collect_time,
+               game.away_win_rate as awayWinRate,
+               game.home_win_rate as homeWinRate,
+               game.gameId,
+               collection.id      as collection_id
+        from game_collection collection,
+             future_games game
+        where game.gameId = collection.game_id
+          and collection.user_id = #{userId};
+    </select>
+
+    <delete id="deleteByGameUser">
+        delete
+        from game_collection
+        where user_id = #{userId}
+          and game_id = #{gameId};
+    </delete>
+
+    <select id="isUserCollection" resultType="java.lang.Integer">
+        select count(*)
+        from game_collection
+        where user_id = #{userId}
+          and game_id = #{gameId};
+    </select>
 </mapper>

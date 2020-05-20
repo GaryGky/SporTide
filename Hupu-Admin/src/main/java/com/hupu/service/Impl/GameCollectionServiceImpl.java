@@ -58,6 +58,33 @@ public class GameCollectionServiceImpl implements GameCollectionService {
     
     @Override
     public List<Map> getUserCollection(int user_id) {
-        return gameCollectionDao.getUserCollection(user_id);
+        List<Map> mapList = gameCollectionDao.getUserCollection(user_id);
+        for (Map map : mapList) {
+            map.put("awayWinRate",0);
+            map.put("homeWinRate",0);
+        }
+        mapList.addAll(getUserColFuture(user_id));
+        return mapList;
+    }
+    
+    @Override
+    public List<Map> getUserColFuture(int userId) {
+        List<Map> list = gameCollectionDao.getUserColFuture(userId);
+        for (Map map : list) {
+            map.put("homeScore", 0); // 新增两个字段保持统一
+            map.put("awayScore", 0);
+            map.put("arena", null);
+        }
+        return list;
+    }
+    
+    @Override
+    public int isUserCollection(int gameId, int userId) {
+        return gameCollectionDao.isUserCollection(gameId, userId);
+    }
+    
+    @Override
+    public int deleteByGameUser(int gameId, int userId) {
+        return gameCollectionDao.deleteByGameUser(gameId, userId);
     }
 }

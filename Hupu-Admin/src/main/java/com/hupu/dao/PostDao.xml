@@ -60,9 +60,9 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="postId" useGeneratedKeys="true">
-        insert into nba.post(post_id,post_title, post_content, post_time,
+        insert into nba.post(post_title, post_content, post_time,
                              post_commentnum, admin_id, img_url)
-        values (#{postId},#{postTitle}, #{postContent}, #{postTime},
+        values (#{postTitle}, #{postContent}, #{postTime},
                    #{postCommentnum}, #{adminId}, #{imgUrl})
     </insert>
 

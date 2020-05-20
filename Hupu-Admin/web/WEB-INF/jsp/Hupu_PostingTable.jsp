@@ -75,7 +75,7 @@
                     <div class="col-md-12 col-sm-12 ">
                         <div class="">
                             <div class="x_title">
-                                <h2>所有帖子信息
+                                <h2>所有新闻信息
                                 </h2>
                                 <div class="clearfix"></div>
                             </div>
@@ -91,32 +91,33 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Id</th>
-                                                    <th>内容</th>
-                                                    <th>类型</th>
-                                                    <th>作者</th>
+                                                    <th>标题</th>
+                                                    <th>管理员Id</th>
                                                     <th>发表时间</th>
                                                     <th>评论量</th>
-                                                    <th>收藏量</th>
-                                                    <th>转发量</th>
+                                                    <th>内容</th>
+                                                    <th>图片路径</th>
                                                     <th>删除</th>
                                                 </tr>
                                                 </thead>
 
                                                 <tbody id="post-info-table">
-                                                <c:forEach var="posts"
-                                                           items="${sessionScope.postMap}">
-                                                    <tr>
-                                                        <td>${posts.post_id}</td>
-                                                        <td>${posts.post_info}</td>
-                                                        <td>${posts.post_type}</td>
-                                                        <td>${posts.user_name}</td>
-                                                        <td>${posts.post_time}</td>
-                                                        <td>${posts.post_commentNum}</td>
-                                                        <td>${posts.post_collectNum}</td>
-                                                        <td>${posts.post_transpondNum}</td>
+                                                <c:forEach var="post"
+                                                           items="${sessionScope.postInfo}">
+                                                    <tr id="${post.post_id}">
+                                                        <td>${post.post_id}</td>
+                                                        <td id="post_title"
+                                                            onclick="tdclick(this)">${post.post_title}</td>
+                                                        <td>${post.admin_id}</td>
+                                                        <td>${post.post_time}</td>
+                                                        <td>${post.post_commentnum}</td>
+                                                        <td id="post_content"
+                                                            onclick="tdclick(this)">${post.post_content}</td>\
+                                                        <td id="img_url"
+                                                            onclick="tdclick(this)">${post.img_url}</td>
                                                         <td>
                                                             <button
-                                                                    onclick="delPost(${posts.post_id})"
+                                                                    onclick="delPost(${post.post_id})"
                                                                     class="btn btn-primary"
                                                                     style="display: block;width: 60px;height: 30px;background: #0b2e13">
                                                                 删除
@@ -139,8 +140,7 @@
 
         <!-- footer content -->
         <footer>
-            <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a
+            <div class="pull-right"> <a
                     href="https://colorlib.com">Colorlib</a>
             </div>
             <div class="clearfix"></div>
@@ -182,6 +182,81 @@
 <script type="text/javascript">
     window.onload = function () {
         getLimitPost();
+    }
+
+    var flag = false
+
+    function tdclick(ele) {
+        console.log(flag)
+        if (flag) {
+            return
+        }
+        flag = true
+        console.log('point1')
+        var td = $(ele);
+        var tr = td.parent();
+
+        var sampleId = $(ele).val();
+        var text = $(ele).text();
+        console.log(text)
+        td.html("");
+        var input = $("<input>");
+        input.attr("value", text);
+        input.keyup(function (event) {
+            console.log('point2')
+            var myEvent = event || window.event;
+            var kcode = myEvent.keyCode;
+            if (kcode === 13) {
+                var inputnode = input;
+                var inputext = inputnode.val();
+                var tdNode = inputnode.parent();
+                tdNode.html(inputext);
+                tdNode.onclick = tdclick;
+                flag = false
+                if (inputext !== text) {                    //只有当内容不一样时才进行保存
+                    //后台交互的地方
+                    sampleNameUpdate($(tr).attr('id'), td.attr('id'), inputext);
+                }
+            }
+        });
+        td.append(input);
+        var inputdom = input.get(0);
+        inputdom.select();
+        td.unbind("click");
+    }
+
+    function sampleNameUpdate(id, field, content) {
+        console.log(id + " " + field + " " + content);
+        $.post({
+            url: "/Hupu-Admin/post/updatePostInfo",
+            data: {
+                teamId: id,
+                field: field,
+                new_value: content
+            },
+            dataType: 'json',
+            success: function (data) {
+                alert("修改成功");
+            }
+        });
+    }
+
+    function delPost(id) {
+        console.log('del post id:', id);
+        $.post({
+            url: "/Hupu-Admin/post/delPost",
+            data: {"id": id},
+            success: function (data) {
+                if(data){
+                    window.location.reload();
+                    alert("删除成功");
+                }
+                else{
+                    alert("删除失败");
+                }
+
+            }
+        });
     }
 </script>
 

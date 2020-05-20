@@ -13,7 +13,7 @@ import java.util.Map;
  * @since 2020-05-15 12:32:10
  */
 public interface GameCollectionDao {
-
+    
     /**
      * 通过ID查询单条数据
      *
@@ -21,7 +21,7 @@ public interface GameCollectionDao {
      * @return 实例对象
      */
     GameCollection queryById(Integer id);
-
+    
     /**
      * 查询指定行数据
      *
@@ -30,8 +30,8 @@ public interface GameCollectionDao {
      * @return 对象列表
      */
     List<GameCollection> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
-
-
+    
+    
     /**
      * 通过实体作为筛选条件查询
      *
@@ -39,7 +39,7 @@ public interface GameCollectionDao {
      * @return 对象列表
      */
     List<GameCollection> queryAll(GameCollection gameCollection);
-
+    
     /**
      * 新增数据
      *
@@ -47,7 +47,7 @@ public interface GameCollectionDao {
      * @return 影响行数
      */
     int insert(GameCollection gameCollection);
-
+    
     /**
      * 修改数据
      *
@@ -55,7 +55,7 @@ public interface GameCollectionDao {
      * @return 影响行数
      */
     int update(GameCollection gameCollection);
-
+    
     /**
      * 通过主键删除数据
      *
@@ -65,4 +65,12 @@ public interface GameCollectionDao {
     int deleteById(Integer id);
     
     List<Map> getUserCollection(@Param("userId") int user_id);
+    
+    List<Map> getUserColFuture(@Param("userId") int userId);
+    
+    int isUserCollection(@Param("gameId") int gameId,
+                             @Param("userId") int userId);
+    
+    int deleteByGameUser(@Param("gameId") int gameId,
+                         @Param("userId") int userId);
 }

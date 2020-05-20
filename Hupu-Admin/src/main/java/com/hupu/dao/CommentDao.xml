@@ -80,7 +80,7 @@
         where topic_id = #{topicId}
           and (topic_type = #{topicType} or topic_type = 0)
           and from_uid = usr.user_id
-        order by CAST(comment_time as DATE) ASC
+        order by CAST(comment_time as DATETIME) ASC
     </select>
 
     <!--通过实体作为筛选条件查询-->

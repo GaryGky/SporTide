@@ -59,4 +59,11 @@ public interface GameCollectionService {
     
     List<Map> getUserCollection(int user_id);
     
+    List<Map> getUserColFuture(int userId);
+    
+    int isUserCollection(int gameId,
+                         int userId);
+    
+    int deleteByGameUser(int gameId,
+                         int userId);
 }

@@ -25,4 +25,9 @@ public class PostTest {
     public void testInsert() {
         postService.insert(new Post(1, "title", "content", "time", 1, 1, "url"));
     }
+    
+    @Test
+    public void testCreate() {
+        postService.createPost("title", "content", "time", 1, "url");
+    }
 }

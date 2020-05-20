@@ -36,31 +36,32 @@ public class PostController {
     
     @Autowired
     private RecapServiceImpl recapService;
-
+    
     @Autowired
     private AdminServiceImpl adminService;
     
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
+    
     @RequestMapping("/createPost")
-    public int createPost(String title, String content, String img_path, HttpSession session) {
+    public int createPost(String name, String title, String content, String img_path, HttpSession session) {
         System.out.println("---------------------create post---------------------------");
         String time = DateUtils.getCurTime();
         System.out.println(time);
         int admin_id = adminService.queryIdByName(session.getAttribute("admin").toString());
         return postService.createPost(title, content, time, admin_id, img_path);
     }
-
+    
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public JSONObject fileUpload(@RequestParam("file") MultipartFile file) throws IOException {
-        String path = "E:/photo";
+        
         System.out.println("------------------------get in upload------------------------");
+        String path = "/root/hupu/postpic";
         File realPath = new File(path);
-        if(!realPath.exists()){
+        if (!realPath.exists()) {
             realPath.mkdirs();
         }
         JSONObject jsonObject = new JSONObject();
-        try  {
+        try {
             file.transferTo(new File(realPath + "/" + file.getOriginalFilename()));
             logger.info("文件上传路径" + realPath);
             logger.info("文件名" + file.getOriginalFilename());
@@ -77,6 +78,25 @@ public class PostController {
         //
     }
     
+    @RequestMapping("/updatePostInfo")
+    public String updatePostInfo(int id, String field, String new_value) {
+        Post post = postService.queryById(id);
+        switch (field) {
+            case "post_title":
+                post.setPostTitle(new_value);
+                break;
+            case "post_content":
+                post.setPostContent(new_value);
+                break;
+            case "img_url":
+                post.setImgUrl(new_value);
+                break;
+            default:
+                return "updating post info fail";
+        }
+        return "updating post info success";
+    }
+    
     @RequestMapping("/getPostRecap")
     public Map<String, Object> getPostByDay(String foreDate, String backDate) {
         // 获取指定日期的战报
@@ -88,5 +108,18 @@ public class PostController {
         newsMap.put("recapList", recapList);
         newsMap.put("postList", postList);
         return newsMap;
+    }
+    
+    @RequestMapping("/getLimitPost")
+    public List<Map<String, Object>> getLimitPost(int entries, HttpServletRequest request) {
+        System.out.println("获取新闻信息");
+        List<Map<String, Object>> postList = postService.queryAllPost();
+        request.getSession().setAttribute("postInfo", postList);
+        return postList;
+    }
+    
+    @RequestMapping("/delPost")
+    public int delPost(int id) {
+        return postService.deleteById(id);
     }
 }

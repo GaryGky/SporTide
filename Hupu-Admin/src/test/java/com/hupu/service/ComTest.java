@@ -20,12 +20,12 @@ public class ComTest {
     
     
     @Test
-    public void testInsert() {
+    public void testInsert() throws InterruptedException {
         
         for (int i = 2; i < 13; i++) {
             commentService.insert(new Comment(i*999, i, 1,
                     HupuEnum.TopicType.COMMENT.getTopicType(), 156542,
-                    "comment info" + i, DateUtils.getCurTime()));
+                    "comment info" + i, "2020-05-" + i));
         }
     }
     

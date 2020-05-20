@@ -3,6 +3,7 @@ package com.hupu.service;
 import com.hupu.pojo.Post;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * (Post)表服务接口
@@ -57,4 +58,6 @@ public interface PostService {
 
     int createPost(String post_title, String post_content, String post_time,
                    int admin_id, String img_url);
+
+    List<Map<String, Object>> queryAllPost();
 }

@@ -14,21 +14,20 @@ function getLimitPost() {
 
 //删除帖子
 function delPost(id) {
-
+    console.log('del post id:', id);
     $.post({
         url: "/Hupu-Admin/post/delPost",
         data: {"id": id},
-        success: function (msg, textStatus) {
-            console.log(msg);
-            console.log(textStatus);
-            if (textStatus === "success") {
-                alert("删除成功");
+        success: function (data) {
+            if(data){
+                getLimitPost();
                 window.location.reload();
+                alert("删除成功");
             }
+            else{
+                alert("删除失败");
+            }
+
         }
     });
 }
-
-
-
-
