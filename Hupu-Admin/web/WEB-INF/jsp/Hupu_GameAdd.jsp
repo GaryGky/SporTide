@@ -219,39 +219,57 @@
     function my_submit() {
 
         var form = new FormData();
-        form.append("file", document.getElementById("file").files[0]);
-        $.ajax({
-            url: "/Hupu-Admin/post/upload",        //后台url
-            data: form,
-            cache: false,
-            async: false,
-            type: "POST",                   //类型，POST或者GET
-            dataType: 'json',              //数据返回类型，可以是xml、json等
-            processData: false,
-            contentType: false,
-            success: function (data) {      //成功，回调函数
-                if (data.result == 1) {
-                    console.log('!!!!!!!!!!!!!!!!!')
-                    $.post({
-                        url: "/Hupu-Admin/post/createPost",
-                        data: {
-                            // "name": $('#post_name').val(),
-                            "title": $('#post_title').val(),
-                            "content": $('#post_content').val(),
-                            "img_path": data.path
-                        },
-                        success: function(data){
-                            console.log(data)
-                        }
-                    });
-                } else {
-                    alert("上传失败");
+
+        if(document.getElementById("file").files[0] === undefined){
+            $.post({
+                url: "/Hupu-Admin/post/createPost",
+                data: {
+                    // "name": $('#post_name').val(),
+                    "title": $('#post_title').val(),
+                    "content": $('#post_content').val(),
+                    "img_path": null
+                },
+                success: function(data){
+                    console.log(data)
                 }
-            },
-            error: function (er) {          //失败，回调函数
-                alert(er);
-            }
-        });
+            });
+        }
+        else {
+            form.append("file", document.getElementById("file").files[0]);
+            $.ajax({
+                url: "/Hupu-Admin/post/upload",        //后台url
+                data: form,
+                cache: false,
+                async: false,
+                type: "POST",                   //类型，POST或者GET
+                dataType: 'json',              //数据返回类型，可以是xml、json等
+                processData: false,
+                contentType: false,
+                success: function (data) {      //成功，回调函数
+                    if (data.result == 1) {
+                        console.log('!!!!!!!!!!!!!!!!!')
+                        $.post({
+                            url: "/Hupu-Admin/post/createPost",
+                            data: {
+                                // "name": $('#post_name').val(),
+                                "title": $('#post_title').val(),
+                                "content": $('#post_content').val(),
+                                "img_path": data.path
+                            },
+                            success: function(data){
+                                console.log(data)
+                            }
+                        });
+                    } else {
+                        alert("上传失败");
+                    }
+                },
+                error: function (er) {          //失败，回调函数
+                    alert(er);
+                }
+            });
+        }
+
 
 
     }
