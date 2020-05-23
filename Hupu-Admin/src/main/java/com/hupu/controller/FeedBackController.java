@@ -1,6 +1,5 @@
 package com.hupu.controller;
 
-import com.hupu.pojo.Comment;
 import com.hupu.pojo.FeedBack;
 import com.hupu.service.Impl.FeedBackServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

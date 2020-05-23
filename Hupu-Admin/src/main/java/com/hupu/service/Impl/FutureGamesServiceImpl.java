@@ -112,10 +112,16 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         if (redisUtil.hasKey(key)) {
             return (HashMap<String, Object>) redisUtil.get(key);
         }
+        Map<String, Long> minMaxMap = futureGamesDao.getMinMax();
         HashMap<String, Object> previewMap = new HashMap<>();
-        Map<String, BigDecimal> avgMap = futureGamesDao.getFutureAVGShot(teamId);
-        Map<String, BigDecimal> sumMap = futureGamesDao.getFutureSUMScore(teamId);
-        int listSize = futureGamesDao.getStatsByTeam(teamId);
+        Map<String, BigDecimal> avgMap =
+                futureGamesDao.getFutureAVGShot(teamId,
+                        minMaxMap.get("min"),
+                        minMaxMap.get("max"));
+        Map<String, BigDecimal> sumMap =
+                futureGamesDao.getFutureSUMScore(teamId, minMaxMap.get("min"),
+                        minMaxMap.get("max"));
+        int listSize = getAllGames(teamId);
         
         logger.info("listSize ===> " + listSize);
         
@@ -132,7 +138,7 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         previewMap.put("goal", avgMap.get("goal").doubleValue() / listSize);
         previewMap.put("goal3", avgMap.get("goal3").doubleValue() / listSize);
         
-        previewMap.put("allGames", getAllGames(teamId));
+        previewMap.put("allGames", listSize);
         previewMap.put("winGames", getWinGames(teamId));
         previewMap.put("teamId", teamId);
         redisUtil.set(key, previewMap, HupuEnum.RedisExpTime.SS_LONG.getTime());
@@ -168,15 +174,5 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         map.put("awayTeam", getTeamPreview(futureGames.getAway()));
         map.put("homeTeam", getTeamPreview(futureGames.getHome()));
         return map;
-    }
-    
-    @Override
-    public Map<String, BigDecimal> getFutureAVGShot(String teamId) {
-        return futureGamesDao.getFutureAVGShot(teamId);
-    }
-    
-    @Override
-    public Map<String, BigDecimal> getFutureSUMScore(String teamId) {
-        return futureGamesDao.getFutureSUMScore(teamId);
     }
 }

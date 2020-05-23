@@ -113,10 +113,7 @@
     <select id="getStatsByTeam" resultType="int">
         select count(distinct id)
         from team_score_stats
-        where gameId in (select gameId
-                         from team_score_stats
-                         where teamId =
-                               #{teamId})
+        where teamId = #{teamId}
           and gameId in (select gameId
                          from season2019);
     </select>
@@ -146,7 +143,7 @@
                AVG(shotHelp.threeShotAll) as shot3
         from player_shot_help shotHelp
         where teamId = #{teamId}
-          and shotHelp.teamStatsId / 10 in (select gameId from season2019);
+          and teamStatsId between #{min} and #{max};
     </select>
 
     <select id="getFutureSUMScore" resultType="Map">
@@ -158,6 +155,11 @@
                SUM(block)      as block
         from player_score_stats
         where teamId = #{teamId}
-          and teamStatsId / 10 in (select gameId from season2019)
+          and teamStatsId between #{min} and #{max};
+    </select>
+
+    <select id="getMinMax" resultType="Map">
+        select min(gameId) * 10 as min, MAX(gameId) * 10 + 1 as max
+        from season2019
     </select>
 </mapper>

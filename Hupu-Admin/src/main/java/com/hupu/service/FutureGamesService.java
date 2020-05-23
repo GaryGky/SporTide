@@ -69,7 +69,8 @@ public interface FutureGamesService {
     int getAllGames(String teamId); // 获得球队的所有比赛场数
     
     int getWinGames(String teamId); // 获得球队的胜场
-    
-    Map<String, BigDecimal> getFutureAVGShot(String teamId);
-    Map<String, BigDecimal> getFutureSUMScore(String teamId);
+//
+//    Map<String, BigDecimal> getFutureAVGShot(String teamId);
+//
+//    Map<String, BigDecimal> getFutureSUMScore(String teamId);
 }

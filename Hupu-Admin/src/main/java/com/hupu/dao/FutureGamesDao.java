@@ -74,7 +74,13 @@ public interface FutureGamesDao {
     
     int getWinGames(@Param("teamId") String teamId); // 获得球队的胜场
     
-    Map<String, BigDecimal> getFutureAVGShot(@Param("teamId") String teamId);
+    Map<String, BigDecimal> getFutureAVGShot(@Param("teamId") String teamId,
+                                             @Param("min") long min,
+                                             @Param("max") long max);
     
-    Map<String, BigDecimal> getFutureSUMScore(@Param("teamId") String teamId);
+    Map<String, BigDecimal> getFutureSUMScore(@Param("teamId") String teamId,
+                                              @Param("min") long min,
+                                              @Param("max") long max);
+    
+    Map<String, Long> getMinMax();
 }
