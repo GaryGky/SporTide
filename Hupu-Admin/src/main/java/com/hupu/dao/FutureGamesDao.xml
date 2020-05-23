@@ -17,11 +17,11 @@
     <!--查询单个-->
     <select id="queryById" resultMap="FutureGamesMap">
         select gameId,
-        home,
-        away,
-        gameTime,
-        home_win_rate,
-        away_win_rate
+               home,
+               away,
+               gameTime,
+               home_win_rate,
+               away_win_rate
         from nba.future_games
         where gameId = #{gameid}
     </select>
@@ -29,11 +29,11 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="FutureGamesMap">
         select gameId,
-        home,
-        away,
-        gameTime,
-        home_win_rate,
-        away_win_rate
+               home,
+               away,
+               gameTime,
+               home_win_rate,
+               away_win_rate
         from nba.future_games
         limit #{offset}, #{limit}
     </select>
@@ -68,7 +68,7 @@
     <!--新增所有列-->
     <insert id="insert" keyProperty="gameid" useGeneratedKeys="true">
         insert into nba.future_games(home, away, gameTime, home_win_rate,
-        away_win_rate)
+                                     away_win_rate)
         values (#{home}, #{away}, #{gametime}, #{homeWinRate}, #{awayWinRate})
     </insert>
 
@@ -111,31 +111,53 @@
 
 
     <select id="getStatsByTeam" resultType="int">
-        select distinct id
+        select count(distinct id)
         from team_score_stats
         where gameId in (select gameId
-        from team_score_stats
-        where teamId =
-        #{teamId})
-        and gameId in (select gameId
-        from season2019);
+                         from team_score_stats
+                         where teamId =
+                               #{teamId})
+          and gameId in (select gameId
+                         from season2019);
     </select>
 
     <select id="getAllGames" resultType="int">
         select count(*)
         from team_score_stats
         where teamId = #{teamId}
-        and gameId in (select gameId from season2019);
+          and gameId in (select gameId from season2019);
     </select>
 
     <select id="getWinGames" resultType="int">
         select count(*)
         from team_score_stats teamA,
-        team_score_stats teamB
+             team_score_stats teamB
         where teamA.gameId = teamB.gameId
-        and teamA.teamId = #{teamId}
-        and teamA.score > teamB
-        .score
-        and teamA.gameId in (select gameId from season2019);
+          and teamA.teamId = #{teamId}
+          and teamA.score > teamB
+            .score
+          and teamA.gameId in (select gameId from season2019);
+    </select>
+
+    <select id="getFutureAVGShot" resultType="Map">
+        select AVG(shotHelp.shotIn)       as goal,
+               AVG(shotHelp.shotAll)      as shot,
+               AVG(shotHelp.threeShotIn)  as goal3,
+               AVG(shotHelp.threeShotAll) as shot3
+        from player_shot_help shotHelp
+        where teamId = #{teamId}
+          and shotHelp.teamStatsId / 10 in (select gameId from season2019);
+    </select>
+
+    <select id="getFutureSUMScore" resultType="Map">
+        select SUM(score)      as score,
+               SUM(backCourt)  as backcourt,
+               SUM(frontCourt) as frontcourt,
+               SUM(assist)     as assist,
+               SUM(steal)      as steal,
+               SUM(block)      as block
+        from player_score_stats
+        where teamId = #{teamId}
+          and teamStatsId / 10 in (select gameId from season2019)
     </select>
 </mapper>

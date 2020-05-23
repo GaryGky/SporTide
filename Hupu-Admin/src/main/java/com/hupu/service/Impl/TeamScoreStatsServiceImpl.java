@@ -102,10 +102,10 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
         if (redisUtil.get(key) != null) {
             // TODO: 有没有办法可以保证转换合法?
             gameIndexByDay = (List<TeamScoreStats>) redisUtil.get(key);
-            
+        }else {
+            gameIndexByDay =
+                    teamScoreStatsDao.getGameIndex(queryDay);
         }
-        gameIndexByDay =
-                teamScoreStatsDao.getGameIndex(queryDay);
         if (gameIndexByDay.size() > 0) {
             redisUtil.set(key, gameIndexByDay,
                     HupuEnum.RedisExpTime.LongTime.getTime());

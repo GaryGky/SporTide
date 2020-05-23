@@ -3,9 +3,11 @@ package com.hupu.service;
 import com.hupu.pojo.FutureGames;
 import org.apache.ibatis.annotations.Param;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * (FutureGames)表服务接口
@@ -67,4 +69,7 @@ public interface FutureGamesService {
     int getAllGames(String teamId); // 获得球队的所有比赛场数
     
     int getWinGames(String teamId); // 获得球队的胜场
+    
+    Map<String, BigDecimal> getFutureAVGShot(String teamId);
+    Map<String, BigDecimal> getFutureSUMScore(String teamId);
 }

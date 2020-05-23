@@ -4,7 +4,9 @@ import com.hupu.pojo.FutureGames;
 import com.hupu.pojo.TeamScoreStats;
 import org.apache.ibatis.annotations.Param;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 /**
  * (FutureGames)表数据库访问层
@@ -66,9 +68,13 @@ public interface FutureGamesDao {
     
     List<FutureGames> getFutureGameByDate(@Param("date") String date);
     
-    List<Integer> getStatsByTeam(@Param("teamId") String teamId);
+    int getStatsByTeam(@Param("teamId") String teamId);
     
     int getAllGames(@Param("teamId") String teamId);
     
     int getWinGames(@Param("teamId") String teamId); // 获得球队的胜场
+    
+    Map<String, BigDecimal> getFutureAVGShot(@Param("teamId") String teamId);
+    
+    Map<String, BigDecimal> getFutureSUMScore(@Param("teamId") String teamId);
 }

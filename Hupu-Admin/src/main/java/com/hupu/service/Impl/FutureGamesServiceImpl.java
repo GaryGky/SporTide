@@ -4,7 +4,6 @@ package com.hupu.service.Impl;
 import com.hupu.config.HupuEnum;
 import com.hupu.dao.FutureGamesDao;
 import com.hupu.dao.PlayerScoreStatsDao;
-import com.hupu.dao.TeamDao;
 import com.hupu.dao.TeamScoreStatsDao;
 import com.hupu.pojo.FutureGames;
 import com.hupu.service.FutureGamesService;
@@ -16,10 +15,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * (FutureGames)表服务实现类
@@ -111,43 +112,26 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         if (redisUtil.hasKey(key)) {
             return (HashMap<String, Object>) redisUtil.get(key);
         }
-        List<Integer> teamStatsIdList =
-                futureGamesDao.getStatsByTeam(teamId); // 得到球队本赛季所有的比赛
         HashMap<String, Object> previewMap = new HashMap<>();
-        double score = 0; // 得分
-        double court = 0; // 篮板可以由前场后场篮板相加得到
-        double assist = 0; // 助攻
-        double steal = 0; // 抢断
-        double block = 0; // 盖帽
-        double shot = 0; // 出手
-        double goal = 0; // 命中
-        double shot3 = 0;
-        double goal3 = 0;
-        //TODO:优化这个循环
-        for (Integer teamStatsId : teamStatsIdList) {
-            // 得到一场比赛球队的球员数据的累加和
-            // TODO:嵌套循环访问数据库，时间爆炸
-            previewMap = getMap(playerDao.queryByTeamStatsId(teamStatsId));
-            score += (double) previewMap.get("score");
-            court += (double) previewMap.get("court");
-            assist += (double) previewMap.get("assist");
-            steal += (double) previewMap.get("steal");
-            block += (double) previewMap.get("block");
-            shot += (double) previewMap.get("shot");
-            goal += (double) previewMap.get("goal");
-            goal3 += (double) previewMap.get("goal3");
-            shot3 += (double) previewMap.get("shot3");
-        }
+        Map<String, BigDecimal> avgMap = futureGamesDao.getFutureAVGShot(teamId);
+        Map<String, BigDecimal> sumMap = futureGamesDao.getFutureSUMScore(teamId);
+        int listSize = futureGamesDao.getStatsByTeam(teamId);
+        
+        logger.info("listSize ===> " + listSize);
+        
         previewMap.clear();
-        previewMap.put("score", score / teamStatsIdList.size());
-        previewMap.put("court", court / teamStatsIdList.size());
-        previewMap.put("assist", assist / teamStatsIdList.size());
-        previewMap.put("steal", steal / teamStatsIdList.size());
-        previewMap.put("block", block / teamStatsIdList.size());
-        previewMap.put("shot", shot / teamStatsIdList.size());
-        previewMap.put("goal", goal / teamStatsIdList.size());
-        previewMap.put("goal3", goal3 / teamStatsIdList.size());
-        previewMap.put("shot3", shot3 / teamStatsIdList.size());
+        previewMap.put("score", sumMap.get("score").doubleValue() / listSize);
+        previewMap.put("court",
+                (sumMap.get("backcourt").doubleValue() + sumMap.get(
+                        "frontcourt").doubleValue()) / listSize);
+        previewMap.put("assist", sumMap.get("assist").doubleValue() / listSize);
+        previewMap.put("steal", sumMap.get("steal").doubleValue() / listSize);
+        previewMap.put("block", sumMap.get("block").doubleValue() / listSize);
+        previewMap.put("shot", avgMap.get("shot").doubleValue() / listSize);
+        previewMap.put("shot3", avgMap.get("shot3").doubleValue() / listSize);
+        previewMap.put("goal", avgMap.get("goal").doubleValue() / listSize);
+        previewMap.put("goal3", avgMap.get("goal3").doubleValue() / listSize);
+        
         previewMap.put("allGames", getAllGames(teamId));
         previewMap.put("winGames", getWinGames(teamId));
         previewMap.put("teamId", teamId);
@@ -184,5 +168,15 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         map.put("awayTeam", getTeamPreview(futureGames.getAway()));
         map.put("homeTeam", getTeamPreview(futureGames.getHome()));
         return map;
+    }
+    
+    @Override
+    public Map<String, BigDecimal> getFutureAVGShot(String teamId) {
+        return futureGamesDao.getFutureAVGShot(teamId);
+    }
+    
+    @Override
+    public Map<String, BigDecimal> getFutureSUMScore(String teamId) {
+        return futureGamesDao.getFutureSUMScore(teamId);
     }
 }
