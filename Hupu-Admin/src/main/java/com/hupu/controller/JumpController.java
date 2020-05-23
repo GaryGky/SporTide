@@ -66,4 +66,9 @@ public class JumpController {
     public String gotoVersionTable() {
         return "Hupu_Version";
     }
+    
+    @RequestMapping("/toVersionList")
+    public String gotoVersionList() {
+        return "Hupu_VersionInfo";
+    }
 }

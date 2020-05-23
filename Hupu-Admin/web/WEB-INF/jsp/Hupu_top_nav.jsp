@@ -79,10 +79,7 @@
                             <li>
                                 <a href="${pageContext.request.contextPath}/jump/toAdminAdd">添加管理员</a>
                             </li>
-                            <li>
-                                <a
-                                        href="${pageContext.request.contextPath}/jump/toVersion">版本管理</a>
-                            </li>
+
                         </ul>
                     </li>
                     <li><a><i class="fa fa-pencil-square-o"></i> 论坛管理
@@ -97,6 +94,19 @@
                             <li>
                                 <a
                                         href="${pageContext.request.contextPath}/jump/toGameAdd">添加新闻</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-pencil-square-o"></i> 版本管理
+                        <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li>
+                                <a
+                                        href="${pageContext.request.contextPath}/jump/toVersion">添加版本</a>
+                            </li>
+                            <li>
+                                <a
+                                        href="${pageContext.request.contextPath}/jump/toVersionList">查看版本</a>
                             </li>
                         </ul>
                     </li>

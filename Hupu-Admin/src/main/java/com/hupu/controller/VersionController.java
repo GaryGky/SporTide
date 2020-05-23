@@ -31,8 +31,10 @@ public class VersionController {
     }
     
     @RequestMapping("/allVersion")
-    public List<VersionInfo> getAllVersion() {
-        return versionInfoService.queryAllByLimit(0, 100);
+    public List<VersionInfo> getAllVersion(HttpServletRequest request) {
+        List<VersionInfo> list = versionInfoService.queryAllByLimit(0, 100);
+        request.getSession().setAttribute("versionInfo", list);
+        return list;
     }
     
     @RequestMapping("/getLatestVersion")

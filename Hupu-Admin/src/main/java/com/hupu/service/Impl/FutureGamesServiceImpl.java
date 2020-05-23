@@ -127,7 +127,7 @@ public class FutureGamesServiceImpl extends Play2TeamStats implements FutureGame
         for (Integer teamStatsId : teamStatsIdList) {
             // 得到一场比赛球队的球员数据的累加和
             // TODO:嵌套循环访问数据库，时间爆炸
-            previewMap = getMap(playerDao.queryByTeamStatsId(teamStatsId)); //
+            previewMap = getMap(playerDao.queryByTeamStatsId(teamStatsId));
             score += (double) previewMap.get("score");
             court += (double) previewMap.get("court");
             assist += (double) previewMap.get("assist");

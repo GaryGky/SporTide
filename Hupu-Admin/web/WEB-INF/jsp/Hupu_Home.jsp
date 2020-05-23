@@ -611,24 +611,5 @@
 
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
-
-<script type="text/javascript">
-    var webSocket = new WebSocket("ws://localhost:8080/Hupu-Admin/webSocket");
-    webSocket.onopen = function () {
-        alert("建立连接");
-    };
-
-    webSocket.onclose = function (ev) {
-        alert("close websocket")
-    };
-    webSocket.onmessage = function (ev) {
-        console.log("get message ==>" +
-            ev.data);
-    }
-
-    webSocket.onbeforeunload = function () {
-        webSocket.close();
-    }
-</script>
 </body>
 </html>

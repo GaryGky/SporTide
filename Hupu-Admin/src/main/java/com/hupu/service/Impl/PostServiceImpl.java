@@ -37,8 +37,6 @@ public class PostServiceImpl implements PostService {
     @Qualifier("redisUtil")
     private RedisUtil redisUtil;
     
-    @Autowired
-    private WebSocketService webSocketService;
     
     @Override
     public Post queryById(Integer postId) {
@@ -74,7 +72,6 @@ public class PostServiceImpl implements PostService {
     public int createPost(String post_title, String post_content, String post_time, int admin_id, String img_url) {
         Post post = new Post(1, post_title, post_content, post_time, 0, admin_id
                 , img_url);
-        webSocketService.sendMessage(JSON.toJSONString(post)); // 向客户端推送消息
         return postDao.createPost(post_title, post_content, post_time, admin_id, img_url);
     }
     

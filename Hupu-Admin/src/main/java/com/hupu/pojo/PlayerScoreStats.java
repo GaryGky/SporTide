@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class PlayerScoreStats implements Serializable {
     
+    private int id;
     private String teamid;
     private Integer teamstatsid;
     private String playername;
@@ -27,7 +28,16 @@ public class PlayerScoreStats implements Serializable {
     public PlayerScoreStats() {
     }
     
-    public PlayerScoreStats(String teamid, Integer teamstatsid, String playername, Integer isfirst, String position, Integer playminute, String shot, String threeshot, String penaltyshot, Integer frontcourt, Integer backcourt, Integer rebound, Integer assist, Integer foul, Integer steal, Integer fault, Integer block, Integer score, Integer contribution) {
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public PlayerScoreStats(int id, String teamid, Integer teamstatsid, String playername, Integer isfirst, String position, Integer playminute, String shot, String threeshot, String penaltyshot, Integer frontcourt, Integer backcourt, Integer rebound, Integer assist, Integer foul, Integer steal, Integer fault, Integer block, Integer score, Integer contribution) {
+        this.id = id;
         this.teamid = teamid;
         this.teamstatsid = teamstatsid;
         this.playername = playername;
