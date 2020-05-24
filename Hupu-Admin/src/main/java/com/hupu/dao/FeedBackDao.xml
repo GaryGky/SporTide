@@ -57,4 +57,9 @@
         where feedbackId = #{feedbackId}
     </delete>
 
+    <select id="queryAllFeedBacks" resultMap="FeedBackMap">
+        select feedbackId, feedback_content, feedback_time, reply, reply_time, user_id
+        from nba.userfeedback
+    </select>
+
 </mapper>

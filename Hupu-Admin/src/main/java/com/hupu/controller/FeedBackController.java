@@ -3,12 +3,14 @@ package com.hupu.controller;
 import com.hupu.pojo.Comment;
 import com.hupu.pojo.FeedBack;
 import com.hupu.service.Impl.FeedBackServiceImpl;
+import com.hupu.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -39,21 +41,24 @@ public class FeedBackController {
     }
 
     @RequestMapping("/repFeedBack")
-    public String repFeedBack(int user_id, int feedbackId, String replyContent, String time){
+    public String repFeedBack(int feedbackId, String replyContent){
+        String time = DateUtils.getCurTime();
+        int user_id = feedBackService.queryById(feedbackId).getUser_id();
         int flag = feedBackService.addReply(replyContent, time, feedbackId);
-        if (flag == 1) {
-            return "reply has been stored";
-        }
-        else {
+        if (flag != 1) {
             return "there is something wrong with database operations";
         }
         //给该用户发送通知
 
+        return "reply has been sended";
     }
 
     @RequestMapping("/getFeedBacks")
-    public List<FeedBack> getFeedBacks(int entries){
-        List<FeedBack> list = feedBackService.queryAllByLimit(0, entries);
+    public List<Map<String, Object>> getFeedBacks(HttpServletRequest request){
+        System.out.println("获取用户反馈信息");
+
+        List<Map<String, Object>> list = feedBackService.getAllFeedBacks();
+        request.getSession().setAttribute("feedbackInfo", list);
         return list;
     }
 
@@ -62,5 +67,6 @@ public class FeedBackController {
         List<FeedBack> list = feedBackService.queryFeedBackByUserId(user_id);
         return list;
     }
+
 
 }
