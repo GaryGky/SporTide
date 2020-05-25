@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.*;
 
 @Service("feedbackService")
 @Transactional
@@ -45,5 +45,22 @@ public class FeedBackServiceImpl implements FeedBackService {
     @Override
     public int deleteById(int feedbackId) {
         return feedBackDao.deleteById(feedbackId);
+    }
+
+    @Override
+    public List<Map<String, Object>> getAllFeedBacks() {
+        List<FeedBack> list = feedBackDao.queryAllFeedBacks();
+        ArrayList<Map<String,Object>> ret_list = new ArrayList<>();
+        for (FeedBack feedBack: list) {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("feedbackId", feedBack.getFeedbackId());
+            map.put("feedback_content", feedBack.getFeedback_content());
+            map.put("feedback_time", feedBack.getFeedback_time());
+            map.put("reply", feedBack.getReply());
+            map.put("reply_time", feedBack.getReply_time());
+            map.put("user_id", feedBack.getUser_id());
+            ret_list.add(map);
+        }
+        return ret_list;
     }
 }

@@ -19,4 +19,6 @@ public interface FeedBackDao {
                  @Param("feedbackId") int feedbackId);
 
     int deleteById(@Param("feedbackId") int feedbackId);
+
+    List<FeedBack> queryAllFeedBacks();
 }

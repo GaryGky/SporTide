@@ -3,6 +3,7 @@ package com.hupu.service;
 import com.hupu.pojo.FeedBack;
 
 import java.util.List;
+import java.util.Map;
 
 public interface FeedBackService {
     FeedBack queryById(int feedbackId);
@@ -16,4 +17,6 @@ public interface FeedBackService {
     int addReply(String reply, String reply_time, int feedbackId);
 
     int deleteById(int feedbackId);
+
+    List<Map<String, Object>> getAllFeedBacks();
 }
