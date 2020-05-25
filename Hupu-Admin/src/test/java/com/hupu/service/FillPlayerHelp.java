@@ -51,19 +51,19 @@ public class FillPlayerHelp {
             Pattern pattern = Pattern.compile("(\\d+)-(\\d+)");
             matcher = pattern.matcher(playerStats.getShot());
             if (matcher.matches()) {
-                goal += Integer.parseInt(matcher.group(1));
-                shot += Integer.parseInt(matcher.group(2));
+                goal = Integer.parseInt(matcher.group(1));
+                shot = Integer.parseInt(matcher.group(2));
             }
             
             matcher = pattern.matcher(playerStats.getThreeshot());
             if (matcher.matches()) {
-                goal3 += Integer.parseInt(matcher.group(1));
-                shot3 += Integer.parseInt(matcher.group(2));
+                goal3 = Integer.parseInt(matcher.group(1));
+                shot3 = Integer.parseInt(matcher.group(2));
             }
             matcher = pattern.matcher(playerStats.getPenaltyshot());
             if (matcher.matches()) {
-                goalP += Integer.parseInt(matcher.group(1));
-                shotP += Integer.parseInt(matcher.group(2));
+                goalP = Integer.parseInt(matcher.group(1));
+                shotP = Integer.parseInt(matcher.group(2));
             }
             shotHelpList.add(new PlayerShotHelp(playerStats.getId(),
                     playerStats.getTeamid(),

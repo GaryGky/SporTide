@@ -137,10 +137,10 @@
     </select>
 
     <select id="getFutureAVGShot" resultType="Map">
-        select AVG(shotHelp.shotIn)       as goal,
-               AVG(shotHelp.shotAll)      as shot,
-               AVG(shotHelp.threeShotIn)  as goal3,
-               AVG(shotHelp.threeShotAll) as shot3
+        select SUM(shotHelp.shotIn)       as goal,
+               SUM(shotHelp.shotAll)      as shot,
+               SUM(shotHelp.threeShotIn)  as goal3,
+               SUM(shotHelp.threeShotAll) as shot3
         from player_shot_help shotHelp
         where teamId = #{teamId}
           and teamStatsId between #{min} and #{max};
