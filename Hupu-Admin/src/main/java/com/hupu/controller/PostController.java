@@ -48,6 +48,7 @@ public class PostController {
         String time = DateUtils.getCurTime();
         System.out.println(time);
         int admin_id = adminService.queryIdByName(session.getAttribute("admin").toString());
+        logger.info(img_path);
         return postService.createPost(title, content, time, admin_id, img_path);
     }
     
@@ -66,7 +67,7 @@ public class PostController {
             logger.info("文件上传路径" + realPath);
             logger.info("文件名" + file.getOriginalFilename());
             jsonObject.put("result", 1);
-            jsonObject.put("path", realPath + "/" + file.getOriginalFilename());
+            jsonObject.put("path", "http://114.115.134.119/postpic" + "/" + file.getOriginalFilename());
             System.out.println("------------------------write success------------------------");
             return jsonObject;
         } catch (Exception e) {

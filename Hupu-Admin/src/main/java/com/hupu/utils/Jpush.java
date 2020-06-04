@@ -28,7 +28,7 @@ public class Jpush {
     /**
      * 极光推送
      */
-    public void jiguangPush(String alias,String message) {
+    public void jiguangPush(String alias, String message) {
         try {
             String result = push(pushUrl, alias, message, appKey, masterSecret,
                     apns_production, time_to_live);
@@ -81,7 +81,7 @@ public class Jpush {
         notification.put("ios", ios);
         
         JSONObject options = new JSONObject();//设置参数
-        options.put("time_to_live", Integer.valueOf(time_to_live));
+        options.put("time_to_live", time_to_live);
         options.put("apns_production", apns_production);
         
         json.put("platform", platform);
@@ -125,7 +125,8 @@ public class Jpush {
             StringEntity entity = new StringEntity(data, encodeCharset);
             entity.setContentType("application/json");
             httpPost.setEntity(entity);
-            httpPost.setHeader("Authorization", authorization.trim());
+            httpPost.addHeader("Authorization", authorization.trim());
+            httpPost.addHeader("audience", "all");
             response = client.execute(httpPost);
             result = EntityUtils.toString(response.getEntity(), encodeCharset);
         } catch (Exception e) {

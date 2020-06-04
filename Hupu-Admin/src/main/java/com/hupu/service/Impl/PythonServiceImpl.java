@@ -16,15 +16,17 @@ public class PythonServiceImpl implements PythonService {
             Process proc = Runtime.getRuntime().exec(cmd);
             BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream(), "GBK"));
             String line = null;
+            String lines = null;
             while ((line = in.readLine()) != null) {
                 System.out.println(line);
+                lines += line;
             }
             in.close();
             int re = proc.waitFor();
             if (re == 0) {
                 return "success";
             } else {
-                return "fail: there is something wrong in python scripts";
+                return "fail: there is something wrong in python scripts" + lines;
             }
             
         } catch (Exception e) {
