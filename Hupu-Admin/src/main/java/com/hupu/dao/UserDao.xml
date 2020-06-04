@@ -99,7 +99,7 @@
                 user_email = #{userEmail},
             </if>
             <if test="userPassword != null">
-                user_password = AES_DECRYPT(#{userPassword}, "hupu"),
+                user_password = AES_ENCRYPT(#{userPassword}, "hupu"),
             </if>
             <if test="userNikename != null and userNikename != ''">
                 user_nikename = #{userNikename},
@@ -141,6 +141,11 @@
         user_head
         from nba.user
         where user_name = #{user_name}
+    </select>
+
+    <select id="getAllUserName" resultType="String">
+        select user_name
+        from user;
     </select>
 
 

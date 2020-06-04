@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dell
@@ -69,41 +70,52 @@
             <!-- top tiles -->
             <div class="row" style="display: inline-block;">
                 <div class="tile_count">
+
                     <div class="col-md-2 col-sm-4  tile_stats_count">
                         <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-                        <div class="count">2500</div>
+                        <div class="count">${sessionScope.totalUser}</div>
                         <span class="count_bottom"><i class="green">4% </i> From last Week</span>
                     </div>
+
                     <div class="col-md-2 col-sm-4  tile_stats_count">
-                        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
-                        <div class="count">123.50</div>
+                        <span class="count_top"><i class="fa fa-clock-o"></i>
+                            Total Game</span>
+                        <div class="count">${sessionScope.totalGame}</div>
                         <span class="count_bottom"><i class="green"><i
                                 class="fa fa-sort-asc"></i>3% </i> From last Week</span>
                     </div>
+
                     <div class="col-md-2 col-sm-4  tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
-                        <div class="count green">2,500</div>
+                        <span class="count_top"><i class="fa fa-user"></i>
+                            Total Posts</span>
+                        <div class="count green">${sessionScope.totalPost}</div>
                         <span class="count_bottom"><i class="green"><i
                                 class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                     </div>
+
                     <div class="col-md-2 col-sm-4  tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
-                        <div class="count">4,567</div>
+                        <span class="count_top"><i class="fa fa-user"></i>
+                            Total Comment</span>
+                        <div class="count">${sessionScope.totalComments}</div>
                         <span class="count_bottom"><i class="red"><i
                                 class="fa fa-sort-desc"></i>12% </i> From last Week</span>
                     </div>
+
                     <div class="col-md-2 col-sm-4  tile_stats_count">
                         <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
-                        <div class="count">2,315</div>
+                        <div class="count">${sessionScope.totalCollections}</div>
                         <span class="count_bottom"><i class="green"><i
                                 class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                     </div>
+
                     <div class="col-md-2 col-sm-4  tile_stats_count">
-                        <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
-                        <div class="count">7,325</div>
+                        <span class="count_top"><i class="fa fa-user"></i>
+                            Total Teams</span>
+                        <div class="count">30</div>
                         <span class="count_bottom"><i class="green"><i
                                 class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                     </div>
+
                 </div>
             </div>
             <!-- /jump/top tiles -->
@@ -142,104 +154,27 @@
                         </div>
                         <div class="x_content">
                             <div class="dashboard-widget-content">
-
                                 <ul class="list-unstyled timeline widget">
-                                    <li>
-                                        <div class="block">
-                                            <div class="block_content">
-                                                <h2 class="title">
-                                                    <a>Who Needs Sundance When
-                                                        You’ve Got&nbsp;Crowdfunding?</a>
-                                                </h2>
-                                                <div class="byline">
-                                                    <span>13 hours ago</span> by
-                                                    <a>Jane Smith</a>
+                                    <c:forEach var="post"
+                                               items="${sessionScope.postList}">
+                                        <li>
+                                            <div class="block">
+                                                <div class="block_content">
+                                                    <h2 class="title">
+                                                        <a>${post.title}</a>
+                                                    </h2>
+                                                    <div class="byline">
+                                                        <span>${post.time}</span>
+                                                        by
+                                                        <span>${post.admin}</span>
+                                                    </div>
+                                                    <p
+                                                            class="excerpt">${post.content}
+                                                    </p>
                                                 </div>
-                                                <p class="excerpt">Film
-                                                    festivals used to be
-                                                    do-or-die moments for movie
-                                                    makers. They were where you
-                                                    met the producers that could
-                                                    fund your project, and if
-                                                    the buyers liked your flick,
-                                                    they’d pay to Fast-forward
-                                                    and… <a>Read&nbsp;More</a>
-                                                </p>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="block">
-                                            <div class="block_content">
-                                                <h2 class="title">
-                                                    <a>Who Needs Sundance When
-                                                        You’ve Got&nbsp;Crowdfunding?</a>
-                                                </h2>
-                                                <div class="byline">
-                                                    <span>13 hours ago</span> by
-                                                    <a>Jane Smith</a>
-                                                </div>
-                                                <p class="excerpt">Film
-                                                    festivals used to be
-                                                    do-or-die moments for movie
-                                                    makers. They were where you
-                                                    met the producers that could
-                                                    fund your project, and if
-                                                    the buyers liked your flick,
-                                                    they’d pay to Fast-forward
-                                                    and… <a>Read&nbsp;More</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="block">
-                                            <div class="block_content">
-                                                <h2 class="title">
-                                                    <a>Who Needs Sundance When
-                                                        You’ve Got&nbsp;Crowdfunding?</a>
-                                                </h2>
-                                                <div class="byline">
-                                                    <span>13 hours ago</span> by
-                                                    <a>Jane Smith</a>
-                                                </div>
-                                                <p class="excerpt">Film
-                                                    festivals used to be
-                                                    do-or-die moments for movie
-                                                    makers. They were where you
-                                                    met the producers that could
-                                                    fund your project, and if
-                                                    the buyers liked your flick,
-                                                    they’d pay to Fast-forward
-                                                    and… <a>Read&nbsp;More</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="block">
-                                            <div class="block_content">
-                                                <h2 class="title">
-                                                    <a>Who Needs Sundance When
-                                                        You’ve Got&nbsp;Crowdfunding?</a>
-                                                </h2>
-                                                <div class="byline">
-                                                    <span>13 hours ago</span> by
-                                                    <a>Jane Smith</a>
-                                                </div>
-                                                <p class="excerpt">Film
-                                                    festivals used to be
-                                                    do-or-die moments for movie
-                                                    makers. They were where you
-                                                    met the producers that could
-                                                    fund your project, and if
-                                                    the buyers liked your flick,
-                                                    they’d pay to Fast-forward
-                                                    and… <a>Read&nbsp;More</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                         </div>
@@ -253,8 +188,8 @@
 
                                 <div class="row x_title">
                                     <div class="col-md-6">
-                                        <h3>Network Activities
-                                            <small>Graph title sub-title</small>
+                                        <h3>Sportide
+                                            <small>用户活跃情况</small>
                                         </h3>
                                     </div>
                                     <div class="col-md-6">
@@ -271,15 +206,16 @@
                                     <div id="chart_plot_01"
                                          class="demo-placeholder"></div>
                                 </div>
+
                                 <div class="col-md-3 col-sm-3  bg-white">
                                     <div class="x_title">
-                                        <h2>Top</h2>
+                                        <h2>热门活动</h2>
                                         <div class="clearfix"></div>
                                     </div>
 
                                     <div class="col-md-12 col-sm-12 ">
                                         <div>
-                                            <p>Facebook Campaign</p>
+                                            <p>比赛浏览</p>
                                             <div class="">
                                                 <div class="progress progress_sm"
                                                      style="width: 76%;">
@@ -290,20 +226,20 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <p>Twitter Campaign</p>
+                                            <p>新闻浏览</p>
                                             <div class="">
                                                 <div class="progress progress_sm"
                                                      style="width: 76%;">
                                                     <div class="progress-bar bg-green"
                                                          role="progressbar"
-                                                         data-transitiongoal="60"></div>
+                                                         data-transitiongoal="30"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-sm-12 ">
                                         <div>
-                                            <p>Conventional Media</p>
+                                            <p>评论热度</p>
                                             <div class="">
                                                 <div class="progress progress_sm"
                                                      style="width: 76%;">
@@ -314,7 +250,7 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <p>Bill boards</p>
+                                            <p>比赛收藏</p>
                                             <div class="">
                                                 <div class="progress progress_sm"
                                                      style="width: 76%;">
@@ -367,10 +303,10 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <h4>App Usage across versions</h4>
+                                    <h4>Sportide 版本使用统计</h4>
                                     <div class="widget_summary">
                                         <div class="w_left w_25">
-                                            <span>0.1.5.2</span>
+                                            <span>release-1.0.2</span>
                                         </div>
                                         <div class="w_center w_55">
                                             <div class="progress">
@@ -379,20 +315,20 @@
                                                      aria-valuenow="60"
                                                      aria-valuemin="0"
                                                      aria-valuemax="100"
-                                                     style="width: 66%;">
+                                                     style="width: 20%;">
                                                     <span class="sr-only">60% Complete</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="w_right w_20">
-                                            <span>123k</span>
+                                            <span>12</span>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
 
                                     <div class="widget_summary">
                                         <div class="w_left w_25">
-                                            <span>0.1.5.3</span>
+                                            <span>release-1.0.3</span>
                                         </div>
                                         <div class="w_center w_55">
                                             <div class="progress">
@@ -401,19 +337,19 @@
                                                      aria-valuenow="60"
                                                      aria-valuemin="0"
                                                      aria-valuemax="100"
-                                                     style="width: 45%;">
+                                                     style="width: 12%;">
                                                     <span class="sr-only">60% Complete</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="w_right w_20">
-                                            <span>53k</span>
+                                            <span>8</span>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="widget_summary">
                                         <div class="w_left w_25">
-                                            <span>0.1.5.4</span>
+                                            <span>release-1.1.0</span>
                                         </div>
                                         <div class="w_center w_55">
                                             <div class="progress">
@@ -428,13 +364,13 @@
                                             </div>
                                         </div>
                                         <div class="w_right w_20">
-                                            <span>23k</span>
+                                            <span>12</span>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="widget_summary">
                                         <div class="w_left w_25">
-                                            <span>0.1.5.5</span>
+                                            <span>release-1.1.1</span>
                                         </div>
                                         <div class="w_center w_55">
                                             <div class="progress">
@@ -443,38 +379,16 @@
                                                      aria-valuenow="60"
                                                      aria-valuemin="0"
                                                      aria-valuemax="100"
-                                                     style="width: 5%;">
+                                                     style="width: 50%;">
                                                     <span class="sr-only">60% Complete</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="w_right w_20">
-                                            <span>3k</span>
+                                            <span>${sessionScope.totalUser}</span>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
-                                    <div class="widget_summary">
-                                        <div class="w_left w_25">
-                                            <span>0.1.5.6</span>
-                                        </div>
-                                        <div class="w_center w_55">
-                                            <div class="progress">
-                                                <div class="progress-bar bg-green"
-                                                     role="progressbar"
-                                                     aria-valuenow="60"
-                                                     aria-valuemin="0"
-                                                     aria-valuemax="100"
-                                                     style="width: 2%;">
-                                                    <span class="sr-only">60% Complete</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="w_right w_20">
-                                            <span>1k</span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
@@ -482,7 +396,7 @@
                         <div class="col-md-6 col-sm-6 ">
                             <div class="x_panel tile fixed_height_320">
                                 <div class="x_title">
-                                    <h2>Quick Settings</h2>
+                                    <h2>待施工的设置</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i
                                                 class="fa fa-chevron-up"></i></a>
@@ -536,7 +450,7 @@
                                         </ul>
 
                                         <div class="sidebar-widget">
-                                            <h4>Profile Completion</h4>
+                                            <h4>首页总体进度</h4>
                                             <canvas width="150" height="80"
                                                     id="chart_gauge_01" class=""
                                                     style="width: 160px; height: 100px;"></canvas>
@@ -612,23 +526,5 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/static/build/js/custom.min.js"></script>
 
-<script type="text/javascript">
-    var webSocket = new WebSocket("ws://localhost:8080/Hupu-Admin/webSocket");
-    webSocket.onopen = function () {
-        alert("建立连接");
-    };
-
-    webSocket.onclose = function (ev) {
-        alert("close websocket")
-    };
-    webSocket.onmessage = function (ev) {
-        console.log("get message ==>" +
-            ev.data);
-    }
-
-    webSocket.onbeforeunload = function () {
-        webSocket.close();
-    }
-</script>
 </body>
 </html>

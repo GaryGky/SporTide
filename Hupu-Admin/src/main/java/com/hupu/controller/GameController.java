@@ -100,9 +100,14 @@ public class GameController {
     public HashMap<String, Object> getGameByDay(String date) throws ParseException {
         log.info("====获取：" + date + " 的所有比赛");
         HashMap<String, Object> retMap = new HashMap<>();
-        if (teamScoreStats.getGameIndexByDay(date).size() > 0) { // 判断比赛是否已经打过
+        
+        ArrayList<Map> mapArrayList = teamScoreStats.getGameIndexByDay(date);
+        int size = mapArrayList.size();
+        log.info("size ===> " + size);
+        if (size > 0) { // 判断比赛是否已经打过
+            log.info("2020-02-10有什么问题");
             retMap.put("typeCode", HupuEnum.GameType.GAMEOVER.getGameCode()); // 0:已经打完的比赛
-            retMap.put("gameList", teamScoreStats.getGameIndexByDay(date));
+            retMap.put("gameList", mapArrayList);
         } else {
             retMap.put("gameList", futureGamesService.getFutureGameByDate(date));
             retMap.put("typeCode",

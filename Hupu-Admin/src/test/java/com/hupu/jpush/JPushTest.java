@@ -12,7 +12,7 @@ public class JPushTest {
     public void test(){
         ArrayList<String> strings = new ArrayList<>();
         strings.add("pxy");
-        strings.add("gky");
+        strings.add("");
         strings.add("zjy");
         for(String str:strings){
             jpush.jiguangPush(str,"TEST");

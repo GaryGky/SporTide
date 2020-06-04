@@ -60,4 +60,8 @@ public interface PostService {
                    int admin_id, String img_url);
 
     List<Map<String, Object>> queryAllPost();
+    
+    List<Map<String ,Object>> getHomePost();
+    
+    List<Integer> getTotalInfo();
 }

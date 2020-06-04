@@ -1,12 +1,10 @@
 package com.hupu.service.Impl;
 
 
-import com.alibaba.fastjson.JSON;
-import com.hupu.config.HupuEnum;
 import com.hupu.dao.PostDao;
 import com.hupu.pojo.Post;
-import com.hupu.pojo.Team;
 import com.hupu.service.PostService;
+import com.hupu.utils.Jpush;
 import com.hupu.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -34,8 +32,7 @@ public class PostServiceImpl implements PostService {
     private PostDao postDao;
     
     @Autowired
-    @Qualifier("redisUtil")
-    private RedisUtil redisUtil;
+    private UserServiceImpl userService;
     
     
     @Override
@@ -68,10 +65,19 @@ public class PostServiceImpl implements PostService {
         return postDao.deleteById(postId);
     }
     
+    private void pushPost(Post post) {
+        Jpush jpush = new Jpush();
+        List<String> userNameList = userService.getAllUserName();
+        for (String name : userNameList) {
+            jpush.jiguangPush(name, post.getPostTitle());
+        }
+    }
+    
     @Override
     public int createPost(String post_title, String post_content, String post_time, int admin_id, String img_url) {
         Post post = new Post(1, post_title, post_content, post_time, 0, admin_id
                 , img_url);
+        pushPost(post); // 调用极光推送
         return postDao.createPost(post_title, post_content, post_time, admin_id, img_url);
     }
     
@@ -91,5 +97,15 @@ public class PostServiceImpl implements PostService {
             postInfo.add(map);
         }
         return postInfo;
+    }
+    
+    
+    @Override
+    public List<Map<String, Object>> getHomePost() {
+        return postDao.getHomePost();
+    }
+    
+    public List<Integer> getTotalInfo() {
+        return postDao.getTotalInfo();
     }
 }

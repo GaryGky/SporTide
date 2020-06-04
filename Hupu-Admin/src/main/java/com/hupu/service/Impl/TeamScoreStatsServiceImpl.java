@@ -118,6 +118,7 @@ public class TeamScoreStatsServiceImpl implements TeamScoreStatsService {
             gameMap.put("awayScore", gameIndexByDay.get(i).getScore());
             gameMap.put("homeTeam", gameIndexByDay.get(i + 1).getTeamid());
             gameMap.put("homeScore", gameIndexByDay.get(i + 1).getScore());
+            log.info("gameID ---> " + gameIndexByDay.get(i).getGameid());
             gameMap.put("gameArena",
                     gameDao.queryById(gameIndexByDay.get(i).getGameid()).getArena());
             i++;

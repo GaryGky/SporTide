@@ -4,6 +4,7 @@ import com.hupu.pojo.Post;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * (Post)表数据库访问层
@@ -68,4 +69,8 @@ public interface PostDao {
                    @Param("post_time") String post_time,
                    @Param("admin_id") int admin_id,
                    @Param("img_url") String img_url);
+    
+    List<Map<String,Object>> getHomePost();
+    
+    List<Integer> getTotalInfo();
 }

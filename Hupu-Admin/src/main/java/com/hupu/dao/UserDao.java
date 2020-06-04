@@ -66,4 +66,6 @@ public interface UserDao {
     String getPwdByUserName(@Param("user_name") String userName);
     
     User getUserByUserName(@Param("user_name") String userName);
+    
+    List<String> getAllUserName();
 }

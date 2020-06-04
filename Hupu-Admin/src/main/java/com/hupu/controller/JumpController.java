@@ -1,11 +1,19 @@
 package com.hupu.controller;
 
+import com.hupu.service.Impl.PostServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 @RequestMapping("/jump")
 public class JumpController {
+    @Autowired
+    private PostServiceImpl postService;
+    
     // 用于页面跳转
     @RequestMapping("/toGameTable")
     public String gotoGameTab() {
@@ -38,7 +46,16 @@ public class JumpController {
     }
     
     @RequestMapping("/toHome")
-    public String gotoLogin() {
+    public String gotoLogin(HttpServletRequest request) {
+        // TODO:查询一次数据库全取出来
+        List<Integer> list = postService.getTotalInfo();
+        request.getSession().setAttribute("totalUser", list.get(0));
+        request.getSession().setAttribute("totalGame", list.get(1));
+        request.getSession().setAttribute("totalPost", list.get(2));
+        request.getSession().setAttribute("totalComments", list.get(3));
+        request.getSession().setAttribute("totalCollections", list.get(4));
+        //TODO: 构造一个map
+        request.getSession().setAttribute("postList", postService.getHomePost());
         return "Hupu_Home";
     }
     
@@ -71,4 +88,7 @@ public class JumpController {
     public String gotoVersionList() {
         return "Hupu_VersionInfo";
     }
+    
+    @RequestMapping("/toFeedBackTable")
+    public String toFeedBackTab(){return "Hupu_FeedBackTable";}
 }

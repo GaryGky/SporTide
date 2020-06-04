@@ -30,4 +30,14 @@ public class PostTest {
     public void testCreate() {
         postService.createPost("title", "content", "time", 1, "url");
     }
+    
+    @Test
+    public void getPost(){
+        System.out.println(JSON.toJSON(postService.getHomePost()));
+    }
+    
+    @Test
+    public void getTotal(){
+        System.out.println(JSON.toJSON(postService.getTotalInfo()));
+    }
 }

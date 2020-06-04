@@ -19,8 +19,8 @@ import sun.misc.BASE64Encoder;
 @SuppressWarnings( {"deprecation", "restriction"})
 public class Jpush {
     private static final Logger log = LoggerFactory.getLogger(Jpush.class);
-    private String masterSecret = "0064f104b5c08bc566542090";
-    private String appKey = "8318395d8b8e74711e5a418c";
+    private String masterSecret = "7381f6918d84441f62b3235d";
+    private String appKey = "185e3f53560539e37fe44c0c";
     private String pushUrl = "https://api.jpush.cn/v3/push";
     private boolean apns_production = true;
     private int time_to_live = 86400;
