@@ -65,20 +65,11 @@ public class PostServiceImpl implements PostService {
         return postDao.deleteById(postId);
     }
     
-    private void pushPost(Post post) {
-        Jpush jpush = new Jpush();
-        List<String> userNameList = userService.getAllUserName();
-        for (String name : userNameList) {
-            jpush.jiguangPush(name, post.getPostTitle());
-        }
-    }
-    
     @Override
     public int createPost(String post_title, String post_content, String post_time, int admin_id, String img_url) {
         Post post = new Post(1, post_title, post_content, post_time, 0, admin_id
                 , img_url);
-        pushPost(post); // 调用极光推送
-        return postDao.createPost(post_title, post_content, post_time, admin_id, img_url);
+        return postDao.insert(post);
     }
     
     @Override

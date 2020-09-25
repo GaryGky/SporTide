@@ -144,11 +144,12 @@
         where post_id = #{postId}
     </delete>
 
-    <insert id="createPost">
+    <insert id="createPost" useGeneratedKeys="true" keyProperty="postId"
+            parameterType="Post">
         insert into post (post_title, post_content, post_time, admin_id,
-                          img_url)
+        img_url)
         values (#{post_title}, #{post_content}, #{post_time}, #{admin_id},
-                #{img_url});
+        #{img_url});
     </insert>
 
 </mapper>

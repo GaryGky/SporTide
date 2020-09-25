@@ -28,16 +28,18 @@ public class PostTest {
     
     @Test
     public void testCreate() {
-        postService.createPost("title", "content", "time", 1, "url");
+        int postId = postService.createPost("title", "content",
+                "time", 1, "url");
+        System.out.println(postId);
     }
     
     @Test
-    public void getPost(){
+    public void getPost() {
         System.out.println(JSON.toJSON(postService.getHomePost()));
     }
     
     @Test
-    public void getTotal(){
+    public void getTotal() {
         System.out.println(JSON.toJSON(postService.getTotalInfo()));
     }
 }

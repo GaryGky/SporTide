@@ -6,6 +6,7 @@ import com.hupu.pojo.Recap;
 import com.hupu.service.Impl.AdminServiceImpl;
 import com.hupu.service.Impl.PostServiceImpl;
 import com.hupu.service.Impl.RecapServiceImpl;
+import com.hupu.utils.Jpush;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.hupu.utils.DateUtils;
@@ -30,6 +31,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/post")
 public class PostController {
+    private Jpush jpush = new Jpush();
+    
     @Autowired
     @Qualifier("postService")
     private PostServiceImpl postService;
@@ -49,7 +52,11 @@ public class PostController {
         System.out.println(time);
         int admin_id = adminService.queryIdByName(session.getAttribute("admin").toString());
         logger.info(img_path);
-        return postService.createPost(title, content, time, admin_id, img_path);
+        int res = postService.createPost(title, content, time, admin_id,
+                img_path);
+        logger.info(jpush.toString());
+        jpush.jiguangPush(0,title);
+        return res;
     }
     
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
@@ -77,6 +84,11 @@ public class PostController {
             return jsonObject;
         }
         //
+    }
+    
+    @RequestMapping("/getPostById")
+    public Post getPostById(int postId) {
+        return postService.queryById(postId);
     }
     
     @RequestMapping("/updatePostInfo")
